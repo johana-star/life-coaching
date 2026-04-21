@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Johana Star — Life Coach</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --sage: #6b7f6e; --sage-light: #f0f4f0; --sage-mid: #c5d2c7;
+    --warm: #e8e0d5; --warm-dark: #c4b8a8;
+    --text-dark: #2a2a27; --text-mid: #5a5a55; --text-light: #8a8a84;
+    --cream: #faf8f5; --white: #ffffff;
+    --plum: #5a4a6e; --plum-light: #f0edf5; --plum-mid: #c2b8d4;
+  }
+  body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--text-dark); line-height: 1.6; font-weight: 300; }
+
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 1.25rem 4rem;
+    background: rgba(250,248,245,0.88); backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(107,127,110,0.12);
+  }
+  .nav-logo { font-family: 'Cormorant Garamond', serif; font-weight: 400; font-size: 1.3rem; letter-spacing: 0.04em; color: var(--text-dark); text-decoration: none; }
+  .nav-cta { background: var(--sage); color: white; padding: 0.55rem 1.4rem; border-radius: 2px; font-size: 0.8rem; font-weight: 400; letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; transition: background 0.2s; }
+  .nav-cta:hover { background: #586860; }
+
+  .hero { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; align-items: center; padding: 8rem 4rem 4rem; gap: 4rem; }
+  .hero-eyebrow { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--sage); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.75rem; }
+  .hero-eyebrow::before { content: ''; display: block; width: 32px; height: 1px; background: var(--sage); }
+  .hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.6rem, 5vw, 4rem); font-weight: 300; line-height: 1.1; letter-spacing: -0.01em; color: var(--text-dark); margin-bottom: 1.5rem; }
+  .hero h1 em { font-style: italic; color: var(--sage); }
+  .hero-sub { font-size: 1.05rem; color: var(--text-mid); line-height: 1.75; margin-bottom: 1.5rem; font-weight: 300; max-width: 440px; }
+  .disclaimer { font-size: 0.8rem; color: var(--text-light); line-height: 1.6; border-left: 2px solid var(--warm-dark); padding-left: 0.9rem; margin-bottom: 2rem; max-width: 420px; }
+  .hero-actions { display: flex; align-items: center; gap: 1.5rem; }
+  .btn-primary { background: var(--text-dark); color: white; padding: 0.9rem 2rem; border-radius: 2px; font-size: 0.85rem; font-weight: 400; letter-spacing: 0.04em; text-decoration: none; transition: background 0.2s; border: 1.5px solid var(--text-dark); }
+  .btn-primary:hover { background: var(--sage); border-color: var(--sage); }
+  .btn-ghost { color: var(--text-mid); font-size: 0.85rem; text-decoration: none; letter-spacing: 0.02em; border-bottom: 1px solid var(--warm-dark); padding-bottom: 2px; transition: color 0.2s, border-color 0.2s; }
+  .btn-ghost:hover { color: var(--sage); border-color: var(--sage); }
+
+  .hero-image { position: relative; height: 600px; border-radius: 2px; overflow: hidden; }
+  .hero-image-bg { width: 100%; height: 100%; background: var(--warm); display: flex; align-items: flex-end; padding: 2.5rem; }
+  .hero-image-shapes { position: absolute; inset: 0; pointer-events: none; }
+  .hero-badge { position: absolute; bottom: 2.5rem; left: 2rem; background: white; padding: 1.25rem 1.5rem; border-radius: 2px; box-shadow: 0 4px 32px rgba(42,42,39,0.08); max-width: 200px; }
+  .hero-badge-text { font-size: 0.78rem; color: var(--text-mid); line-height: 1.5; }
+  .hero-badge-em { font-family: 'Cormorant Garamond', serif; font-size: 1rem; font-style: italic; color: var(--sage); display: block; margin-bottom: 0.25rem; }
+
+  .trust-bar { background: var(--sage-light); padding: 1.75rem 4rem; display: flex; align-items: center; justify-content: center; gap: 3rem; flex-wrap: wrap; }
+  .trust-item { font-size: 0.75rem; color: var(--sage); font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; display: flex; align-items: center; gap: 0.6rem; }
+  .trust-item::before { content: '◆'; font-size: 0.5rem; }
+
+  .about { display: grid; grid-template-columns: 1fr 1.2fr; gap: 6rem; padding: 7rem 4rem; align-items: start; }
+  .about-label { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--sage); margin-bottom: 1rem; }
+  .about h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 3.5vw, 2.8rem); font-weight: 300; line-height: 1.2; margin-bottom: 1.5rem; }
+  .about h2 em { font-style: italic; color: var(--sage); }
+  .about p { color: var(--text-mid); line-height: 1.85; margin-bottom: 1.2rem; font-size: 0.97rem; }
+  .identity-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1.5rem 0; }
+  .tag { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; padding: 0.3rem 0.75rem; border: 1px solid; border-radius: 2px; }
+  .tag-sage { color: #3b6d11; background: #eaf3de; border-color: #c0dd97; }
+  .tag-plum { color: #3C3489; background: #EEEDFE; border-color: #CECBF6; }
+  .tag-warm { color: #633806; background: #FAEEDA; border-color: #FAC775; }
+  .about-portrait { aspect-ratio: 4/5; background: var(--warm); border-radius: 2px; position: relative; overflow: hidden; }
+  .about-portrait-image { width:100%; height:100%; object-fit:cover; display:block; }
+  .about-portrait-inner { width: 100%; height: 100%; background: linear-gradient(160deg, var(--warm) 0%, var(--sage-mid) 100%); display: flex; align-items: center; justify-content: center; }
+  .portrait-initials { font-family: 'Cormorant Garamond', serif; font-size: 5rem; font-weight: 300; color: rgba(255,255,255,0.7); letter-spacing: 0.1em; }
+
+  .not-therapy { background: #2a2a27; padding: 4rem; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+  .not-therapy-label { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--sage-mid); margin-bottom: 1rem; }
+  .not-therapy h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.8rem, 3vw, 2.4rem); font-weight: 300; color: white; line-height: 1.2; margin-bottom: 1rem; }
+  .not-therapy h2 em { font-style: italic; color: var(--sage-mid); }
+  .not-therapy p { font-size: 0.92rem; color: rgba(255,255,255,0.6); line-height: 1.8; margin-bottom: 1rem; }
+  .not-therapy-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.08); }
+  .nt-col { padding: 1.5rem; }
+  .nt-col-title { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.75rem; }
+  .nt-col-title.is { color: var(--sage-mid); }
+  .nt-col-title.not { color: rgba(255,255,255,0.3); }
+  .nt-list { list-style: none; }
+  .nt-list li { font-size: 0.85rem; padding: 0.4rem 0; border-bottom: 1px solid rgba(255,255,255,0.06); line-height: 1.5; }
+  .nt-list.is li { color: rgba(255,255,255,0.85); }
+  .nt-list.not li { color: rgba(255,255,255,0.35); text-decoration: line-through; text-decoration-color: rgba(255,255,255,0.15); }
+
+  .offerings { padding: 7rem 4rem; }
+  .offerings-header { margin-bottom: 3.5rem; }
+  .offerings-label { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--sage); margin-bottom: 1rem; }
+  .offerings h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 3.5vw, 2.8rem); font-weight: 300; line-height: 1.2; }
+  .offerings h2 em { font-style: italic; color: var(--sage); }
+  .focus-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1px; background: var(--warm-dark); border: 1px solid var(--warm-dark); margin-top: 2.5rem; }
+  .focus-card { background: var(--cream); padding: 2rem; }
+  .focus-icon { width: 36px; height: 36px; border-radius: 2px; background: var(--sage-light); display: flex; align-items: center; justify-content: center; margin-bottom: 1.25rem; }
+  .focus-icon svg { width: 16px; height: 16px; stroke: var(--sage); fill: none; stroke-width: 1.5; }
+  .focus-card h3 { font-size: 0.95rem; font-weight: 500; color: var(--text-dark); margin-bottom: 0.5rem; }
+  .focus-card p { font-size: 0.85rem; color: var(--text-mid); line-height: 1.7; }
+
+  .systems { background: var(--plum-light); padding: 5rem 4rem; }
+  .systems-inner { max-width: 860px; margin: 0 auto; }
+  .systems-label { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--plum); margin-bottom: 1rem; }
+  .systems h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.8rem, 3vw, 2.4rem); font-weight: 300; line-height: 1.2; margin-bottom: 1.25rem; }
+  .systems h2 em { font-style: italic; color: var(--plum); }
+  .systems p { font-size: 0.95rem; color: var(--text-mid); line-height: 1.8; max-width: 640px; }
+  .systems-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.5rem; }
+
+  .process { padding: 7rem 4rem; max-width: 860px; margin: 0 auto; }
+  .process-label { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--sage); margin-bottom: 1rem; }
+  .process h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 3.5vw, 2.8rem); font-weight: 300; margin-bottom: 3.5rem; line-height: 1.2; }
+  .process h2 em { font-style: italic; color: var(--sage); }
+  .step { display: grid; grid-template-columns: 80px 1fr; border-top: 1px solid var(--warm-dark); padding: 2rem 0; align-items: start; gap: 2rem; }
+  .step:last-child { border-bottom: 1px solid var(--warm-dark); }
+  .step-num { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 300; color: var(--sage); padding-top: 0.1rem; }
+  .step h4 { font-size: 1rem; font-weight: 500; margin-bottom: 0.4rem; }
+  .step p { font-size: 0.9rem; color: var(--text-mid); line-height: 1.7; }
+
+  .testimonials { background: var(--warm); padding: 7rem 4rem; }
+  .testimonials-inner { max-width: 1000px; margin: 0 auto; }
+  .testimonials-label { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--sage); margin-bottom: 1rem; text-align: center; }
+  .testimonials h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 3.5vw, 2.8rem); font-weight: 300; text-align: center; margin-bottom: 3.5rem; line-height: 1.2; }
+  .testimonials h2 em { font-style: italic; color: var(--sage); }
+  .quotes { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+  .quote { background: white; padding: 2.5rem; border-radius: 2px; }
+  .quote-text { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 300; font-style: italic; line-height: 1.6; color: var(--text-dark); margin-bottom: 1.5rem; }
+  .quote-author { display: flex; align-items: center; gap: 0.75rem; }
+  .quote-avatar { width: 40px; height: 40px; border-radius: 50%; background: var(--sage-light); display: flex; align-items: center; justify-content: center; font-size: 0.78rem; font-weight: 500; color: var(--sage); }
+  .quote-avatar.plum { background: var(--plum-light); color: var(--plum); }
+  .quote-name { font-size: 0.85rem; font-weight: 500; color: var(--text-dark); }
+  .quote-role { font-size: 0.78rem; color: var(--text-light); }
+
+  #book { background: var(--cream); padding: 0 4rem;}
+  .cta-section { padding: 8rem 4rem; display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; max-width: 1100px; margin: 0 auto; }
+  .cta-text h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 300; line-height: 1.15; margin-bottom: 1rem; }
+  .cta-text h2 em { font-style: italic; color: var(--sage); }
+  .cta-text p { color: var(--text-mid); line-height: 1.75; margin-bottom: 1rem; font-size: 0.97rem; }
+  .cta-form { background: var(--sage-light); padding: 2.5rem; border-radius: 2px; border: 1px solid var(--sage-mid); }
+  .form-title { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 400; margin-bottom: 0.4rem; }
+  .form-sub { font-size: 0.82rem; color: var(--text-mid); margin-bottom: 1.75rem; }
+  .form-group { margin-bottom: 1rem; }
+  label { display: block; font-size: 0.75rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-mid); margin-bottom: 0.4rem; }
+  input, select, textarea { width: 100%; padding: 0.75rem 1rem; border: 1px solid var(--warm-dark); border-radius: 2px; background: white; font-family: 'DM Sans', sans-serif; font-size: 0.9rem; color: var(--text-dark); outline: none; transition: border-color 0.2s; }
+  input:focus, select:focus, textarea:focus { border-color: var(--sage); }
+  textarea { resize: vertical; min-height: 80px; }
+  .submit-btn { width: 100%; background: var(--sage); color: white; padding: 1rem; border: none; border-radius: 2px; font-family: 'DM Sans', sans-serif; font-size: 0.88rem; font-weight: 500; letter-spacing: 0.04em; cursor: pointer; margin-top: 0.5rem; transition: background 0.2s; }
+  .submit-btn:hover { background: #586860; }
+  .cta-note { text-align: center; margin-top: 0.75rem; font-size: 0.75rem; color: var(--text-light); letter-spacing: 0.02em; }
+
+  footer { border-top: 1px solid var(--warm-dark); padding: 2.5rem 4rem; display: flex; justify-content: space-between; align-items: center; }
+  .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; color: var(--text-mid); font-weight: 400; }
+  .footer-note { font-size: 0.78rem; color: var(--text-light); }
+
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+  .animate { opacity: 0; }
+  .animate.visible { animation: fadeUp 0.7s ease forwards; }
+  .d1 { animation-delay: 0.05s; } .d2 { animation-delay: 0.15s; } .d3 { animation-delay: 0.25s; } .d4 { animation-delay: 0.35s; }
+
+  @media (max-width: 900px) {
+    nav { padding: 1.25rem 2rem; }
+    .hero, .about, .cta-section, .not-therapy { grid-template-columns: 1fr; padding: 5rem 2rem 3rem; }
+    .hero-image { height: 340px; }
+    .quotes { grid-template-columns: 1fr; }
+    .not-therapy-cols { grid-template-columns: 1fr; }
+    .trust-bar { flex-direction: column; gap: 1rem; padding: 1.5rem 2rem; }
+    .offerings, .testimonials, .process, .systems { padding: 5rem 2rem; }
+    .footer { flex-direction: column; gap: 0.75rem; text-align: center; padding: 2rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="nav-logo">Johana Star</a>
+  <a href="#book" class="nav-cta">Book a call</a>
+</nav>
+
+<section class="hero">
+  <div class="hero-text">
+    <div class="hero-eyebrow animate d1">Peer Life Coach · California</div>
+    <h1 class="animate d2">Someone who <em>actually</em><br>gets it.</h1>
+    <p class="hero-sub animate d3">Coaching for neurodivergent people, those navigating mental health conditions, and anyone who's felt like systems weren't built for them — because they weren't.</p>
+    <p class="disclaimer animate d3">I'm a life coach, not a licensed mental health practitioner, counselor, or psychologist. I bring lived experience and practical knowledge, not clinical treatment.</p>
+    <div class="hero-actions animate d4">
+      <a href="#book" class="btn-primary">Book your free discovery call</a>
+      <a href="#about" class="btn-ghost">My story</a>
+    </div>
+  </div>
+  <div class="hero-image animate d3">
+    <div class="hero-image-bg">
+      <svg class="hero-image-shapes" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="480" cy="120" r="200" fill="#c5d2c7" opacity="0.35"/>
+        <circle cx="80" cy="460" r="140" fill="#e8e0d5" opacity="0.5"/>
+        <circle cx="300" cy="300" r="180" fill="none" stroke="#6b7f6e" stroke-width="0.6" opacity="0.2"/>
+        <circle cx="300" cy="300" r="120" fill="none" stroke="#6b7f6e" stroke-width="0.6" opacity="0.15"/>
+        <text x="300" y="315" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="52" fill="#6b7f6e" opacity="0.15" font-style="italic">seen.</text>
+      </svg>
+    </div>
+    <div class="hero-badge">
+      <span class="hero-badge-em">Lived experience.</span>
+      <span class="hero-badge-text">Late-diagnosed autistic · Complex trauma recovery · Trans 🏳️‍⚧️ &amp; <br />nonbinary 💛🤍💜🖤</span>
+    </div>
+  </div>
+</section>
+
+<div class="trust-bar">
+  <div class="trust-item">Peer coaching</div>
+  <div class="trust-item">Neurodivergent-affirming</div>
+  <div class="trust-item">Gender-affirming</div>
+  <div class="trust-item">Queer-affirming</div>
+  <div class="trust-item">California DDS navigation</div>
+  <div class="trust-item">100% confidential</div>
+</div>
+
+<section class="about" id="about">
+  <div class="about-portrait">
+    <img src="headshot.jpg" alt="headshot of Johana Star" class="about-portrait-image">
+  </div>
+  <div>
+    <div class="about-label">My story</div>
+    <h2>I found my way through.<br>Now I help <em>you</em> find yours.</h2>
+    <p>I'm a late-diagnosed autistic person in recovery from a complex trauma disorder and other mental health conditions. I'm also queer, trans, and nonbinary. I know what it's like to spend years not understanding why the world feels so hard — and then, slowly, to build a life that actually works for you.</p>
+    <p>I became a life coach because I kept finding myself in conversations with people who needed exactly what I wish I'd had: someone with real, personal knowledge of these systems, challenges, and communities. Not a textbook. A person.</p>
+    <p>I'm new to coaching as a profession, and I'm honest about that. What I bring is lived expertise, deep empathy, practical skills, and the ability to sit alongside you without judgment — wherever you are.</p>
+    <div class="identity-tags">
+      <span class="tag tag-plum">Late-diagnosed autistic</span>
+      <span class="tag tag-plum">Complex trauma survivor</span>
+      <span class="tag tag-plum">Trans &amp; nonbinary</span>
+      <span class="tag tag-sage">Mental health peer</span>
+      <span class="tag tag-warm">LA-based</span>
+    </div>
+    <a href="#book" class="btn-primary" style="display:inline-block; margin-top:1rem;">Work with me</a>
+  </div>
+</section>
+
+<section class="not-therapy">
+  <div>
+    <div class="not-therapy-label">Clarity on what this is</div>
+    <h2>Coaching is <em>not</em><br>therapy — and that's okay.</h2>
+    <p>I want to be upfront: I am not a licensed mental health practitioner, counselor, or psychologist. I haven't had clinical training, and I don't provide diagnosis, treatment, or therapeutic services.</p>
+    <p>What I offer is something different — and genuinely valuable. Peer coaching from someone who has navigated the same terrain you're navigating.</p>
+    <p style="font-size:0.8rem; color:rgba(255,255,255,0.35);">If you're in crisis or need clinical support, please reach out to a licensed provider. I'm happy to help you find one.</p>
+  </div>
+  <div class="not-therapy-cols">
+    <div class="nt-col">
+      <div class="nt-col-title is">Coaching is</div>
+      <ul class="nt-list is">
+        <li>Practical strategies for daily life</li>
+        <li>Peer support from lived experience</li>
+        <li>Help navigating systems &amp; services</li>
+        <li>Goal-setting &amp; accountability</li>
+        <li>Skills for managing sensory needs</li>
+        <li>Building routines that actually work</li>
+      </ul>
+    </div>
+    <div class="nt-col">
+      <div class="nt-col-title not">Coaching is not</div>
+      <ul class="nt-list not">
+        <li>Clinical mental health treatment</li>
+        <li>Therapy or counseling</li>
+        <li>Diagnosis or assessment</li>
+        <li>Crisis intervention</li>
+        <li>A substitute for medication</li>
+        <li>Licensed psychological services</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="offerings" id="offerings">
+  <div class="offerings-header">
+    <div class="offerings-label">What we work on</div>
+    <h2>Real challenges.<br><em>Practical</em> support.</h2>
+  </div>
+  <div class="focus-grid">
+    <div class="focus-card">
+      <div class="focus-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/></svg>
+      </div>
+      <h3>Burnout recovery</h3>
+      <p>Identifying what depleted you, untangling obligation from identity, and rebuilding energy slowly and sustainably. No "hustle harder" advice here.</p>
+    </div>
+    <div class="focus-card">
+      <div class="focus-icon">
+        <svg viewBox="0 0 24 24"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+      </div>
+      <h3>Boundary setting</h3>
+      <p>Learning to say no without guilt, recognising when your limits are being crossed, and building relationships that feel safer and more reciprocal.</p>
+    </div>
+    <div class="focus-card">
+      <div class="focus-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      </div>
+      <h3>Sensory-friendly environments</h3>
+      <p>Designing your home, work space, and daily routines to reduce overwhelm — from lighting and sound to clothing and social energy management.</p>
+    </div>
+    <div class="focus-card">
+      <div class="focus-icon">
+        <svg viewBox="0 0 24 24"><path d="M18 8h1a4 4 0 010 8h-1"/><path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+      </div>
+      <h3>Feeding yourself</h3>
+      <p>Practical approaches to eating when sensory challenges, executive dysfunction, or low energy make cooking feel impossible. No diet culture. Just nourishment.</p>
+    </div>
+    <div class="focus-card">
+      <div class="focus-icon">
+        <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+      </div>
+      <h3>Routines that hold</h3>
+      <p>Creating flexible structures that account for variable energy, bad days, and the reality of neurodivergent time — without shame when things fall apart.</p>
+    </div>
+    <div class="focus-card">
+      <div class="focus-icon">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+      </div>
+      <h3>Artistic practice</h3>
+      <p>Building a creative practice that fits your actual life — overcoming perfectionism, finding your medium, and making art a consistent part of your world.</p>
+    </div>
+  </div>
+</section>
+
+<section class="systems">
+  <div class="systems-inner">
+    <div class="systems-label">Systems navigation</div>
+    <h2>California's disability <em>support</em> systems,<br>decoded.</h2>
+    <p>California's Regional Centers (through the Department of Developmental Services) provide support to Californians with intellectual or developmental disabilities — including autism and cerebral palsy. Knowing what you're entitled to, how to ask for it, and what to do when the system pushes back can make an enormous difference. I can help you navigate that.</p>
+    <p style="margin-top:1rem; font-size:0.88rem; color:var(--text-light);">I also support clients finding gender-affirming resources, community, and habits — from social connections to everyday practices that affirm who you are.</p>
+    <div class="systems-tags">
+      <span class="tag tag-plum">Regional center eligibility</span>
+      <!-- <span class="tag tag-plum">IPP planning</span> -->
+      <span class="tag tag-plum">Self-determination program</span>
+      <span class="tag tag-plum">Advocacy support</span>
+      <span class="tag tag-sage">Gender-affirming habits</span>
+      <span class="tag tag-sage">Trans community resources</span>
+    </div>
+  </div>
+</section>
+
+<section class="process" id="process">
+  <div class="process-label">How it works</div>
+  <h2>Simple, <em>honest</em> steps</h2>
+  <div class="step">
+    <div class="step-num">I</div>
+    <div>
+      <h4>Discovery call — 30 minutes, free</h4>
+      <p>We meet, talk honestly about where you are, and see if working together makes sense. I'll tell you plainly if I think someone else might serve you better. No pressure, no pitch.</p>
+    </div>
+  </div>
+  <div class="step">
+    <div class="step-num">II</div>
+    <div>
+      <h4>Intake reflection</h4>
+      <p>Before our first session, I'll send a short questionnaire to help me understand your context — your diagnoses, your current challenges, what you've already tried, and what you actually want from this.</p>
+    </div>
+  </div>
+  <div class="step">
+    <div class="step-num">III</div>
+    <div>
+      <h4>Sessions — flexible pacing</h4>
+      <p>60-minute sessions, weekly or bi-weekly. We go at a pace that works for your energy and life. I adapt to you — not the other way around.</p>
+    </div>
+  </div>
+  <div class="step">
+    <div class="step-num">IV</div>
+    <div>
+      <h4>You keep everything</h4>
+      <p>Every strategy, resource, and insight we develop stays with you. The goal is for you to need me less over time, not more.</p>
+    </div>
+  </div>
+</section>
+
+<section class="testimonials">
+  <div class="testimonials-inner">
+    <div class="testimonials-label">Client stories</div>
+    <h2>What it feels like to be <em>understood</em></h2>
+    <div class="quotes">
+      <div class="quote">
+        <div class="quote-text">"I'd tried therapy before and felt like I was always explaining myself from scratch. This was the first time I didn't have to. The relief of that alone was worth it."</div>
+        <div class="quote-author">
+          <div class="quote-avatar">AJ</div>
+          <div><div class="quote-name">Alex J.</div><div class="quote-role">Autistic adult, late diagnosis</div></div>
+        </div>
+      </div>
+      <div class="quote">
+        <div class="quote-text">"I had no idea I was eligible for regional center services. Within two months we'd filed my paperwork and I was connected to support I'd been missing for years."</div>
+        <div class="quote-author">
+          <div class="quote-avatar plum">MR</div>
+          <div><div class="quote-name">Morgan R.</div><div class="quote-role">Parent navigating DDS</div></div>
+        </div>
+      </div>
+      <div class="quote">
+        <div class="quote-text">"The sensory stuff — the lighting, the food, the routines — seems small from the outside. But getting that right changed everything. I finally have capacity for the rest of my life."</div>
+        <div class="quote-author">
+          <div class="quote-avatar">SL</div>
+          <div><div class="quote-name">Sam L.</div><div class="quote-role">Recovering from burnout</div></div>
+        </div>
+      </div>
+      <div class="quote">
+        <div class="quote-text">"As a trans person with chronic mental health stuff, I've always had to code-switch with providers. Not here. I could just show up as myself and actually get work done."</div>
+        <div class="quote-author">
+          <div class="quote-avatar plum">RK</div>
+          <div><div class="quote-name">River K.</div><div class="quote-role">Trans, nonbinary client</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="book">
+  <div class="cta-section">
+    <div class="cta-text">
+      <h2>You don't have to<br>figure this out <em>alone.</em></h2>
+      <p>The discovery call is 30 minutes, free, and genuinely just a conversation. I want to understand what's hard for you right now — and be honest with you about whether I can help.</p>
+      <p>If we're a good fit, we'll take the next step together. If not, I'll do my best to point you somewhere useful.</p>
+      <p style="font-size:0.82rem; color:var(--sage); font-weight:500; margin-top:0.5rem;">I take on a small number of clients at a time so I can show up fully for each person.</p>
+    </div>
+    <!--
+    <div class="cta-form">
+      <div class="form-title">Book your discovery call</div>
+      <div class="form-sub">I'll be in touch within 24 hours to find a time that works.</div>
+      <div class="form-group">
+        <label for="name">Your name</label>
+        <input type="text" id="name" placeholder="Whatever name you go by">
+      </div>
+      <div class="form-group">
+        <label for="email">Email address</label>
+        <input type="email" id="email" placeholder="you@example.com">
+      </div>
+      <div class="form-group">
+        <label for="pronouns">Pronouns (optional)</label>
+        <input type="text" id="pronouns" placeholder="e.g. they/them, she/her">
+      </div>
+      <div class="form-group">
+        <label for="focus">What brings you here?</label>
+        <select id="focus">
+          <option value="">Select one...</option>
+          <option>Burnout &amp; recovery</option>
+          <option>Sensory challenges &amp; daily functioning</option>
+          <option>Navigating California's Regional Centers / DDS</option>
+          <option>Gender-affirming support</option>
+          <option>Boundary setting &amp; relationships</option>
+          <option>Routines &amp; creative practice</option>
+          <option>Something else</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="note">Anything you want me to know?</label>
+        <textarea id="note" placeholder="Optional — share as much or as little as you'd like"></textarea>
+      </div>
+      <button class="submit-btn" onclick="handleSubmit()">Request my free call →</button>
+      <div class="cta-note">No spam. No pressure. Just a real conversation.</div>
+    </div> 
+    -->
+    <!-- Calendly inline widget begin -->
+      <div class="cta-form calendly-inline-widget" data-url="https://calendly.com/johana-linda-star/30-minutes" style="min-width:320px;height:700px;"></div>
+      <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+    <!-- Calendly inline widget end -->
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo">Johana Star — Life Coach</div>
+  <div class="footer-note">© 2026 · Life coaching is not a substitute for licensed mental health treatment.</div>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.animate').forEach(el => observer.observe(el));
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) target.scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+  function handleSubmit() {
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    if (!name || !email) { alert('Please fill in your name and email.'); return; }
+    const btn = document.querySelector('.submit-btn');
+    btn.textContent = "Request sent — I'll be in touch soon.";
+    btn.style.background = '#3b6d11';
+    btn.disabled = true;
+  }
+</script>
+</body>
+</html>
