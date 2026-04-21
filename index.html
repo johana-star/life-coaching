@@ -36,6 +36,7 @@
   .disclaimer { font-size: 0.8rem; color: var(--text-light); line-height: 1.6; border-left: 2px solid var(--warm-dark); padding-left: 0.9rem; margin-bottom: 2rem; max-width: 420px; }
   .hero-actions { display: flex; align-items: center; gap: 1.5rem; }
   .btn-primary { background: var(--text-dark); color: white; padding: 0.9rem 2rem; border-radius: 2px; font-size: 0.85rem; font-weight: 400; letter-spacing: 0.04em; text-decoration: none; transition: background 0.2s; border: 1.5px solid var(--text-dark); }
+  .btn-primary.spacer { display:inline-block; margin-top:1rem; }
   .btn-primary:hover { background: var(--sage); border-color: var(--sage); }
   .btn-ghost { color: var(--text-mid); font-size: 0.85rem; text-decoration: none; letter-spacing: 0.02em; border-bottom: 1px solid var(--warm-dark); padding-bottom: 2px; transition: color 0.2s, border-color 0.2s; }
   .btn-ghost:hover { color: var(--sage); border-color: var(--sage); }
@@ -71,6 +72,7 @@
   .not-therapy h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.8rem, 3vw, 2.4rem); font-weight: 300; color: white; line-height: 1.2; margin-bottom: 1rem; }
   .not-therapy h2 em { font-style: italic; color: var(--sage-mid); }
   .not-therapy p { font-size: 0.92rem; color: rgba(255,255,255,0.6); line-height: 1.8; margin-bottom: 1rem; }
+  .not-therapy .note { font-size: 0.8rem; color:rgba(255,255,255,0.35); }
   .not-therapy-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.08); }
   .nt-col { padding: 1.5rem; }
   .nt-col-title { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.75rem; }
@@ -99,6 +101,7 @@
   .systems h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.8rem, 3vw, 2.4rem); font-weight: 300; line-height: 1.2; margin-bottom: 1.25rem; }
   .systems h2 em { font-style: italic; color: var(--plum); }
   .systems p { font-size: 0.95rem; color: var(--text-mid); line-height: 1.8; max-width: 640px; }
+  .systems .note { margin-top: 1rem; font-size: 0.88rem; color: var(--text-light); }
   .systems-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.5rem; }
 
   .process { padding: 7rem 4rem; max-width: 860px; margin: 0 auto; }
@@ -148,6 +151,7 @@
   .diagnosis h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.8rem, 3vw, 2.4rem); font-weight: 300; line-height: 1.2; margin-bottom: 1.25rem; }
   .diagnosis h2 em { font-style: italic; color: var(--sage); }
   .diagnosis p { font-size: 0.95rem; color: var(--text-mid); line-height: 1.85; margin-bottom: 1rem; }
+  .diagnosis .note { font-size: 0.8rem; color: var(--text-light); margin-bottom: 1.25rem; }
   .rc-card { background: white; border-radius: 2px; padding: 2rem; border: 1px solid var(--warm-dark); }
   .rc-card-label { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--sage); margin-bottom: 0.75rem; }
   .rc-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 300; margin-bottom: 0.75rem; line-height: 1.3; }
@@ -240,7 +244,7 @@
       <span class="tag tag-sage">Mental health peer</span>
       <span class="tag tag-warm">LA-based</span>
     </div>
-    <a href="#book" class="btn-primary" style="display:inline-block; margin-top:1rem;">Work with me</a>
+    <a href="#book" class="btn-primary spacer">Work with me</a>
   </div>
 </section>
 
@@ -250,7 +254,7 @@
     <h2>Coaching is <em>not</em><br>therapy — and that's okay.</h2>
     <p>I want to be upfront: I am not a licensed mental health practitioner, counselor, or psychologist. I haven't had clinical training, and I don't provide diagnosis, treatment, or therapeutic services.</p>
     <p>What I offer is something different — and genuinely valuable. Peer coaching from someone who has navigated the same terrain you're navigating.</p>
-    <p style="font-size:0.8rem; color:rgba(255,255,255,0.35);">If you're in crisis or need clinical support, please reach out to a licensed provider. I'm happy to help you find one.</p>
+    <p class="note">If you're in crisis or need clinical support, please reach out to a licensed provider. I'm happy to help you find one.</p>
   </div>
   <div class="not-therapy-cols">
     <div class="nt-col">
@@ -334,7 +338,7 @@
     <div class="systems-label">Systems navigation</div>
     <h2>California's disability <em>support</em> systems,<br>decoded.</h2>
     <p>California's Regional Centers (through the Department of Developmental Services) provide support to Californians with intellectual or developmental disabilities — including autism and cerebral palsy. Knowing what you're entitled to, how to ask for it, and what to do when the system pushes back can make an enormous difference. I can help you navigate that.</p>
-    <p style="margin-top:1rem; font-size:0.88rem; color:var(--text-light);">I also support clients finding gender-affirming resources, community, and habits — from social connections to everyday practices that affirm who you are.</p>
+    <p class="note">I also support clients finding gender-affirming resources, community, and habits — from social connections to everyday practices that affirm who you are.</p>
     <div class="systems-tags">
       <span class="tag tag-plum">Regional center eligibility</span>
       <!-- <span class="tag tag-plum">IPP planning</span> -->
@@ -366,7 +370,7 @@
         <span class="tag tag-plum">Intellectual disability</span>
         <span class="tag tag-sage">Epilepsy</span>
       </div>
-      <p style="font-size:0.8rem; color:var(--text-light); margin-bottom:1.25rem;">I can help you understand whether you might qualify, what the process looks like, and how to advocate for yourself within the system.</p>
+      <p class="note">I can help you understand whether you might qualify, what the process looks like, and how to advocate for yourself within the system.</p>
       <a href="https://www.dds.ca.gov/rc/lookup-rcs-by-county/" target="_blank" class="rc-link">Find your Regional Center →</a>
     </div>
   </div>
