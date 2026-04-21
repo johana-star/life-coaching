@@ -142,6 +142,21 @@
   .submit-btn:hover { background: #586860; }
   .cta-note { text-align: center; margin-top: 0.75rem; font-size: 0.75rem; color: var(--text-light); letter-spacing: 0.02em; }
 
+  .diagnosis { padding: 7rem 4rem; background: var(--warm); }
+  .diagnosis-inner { max-width: 860px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
+  .diagnosis-label { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--sage); margin-bottom: 1rem; }
+  .diagnosis h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.8rem, 3vw, 2.4rem); font-weight: 300; line-height: 1.2; margin-bottom: 1.25rem; }
+  .diagnosis h2 em { font-style: italic; color: var(--sage); }
+  .diagnosis p { font-size: 0.95rem; color: var(--text-mid); line-height: 1.85; margin-bottom: 1rem; }
+  .rc-card { background: white; border-radius: 2px; padding: 2rem; border: 1px solid var(--warm-dark); }
+  .rc-card-label { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--sage); margin-bottom: 0.75rem; }
+  .rc-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 300; margin-bottom: 0.75rem; line-height: 1.3; }
+  .rc-card p { font-size: 0.85rem; color: var(--text-mid); line-height: 1.75; margin-bottom: 1.25rem; }
+  .rc-conditions { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.5rem; }
+  .rc-link { display: inline-block; background: var(--sage); color: white; padding: 0.65rem 1.25rem; border-radius: 2px; font-size: 0.8rem; font-weight: 400; letter-spacing: 0.04em; text-decoration: none; transition: background 0.2s; }
+  .rc-link:hover { background: #586860; }
+  @media (max-width: 900px) { .diagnosis-inner { grid-template-columns: 1fr; gap: 2.5rem; } }
+
   footer { border-top: 1px solid var(--warm-dark); padding: 2.5rem 4rem; display: flex; justify-content: space-between; align-items: center; }
   .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; color: var(--text-mid); font-weight: 400; }
   .footer-note { font-size: 0.78rem; color: var(--text-light); }
@@ -174,7 +189,8 @@
   <div class="hero-text">
     <div class="hero-eyebrow animate d1">Peer Life Coach · California</div>
     <h1 class="animate d2">Someone who <em>actually</em><br>gets it.</h1>
-    <p class="hero-sub animate d3">Coaching for those navigating mental health conditions, queer and trans folks, and anyone who's felt like systems weren't built for them — because they weren't.</p>
+    <p class="hero-sub animate d3">Coaching for neurodivergent people navigating life with mental health conditions, queer and trans folks, and anyone who's felt like systems weren't built for them — because they weren't.</p>
+    <p class="hero-sub animate d3">This is coaching for folks still figuring out what their diagnosis or identity actually means for their life.</p>
     <p class="disclaimer animate d3">I'm a life coach, not a licensed mental health practitioner, counselor, or psychologist. I bring lived experience and practical knowledge, not clinical treatment.</p>
     <div class="hero-actions animate d4">
       <a href="#book" class="btn-primary">Book your free discovery call</a>
@@ -322,10 +338,36 @@
     <div class="systems-tags">
       <span class="tag tag-plum">Regional center eligibility</span>
       <!-- <span class="tag tag-plum">IPP planning</span> -->
-      <span class="tag tag-plum">Self-determination program</span>
+      <span class="tag tag-warm">Self-determination program</span>
       <span class="tag tag-plum">Advocacy support</span>
       <span class="tag tag-sage">Gender-affirming habits</span>
       <span class="tag tag-sage">Trans community resources</span>
+    </div>
+  </div>
+</section>
+
+<section class="diagnosis">
+  <div class="diagnosis-inner">
+    <div>
+      <div class="diagnosis-label">If you're newly diagnosed</div>
+      <h2>Getting a diagnosis<br>is just the <em>beginning.</em></h2>
+      <p>Whether your diagnosis came last year or decades ago, there's often a moment — sometimes many of them — where you're left wondering what to do with the information. Relief and grief can arrive at the same time. So can confusion, or a quiet resistance to the idea that you need support at all.</p>
+      <p>You don't have to have it figured out to reach out. A lot of the people I work with are somewhere in that in-between space — not in crisis, not fully okay, just trying to make sense of things. That's exactly where coaching can help.</p>
+      <p>And you're allowed to take it slowly. There's no pressure to seek services, claim an identity, or do anything before you're ready. I'm here to walk alongside you, not to push.</p>
+    </div>
+    <div class="rc-card">
+      <div class="rc-card-label">California Regional Centers</div>
+      <h3>Free services you may not know you're entitled to.</h3>
+      <p>California's Department of Developmental Services funds a network of Regional Centers that provide free, lifelong support to people with qualifying intellectual or developmental disabilities. Many people who qualify have never been told — or were told and didn't know where to start.</p>
+      <p>Qualifying conditions include:</p>
+      <div class="rc-conditions">
+        <span class="tag tag-sage">Autism</span>
+        <span class="tag tag-warm">Cerebral palsy</span>
+        <span class="tag tag-plum">Intellectual disability</span>
+        <span class="tag tag-sage">Epilepsy</span>
+      </div>
+      <p style="font-size:0.8rem; color:var(--text-light); margin-bottom:1.25rem;">I can help you understand whether you might qualify, what the process looks like, and how to advocate for yourself within the system.</p>
+      <a href="https://www.dds.ca.gov/rc/lookup-rcs-by-county/" target="_blank" class="rc-link">Find your Regional Center →</a>
     </div>
   </div>
 </section>
@@ -362,7 +404,7 @@
     </div>
   </div>
 </section>
-
+<!--
 <section class="testimonials">
   <div class="testimonials-inner">
     <div class="testimonials-label">Client stories</div>
@@ -399,13 +441,14 @@
     </div>
   </div>
 </section>
-
+-->
 <section id="book">
   <div class="cta-section">
     <div class="cta-text">
       <h2>You don't have to<br>figure this out <em>alone.</em></h2>
       <p>The discovery call is 30 minutes, free, and genuinely just a conversation. I want to understand what's hard for you right now — and be honest with you about whether I can help.</p>
       <p>If we're a good fit, we'll take the next step together. If not, I'll do my best to point you somewhere useful.</p>
+      <p>And if you're not ready to book anything yet — that's okay too. Feel free to look around, sit with it, and come back when the time feels right.</p>
       <p style="font-size:0.82rem; color:var(--sage); font-weight:500; margin-top:0.5rem;">I take on a small number of clients at a time so I can show up fully for each person.</p>
     </div>
     <!--
