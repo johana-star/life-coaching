@@ -16,8 +16,8 @@
     --serif: 'Cormorant Garamond', serif;
   }
   body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--text-dark); line-height: 1.6; font-weight: 300; }
-  h1, h2, h3, .nav-logo, .form-title, .rc-card h3, .footer-logo, .hero-badge-em, .quote-text, .portrait-initials { font-family: var(--serif); }
-  h1, h2, h3 { font-weight: 300; }
+  h1, h2, h3, .nav-logo, .step-num, .footer-logo, .hero-badge-em, .quote-text { font-family: var(--serif); }
+  h1, h2, h3, .step-num { font-weight: 300; }
   h2 em { font-style: italic; }
 
   nav {
@@ -58,10 +58,11 @@
 
   .about { display: grid; grid-template-columns: 1fr 1.2fr; gap: 6rem; padding: 7rem 4rem; align-items: start; }
   .section-label { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 1rem; }
-  .about-label, .offerings-label, .process-label, .diagnosis-label { color: var(--sage); }
+  .about-label, .offerings-label, .process-label, .diagnosis-label, .testimonials-label { color: var(--sage); }
   .systems-label, .rc-card-label { color: var(--plum); }
   .not-therapy-label { color: var(--sage-mid); }
-  .about h2 { font-size: clamp(2rem, 3.5vw, 2.8rem); font-weight: 300; line-height: 1.2; margin-bottom: 1.5rem; }
+  .about h2 { font-size: clamp(2rem, 3.5vw, 2.8rem); line-height: 1.2; margin-bottom: 1.5rem; }
+  .about h2 em { font-style: italic; color: var(--sage); }
   .about p { color: var(--text-mid); line-height: 1.85; margin-bottom: 1.2rem; font-size: 0.97rem; }
   .identity-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1.5rem 0; }
   .tag { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; padding: 0.3rem 0.75rem; border: 1px solid; border-radius: 2px; }
@@ -72,7 +73,8 @@
   .about-portrait-image { width:100%; height:100%; object-fit:cover; display:block; }
 
   .not-therapy { background: #2a2a27; padding: 4rem; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
-  .not-therapy h2 { font-size: clamp(1.8rem, 3vw, 2.4rem); font-weight: 300; color: white; line-height: 1.2; margin-bottom: 1rem; }
+  .not-therapy h2 { font-size: clamp(1.8rem, 3vw, 2.4rem); color: white; line-height: 1.2; margin-bottom: 1rem; }
+  .not-therapy h2 em { font-style: italic; color: var(--sage-mid); }
   .not-therapy p { font-size: 0.92rem; color: rgba(255,255,255,0.6); line-height: 1.8; margin-bottom: 1rem; }
   .not-therapy .note { font-size: 0.8rem; color:rgba(255,255,255,0.35); }
   .not-therapy-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.08); }
@@ -87,7 +89,8 @@
 
   .offerings { padding: 7rem 4rem; }
   .offerings-header { margin-bottom: 3.5rem; }
-  .offerings h2 { font-size: clamp(2rem, 3.5vw, 2.8rem); font-weight: 300; line-height: 1.2; }
+  .offerings h2 { font-size: clamp(2rem, 3.5vw, 2.8rem); line-height: 1.2; }
+  .offerings h2 em { font-style: italic; color: var(--sage); }
   .focus-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1px; background: var(--warm-dark); border: 1px solid var(--warm-dark); margin-top: 2.5rem; }
   .focus-card { background: var(--cream); padding: 2rem; }
   .focus-icon { width: 36px; height: 36px; border-radius: 2px; background: var(--sage-light); display: flex; align-items: center; justify-content: center; margin-bottom: 1.25rem; }
@@ -97,23 +100,25 @@
 
   .systems { background: var(--plum-light); padding: 5rem 4rem; }
   .systems-inner { max-width: 860px; margin: 0 auto; }
-  .systems h2 { font-size: clamp(1.8rem, 3vw, 2.4rem); font-weight: 300; line-height: 1.2; margin-bottom: 1.25rem; }
+  .systems h2 { font-size: clamp(1.8rem, 3vw, 2.4rem); line-height: 1.2; margin-bottom: 1.25rem; }
+  .systems h2 em { font-style: italic; color: var(--plum); }
   .systems p { font-size: 0.95rem; color: var(--text-mid); line-height: 1.8; max-width: 640px; }
   .systems .note { margin-top: 1rem; font-size: 0.88rem; color: var(--text-light); }
   .systems-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.5rem; }
 
   .process { padding: 7rem 4rem; max-width: 860px; margin: 0 auto; }
-  .process h2 { font-size: clamp(2rem, 3.5vw, 2.8rem); font-weight: 300; margin-bottom: 3.5rem; line-height: 1.2; }
+  .process h2 { font-size: clamp(2rem, 3.5vw, 2.8rem); margin-bottom: 3.5rem; line-height: 1.2; }
+  .process h2 em { font-style: italic; color: var(--sage); }
   .step { display: grid; grid-template-columns: 80px 1fr; border-top: 1px solid var(--warm-dark); padding: 2rem 0; align-items: start; gap: 2rem; }
   .step:last-child { border-bottom: 1px solid var(--warm-dark); }
-  .step-num { font-family: var(--serif); font-size: 1.5rem; font-weight: 300; color: var(--sage); padding-top: 0.1rem; }
+  .step-num { font-size: 1.5rem; color: var(--sage); padding-top: 0.1rem; }
   .step h4 { font-size: 1rem; font-weight: 500; margin-bottom: 0.4rem; }
   .step p { font-size: 0.9rem; color: var(--text-mid); line-height: 1.7; }
 
   .testimonials { background: var(--warm); padding: 7rem 4rem; }
   .testimonials-inner { max-width: 1000px; margin: 0 auto; }
-  .testimonials-label { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--sage); margin-bottom: 1rem; text-align: center; }
-  .testimonials h2 { font-size: clamp(2rem, 3.5vw, 2.8rem); font-weight: 300; text-align: center; margin-bottom: 3.5rem; line-height: 1.2; }
+  .testimonials h2 { font-size: clamp(2rem, 3.5vw, 2.8rem); text-align: center; margin-bottom: 3.5rem; line-height: 1.2; }
+  .testimonials h2 em { font-style: italic; color: var(--sage); }
   .quotes { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
   .quote { background: white; padding: 2.5rem; border-radius: 2px; }
   .quote-text { font-size: 1.2rem; font-weight: 300; font-style: italic; line-height: 1.6; color: var(--text-dark); margin-bottom: 1.5rem; }
@@ -125,9 +130,10 @@
 
   #book { background: var(--cream); padding: 0 4rem;}
   .cta-section { padding: 8rem 4rem; display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; max-width: 1100px; margin: 0 auto; }
-  .cta-text h2 { font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 300; line-height: 1.15; margin-bottom: 1rem; }
+  .cta-text h2 { font-size: clamp(2rem, 4vw, 3.2rem); line-height: 1.15; margin-bottom: 1rem; }
+  .cta-text h2 em { font-style: italic; color: var(--sage); }
   .cta-text p { color: var(--text-mid); line-height: 1.75; margin-bottom: 1rem; font-size: 0.97rem; }
-  /* Form styles — commented out while form is inactive
+  /* Form styles — restore when form is reactivated
     .cta-form { background: var(--sage-light); padding: 2.5rem; border-radius: 2px; border: 1px solid var(--sage-mid); }
   .form-title { font-family: var(--serif); font-size: 1.4rem; font-weight: 400; margin-bottom: 0.4rem; }
   .form-sub { font-size: 0.82rem; color: var(--text-mid); margin-bottom: 1.75rem; }
@@ -143,11 +149,12 @@
 
   .diagnosis { padding: 7rem 4rem; background: var(--warm); }
   .diagnosis-inner { max-width: 860px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
-  .diagnosis h2 { font-size: clamp(1.8rem, 3vw, 2.4rem); font-weight: 300; line-height: 1.2; margin-bottom: 1.25rem; }
+  .diagnosis h2 { font-size: clamp(1.8rem, 3vw, 2.4rem); line-height: 1.2; margin-bottom: 1.25rem; }
+  .diagnosis h2 em { font-style: italic; color: var(--sage); }
   .diagnosis p { font-size: 0.95rem; color: var(--text-mid); line-height: 1.85; margin-bottom: 1rem; }
   .diagnosis .note { font-size: 0.8rem; color: var(--text-light); margin-bottom: 1.25rem; }
   .rc-card { background: white; border-radius: 2px; padding: 2rem; border: 1px solid var(--warm-dark); }
-  .rc-card h3 { font-size: 1.3rem; font-weight: 300; margin-bottom: 0.75rem; line-height: 1.3; }
+  .rc-card h3 { font-size: 1.3rem; margin-bottom: 0.75rem; line-height: 1.3; }
   .rc-card p { font-size: 0.85rem; color: var(--text-mid); line-height: 1.75; margin-bottom: 1.25rem; }
   .rc-conditions { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.5rem; }
   .rc-link { display: inline-block; background: var(--sage); color: white; padding: 0.65rem 1.25rem; border-radius: 2px; font-size: 0.8rem; font-weight: 400; letter-spacing: 0.04em; text-decoration: none; transition: background 0.2s; }
