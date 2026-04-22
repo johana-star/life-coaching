@@ -41,13 +41,13 @@
   nav .cta:hover { background: var(--sage-hover); }
 
   .hero { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; align-items: center; padding: 8rem 4rem 4rem; gap: 4rem; }
-  .hero .eyebrow { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--sage); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.75rem; }
-  .hero .eyebrow::before { content: ''; display: block; width: 32px; height: 1px; background: var(--sage); }
-  .hero h1 { font-size: clamp(2.6rem, 5vw, 4rem); line-height: 1.1; letter-spacing: -0.01em; color: var(--text-dark); margin-bottom: 1.5rem; }
-  .hero h1 em { font-style: italic; color: var(--sage); }
-  .hero .lede { font-size: 1.05rem; color: var(--text-mid); line-height: 1.75; margin-bottom: 1.5rem; font-weight: 300; max-width: 440px; }
+  .hero header .eyebrow { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--sage); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.75rem; }
+  .hero header .eyebrow::before { content: ''; display: block; width: 32px; height: 1px; background: var(--sage); }
+  .hero header h1 { font-size: clamp(2.6rem, 5vw, 4rem); line-height: 1.1; letter-spacing: -0.01em; color: var(--text-dark); margin-bottom: 1.5rem; }
+  .hero header h1 em { font-style: italic; color: var(--sage); }
+  .hero header .lede { font-size: 1.05rem; color: var(--text-mid); line-height: 1.75; margin-bottom: 1.5rem; font-weight: 300; max-width: 440px; }
   .disclaimer { font-size: 0.8rem; color: var(--text-light); line-height: 1.6; border-left: 2px solid var(--warm-dark); padding-left: 0.9rem; margin-bottom: 2rem; max-width: 420px; }
-  .hero nav { display: flex; align-items: center; gap: 1.5rem; }
+  .hero header nav { display: flex; align-items: center; gap: 1.5rem; }
   .btn-primary { background: var(--text-dark); color: white; padding: 0.9rem 2rem; border-radius: 2px; font-size: 0.85rem; font-weight: 400; letter-spacing: 0.04em; text-decoration: none; transition: background 0.2s; border: 1.5px solid var(--text-dark); }
   .btn-primary.spacer { display:inline-block; margin-top:1rem; }
   .btn-primary:hover { background: var(--sage); border-color: var(--sage); }
@@ -196,15 +196,17 @@
 </nav>
 
 <section class="hero">
-  <p class="eyebrow animate delay-1">Peer Life Coach · California</p>
-  <h1 class="animate delay-2">Someone who <em>actually</em><br>gets it.</h1>
-  <p class="lede animate delay-3">Coaching for neurodivergent people navigating life with mental health conditions, queer and trans folks, and anyone who's felt like systems weren't built for them — because they weren't.</p>
-  <p class="lede animate delay-3">This is coaching for folks still figuring out what their diagnosis or identity actually means for their life.</p>
-  <p class="disclaimer animate delay-3">I'm a life coach, not a licensed mental health practitioner, counselor, or psychologist. I bring lived experience and practical knowledge, not clinical treatment.</p>
-  <nav class="animate delay-4">
-    <a href="#book" class="btn-primary">Book your free discovery call</a>
-    <a href="#about" class="btn-ghost">My story</a>
-  </nav>
+  <header>
+    <p class="eyebrow animate delay-1">Peer Life Coach · California</p>
+    <h1 class="animate delay-2">Someone who <em>actually</em><br>gets it.</h1>
+    <p class="lede animate delay-3">Coaching for neurodivergent people navigating life with mental health conditions, queer and trans folks, and anyone who's felt like systems weren't built for them — because they weren't.</p>
+    <p class="lede animate delay-3">This is coaching for folks still figuring out what their diagnosis or identity actually means for their life.</p>
+    <p class="disclaimer animate delay-3">I'm a life coach, not a licensed mental health practitioner, counselor, or psychologist. I bring lived experience and practical knowledge, not clinical treatment.</p>
+    <nav class="animate delay-4">
+      <a href="#book" class="btn-primary">Book your free discovery call</a>
+      <a href="#about" class="btn-ghost">My story</a>
+    </nav>
+  </header>
   <div class="image animate delay-3">
     <svg class="shapes" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
         <circle cx="480" cy="120" r="200" fill="#c5d2c7" opacity="0.35"/>
