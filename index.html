@@ -8,11 +8,20 @@
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   :root {
-    --sage: #6b7f6e; --sage-hover: #586860; --sage-light: #f0f4f0; --sage-mid: #c5d2c7;
-    --warm: #e8e0d5; --warm-dark: #c4b8a8;
-    --text-dark: #2a2a27; --text-mid: #5a5a55; --text-light: #8a8a84;
-    --cream: #faf8f5; --white: #ffffff;
-    --plum: #5a4a6e; --plum-light: #f0edf5; --plum-mid: #c2b8d4;
+    --sage: #6b7f6e;
+    --sage-hover: #586860;
+    --sage-light: #f0f4f0;
+    --sage-mid: #c5d2c7;
+    --warm: #e8e0d5;
+    --warm-dark: #c4b8a8;
+    --text-dark: #2a2a27;
+    --text-mid: #5a5a55;
+    --text-light: #8a8a84;
+    --cream: #faf8f5;
+    --white: #ffffff;
+    --plum: #5a4a6e;
+    --plum-light: #f0edf5;
+    --plum-mid: #c2b8d4;
     --serif: 'Cormorant Garamond', serif;
   }
   body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--text-dark); line-height: 1.6; font-weight: 300; }
@@ -87,7 +96,7 @@
   .nt-list.not li { color: rgba(255,255,255,0.35); text-decoration: line-through; text-decoration-color: rgba(255,255,255,0.15); }
 
   .offerings { padding: 7rem 4rem; }
-  .offerings-header { margin-bottom: 3.5rem; }
+  .offerings .header { margin-bottom: 3.5rem; }
   .offerings h2 { font-size: clamp(2rem, 3.5vw, 2.8rem); line-height: 1.2; }
   .offerings h2 em { font-style: italic; color: var(--sage); }
   .focus-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1px; background: var(--warm-dark); border: 1px solid var(--warm-dark); margin-top: 2.5rem; }
@@ -281,7 +290,7 @@
 </section>
 
 <section class="offerings" id="offerings">
-  <div class="offerings-header">
+  <div class="header">
     <div class="label">What we work on</div>
     <h2>Real challenges.<br><em>Practical</em> support.</h2>
   </div>
@@ -488,7 +497,7 @@
       </div>
       <button class="submit-btn" onclick="handleSubmit()">Request my free call →</button>
       <div class="cta-note">No spam. No pressure. Just a real conversation.</div>
-    </div> 
+    </div>
     -->
     <!-- Calendly inline widget begin -->
       <div class="cta-form calendly-inline-widget" data-url="https://calendly.com/johana-linda-star/30-minutes" style="min-width:320px;height:700px;"></div>
