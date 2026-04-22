@@ -25,8 +25,8 @@
     --serif: 'Cormorant Garamond', serif;
   }
   body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--text-dark); line-height: 1.6; font-weight: 300; }
-  h1, h2, h3, nav .logo, .step .numeral, footer .logo, .quote blockquote { font-family: var(--serif); }
-  h1, h2, h3, .step .numeral { font-weight: 300; }
+  h1, h2, h3, h4, nav .logo, .step .numeral, footer .logo, .quote blockquote { font-family: var(--serif); }
+  h1, h2, h3, h4, .step .numeral { font-weight: 300; }
   h2 em { font-style: italic; }
 
   nav {
@@ -56,9 +56,10 @@
 
   .hero .image { position: relative; height: 600px; border-radius: 2px; overflow: hidden; background: var(--warm); }
   .hero .image .shapes { position: absolute; inset: 0; pointer-events: none; }
-  .hero .badge { position: absolute; bottom: 2.5rem; left: 2rem; background: white; padding: 1.25rem 1.5rem; border-radius: 2px; box-shadow: 0 4px 32px rgba(42,42,39,0.08); max-width: 200px; }
-  .hero .badge .caption { font-size: 0.78rem; color: var(--text-mid); line-height: 1.5; }
-  .hero .badge em { font-family: var(--serif); font-size: 1rem; color: var(--sage); display: block; margin-bottom: 0.25rem; }
+  .hero .badge { position: absolute; bottom: 2.5rem; left: 2rem; background: white; padding: 1.25rem 1.5rem; border-radius: 2px; box-shadow: 0 4px 32px rgba(42,42,39,0.08); max-width: 240px; }
+  .hero .badge h4 { font-size: 1rem; color: var(--sage); margin-bottom: 0.25rem; }
+  .hero .badge ul { list-style-type: '\b7  '; }
+  .hero .badge li { font-size: 0.78rem; color: var(--text-mid); line-height: 1.5; }
 
   .trust-bar { list-style: none; background: var(--sage-light); padding: 1.75rem 4rem; display: flex; align-items: center; justify-content: center; gap: 3rem; flex-wrap: wrap; }
   .trust-bar li { font-size: 0.75rem; color: var(--sage); font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; display: flex; align-items: center; gap: 0.6rem; }
@@ -216,8 +217,12 @@
         <text x="300" y="315" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="52" fill="#6b7f6e" opacity="0.15" font-style="italic">seen.</text>
     </svg>
     <div class="badge">
-      <em>Lived experience.</em>
-      <span class="caption">Late-diagnosed autistic · Complex trauma recovery · Trans 🏳️‍⚧️ &amp; <br />nonbinary 💛🤍💜🖤</span>
+      <h4>Lived experience.</h4>
+      <ul>
+        <li>Late-diagnosed autistic</li>
+        <li>Complex trauma recovery</li>
+        <li>Trans 🏳️‍⚧️ &amp; nonbinary 💛🤍💜🖤</li>
+      </ul>
     </div>
   </div>
 </section>
