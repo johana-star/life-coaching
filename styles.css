@@ -178,7 +178,7 @@
     box-shadow: 0 4px 32px rgba(42,42,39,0.08);
     max-width: 240px;
   }
-  .hero .badge h4 {
+  .hero .badge strong {
     font-size: 1rem;
     color: var(--sage);
     margin-bottom: 0.25rem;
