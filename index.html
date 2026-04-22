@@ -25,8 +25,8 @@
     --serif: 'Cormorant Garamond', serif;
   }
   body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--text-dark); line-height: 1.6; font-weight: 300; }
-  h1, h2, h3, .nav-logo, .step-num, .footer-logo, .quote-text { font-family: var(--serif); }
-  h1, h2, h3, .step-num { font-weight: 300; }
+  h1, h2, h3, nav .logo, .step .numeral, footer .logo, .quote blockquote { font-family: var(--serif); }
+  h1, h2, h3, .step .numeral { font-weight: 300; }
   h2 em { font-style: italic; }
 
   nav {
@@ -36,9 +36,9 @@
     background: rgba(250,248,245,0.88); backdrop-filter: blur(12px);
     border-bottom: 1px solid rgba(107,127,110,0.12);
   }
-  .nav-logo { font-weight: 400; font-size: 1.3rem; letter-spacing: 0.04em; color: var(--text-dark); text-decoration: none; }
-  .nav-cta { background: var(--sage); color: white; padding: 0.55rem 1.4rem; border-radius: 2px; font-size: 0.8rem; font-weight: 400; letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; transition: background 0.2s; }
-  .nav-cta:hover { background: var(--sage-hover); }
+  nav .logo { font-weight: 400; font-size: 1.3rem; letter-spacing: 0.04em; color: var(--text-dark); text-decoration: none; }
+  nav .cta { background: var(--sage); color: white; padding: 0.55rem 1.4rem; border-radius: 2px; font-size: 0.8rem; font-weight: 400; letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; transition: background 0.2s; }
+  nav .cta:hover { background: var(--sage-hover); }
 
   .hero { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; align-items: center; padding: 8rem 4rem 4rem; gap: 4rem; }
   .hero .eyebrow { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--sage); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.75rem; }
@@ -61,8 +61,8 @@
   .hero .badge em { font-family: var(--serif); font-size: 1rem; color: var(--sage); display: block; margin-bottom: 0.25rem; }
 
   .trust-bar { list-style: none; background: var(--sage-light); padding: 1.75rem 4rem; display: flex; align-items: center; justify-content: center; gap: 3rem; flex-wrap: wrap; }
-  .trust-item { font-size: 0.75rem; color: var(--sage); font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; display: flex; align-items: center; gap: 0.6rem; }
-  .trust-item::before { content: '◆'; font-size: 0.5rem; }
+  .trust-bar li { font-size: 0.75rem; color: var(--sage); font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; display: flex; align-items: center; gap: 0.6rem; }
+  .trust-bar li::before { content: '◆'; font-size: 0.5rem; }
 
   .about { display: grid; grid-template-columns: 1fr 1.2fr; gap: 6rem; padding: 7rem 4rem; align-items: start; }
   .about .label, .offerings .label, .process .label, .diagnosis .label, .testimonials .label { color: var(--sage); }
@@ -71,39 +71,39 @@
   .about h2 { font-size: clamp(2rem, 3.5vw, 2.8rem); line-height: 1.2; margin-bottom: 1.5rem; }
   .about h2 em { font-style: italic; color: var(--sage); }
   .about p { color: var(--text-mid); line-height: 1.85; margin-bottom: 1.2rem; font-size: 0.97rem; }
-  .identity-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1.5rem 0; }
+  .about .tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1.5rem 0; }
   .tag { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; padding: 0.3rem 0.75rem; border: 1px solid; border-radius: 2px; }
   .tag-sage { color: #3b6d11; background: #eaf3de; border-color: #c0dd97; }
   .tag-plum { color: #3C3489; background: #EEEDFE; border-color: #CECBF6; }
   .tag-warm { color: #633806; background: #FAEEDA; border-color: #FAC775; }
-  .about-portrait { aspect-ratio: 4/5; background: var(--warm); border-radius: 2px; position: relative; overflow: hidden; }
-  .about-portrait-image { width:100%; height:100%; object-fit:cover; display:block; }
+  .about .portrait { aspect-ratio: 4/5; background: var(--warm); border-radius: 2px; position: relative; overflow: hidden; }
+  .about .portrait img { width:100%; height:100%; object-fit:cover; display:block; }
 
   .not-therapy { background: #2a2a27; padding: 4rem; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
   .not-therapy h2 { font-size: clamp(1.8rem, 3vw, 2.4rem); color: white; line-height: 1.2; margin-bottom: 1rem; }
   .not-therapy h2 em { font-style: italic; color: var(--sage-mid); }
   .not-therapy p { font-size: 0.92rem; color: rgba(255,255,255,0.6); line-height: 1.8; margin-bottom: 1rem; }
   .not-therapy .note { font-size: 0.8rem; color:rgba(255,255,255,0.35); }
-  .not-therapy-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.08); }
-  .nt-col { padding: 1.5rem; }
-  .nt-col-title { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.75rem; }
-  .nt-col-title.is { color: var(--sage-mid); }
-  .nt-col-title.not { color: rgba(255,255,255,0.3); }
-  .nt-list { list-style: none; }
-  .nt-list li { font-size: 0.85rem; padding: 0.4rem 0; border-bottom: 1px solid rgba(255,255,255,0.06); line-height: 1.5; }
-  .nt-list.is li { color: rgba(255,255,255,0.85); }
-  .nt-list.not li { color: rgba(255,255,255,0.35); text-decoration: line-through; text-decoration-color: rgba(255,255,255,0.15); }
+  .not-therapy .comparison { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.08); }
+  .not-therapy .panel { padding: 1.5rem; }
+  .not-therapy .panel .title { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.75rem; }
+  .not-therapy .panel .title.is { color: var(--sage-mid); }
+  .not-therapy .panel .title.not { color: rgba(255,255,255,0.3); }
+  .not-therapy .list { list-style: none; }
+  .not-therapy .list li { font-size: 0.85rem; padding: 0.4rem 0; border-bottom: 1px solid rgba(255,255,255,0.06); line-height: 1.5; }
+  .not-therapy .list.is li { color: rgba(255,255,255,0.85); }
+  .not-therapy .list.not li { color: rgba(255,255,255,0.35); text-decoration: line-through; text-decoration-color: rgba(255,255,255,0.15); }
 
   .offerings { padding: 7rem 4rem; }
   .offerings .header { margin-bottom: 3.5rem; }
   .offerings h2 { font-size: clamp(2rem, 3.5vw, 2.8rem); line-height: 1.2; }
   .offerings h2 em { font-style: italic; color: var(--sage); }
-  .focus-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1px; background: var(--warm-dark); border: 1px solid var(--warm-dark); margin-top: 2.5rem; }
-  .focus-card { background: var(--cream); padding: 2rem; }
-  .focus-icon { width: 36px; height: 36px; border-radius: 2px; background: var(--sage-light); display: flex; align-items: center; justify-content: center; margin-bottom: 1.25rem; }
-  .focus-icon svg { width: 16px; height: 16px; stroke: var(--sage); fill: none; stroke-width: 1.5; }
-  .focus-card h3 { font-size: 0.95rem; font-weight: 500; color: var(--text-dark); margin-bottom: 0.5rem; }
-  .focus-card p { font-size: 0.85rem; color: var(--text-mid); line-height: 1.7; }
+  .offerings .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1px; background: var(--warm-dark); border: 1px solid var(--warm-dark); margin-top: 2.5rem; }
+  .offerings .card { background: var(--cream); padding: 2rem; }
+  .offerings .icon { width: 36px; height: 36px; border-radius: 2px; background: var(--sage-light); display: flex; align-items: center; justify-content: center; margin-bottom: 1.25rem; }
+  .offerings .icon svg { width: 16px; height: 16px; stroke: var(--sage); fill: none; stroke-width: 1.5; }
+  .offerings .card h3 { font-size: 0.95rem; font-weight: 500; color: var(--text-dark); margin-bottom: 0.5rem; }
+  .offerings .card p { font-size: 0.85rem; color: var(--text-mid); line-height: 1.7; }
 
   .systems { background: var(--plum-light); padding: 5rem 4rem; }
   .systems .inner { max-width: 860px; margin: 0 auto; }
@@ -111,14 +111,14 @@
   .systems h2 em { font-style: italic; color: var(--plum); }
   .systems p { font-size: 0.95rem; color: var(--text-mid); line-height: 1.8; max-width: 640px; }
   .systems .note { margin-top: 1rem; font-size: 0.88rem; color: var(--text-light); }
-  .systems-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.5rem; }
+  .systems .tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.5rem; }
 
   .process { padding: 7rem 4rem; max-width: 860px; margin: 0 auto; }
   .process h2 { font-size: clamp(2rem, 3.5vw, 2.8rem); margin-bottom: 3.5rem; line-height: 1.2; }
   .process h2 em { font-style: italic; color: var(--sage); }
   .step { display: grid; grid-template-columns: 80px 1fr; border-top: 1px solid var(--warm-dark); padding: 2rem 0; align-items: start; gap: 2rem; }
   .step:last-child { border-bottom: 1px solid var(--warm-dark); }
-  .step-num { font-size: 1.5rem; color: var(--sage); padding-top: 0.1rem; }
+  .step .numeral { font-size: 1.5rem; color: var(--sage); padding-top: 0.1rem; }
   .step h4 { font-size: 1rem; font-weight: 500; margin-bottom: 0.4rem; }
   .step p { font-size: 0.9rem; color: var(--text-mid); line-height: 1.7; }
 
@@ -128,18 +128,18 @@
   .testimonials h2 em { font-style: italic; color: var(--sage); }
   .quotes { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
   .quote { background: white; padding: 2.5rem; border-radius: 2px; }
-  .quote-text { font-size: 1.2rem; font-weight: 300; font-style: italic; line-height: 1.6; color: var(--text-dark); margin-bottom: 1.5rem; }
-  .quote-author { display: flex; align-items: center; gap: 0.75rem; }
-  .quote-avatar { width: 40px; height: 40px; border-radius: 50%; background: var(--sage-light); display: flex; align-items: center; justify-content: center; font-size: 0.78rem; font-weight: 500; color: var(--sage); }
-  .quote-avatar.plum { background: var(--plum-light); color: var(--plum); }
-  .quote-name { font-size: 0.85rem; font-weight: 500; color: var(--text-dark); }
-  .quote-role { font-size: 0.78rem; color: var(--text-light); }
+  .quote blockquote { font-size: 1.2rem; font-weight: 300; font-style: italic; line-height: 1.6; color: var(--text-dark); margin-bottom: 1.5rem; }
+  .quote .author { display: flex; align-items: center; gap: 0.75rem; }
+  .quote .avatar { width: 40px; height: 40px; border-radius: 50%; background: var(--sage-light); display: flex; align-items: center; justify-content: center; font-size: 0.78rem; font-weight: 500; color: var(--sage); }
+  .quote .avatar.plum { background: var(--plum-light); color: var(--plum); }
+  .quote .name { font-size: 0.85rem; font-weight: 500; color: var(--text-dark); }
+  .quote .role { font-size: 0.78rem; color: var(--text-light); }
 
   #book { background: var(--cream); padding: 0 4rem;}
-  .cta-section { padding: 8rem 4rem; display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; max-width: 1100px; margin: 0 auto; }
-  .cta-text h2 { font-size: clamp(2rem, 4vw, 3.2rem); line-height: 1.15; margin-bottom: 1rem; }
-  .cta-text h2 em { font-style: italic; color: var(--sage); }
-  .cta-text p { color: var(--text-mid); line-height: 1.75; margin-bottom: 1rem; font-size: 0.97rem; }
+  #book .layout { padding: 8rem 4rem; display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; max-width: 1100px; margin: 0 auto; }
+  #book .pitch h2 { font-size: clamp(2rem, 4vw, 3.2rem); line-height: 1.15; margin-bottom: 1rem; }
+  #book .pitch h2 em { font-style: italic; color: var(--sage); }
+  #book .pitch p { color: var(--text-mid); line-height: 1.75; margin-bottom: 1rem; font-size: 0.97rem; }
   /* Form styles — restore when form is reactivated
     .cta-form { background: var(--sage-light); padding: 2.5rem; border-radius: 2px; border: 1px solid var(--sage-mid); }
   .form-title { font-family: var(--serif); font-size: 1.4rem; font-weight: 400; margin-bottom: 0.4rem; }
@@ -177,10 +177,10 @@
 
   @media (max-width: 900px) {
     nav { padding: 1.25rem 2rem; }
-    .hero, .about, .cta-section, .not-therapy { grid-template-columns: 1fr; padding: 5rem 2rem 3rem; }
+    .hero, .about, #book .layout, .not-therapy { grid-template-columns: 1fr; padding: 5rem 2rem 3rem; }
     .hero .image { height: 340px; }
     .quotes { grid-template-columns: 1fr; }
-    .not-therapy-cols { grid-template-columns: 1fr; }
+    .not-therapy .comparison { grid-template-columns: 1fr; }
     .trust-bar { flex-direction: column; gap: 1rem; padding: 1.5rem 2rem; }
     .offerings, .testimonials, .process, .systems { padding: 5rem 2rem; }
     .diagnosis .inner { grid-template-columns: 1fr; gap: 2.5rem; }
@@ -191,8 +191,8 @@
 <body>
 
 <nav>
-  <a href="#" class="nav-logo">Johana Star</a>
-  <a href="#book" class="nav-cta">Book a call</a>
+  <a href="#" class="logo">Johana Star</a>
+  <a href="#book" class="cta">Book a call</a>
 </nav>
 
 <section class="hero">
@@ -221,17 +221,17 @@
 </section>
 
 <ul class="trust-bar">
-  <li class="trust-item">Peer coaching</li>
-  <li class="trust-item">Neurodivergent-affirming</li>
-  <li class="trust-item">Gender-affirming</li>
-  <li class="trust-item">Queer-affirming</li>
-  <li class="trust-item">California DDS navigation</li>
-  <li class="trust-item">100% confidential</li>
+  <li>Peer coaching</li>
+  <li>Neurodivergent-affirming</li>
+  <li>Gender-affirming</li>
+  <li>Queer-affirming</li>
+  <li>California DDS navigation</li>
+  <li>100% confidential</li>
 </ul>
 
 <section class="about" id="about">
-  <div class="about-portrait">
-    <img src="headshot.jpg" alt="headshot of Johana Star" class="about-portrait-image">
+  <div class="portrait">
+    <img src="headshot.jpg" alt="headshot of Johana Star" class=>
   </div>
   <div>
     <div class="label">My story</div>
@@ -239,7 +239,7 @@
     <p>I'm a late-diagnosed autistic person in recovery from a complex trauma disorder and other mental health conditions. I'm also queer, trans, and nonbinary. I know what it's like to spend years not understanding why the world feels so hard — and then, slowly, to build a life that actually works for you.</p>
     <p>I became a life coach because I kept finding myself in conversations with people who needed exactly what I wish I'd had: someone with real, personal knowledge of these systems, challenges, and communities. Not a textbook. A person.</p>
     <p>I'm new to coaching as a profession, and I'm honest about that. What I bring is lived expertise, deep empathy, practical skills, and the ability to sit alongside you without judgment — wherever you are.</p>
-    <div class="identity-tags">
+    <div class="tags">
       <span class="tag tag-plum">Late-diagnosed autistic</span>
       <span class="tag tag-plum">Complex trauma survivor</span>
       <span class="tag tag-plum">Trans &amp; nonbinary</span>
@@ -258,10 +258,10 @@
     <p>What I offer is something different — and genuinely valuable. Peer coaching from someone who has navigated the same terrain you're navigating.</p>
     <p class="note">If you're in crisis or need clinical support, please reach out to a licensed provider. I'm happy to help you find one.</p>
   </div>
-  <div class="not-therapy-cols">
-    <div class="nt-col">
-      <div class="nt-col-title is">Coaching is</div>
-      <ul class="nt-list is">
+  <div class="comparison">
+    <div class="panel">
+      <div class="title is">Coaching is</div>
+      <ul class="list is">
         <li>Practical strategies for daily life</li>
         <li>Peer support from lived experience</li>
         <li>Help navigating systems &amp; services</li>
@@ -270,9 +270,9 @@
         <li>Building routines that actually work</li>
       </ul>
     </div>
-    <div class="nt-col">
-      <div class="nt-col-title not">Coaching is not</div>
-      <ul class="nt-list not">
+    <div class="panel">
+      <div class="title not">Coaching is not</div>
+      <ul class="list not">
         <li>Clinical mental health treatment</li>
         <li>Therapy or counseling</li>
         <li>Diagnosis or assessment</li>
@@ -289,44 +289,44 @@
     <div class="label">What we work on</div>
     <h2>Real challenges.<br><em>Practical</em> support.</h2>
   </div>
-  <div class="focus-grid">
-    <div class="focus-card">
-      <div class="focus-icon">
+  <div class="grid">
+    <div class="card">
+      <div class="icon">
         <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/></svg>
       </div>
       <h3>Burnout recovery</h3>
       <p>Identifying what depleted you, untangling obligation from identity, and rebuilding energy slowly and sustainably. No "hustle harder" advice here.</p>
     </div>
-    <div class="focus-card">
-      <div class="focus-icon">
+    <div class="card">
+      <div class="icon">
         <svg viewBox="0 0 24 24"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
       </div>
       <h3>Boundary setting</h3>
       <p>Learning to say no without guilt, recognising when your limits are being crossed, and building relationships that feel safer and more reciprocal.</p>
     </div>
-    <div class="focus-card">
-      <div class="focus-icon">
+    <div class="card">
+      <div class="icon">
         <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
       </div>
       <h3>Sensory-friendly environments</h3>
       <p>Designing your home, work space, and daily routines to reduce overwhelm — from lighting and sound to clothing and social energy management.</p>
     </div>
-    <div class="focus-card">
-      <div class="focus-icon">
+    <div class="card">
+      <div class="icon">
         <svg viewBox="0 0 24 24"><path d="M18 8h1a4 4 0 010 8h-1"/><path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
       </div>
       <h3>Feeding yourself</h3>
       <p>Practical approaches to eating when sensory challenges, executive dysfunction, or low energy make cooking feel impossible. No diet culture. Just nourishment.</p>
     </div>
-    <div class="focus-card">
-      <div class="focus-icon">
+    <div class="card">
+      <div class="icon">
         <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
       </div>
       <h3>Routines that hold</h3>
       <p>Creating flexible structures that account for variable energy, bad days, and the reality of neurodivergent time — without shame when things fall apart.</p>
     </div>
-    <div class="focus-card">
-      <div class="focus-icon">
+    <div class="card">
+      <div class="icon">
         <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
       </div>
       <h3>Artistic practice</h3>
@@ -341,7 +341,7 @@
     <h2>California's disability <em>support</em> systems,<br>decoded.</h2>
     <p>California's Regional Centers (through the Department of Developmental Services) provide support to Californians with intellectual or developmental disabilities — including autism and cerebral palsy. Knowing what you're entitled to, how to ask for it, and what to do when the system pushes back can make an enormous difference. I can help you navigate that.</p>
     <p class="note">I also support clients finding gender-affirming resources, community, and habits — from social connections to everyday practices that affirm who you are.</p>
-    <div class="systems-tags">
+    <div class="tags">
       <span class="tag tag-plum">Regional center eligibility</span>
       <!-- <span class="tag tag-plum">IPP planning</span> -->
       <span class="tag tag-warm">Self-determination program</span>
@@ -382,28 +382,28 @@
   <div class="label">How it works</div>
   <h2>Simple, <em>honest</em> steps</h2>
   <div class="step">
-    <div class="step-num">I</div>
+    <div class="numeral">I</div>
     <div>
       <h4>Discovery call — 30 minutes, free</h4>
       <p>We meet, talk honestly about where you are, and see if working together makes sense. I'll tell you plainly if I think someone else might serve you better. No pressure, no pitch.</p>
     </div>
   </div>
   <div class="step">
-    <div class="step-num">II</div>
+    <div class="numeral">II</div>
     <div>
       <h4>Intake reflection</h4>
       <p>Before our first session, I'll send a short questionnaire to help me understand your context — your diagnoses, your current challenges, what you've already tried, and what you actually want from this.</p>
     </div>
   </div>
   <div class="step">
-    <div class="step-num">III</div>
+    <div class="numeral">III</div>
     <div>
       <h4>Sessions — flexible pacing</h4>
       <p>60-minute sessions, weekly or bi-weekly. We go at a pace that works for your energy and life. I adapt to you — not the other way around.</p>
     </div>
   </div>
   <div class="step">
-    <div class="step-num">IV</div>
+    <div class="numeral">IV</div>
     <div>
       <h4>You keep everything</h4>
       <p>Every strategy, resource, and insight we develop stays with you. The goal is for you to need me less over time, not more.</p>
@@ -417,31 +417,31 @@
     <h2>What it feels like to be <em>understood</em></h2>
     <div class="quotes">
       <div class="quote">
-        <div class="quote-text">"I'd tried therapy before and felt like I was always explaining myself from scratch. This was the first time I didn't have to. The relief of that alone was worth it."</div>
-        <div class="quote-author">
-          <div class="quote-avatar">AJ</div>
-          <div><div class="quote-name">Alex J.</div><div class="quote-role">Autistic adult, late diagnosis</div></div>
+        <blockquote>"I'd tried therapy before and felt like I was always explaining myself from scratch. This was the first time I didn't have to. The relief of that alone was worth it."</blockquote>
+        <div class="author">
+          <div class="avatar">AJ</div>
+          <div><div class="name">Alex J.</div><div class="role">Autistic adult, late diagnosis</div></div>
         </div>
       </div>
       <div class="quote">
-        <div class="quote-text">"I had no idea I was eligible for regional center services. Within two months we'd filed my paperwork and I was connected to support I'd been missing for years."</div>
-        <div class="quote-author">
-          <div class="quote-avatar plum">MR</div>
-          <div><div class="quote-name">Morgan R.</div><div class="quote-role">Parent navigating DDS</div></div>
+        <blockquote>"I had no idea I was eligible for regional center services. Within two months we'd filed my paperwork and I was connected to support I'd been missing for years."</blockquote>
+        <div class="author">
+          <div class="avatar plum">MR</div>
+          <div><div class="name">Morgan R.</div><div class="role">Parent navigating DDS</div></div>
         </div>
       </div>
       <div class="quote">
-        <div class="quote-text">"The sensory stuff — the lighting, the food, the routines — seems small from the outside. But getting that right changed everything. I finally have capacity for the rest of my life."</div>
-        <div class="quote-author">
-          <div class="quote-avatar">SL</div>
-          <div><div class="quote-name">Sam L.</div><div class="quote-role">Recovering from burnout</div></div>
+        <blockquote>"The sensory stuff — the lighting, the food, the routines — seems small from the outside. But getting that right changed everything. I finally have capacity for the rest of my life."</blockquote>
+        <div class="author">
+          <div class="avatar">SL</div>
+          <div><div class="name">Sam L.</div><div class="role">Recovering from burnout</div></div>
         </div>
       </div>
       <div class="quote">
-        <div class="quote-text">"As a trans person with chronic mental health stuff, I've always had to code-switch with providers. Not here. I could just show up as myself and actually get work done."</div>
-        <div class="quote-author">
-          <div class="quote-avatar plum">RK</div>
-          <div><div class="quote-name">River K.</div><div class="quote-role">Trans, nonbinary client</div></div>
+        <blockquote>"As a trans person with chronic mental health stuff, I've always had to code-switch with providers. Not here. I could just show up as myself and actually get work done."</blockquote>
+        <div class="author">
+          <div class="avatar plum">RK</div>
+          <div><div class="name">River K.</div><div class="role">Trans, nonbinary client</div></div>
         </div>
       </div>
     </div>
@@ -449,8 +449,8 @@
 </section>
 -->
 <section id="book">
-  <div class="cta-section">
-    <div class="cta-text">
+  <div class="layout">
+    <div class="pitch">
       <h2>You don't have to<br>figure this out <em>alone.</em></h2>
       <p>The discovery call is 30 minutes, free, and genuinely just a conversation. I want to understand what's hard for you right now — and be honest with you about whether I can help.</p>
       <p>If we're a good fit, we'll take the next step together. If not, I'll do my best to point you somewhere useful.</p>
