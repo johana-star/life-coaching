@@ -67,7 +67,7 @@
 
   .about { display: grid; grid-template-columns: 1fr 1.2fr; gap: 6rem; padding: 7rem 4rem; align-items: start; }
   .about .label, .offerings .label, .process .label, .diagnosis .label, .testimonials .label { color: var(--sage); }
-  .systems .label, .rc-card .label { color: var(--plum); }
+  .systems .label, .regional-center.card .label { color: var(--plum); }
   .not-therapy .label { color: var(--sage-mid); }
   .about h2 { font-size: clamp(2rem, 3.5vw, 2.8rem); line-height: 1.2; margin-bottom: 1.5rem; }
   .about h2 em { font-style: italic; color: var(--sage); }
@@ -161,12 +161,12 @@
   .diagnosis h2 em { font-style: italic; color: var(--sage); }
   .diagnosis p { font-size: 0.95rem; color: var(--text-mid); line-height: 1.85; margin-bottom: 1rem; }
   .diagnosis .note { font-size: 0.8rem; color: var(--text-light); margin-bottom: 1.25rem; }
-  .rc-card { background: white; border-radius: 2px; padding: 2rem; border: 1px solid var(--warm-dark); }
-  .rc-card h3 { font-size: 1.3rem; margin-bottom: 0.75rem; line-height: 1.3; }
-  .rc-card p { font-size: 0.85rem; color: var(--text-mid); line-height: 1.75; margin-bottom: 1.25rem; }
-  .rc-conditions { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.5rem; }
-  .rc-link { display: inline-block; background: var(--sage); color: white; padding: 0.65rem 1.25rem; border-radius: 2px; font-size: 0.8rem; font-weight: 400; letter-spacing: 0.04em; text-decoration: none; transition: background 0.2s; }
-  .rc-link:hover { background: var(--sage-hover); }
+  .regional-center.card { background: white; border-radius: 2px; padding: 2rem; border: 1px solid var(--warm-dark); }
+  .regional-center.card h3 { font-size: 1.3rem; margin-bottom: 0.75rem; line-height: 1.3; }
+  .regional-center.card p { font-size: 0.85rem; color: var(--text-mid); line-height: 1.75; margin-bottom: 1.25rem; }
+  .regional-center .conditions { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.5rem; }
+  .regional-center .link { display: inline-block; background: var(--sage); color: white; padding: 0.65rem 1.25rem; border-radius: 2px; font-size: 0.8rem; font-weight: 400; letter-spacing: 0.04em; text-decoration: none; transition: background 0.2s; }
+  .regional-center .link:hover { background: var(--sage-hover); }
   footer { border-top: 1px solid var(--warm-dark); padding: 2.5rem 4rem; display: flex; justify-content: space-between; align-items: center; }
   footer .logo { font-size: 1.1rem; color: var(--text-mid); font-weight: 400; }
   footer .note { font-size: 0.78rem; color: var(--text-light); }
@@ -366,19 +366,19 @@
       <p>You don't have to have it figured out to reach out. A lot of the people I work with are somewhere in that in-between space — not in crisis, not fully okay, just trying to make sense of things. That's exactly where coaching can help.</p>
       <p>And you're allowed to take it slowly. There's no pressure to seek services, claim an identity, or do anything before you're ready. I'm here to walk alongside you, not to push.</p>
     </div>
-    <div class="rc-card">
+    <div class="regional-center card">
       <div class="label">California Regional Centers</div>
       <h3>Free services you may not know you're entitled to.</h3>
       <p>California's Department of Developmental Services funds a network of Regional Centers that provide free, lifelong support to people with qualifying intellectual or developmental disabilities. Many people who qualify have never been told — or were told and didn't know where to start.</p>
       <p>Qualifying conditions include:</p>
-      <div class="rc-conditions">
+      <div class="conditions">
         <span class="tag tag-sage">Autism</span>
         <span class="tag tag-warm">Cerebral palsy</span>
         <span class="tag tag-plum">Intellectual disability</span>
         <span class="tag tag-sage">Epilepsy</span>
       </div>
       <p class="note">I can help you understand whether you might qualify, what the process looks like, and how to advocate for yourself within the system.</p>
-      <a href="https://www.dds.ca.gov/rc/lookup-rcs-by-county/" target="_blank" class="rc-link">Find your Regional Center →</a>
+      <a href="https://www.dds.ca.gov/rc/lookup-rcs-by-county/" target="_blank" class="link">Find your Regional Center →</a>
     </div>
   </div>
 </section>
