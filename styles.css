@@ -150,6 +150,7 @@
     letter-spacing: 0.02em;
     border-bottom: 1px solid var(--warm-dark);
     padding-bottom: 2px;
+    margin: 2rem;
     transition: color 0.2s, border-color 0.2s;
   }
   .btn-ghost:hover {
