@@ -4,25 +4,29 @@
     padding: 0;
   }
   :root {
-    --sage: #6b7f6e;
-    --sage-hover: #586860;
-    --sage-light: #f0f4f0;
-    --sage-mid: #c5d2c7;
-    --warm: #e8e0d5;
-    --warm-dark: #c4b8a8;
-    --text-dark: #2a2a27;
-    --text-mid: #5a5a55;
-    --text-light: #8a8a84;
-    --cream: #faf8f5;
-    --plum: #5a4a6e;
-    --plum-light: #f0edf5;
-    --plum-mid: #c2b8d4;
+    --periwinkle: #6b7fbd;
+    --periwinkle-hover: #4a5e9c;
+    --feta: #eeeee4;
+    --coastal: #88bcd8;
+    --cream: #f8f8f4;
+    --feta-dark: #d8d8c8;
+    --navy: #1a2244;
+    --navy-mid: #4a5472;
+    --navy-light: #8a94b0;
+    --white: #ffffff;
+    --sage: #7aaa82;
+    --sage-light: #e8f4ea;
+    --sage-mid: #a8d0b0;
     --serif: 'Cormorant Garamond', serif;
+    --mustard: #d8c030;
+    --mustard-hover: #b8a020;
+    --sakura: #e8a0c0;
+    --cherry: #883060;
   }
   body {
     font-family: 'DM Sans', sans-serif;
     background: var(--cream);
-    color: var(--text-dark);
+    color: var(--navy);
     line-height: 1.6;
     font-weight: 300;
   }
@@ -40,20 +44,20 @@
     justify-content: space-between;
     align-items: center;
     padding: 1.25rem 4rem;
-    background: rgba(250,248,245,0.88);
+    background: rgba(248,248,244,0.88);
     backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(107,127,110,0.12);
+    border-bottom: 1px solid rgba(107,127,189,0.15);
   }
   body > nav .logo {
     font-weight: 400;
     font-size: 1.3rem;
     letter-spacing: 0.04em;
-    color: var(--text-dark);
+    color: var(--navy);
     text-decoration: none;
   }
   body > nav .cta {
-    background: var(--sage);
-    color: white;
+    background: var(--periwinkle);
+    color: var(--white);
     padding: 0.55rem 1.4rem;
     border-radius: 2px;
     font-size: 0.8rem;
@@ -63,7 +67,7 @@
     text-decoration: none;
     transition: background 0.2s;
   }
-  body > nav .cta:hover { background: var(--sage-hover); }
+  body > nav .cta:hover { background: var(--periwinkle-hover); }
   .hero {
     min-height: 100vh;
     display: grid;
@@ -77,7 +81,7 @@
     font-weight: 500;
     letter-spacing: 0.14em;
     text-transform: uppercase;
-    color: var(--sage);
+    color: var(--periwinkle);
     margin-bottom: 1.5rem;
     display: flex;
     align-items: center;
@@ -88,22 +92,22 @@
     display: block;
     width: 32px;
     height: 1px;
-    background: var(--sage);
+    background: var(--periwinkle);
   }
   .hero header h1 {
     font-size: clamp(2.6rem, 5vw, 4rem);
     line-height: 1.1;
     letter-spacing: -0.01em;
-    color: var(--text-dark);
+    color: var(--navy);
     margin-bottom: 1.5rem;
   }
   .hero header h1 em {
     font-style: italic;
-    color: var(--sage);
+    color: var(--periwinkle);
   }
   .hero header .lede {
     font-size: 1.05rem;
-    color: var(--text-mid);
+    color: var(--navy-mid);
     line-height: 1.75;
     margin-bottom: 1.5rem;
     font-weight: 300;
@@ -111,9 +115,9 @@
   }
   .disclaimer {
     font-size: 0.8rem;
-    color: var(--text-light);
+    color: var(--navy-light);
     line-height: 1.6;
-    border-left: 2px solid var(--warm-dark);
+    border-left: 2px solid var(--feta-dark);
     padding-left: 0.9rem;
     margin-bottom: 2rem;
     max-width: 420px;
@@ -124,8 +128,8 @@
     gap: 1.5rem;
   }
   .btn-primary {
-    background: var(--text-dark);
-    color: white;
+    background: var(--navy);
+    color: var(--white);
     padding: 0.9rem 2rem;
     border-radius: 2px;
     font-size: 0.85rem;
@@ -133,35 +137,35 @@
     letter-spacing: 0.04em;
     text-decoration: none;
     transition: background 0.2s;
-    border: 1.5px solid var(--text-dark);
+    border: 1.5px solid var(--navy);
   }
   .btn-primary.spacer {
     display:inline-block;
     margin-top:1rem;
   }
   .btn-primary:hover {
-    background: var(--sage);
-    border-color: var(--sage);
+    background: var(--periwinkle);
+    border-color: var(--periwinkle);
   }
   .btn-ghost {
-    color: var(--text-mid);
+    color: var(--navy-mid);
     font-size: 0.85rem;
     text-decoration: none;
     letter-spacing: 0.02em;
-    border-bottom: 1px solid var(--warm-dark);
+    border-bottom: 1px solid var(--feta-dark);
     padding-bottom: 2px;
     transition: color 0.2s, border-color 0.2s;
   }
   .btn-ghost:hover {
-    color: var(--sage);
-    border-color: var(--sage);
+    color: var(--periwinkle);
+    border-color: var(--periwinkle);
   }
   .hero .image {
     position: relative;
     height: 600px;
     border-radius: 2px;
     overflow: hidden;
-    background: var(--warm);
+    background: var(--white);
   }
   .hero .image .shapes {
     position: absolute;
@@ -172,7 +176,7 @@
     position: absolute;
     bottom: 2.5rem;
     left: 2rem;
-    background: white;
+    background: var(--white);
     padding: 1.25rem 1.5rem;
     border-radius: 2px;
     box-shadow: 0 4px 32px rgba(42,42,39,0.08);
@@ -180,18 +184,18 @@
   }
   .hero .badge strong {
     font-size: 1rem;
-    color: var(--sage);
+    color: var(--periwinkle);
     margin-bottom: 0.25rem;
   }
   .hero .badge ul { list-style-type: '\b7  '; }
   .hero .badge li {
     font-size: 0.78rem;
-    color: var(--text-mid);
+    color: var(--navy-mid);
     line-height: 1.5;
   }
   .trust-bar {
     list-style: none;
-    background: var(--sage-light);
+    background: var(--feta);
     padding: 1.75rem 4rem;
     display: flex;
     align-items: center;
@@ -201,7 +205,7 @@
   }
   .trust-bar li {
     font-size: 0.75rem;
-    color: var(--sage);
+    color: var(--periwinkle);
     font-weight: 500;
     letter-spacing: 0.08em;
     text-transform: uppercase;
@@ -221,18 +225,18 @@
     align-items: start;
   }
   .about .label, .offerings .label, .process .label, .diagnosis .label, .testimonials .label {
-    color: var(--sage);
+    color: var(--periwinkle);
   }
-  .systems .label, .regional-center.card .label { color: var(--plum); }
-  .not-therapy .label { color: var(--sage-mid); }
+  .systems .label, .regional-center.card .label { color: var(--sage); }
+  .not-therapy .label { color: var(--coastal); }
   .about h2 {
     font-size: clamp(2rem, 3.5vw, 2.8rem);
     line-height: 1.2;
     margin-bottom: 1.5rem;
   }
-  .about h2 em { color: var(--sage); }
+  .about h2 em { color: var(--periwinkle); }
   .about p {
-    color: var(--text-mid);
+    color: var(--navy-mid);
     line-height: 1.85;
     margin-bottom: 1.2rem;
     font-size: 0.97rem;
@@ -254,23 +258,28 @@
     border-radius: 2px;
   }
   .tag-sage {
-    color: #3b6d11;
-    background: #eaf3de;
-    border-color: #c0dd97;
+    color: #2a5a32;
+    background: var(--sage-light);
+    border-color: var(--sage-mid);
   }
-  .tag-plum {
-    color: #3C3489;
-    background: #EEEDFE;
-    border-color: #CECBF6;
+  .tag-periwinkle {
+    color: #2a3878;
+    background: #eef0f8;
+    border-color: #b8c0e0;
   }
-  .tag-warm {
-    color: #633806;
-    background: #FAEEDA;
-    border-color: #FAC775;
+  .tag-mustard {
+    color: #6a5800;
+    background: #faf5c0;
+    border-color: var(--mustard);
+  }
+  .tag-sakura {
+    color: var(--cherry);
+    background: #fceef5;
+    border-color: #e0a8c8;
   }
   .about .portrait {
     aspect-ratio: 4/5;
-    background: var(--warm);
+    background: var(--white);
     border-radius: 2px;
     position: relative;
     overflow: hidden;
@@ -282,7 +291,7 @@
     display:block;
   }
   .not-therapy {
-    background: #2a2a27;
+    background: var(--navy);
     padding: 4rem;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -291,27 +300,27 @@
   }
   .not-therapy h2 {
     font-size: clamp(1.8rem, 3vw, 2.4rem);
-    color: white;
+    color: var(--cream);
     line-height: 1.2;
     margin-bottom: 1rem;
   }
-  .not-therapy h2 em { color: var(--sage-mid); }
+  .not-therapy h2 em { color: var(--coastal); }
   .not-therapy p {
     font-size: 0.92rem;
-    color: rgba(255,255,255,0.6);
+    color: rgba(248,248,244,0.6);
     line-height: 1.8;
     margin-bottom: 1rem;
   }
   .not-therapy .note {
     font-size: 0.8rem;
-    color:rgba(255,255,255,0.35);
+    color: rgba(248,248,244,0.35);
   }
   .not-therapy .comparison {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1px;
-    background: rgba(255,255,255,0.08);
-    border: 1px solid rgba(255,255,255,0.08);
+    background: rgba(248,248,244,0.08);
+    border: 1px solid rgba(248,248,244,0.08);
   }
   .not-therapy .panel { padding: 1.5rem; }
   .not-therapy .panel .title {
@@ -321,18 +330,18 @@
     text-transform: uppercase;
     margin-bottom: 0.75rem;
   }
-  .not-therapy .panel .title.is { color: var(--sage-mid); }
+  .not-therapy .panel .title.is { color: var(--coastal); }
   .not-therapy .panel .title.not { color: rgba(255,255,255,0.3); }
   .not-therapy .list { list-style: none; }
   .not-therapy .list li {
     font-size: 0.85rem;
     padding: 0.4rem 0;
-    border-bottom: 1px solid rgba(255,255,255,0.06);
+    border-bottom: 1px solid rgba(248,248,244,0.06);
     line-height: 1.5;
   }
   .not-therapy .list.is li { color: rgba(255,255,255,0.85); }
   .not-therapy .list.not li {
-    color: rgba(255,255,255,0.35);
+    color: rgba(248,248,244,0.35);
     text-decoration: line-through;
     text-decoration-color: rgba(255,255,255,0.15);
   }
@@ -342,24 +351,24 @@
     font-size: clamp(2rem, 3.5vw, 2.8rem);
     line-height: 1.2;
   }
-  .offerings h2 em { color: var(--sage); }
+  .offerings h2 em { color: var(--periwinkle); }
   .offerings .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 1px;
-    background: var(--warm-dark);
-    border: 1px solid var(--warm-dark);
+    background: var(--feta-dark);
+    border: 1px solid var(--feta-dark);
     margin-top: 2.5rem;
   }
   .offerings .card {
-    background: var(--cream);
+    background: var(--white);
     padding: 2rem;
   }
   .offerings .icon {
     width: 36px;
     height: 36px;
     border-radius: 2px;
-    background: var(--sage-light);
+    background: var(--feta);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -368,23 +377,23 @@
   .offerings .icon svg {
     width: 16px;
     height: 16px;
-    stroke: var(--sage);
+    stroke: var(--periwinkle);
     fill: none;
     stroke-width: 1.5;
   }
   .offerings .card h3 {
     font-size: 0.95rem;
     font-weight: 500;
-    color: var(--text-dark);
+    color: var(--navy);
     margin-bottom: 0.5rem;
   }
   .offerings .card p {
     font-size: 0.85rem;
-    color: var(--text-mid);
+    color: var(--navy-mid);
     line-height: 1.7;
   }
   .systems {
-    background: var(--plum-light);
+    background: var(--sage-light);
     padding: 5rem 4rem;
   }
   .systems .inner {
@@ -396,17 +405,17 @@
     line-height: 1.2;
     margin-bottom: 1.25rem;
   }
-  .systems h2 em { color: var(--plum); }
+  .systems h2 em { color: var(--sage); }
   .systems p {
     font-size: 0.95rem;
-    color: var(--text-mid);
+    color: var(--navy-mid);
     line-height: 1.8;
     max-width: 640px;
   }
   .systems .note {
     margin-top: 1rem;
     font-size: 0.88rem;
-    color: var(--text-light);
+    color: var(--navy-light);
   }
   .systems .tags {
     list-style: none;
@@ -425,22 +434,22 @@
     margin-bottom: 3.5rem;
     line-height: 1.2;
   }
-  .process h2 em { color: var(--sage); }
+  .process h2 em { color: var(--periwinkle); }
   .process ol {
     list-style: none;
   }
   .step {
     display: grid;
     grid-template-columns: 80px 1fr;
-    border-top: 1px solid var(--warm-dark);
+    border-top: 1px solid var(--feta-dark);
     padding: 2rem 0;
     align-items: start;
     gap: 2rem;
   }
-  .step:last-child { border-bottom: 1px solid var(--warm-dark); }
+  .step:last-child { border-bottom: 1px solid var(--feta-dark); }
   .step .numeral {
     font-size: 1.5rem;
-    color: var(--sage);
+    color: var(--periwinkle);
     padding-top: 0.1rem;
   }
   .step h4 {
@@ -450,11 +459,11 @@
   }
   .step p {
     font-size: 0.9rem;
-    color: var(--text-mid);
+    color: var(--navy-mid);
     line-height: 1.7;
   }
   .testimonials {
-    background: var(--warm);
+    background: var(--white);
     padding: 7rem 4rem;
   }
   .testimonials .inner {
@@ -467,14 +476,14 @@
     margin-bottom: 3.5rem;
     line-height: 1.2;
   }
-  .testimonials h2 em { color: var(--sage); }
+  .testimonials h2 em { color: var(--periwinkle); }
   .quotes {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1.5rem;
   }
   .quote {
-    background: white;
+    background: var(--white);
     padding: 2.5rem;
     border-radius: 2px;
   }
@@ -483,7 +492,7 @@
     font-weight: 300;
     font-style: italic;
     line-height: 1.6;
-    color: var(--text-dark);
+    color: var(--navy);
     margin-bottom: 1.5rem;
   }
   .quote .author {
@@ -495,29 +504,29 @@
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background: var(--sage-light);
+    background: var(--feta);
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 0.78rem;
     font-weight: 500;
-    color: var(--sage);
+    color: var(--periwinkle);
   }
   .quote .avatar.plum {
-    background: var(--plum-light);
-    color: var(--plum);
+    background: var(--sage-light);
+    color: var(--sage);
   }
   .quote .name {
     font-size: 0.85rem;
     font-weight: 500;
-    color: var(--text-dark);
+    color: var(--navy);
   }
   .quote .role {
     font-size: 0.78rem;
-    color: var(--text-light);
+    color: var(--navy-light);
   }
   #book {
-    background: var(--cream);
+    background: var(--white);
     padding: 0 4rem;
   }
   #book .layout {
@@ -534,22 +543,22 @@
     line-height: 1.15;
     margin-bottom: 1rem;
   }
-  #book .pitch h2 em { color: var(--sage); }
+  #book .pitch h2 em { color: var(--periwinkle); }
   #book .pitch p {
-    color: var(--text-mid);
+    color: var(--navy-mid);
     line-height: 1.75;
     margin-bottom: 1rem;
     font-size: 0.97rem;
   }
   #book .pitch .note {
     font-size: 0.82rem;
-    color: var(--sage);
+    color: var(--periwinkle);
     font-weight: 500;
     margin-top: 0.5rem;
   }
   .diagnosis {
     padding: 7rem 4rem;
-    background: var(--warm);
+    background: var(--white);
   }
   .diagnosis .inner {
     max-width: 860px;
@@ -564,23 +573,23 @@
     line-height: 1.2;
     margin-bottom: 1.25rem;
   }
-  .diagnosis h2 em { color: var(--sage); }
+  .diagnosis h2 em { color: var(--periwinkle); }
   .diagnosis p {
     font-size: 0.95rem;
-    color: var(--text-mid);
+    color: var(--navy-mid);
     line-height: 1.85;
     margin-bottom: 1rem;
   }
   .diagnosis .note {
     font-size: 0.8rem;
-    color: var(--text-light);
+    color: var(--navy-light);
     margin-bottom: 1.25rem;
   }
   .regional-center.card {
-    background: white;
+    background: var(--white);
     border-radius: 2px;
     padding: 2rem;
-    border: 1px solid var(--warm-dark);
+    border: 1px solid var(--feta-dark);
   }
   .regional-center.card h3 {
     font-size: 1.3rem;
@@ -589,7 +598,7 @@
   }
   .regional-center.card p {
     font-size: 0.85rem;
-    color: var(--text-mid);
+    color: var(--navy-mid);
     line-height: 1.75;
     margin-bottom: 1.25rem;
   }
@@ -602,8 +611,8 @@
   }
   .regional-center .link {
     display: inline-block;
-    background: var(--sage);
-    color: white;
+    background: var(--periwinkle);
+    color: var(--white);
     padding: 0.65rem 1.25rem;
     border-radius: 2px;
     font-size: 0.8rem;
@@ -612,9 +621,9 @@
     text-decoration: none;
     transition: background 0.2s;
   }
-  .regional-center .link:hover { background: var(--sage-hover); }
+  .regional-center .link:hover { background: var(--periwinkle-hover); }
   footer {
-    border-top: 1px solid var(--warm-dark);
+    border-top: 1px solid var(--feta-dark);
     padding: 2.5rem 4rem;
     display: flex;
     justify-content: space-between;
@@ -622,12 +631,12 @@
   }
   footer .logo {
     font-size: 1.1rem;
-    color: var(--text-mid);
+    color: var(--navy-mid);
     font-weight: 400;
   }
   footer .note {
     font-size: 0.78rem;
-    color: var(--text-light);
+    color: var(--navy-light);
   }
 
   @keyframes fadeUp {
