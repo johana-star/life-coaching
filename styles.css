@@ -238,6 +238,7 @@
     font-size: 0.97rem;
   }
   .about .tags {
+    list-style: none;
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
@@ -408,6 +409,7 @@
     color: var(--text-light);
   }
   .systems .tags {
+    list-style: none;
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
@@ -424,6 +426,9 @@
     line-height: 1.2;
   }
   .process h2 em { color: var(--sage); }
+  .process ol {
+    list-style: none;
+  }
   .step {
     display: grid;
     grid-template-columns: 80px 1fr;
@@ -589,6 +594,7 @@
     margin-bottom: 1.25rem;
   }
   .regional-center .conditions {
+    list-style: none;
     display: flex;
     flex-wrap: wrap;
     gap: 0.4rem;
