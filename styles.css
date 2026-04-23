@@ -26,11 +26,11 @@
     line-height: 1.6;
     font-weight: 300;
   }
-  h1, h2, h3, h4, nav .logo, .step .numeral, footer .logo, .quote blockquote {
+  h1, h2, h3, h4, body > nav .logo, .step .numeral, footer .logo, .quote blockquote {
     font-family: var(--serif);
   }
   h1, h2, h3, h4, .step .numeral { font-weight: 300; }
-  nav {
+  body > nav {
     position: fixed;
     top: 0;
     left: 0;
@@ -44,14 +44,14 @@
     backdrop-filter: blur(12px);
     border-bottom: 1px solid rgba(107,127,110,0.12);
   }
-  nav .logo {
+  body > nav .logo {
     font-weight: 400;
     font-size: 1.3rem;
     letter-spacing: 0.04em;
     color: var(--text-dark);
     text-decoration: none;
   }
-  nav .cta {
+  body > nav .cta {
     background: var(--sage);
     color: white;
     padding: 0.55rem 1.4rem;
@@ -63,7 +63,7 @@
     text-decoration: none;
     transition: background 0.2s;
   }
-  nav .cta:hover { background: var(--sage-hover); }
+  body > nav .cta:hover { background: var(--sage-hover); }
   .hero {
     min-height: 100vh;
     display: grid;
@@ -150,7 +150,6 @@
     letter-spacing: 0.02em;
     border-bottom: 1px solid var(--warm-dark);
     padding-bottom: 2px;
-    margin: 2rem;
     transition: color 0.2s, border-color 0.2s;
   }
   .btn-ghost:hover {
@@ -648,7 +647,7 @@
   .delay-3 { animation-delay: 0.25s; }
   .delay-4 { animation-delay: 0.35s; }
   @media (max-width: 900px) {
-    nav {
+    body > nav {
       padding: 1.25rem 2rem;
     }
     .hero, .about, #book .layout, .not-therapy {
