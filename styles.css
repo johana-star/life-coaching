@@ -224,6 +224,14 @@
     color: var(--text-mid);
     line-height: 1.5;
   }
+  .flag-badge {
+    display: inline-block;
+    width: 1.3em;
+    height: 0.78em;
+    vertical-align: baseline;
+    margin: 0 0.15em;
+    border-radius: 1.5px;
+  }
   .trust-bar {
     list-style: none;
     background: var(--surface-alt);
