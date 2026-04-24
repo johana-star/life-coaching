@@ -30,63 +30,23 @@
     </nav>
   </header>
   <div class="image animate delay-3">
-    <!-- SVG presentation attributes are used here instead of CSS because SVG elements
-         inside HTML do not reliably inherit CSS custom properties for fill and font-family.
-         Colour mapping: fill=#a8d0b0 (--thyme), fill=#eeeee4 (--feta), stroke/fill=#6b7fbd (--periwinkle) -->
-    <svg class="shapes" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="480" cy="120" r="200" fill="#a8d0b0" opacity="0.35"/>
-      <circle cx="80" cy="460" r="140" fill="#eeeee4" opacity="0.5"/>
-      <circle cx="300" cy="300" r="180" fill="none" stroke="#6b7fbd" stroke-width="0.6" opacity="0.2"/>
-      <circle cx="300" cy="300" r="120" fill="none" stroke="#6b7fbd" stroke-width="0.6" opacity="0.15"/>
-      <text x="300" y="315" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="52" fill="#6b7fbd" opacity="0.25" font-style="italic">seen.</text>
-    </svg>
+    <!--
+    TODO: Figure out why comments inline in the seen.svg did not work.
+
+    SVG presentation attributes are used here because SVG does not reliably inherit
+    CSS custom properties for fill and font-family when loaded externally.
+    Color mapping: fill=#a8d0b0 (--thyme), fill=#eeeee4 (--feta), stroke/fill=#6b7fbd (--periwinkle)
+    -->
+    <img class="shapes" src="images/seen.svg" alt="" aria-hidden="true">
     <div class="badge">
       <strong>Lived experience.</strong>
       <ul>
         <li>Late-diagnosed autistic</li>
         <li>Complex trauma recovery</li>
         <li>Trans
-          <svg class="flag-badge flag-trans" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Trans pride flag" viewBox="0 0 15 9">
-            <defs>
-              <clipPath id="clip-trans">
-                <rect width="15" height="9" rx="1.5"/>
-              </clipPath>
-              <style>
-                .flag-trans .stripe-coastal { fill: #88bcd8; }
-                .flag-trans .stripe-sakura  { fill: #e8a0c0; }
-                .flag-trans .stripe-white   { fill: #ffffff; }
-              </style>
-            </defs>
-            <g clip-path="url(#clip-trans)">
-              <rect class="stripe-coastal" x="0" y="0"   width="15" height="1.8"/>
-              <rect class="stripe-sakura"  x="0" y="1.8" width="15" height="1.8"/>
-              <rect class="stripe-white"   x="0" y="3.6" width="15" height="1.8"/>
-              <rect class="stripe-sakura"  x="0" y="5.4" width="15" height="1.8"/>
-              <rect class="stripe-coastal" x="0" y="7.2" width="15" height="1.8"/>
-            </g>
-            <rect width="15" height="9" rx="1.5" fill="none" stroke="rgba(0,0,0,0.1)" stroke-width="0.5"/>
-          </svg>
+          <img class="flag-badge" src="images/flag-trans.svg" alt="Trans pride flag">
           &amp; nonbinary
-          <svg class="flag-badge flag-nonbinary" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Nonbinary pride flag" viewBox="0 0 15 9">
-            <defs>
-              <clipPath id="clip-nb">
-                <rect width="15" height="9" rx="1.5"/>
-              </clipPath>
-              <style>
-                .flag-nonbinary .stripe-mustard    { fill: #d8c030; }
-                .flag-nonbinary .stripe-white      { fill: #ffffff; }
-                .flag-nonbinary .stripe-periwinkle { fill: #6b7fbd; }
-                .flag-nonbinary .stripe-navy       { fill: #1a2244; }
-              </style>
-            </defs>
-            <g clip-path="url(#clip-nb)">
-              <rect class="stripe-mustard"    x="0" y="0"    width="15" height="2.25"/>
-              <rect class="stripe-white"      x="0" y="2.25" width="15" height="2.25"/>
-              <rect class="stripe-periwinkle" x="0" y="4.5"  width="15" height="2.25"/>
-              <rect class="stripe-navy"       x="0" y="6.75" width="15" height="2.25"/>
-            </g>
-            <rect width="15" height="9" rx="1.5" fill="none" stroke="rgba(0,0,0,0.1)" stroke-width="0.5"/>
-          </svg>
+          <img class="flag-badge" src="images/flag-nonbinary.svg" alt="Nonbinary pride flag">
         </li>
       </ul>
     </div>
@@ -102,11 +62,9 @@
   <li>100% confidential</li>
 </ul>
 
-<!-- TODO: can we review the section colors so there is more variety of light and dark backgrounds? .about, .trust-bar,
--          and .hero are all light/cream or white and the backgrounds could use some variety. -->
 <section class="about" id="about">
   <div class="portrait">
-    <img src="headshot.jpg" alt="headshot of Johana Star" class=>
+    <img src="images/headshot.jpg" alt="headshot of Johana Star" class=>
   </div>
   <div>
     <p class="label">My story</p>
@@ -176,43 +134,42 @@
   <div class="grid">
     <article class="card">
       <div class="icon">
-        <!-- TODO: can we extract all the SVGs into an image folder, and name them well based on the visual element they represent?-->
-        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/></svg>
+        <img src="images/person.svg" alt="" aria-hidden="true">
       </div>
       <h3>Burnout recovery</h3>
       <p>Identifying what depleted you, untangling obligation from identity, and rebuilding energy slowly and sustainably. No "hustle harder" advice here.</p>
     </article>
     <article class="card">
       <div class="icon">
-        <svg viewBox="0 0 24 24"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+        <img src="images/check.svg" alt="" aria-hidden="true">
       </div>
       <h3>Boundary setting</h3>
       <p>Learning to say no without guilt, recognising when your limits are being crossed, and building relationships that feel safer and more reciprocal.</p>
     </article>
     <article class="card">
       <div class="icon">
-        <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        <img src="images/shield.svg" alt="" aria-hidden="true">
       </div>
       <h3>Sensory-friendly environments</h3>
       <p>Designing your home, work space, and daily routines to reduce overwhelm — from lighting and sound to clothing and social energy management.</p>
     </article>
     <article class="card">
       <div class="icon">
-        <svg viewBox="0 0 24 24"><path d="M18 8h1a4 4 0 010 8h-1"/><path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+        <img src="images/mug.svg" alt="" aria-hidden="true">
       </div>
       <h3>Feeding yourself</h3>
       <p>Practical approaches to eating when sensory challenges, executive dysfunction, or low energy make cooking feel impossible. No diet culture. Just nourishment.</p>
     </article>
     <article class="card">
       <div class="icon">
-        <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        <img src="images/calendar.svg" alt="" aria-hidden="true">
       </div>
       <h3>Routines that hold</h3>
       <p>Creating flexible structures that account for variable energy, bad days, and the reality of neurodivergent time — without shame when things fall apart.</p>
     </article>
     <article class="card">
       <div class="icon">
-        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        <img src="images/info.svg" alt="" aria-hidden="true">
       </div>
       <h3>Artistic practice</h3>
       <p>Building a creative practice that fits your actual life — overcoming perfectionism, finding your medium, and making art a consistent part of your world.</p>

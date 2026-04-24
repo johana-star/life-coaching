@@ -1,0 +1,16 @@
+<!-- Trans pride flag: coastal (#88bcd8), sakura (#e8a0c0), white (#ffffff), sakura (#e8a0c0), coastal (#88bcd8) -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 9" role="img" aria-label="Trans pride flag">
+  <defs>
+    <clipPath id="clip-trans">
+      <rect width="15" height="9" rx="1.5"/>
+    </clipPath>
+  </defs>
+  <g clip-path="url(#clip-trans)">
+    <rect x="0" y="0"   width="15" height="1.8" fill="#88bcd8"/>
+    <rect x="0" y="1.8" width="15" height="1.8" fill="#e8a0c0"/>
+    <rect x="0" y="3.6" width="15" height="1.8" fill="#ffffff"/>
+    <rect x="0" y="5.4" width="15" height="1.8" fill="#e8a0c0"/>
+    <rect x="0" y="7.2" width="15" height="1.8" fill="#88bcd8"/>
+  </g>
+  <rect width="15" height="9" rx="1.5" fill="none" stroke="rgba(0,0,0,0.1)" stroke-width="0.5"/>
+</svg>
