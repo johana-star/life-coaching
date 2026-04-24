@@ -25,24 +25,46 @@
          · dijon is effectively mustard darkened — hue drift of only 0.9°
       Note: all color math here is Claude-generated. Trust, but verify.
     */
-
+    /*
+    Color families:
+    lights & whites: theming is dairy
+    reds & pinks: theming is floral & fruity
+    oranges: theming is culinary, spices
+    yellows: theming is culinary, condiments
+        NOTE: Mustard is a brassica, so there may be design space for cabbage, a yellow-green
+        tinted white, bok choy, a light green, broccoli, a dark and grounded green,
+        turnip, a purplish-red white, kale a dark green, etc.
+    greens: theming is culinary, herbal
+    darks & blues: theming is nautical
+    purples: theming is floral & astronomical
+        NOTE: Oranges and periwinkles are not used yet in this design, their intention in
+        specification is to be used as accent colors for future designs inheriting
+        this palette and pride flags.
+    */
     --white:        #ffffff;
     --cream:        #f8f8f4;
     --feta:         #eeeee4;
     --chevre:       #d8d8c8;
-    --navy:         #1a2244;
+    --navy:         #1a2244; /* Are the names navy and abyss swapped? Should abyss be the darkest blue? */
     --abyss:        #4a5472;
     --haze:         #8a94b0;
     --periwinkle:   #7F7FBD;
     --cosmic:       #4a5e9c;  /* periwinkle (L=46.3%) darkened 8.0 lightness points to L=38.3% */
     --lavender:     #7570a9;
+    --kikyo:        #6a4c9c;  /* NOTE: I stumbled upon this japanese flower word while researching navy,
+                                         feel free to tweak slightly to match palette. */
     --wisteria:     #5f5a96;  /* lavender (L=55.1%) darkened 8.0 lightness points to L=47.1% → wisteria */
     --sage:         #7aaa82;
     --mint:         #e8f4ea;  /* sage (L=57.6%) lightened 35.0 lightness points to L=92.6% */
     --thyme:        #a8d0b0;  /* sage (L=57.6%) lightened 15.0 lightness points to L=72.6% */
     --mustard:      #d8c030;
     --dijon:        #b8a020;  /* mustard (L=51.2%) darkened 7.0 lightness points to L=44.2% */
+    /* question for Claude: paprika is expressed in terms of lavender, when I requested it relate directly with periwinkle
+                            Since lavender & periwinkle are similar shades I expect the relationship corresponds closely.
+                            How do our oranges reflect their relationship to periwinkle?
+    */
     --paprika:      #e27e36;  /* split complement of lavender (H=245°); H=25° S=75% L=55% */
+/*  --saffron:        #TKTKTK; */
     --coastal:      #88bcd8;  /* shallows was considered but coastal retained */
     --sakura:       #e8a0c0;
     --cherry:       #883060;  /* sakura sibling: H=327° S=48% L=36% vs sakura H=333° S=61% L=77% */
