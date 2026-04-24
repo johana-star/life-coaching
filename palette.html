@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tide Garden — Palette</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    background: var(--cream);
+    color: var(--abyss);
+    min-height: 100vh;
+    padding: 4rem;
+  }
+
+  header {
+    margin-bottom: 4rem;
+  }
+
+  header p {
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--lavender);
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  header p::before {
+    content: '';
+    display: block;
+    width: 32px;
+    height: 1px;
+    background: var(--lavender);
+  }
+
+  header h1 {
+    font-family: var(--serif);
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 300;
+    line-height: 1.1;
+  }
+
+  header h1 em {
+    font-style: italic;
+    color: var(--lavender);
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 0;
+    border: 1px solid var(--chevre);
+  }
+
+  .family {
+    border-right: 1px solid var(--chevre);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .family:last-child { border-right: none; }
+
+  .family-label {
+    padding: 0.75rem 1rem;
+    font-size: 0.65rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--navy);
+    background: var(--feta);
+    border-bottom: 1px solid var(--chevre);
+    position: sticky;
+    top: 0;
+  }
+
+  .swatches { flex: 1; }
+
+  .swatch {
+    height: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 0.5rem 0.75rem;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+    position: relative;
+    cursor: default;
+    transition: height 0.2s ease;
+  }
+
+  .swatch:last-child { border-bottom: none; }
+  .swatch:hover { height: 100px; }
+
+  .swatch-name {
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    line-height: 1.2;
+    mix-blend-mode: multiply;
+  }
+
+  .swatch-hex {
+    font-size: 0.62rem;
+    font-weight: 400;
+    letter-spacing: 0.06em;
+    opacity: 0.6;
+    font-family: 'DM Mono', 'Courier New', monospace;
+    mix-blend-mode: multiply;
+  }
+
+  /* Light swatches get dark text, dark swatches get light text */
+  .light .swatch-name,
+  .light .swatch-hex { color: var(--abyss); }
+
+  .dark .swatch-name,
+  .dark .swatch-hex { color: var(--cream); mix-blend-mode: normal; opacity: 1; }
+
+  .dark .swatch-hex { opacity: 0.6; }
+
+  /* placeholder for saffron */
+  .swatch.placeholder {
+    background: repeating-linear-gradient(
+      45deg,
+      var(--feta),
+      var(--feta) 4px,
+      var(--chevre) 4px,
+      var(--chevre) 8px
+    );
+  }
+
+  footer {
+    margin-top: 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    border-top: 1px solid var(--chevre);
+    padding-top: 1.5rem;
+  }
+
+  footer p {
+    font-size: 0.75rem;
+    color: var(--navy);
+    letter-spacing: 0.04em;
+  }
+
+  footer em {
+    font-family: var(--serif);
+    font-style: italic;
+  }
+
+  @media (max-width: 900px) {
+    body { padding: 2rem 1rem; }
+    .grid { grid-template-columns: repeat(3, 1fr); }
+    .family { border-bottom: 1px solid var(--chevre); }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <p>Color system</p>
+  <h1>Tide <em>Garden</em></h1>
+</header>
+
+<div class="grid">
+
+  <div class="family">
+    <div class="family-label">Dairy</div>
+    <div class="swatches">
+      <div class="swatch light" style="background:#ffffff;">
+        <span class="swatch-name">white</span>
+        <span class="swatch-hex">#ffffff</span>
+      </div>
+      <div class="swatch light" style="background:#f8f8f4;">
+        <span class="swatch-name">cream</span>
+        <span class="swatch-hex">#f8f8f4</span>
+      </div>
+      <div class="swatch light" style="background:#eeeee4;">
+        <span class="swatch-name">feta</span>
+        <span class="swatch-hex">#eeeee4</span>
+      </div>
+      <div class="swatch light" style="background:#d8d8c8;">
+        <span class="swatch-name">chevre</span>
+        <span class="swatch-hex">#d8d8c8</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="family">
+    <div class="family-label">Reds &amp; Pinks</div>
+    <div class="swatches">
+      <div class="swatch light" style="background:#fceef5;">
+        <span class="swatch-name">blush</span>
+        <span class="swatch-hex">#fceef5</span>
+      </div>
+      <div class="swatch light" style="background:#e0a8c8;">
+        <span class="swatch-name">peony</span>
+        <span class="swatch-hex">#e0a8c8</span>
+      </div>
+      <div class="swatch light" style="background:#e8a0c0;">
+        <span class="swatch-name">sakura</span>
+        <span class="swatch-hex">#e8a0c0</span>
+      </div>
+      <div class="swatch dark" style="background:#883060;">
+        <span class="swatch-name">cherry</span>
+        <span class="swatch-hex">#883060</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="family">
+    <div class="family-label">Oranges</div>
+    <div class="swatches">
+      <div class="swatch light" style="background:#e27e36;">
+        <span class="swatch-name">paprika</span>
+        <span class="swatch-hex">#e27e36</span>
+      </div>
+      <div class="swatch placeholder">
+        <span class="swatch-name" style="color:var(--navy);">saffron</span>
+        <span class="swatch-hex" style="color:var(--navy);">TK</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="family">
+    <div class="family-label">Yellows</div>
+    <div class="swatches">
+      <div class="swatch light" style="background:#faf5c0;">
+        <span class="swatch-name">parchment</span>
+        <span class="swatch-hex">#faf5c0</span>
+      </div>
+      <div class="swatch light" style="background:#d8c030;">
+        <span class="swatch-name">mustard</span>
+        <span class="swatch-hex">#d8c030</span>
+      </div>
+      <div class="swatch light" style="background:#b8a020;">
+        <span class="swatch-name">dijon</span>
+        <span class="swatch-hex">#b8a020</span>
+      </div>
+      <div class="swatch dark" style="background:#6a5800;">
+        <span class="swatch-name">molasses</span>
+        <span class="swatch-hex">#6a5800</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="family">
+    <div class="family-label">Greens</div>
+    <div class="swatches">
+      <div class="swatch light" style="background:#e8f4ea;">
+        <span class="swatch-name">mint</span>
+        <span class="swatch-hex">#e8f4ea</span>
+      </div>
+      <div class="swatch light" style="background:#a8d0b0;">
+        <span class="swatch-name">thyme</span>
+        <span class="swatch-hex">#a8d0b0</span>
+      </div>
+      <div class="swatch light" style="background:#7aaa82;">
+        <span class="swatch-name">sage</span>
+        <span class="swatch-hex">#7aaa82</span>
+      </div>
+      <div class="swatch dark" style="background:#2a5a32;">
+        <span class="swatch-name">pine</span>
+        <span class="swatch-hex">#2a5a32</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="family">
+    <div class="family-label">Blues &amp; Darks</div>
+    <div class="swatches">
+      <div class="swatch light" style="background:#88bcd8;">
+        <span class="swatch-name">coastal</span>
+        <span class="swatch-hex">#88bcd8</span>
+      </div>
+      <div class="swatch light" style="background:#8a94b0;">
+        <span class="swatch-name">haze</span>
+        <span class="swatch-hex">#8a94b0</span>
+      </div>
+      <div class="swatch dark" style="background:#4a5472;">
+        <span class="swatch-name">navy</span>
+        <span class="swatch-hex">#4a5472</span>
+      </div>
+      <div class="swatch dark" style="background:#1a2244;">
+        <span class="swatch-name">abyss</span>
+        <span class="swatch-hex">#1a2244</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="family">
+    <div class="family-label">Purples</div>
+    <div class="swatches">
+      <div class="swatch light" style="background:#e7e6f0;">
+        <span class="swatch-name">lilac</span>
+        <span class="swatch-hex">#e7e6f0</span>
+      </div>
+      <div class="swatch light" style="background:#c8c6dd;">
+        <span class="swatch-name">thistle</span>
+        <span class="swatch-hex">#c8c6dd</span>
+      </div>
+      <div class="swatch light" style="background:#7f7fbd;">
+        <span class="swatch-name">periwinkle</span>
+        <span class="swatch-hex">#7f7fbd</span>
+      </div>
+      <div class="swatch light" style="background:#7570a9;">
+        <span class="swatch-name">lavender</span>
+        <span class="swatch-hex">#7570a9</span>
+      </div>
+      <div class="swatch dark" style="background:#6a4c9c;">
+        <span class="swatch-name">kikyo</span>
+        <span class="swatch-hex">#6a4c9c</span>
+      </div>
+      <div class="swatch dark" style="background:#5f5a96;">
+        <span class="swatch-name">wisteria</span>
+        <span class="swatch-hex">#5f5a96</span>
+      </div>
+      <div class="swatch dark" style="background:#494573;">
+        <span class="swatch-name">iris</span>
+        <span class="swatch-hex">#494573</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <p>Tide Garden &mdash; <em>a palette for Johana Star Life Coaching</em></p>
+  <p>27 colours · 7 families</p>
+</footer>
+
+</body>
+</html>
