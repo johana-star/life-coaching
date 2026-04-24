@@ -3,17 +3,25 @@
     margin: 0;
     padding: 0;
   }
-    :root {
-    /*
-      TODO: Can we define some of the least used tokens below in terms of the most used tokens below?
-            The intent of such a refactoring would be to make it easy to change the color scheme of
-            the document by only defining a handful of primary colors from which all the other colors derive.
-      TODO: Can we rename colors like feta-dark and navy-mid to use thematically similar but distinct names.
-            I already started this with mint, thyme, and dijon. Are these the best names for these colors or
-            are there other more distinctive and evocative color names which I had not considered?
-   */
+  :root {
+    /* ─── color tokens ─────────────────────────────────────────────────────────
+       Color wheel relationships:
+         · coastal (H=201°), periwinkle (H=225°), and navy (H=229°) are
+           analogous — a tight blue cluster spanning 28°
+         · mustard (H=51°) and periwinkle (H=225°) are near-complementary
+           (174° apart) — they pop against each other
+         · mustard (H=51°) and coastal (H=201°) are near-complementary
+           (150° apart)
+         · sakura (H=333°) and sage (H=130°) are near-complementary
+           (157° apart) — warm pink against cool green
+         · mustard (H=51°), sage (H=130°), and sakura (H=333°) form a
+           split-complementary triad around sage
+       Sibling relationships:
+         · cherry is a sibling of sakura, not simply a darkened version —
+           hue shifts 6°, saturation drops 13%, lightness drops 41°
+         · dijon is effectively mustard darkened — hue drift of only 0.9°
+    */
 
-    /* color tokens */
     --white: #ffffff;
     --cream: #f8f8f4;
     --feta: #eeeee4;
@@ -22,58 +30,64 @@
     --navy-mid: #4a5472;
     --navy-light: #8a94b0;
     --periwinkle: #6b7fbd;
-    --periwinkle-dark: #4a5e9c;
+    --periwinkle-hover: #4a5e9c;  /* periwinkle (L=46.3%) darkened 8.0 lightness points to L=38.3% */
     --sage: #7aaa82;
-    --mint: #e8f4ea;
-    --thyme: #a8d0b0;
+    --mint: #e8f4ea;              /* sage (L=57.6%) lightened 35.0 lightness points to L=92.6% */
+    --thyme: #a8d0b0;             /* sage (L=57.6%) lightened 15.0 lightness points to L=72.6% */
     --mustard: #d8c030;
-    --dijon: #b8a020;
+    --dijon: #b8a020;             /* mustard (L=51.2%) darkened 7.0 lightness points to L=44.2% */
     --coastal: #88bcd8;
     --sakura: #e8a0c0;
-    --cherry: #883060;
+    --cherry: #883060;            /* sakura sibling: H=327° S=48% L=36% vs sakura H=333° S=61% L=77% */
     --serif: 'Cormorant Garamond', serif;
 
-    /* tints and shades — derived from palette colours */
-    --periwinkle-dark: #2a3878; /* periwinkle (L=46.3%) darkened by 19.0 lightness points to L=27.3% */
-    --periwinkle-mid:  #b8c0e0;
-    --periwinkle-tint: #eef0f8;
-    --sakura-mid:  #e0a8c8;
-    --sakura-tint: #fceef5;
-    --mustard-tint: #faf5c0;
-    --dijon-dark:  #6a5800; /* dijon (L=42.4%) darkened by 21.6 lightness points to L=20.8% */
-    --sage-dark:   #2a5a32;
+    /* ─── tints and shades ──────────────────────────────────────────────────────
+       native CSS cannot compute these; use Sass or a design tool to
+       recalculate if palette colours change */
+    --periwinkle-dark: #2a3878;   /* periwinkle (L=46.3%) darkened 19.0 lightness points to L=27.3% */
+    --periwinkle-mid:  #b8c0e0;   /* periwinkle (L=46.3%) lightened 27.0 lightness points to L=73.3% */
+    --periwinkle-tint: #eef0f8;   /* periwinkle (L=46.3%) lightened 46.0 lightness points to L=92.3% */
+    --sakura-mid:      #e0a8c8;   /* sakura (L=77.5%) darkened 10.0 lightness points to L=67.5% */
+    --sakura-tint:     #fceef5;   /* sakura (L=77.5%) lightened 15.0 lightness points to L=92.5% */
+    --mustard-tint:    #faf5c0;   /* mustard (L=51.2%) lightened 40.0 lightness points to L=91.2% */
+    --dijon-dark:      #6a5800;   /* dijon (L=42.4%) darkened 21.6 lightness points to L=20.8% */
+    --sage-dark:       #2a5a32;   /* sage (L=57.6%) darkened 35.0 lightness points to L=22.6% */
 
-    /* semantic tokens */
-    --background: var(--cream);
-    --surface: var(--white);
-    --surface-alt: var(--feta);
-    --surface-alt-dark: var(--feta-dark);
-    --text: var(--navy);
-    --text-mid: var(--navy-mid);
-    --text-light: var(--navy-light);
-    --accent: var(--periwinkle);
-    --accent-hover: var(--periwinkle-dark);
-    --accent-secondary: var(--sage);
+    /* ─── semantic tokens ───────────────────────────────────────────────────────
+       these are what rules reference — colour tokens above should not
+       appear in rules directly */
+    --background:            var(--cream);
+    --surface:               var(--white);
+    --surface-alt:           var(--feta);
+    --surface-alt-dark:      var(--feta-dark);
+    --text:                  var(--navy);
+    --text-mid:              var(--navy-mid);
+    --text-light:            var(--navy-light);
+    --accent:                var(--periwinkle);
+    --accent-hover:          var(--periwinkle-hover);
+    --accent-secondary:      var(--sage);
     --accent-secondary-light: var(--mint);
-    --accent-secondary-mid: var(--thyme);
-    --accent-tertiary: var(--mustard);
+    --accent-secondary-mid:  var(--thyme);
+    --accent-tertiary:       var(--mustard);
     --accent-tertiary-hover: var(--dijon);
-    --highlight: var(--sakura);
-    --highlight-dark: var(--cherry);
-    --muted: var(--coastal);
-    --deep: var(--navy);
+    --highlight:             var(--sakura);
+    --highlight-dark:        var(--cherry);
+    --muted:                 var(--coastal);
+    --deep:                  var(--navy);
 
-    /* opacity variants — for use where alpha transparency is needed */
-    --cream-88:  var(--cream-88);
-    --cream-35:  var(--cream-35);
-    --cream-8:   var(--cream-8);
-    --cream-6:   var(--cream-6);
-    --white-85:  var(--white-85);
-    --white-30:  var(--white-30);
-    --white-15:  var(--white-15);
-    --periwinkle-15: var(--periwinkle-15);
-    --mustard-25:    var(--mustard-25);
-    --navy-8:        var(--navy-8);
+    /* ─── opacity variants ──────────────────────────────────────────────────────
+       for use where alpha transparency is needed */
+    --cream-88:      rgba(248,248,244,0.88);
+    --cream-60:      rgba(248,248,244,0.60);
+    --cream-35:      rgba(248,248,244,0.35);
+    --cream-8:       rgba(248,248,244,0.08);
+    --cream-6:       rgba(248,248,244,0.06);
+    --white-85:      rgba(255,255,255,0.85);
+    --white-30:      rgba(255,255,255,0.30);
+    --white-15:      rgba(255,255,255,0.15);
+    --periwinkle-15: rgba(107,127,189,0.15);
+    --mustard-25:    rgba(216,192,48,0.25);
+    --navy-8:        rgba(26,34,68,0.08);
   }
   body {
     font-family: 'DM Sans', sans-serif;
