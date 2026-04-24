@@ -4,7 +4,16 @@
     padding: 0;
   }
     :root {
-    /* colour tokens */
+    /*
+      TODO: Can we define some of the least used tokens below in terms of the most used tokens below?
+            The intent of such a refactoring would be to make it easy to change the color scheme of
+            the document by only defining a handful of primary colors from which all the other colors derive.
+      TODO: Can we rename colors like feta-dark and navy-mid to use thematically similar but distinct names.
+            I already started this with mint, thyme, and dijon. Are these the best names for these colors or
+            are there other more distinctive and evocative color names which I had not considered?
+   */
+
+    /* color tokens */
     --white: #ffffff;
     --cream: #f8f8f4;
     --feta: #eeeee4;
@@ -12,14 +21,13 @@
     --navy: #1a2244;
     --navy-mid: #4a5472;
     --navy-light: #8a94b0;
-    --ink: #1a2244;
     --periwinkle: #6b7fbd;
-    --periwinkle-hover: #4a5e9c;
+    --periwinkle-dark: #4a5e9c;
     --sage: #7aaa82;
-    --sage-light: #e8f4ea;
-    --sage-mid: #a8d0b0;
+    --mint: #e8f4ea;
+    --thyme: #a8d0b0;
     --mustard: #d8c030;
-    --mustard-hover: #b8a020;
+    --dijon: #b8a020;
     --coastal: #88bcd8;
     --sakura: #e8a0c0;
     --cherry: #883060;
@@ -34,16 +42,16 @@
     --text-mid: var(--navy-mid);
     --text-light: var(--navy-light);
     --accent: var(--periwinkle);
-    --accent-hover: var(--periwinkle-hover);
+    --accent-hover: var(--periwinkle-dark);
     --accent-secondary: var(--sage);
-    --accent-secondary-light: var(--sage-light);
-    --accent-secondary-mid: var(--sage-mid);
+    --accent-secondary-light: var(--mint);
+    --accent-secondary-mid: var(--thyme);
     --accent-tertiary: var(--mustard);
-    --accent-tertiary-hover: var(--mustard-hover);
+    --accent-tertiary-hover: var(--dijon);
     --highlight: var(--sakura);
     --highlight-dark: var(--cherry);
     --muted: var(--coastal);
-    --deep: var(--ink);
+    --deep: var(--navy);
   }
   body {
     font-family: 'DM Sans', sans-serif;
@@ -56,6 +64,7 @@
     font-family: var(--serif);
   }
   h1, h2, h3, h4, .step .numeral { font-weight: 300; }
+  /* TODO: Can we define the rbga codes below either in the color tokens section of :root or derived from those colors? */
   body > nav {
     position: fixed;
     top: 0;
@@ -279,6 +288,7 @@
     border: 1px solid;
     border-radius: 2px;
   }
+  /* TODO: Can we define the hex codes below in the color tokens section of :root */
   .tag-secondary {
     color: #2a5a32;
     background: var(--accent-secondary-light);
