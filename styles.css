@@ -6,12 +6,14 @@
   :root {
     /* ─── color tokens ─────────────────────────────────────────────────────────
        Color wheel relationships:
-         · coastal (H=201°), lavender (H=225°), and navy (H=229°) are
-           analogous — a tight blue cluster spanning 28°
-         · mustard (H=51°) and lavender (H=225°) are near-complementary
-           (174° apart) — they pop against each other
+         · coastal (H=201°), lavender (H=245°), and navy (H=229°) are
+           analogous — a tight blue/purple cluster spanning 44°
+         · mustard (H=51°) and lavender (H=245°) are near-complementary
+           (194° apart) — they pop against each other
          · mustard (H=51°) and coastal (H=201°) are near-complementary
            (150° apart)
+         · coastal (H=201°) and lavender (H=245°) are now 44° apart —
+           a wider analogous gap than the original 24° with coastal/periwinkle
          · sakura (H=333°) and sage (H=130°) are near-complementary
            (157° apart) — warm pink against cool green
          · mustard (H=51°), sage (H=130°), and sakura (H=333°) form a
