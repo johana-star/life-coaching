@@ -6,9 +6,9 @@
   :root {
     /* ─── color tokens ─────────────────────────────────────────────────────────
        Color wheel relationships:
-         · coastal (H=201°), periwinkle (H=225°), and navy (H=229°) are
+         · coastal (H=201°), lavender (H=225°), and navy (H=229°) are
            analogous — a tight blue cluster spanning 28°
-         · mustard (H=51°) and periwinkle (H=225°) are near-complementary
+         · mustard (H=51°) and lavender (H=225°) are near-complementary
            (174° apart) — they pop against each other
          · mustard (H=51°) and coastal (H=201°) are near-complementary
            (150° apart)
@@ -20,6 +20,7 @@
          · cherry is a sibling of sakura, not simply a darkened version —
            hue shifts 6°, saturation drops 13%, lightness drops 41°
          · dijon is effectively mustard darkened — hue drift of only 0.9°
+      Note: all color math here is Claude-generated. Trust, but verify.
     */
 
     --white: #ffffff;
@@ -29,8 +30,10 @@
     --navy: #1a2244;
     --navy-mid: #4a5472;
     --navy-light: #8a94b0;
-    --periwinkle: #7F7FBD;
+/*  --periwinkle: #7F7FBD;
     --periwinkle-hover: #4a5e9c;  /* periwinkle (L=46.3%) darkened 8.0 lightness points to L=38.3% */
+    --lavender: #7570a9;
+    --lavender-hover: #5f5a96;  /* lavender (L=55.1%) darkened 8.0 lightness points to L=47.1% */
     --sage: #7aaa82;
     --mint: #e8f4ea;              /* sage (L=57.6%) lightened 35.0 lightness points to L=92.6% */
     --thyme: #a8d0b0;             /* sage (L=57.6%) lightened 15.0 lightness points to L=72.6% */
@@ -44,9 +47,9 @@
     /* ─── tints and shades ──────────────────────────────────────────────────────
        native CSS cannot compute these; use Sass or a design tool to
        recalculate if palette colours change */
-    --periwinkle-dark: #2a3878;   /* periwinkle (L=46.3%) darkened 19.0 lightness points to L=27.3% */
-    --periwinkle-mid:  #b8c0e0;   /* periwinkle (L=46.3%) lightened 27.0 lightness points to L=73.3% */
-    --periwinkle-tint: #eef0f8;   /* periwinkle (L=46.3%) lightened 46.0 lightness points to L=92.3% */
+    --lavender-dark: #494573;   /* lavender (L=55.1%) darkened 19.0 lightness points to L=36.1% */
+    --lavender-mid:  #c8c6dd;   /* lavender (L=55.1%) lightened 27.0 lightness points to L=82.1% */
+    --lavender-tint: #e7e6f0;   /* lavender (L=55.1%) lightened to L=92.3% (target unchanged) */
     --sakura-mid:      #e0a8c8;   /* sakura (L=77.5%) darkened 10.0 lightness points to L=67.5% */
     --sakura-tint:     #fceef5;   /* sakura (L=77.5%) lightened 15.0 lightness points to L=92.5% */
     --mustard-tint:    #faf5c0;   /* mustard (L=51.2%) lightened 40.0 lightness points to L=91.2% */
@@ -63,8 +66,8 @@
     --text:                  var(--navy);
     --text-mid:              var(--navy-mid);
     --text-light:            var(--navy-light);
-    --accent:                var(--periwinkle);
-    --accent-hover:          var(--periwinkle-hover);
+    --accent:                var(--lavender);
+    --accent-hover:          var(--lavender-hover);
     --accent-secondary:      var(--sage);
     --accent-secondary-light: var(--mint);
     --accent-secondary-mid:  var(--thyme);
@@ -85,7 +88,7 @@
     --white-85:      rgba(255,255,255,0.85);
     --white-30:      rgba(255,255,255,0.30);
     --white-15:      rgba(255,255,255,0.15);
-    --periwinkle-15: rgba(107,127,189,0.15);
+    --lavender-15: rgba(117,112,169,0.15);
     --mustard-25:    rgba(216,192,48,0.25);
     --navy-8:        rgba(26,34,68,0.08);
   }
@@ -113,7 +116,7 @@
     padding: 1.25rem 4rem;
     background: var(--cream-88);
     backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--periwinkle-15);
+    border-bottom: 1px solid var(--lavender-15);
   }
   body > nav .logo {
     font-weight: 400;
@@ -340,9 +343,9 @@
     border-color: var(--accent-secondary-mid);
   }
   .tag-accent {
-    color: var(--periwinkle-dark);
-    background: var(--periwinkle-tint);
-    border-color: var(--periwinkle-mid);
+    color: var(--lavender-dark);
+    background: var(--lavender-tint);
+    border-color: var(--lavender-mid);
   }
   .tag-tertiary {
     color: var(--dijon-dark);

@@ -1,4 +1,4 @@
-<!-- Nonbinary pride flag: mustard (#d8c030), white (#ffffff), periwinkle (#6b7fbd), navy (#1a2244) -->
+<!-- Nonbinary pride flag: mustard (#d8c030), white (#ffffff), lavender (#7570a9), navy (#1a2244) -->
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 9" role="img" aria-label="Nonbinary pride flag">
   <defs>
     <clipPath id="clip-nb">
@@ -8,7 +8,7 @@
   <g clip-path="url(#clip-nb)">
     <rect x="0" y="0"    width="15" height="2.25" fill="#d8c030"/>
     <rect x="0" y="2.25" width="15" height="2.25" fill="#ffffff"/>
-    <rect x="0" y="4.5"  width="15" height="2.25" fill="#6b7fbd"/>
+    <rect x="0" y="4.5"  width="15" height="2.25" fill="#7570a9"/>
     <rect x="0" y="6.75" width="15" height="2.25" fill="#1a2244"/>
   </g>
   <rect width="15" height="9" rx="1.5" fill="none" stroke="rgba(0,0,0,0.1)" stroke-width="0.5"/>
