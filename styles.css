@@ -4,15 +4,7 @@
     padding: 0;
   }
     :root {
-    /*
-       TODO: Can we define some of the least used tokens below in terms of the most used tokens below?
-             The intent of such a refactoring would be to make it easy to change the color scheme of
-             the document by only defining a handful of primary colors from which all the other colors derive.
-       TODO: Can we rename colors like feta-dark and navy-mid to use thematically similar but distinct names.
-             I already started this with mint, thyme, and dijon. Are these the best names for these colors or
-             are there other more distinctive and evocative color names which I had not considered?
-    */
-    /* color tokens */
+    /* colour tokens */
     --white: #ffffff;
     --cream: #f8f8f4;
     --feta: #eeeee4;
@@ -20,13 +12,14 @@
     --navy: #1a2244;
     --navy-mid: #4a5472;
     --navy-light: #8a94b0;
+    --ink: #1a2244;
     --periwinkle: #6b7fbd;
-    --periwinkle-dark: #4a5e9c;
+    --periwinkle-hover: #4a5e9c;
     --sage: #7aaa82;
-    --mint: #e8f4ea;
-    --thyme: #a8d0b0;
+    --sage-light: #e8f4ea;
+    --sage-mid: #a8d0b0;
     --mustard: #d8c030;
-    --dijon: #b8a020;
+    --mustard-hover: #b8a020;
     --coastal: #88bcd8;
     --sakura: #e8a0c0;
     --cherry: #883060;
@@ -41,16 +34,16 @@
     --text-mid: var(--navy-mid);
     --text-light: var(--navy-light);
     --accent: var(--periwinkle);
-    --accent-hover: var(--periwinkle-dark);
+    --accent-hover: var(--periwinkle-hover);
     --accent-secondary: var(--sage);
-    --accent-secondary-light: var(--mint);
-    --accent-secondary-mid: var(--thyme);
+    --accent-secondary-light: var(--sage-light);
+    --accent-secondary-mid: var(--sage-mid);
     --accent-tertiary: var(--mustard);
-    --accent-tertiary-hover: var(--dijon);
+    --accent-tertiary-hover: var(--mustard-hover);
     --highlight: var(--sakura);
     --highlight-dark: var(--cherry);
     --muted: var(--coastal);
-    --deep: var(--navy);
+    --deep: var(--ink);
   }
   body {
     font-family: 'DM Sans', sans-serif;
@@ -291,7 +284,6 @@
     background: var(--accent-secondary-light);
     border-color: var(--accent-secondary-mid);
   }
-  /* TODO: Can we define the hex codes below in the color tokens section of :root */
   .tag-accent {
     color: #2a3878;
     background: #eef0f8;
@@ -334,8 +326,6 @@
     line-height: 1.2;
     margin-bottom: 1rem;
   }
-
-  /* TODO: Can we define the rbga codes below in the color tokens section of :root */
   .not-therapy h2 em { color: var(--muted); }
   .not-therapy p {
     font-size: 0.92rem;
@@ -457,41 +447,49 @@
     margin-top: 1.5rem;
   }
   .process {
+    background: var(--deep);
     padding: 7rem 4rem;
+  }
+  .process .inner {
     max-width: 860px;
     margin: 0 auto;
+  }
+  .process .label {
+    color: var(--accent-tertiary);
   }
   .process h2 {
     font-size: clamp(2rem, 3.5vw, 2.8rem);
     margin-bottom: 3.5rem;
     line-height: 1.2;
+    color: var(--surface);
   }
-  .process h2 em { color: var(--accent); }
+  .process h2 em { color: var(--accent-tertiary); }
   .process ol {
     list-style: none;
   }
   .step {
     display: grid;
     grid-template-columns: 80px 1fr;
-    border-top: 1px solid var(--surface-alt-dark);
+    border-top: 1px solid rgba(216,192,48,0.25);
     padding: 2rem 0;
     align-items: start;
     gap: 2rem;
   }
-  .step:last-child { border-bottom: 1px solid var(--surface-alt-dark); }
+  .step:last-child { border-bottom: 1px solid rgba(216,192,48,0.25); }
   .step .numeral {
     font-size: 1.5rem;
-    color: var(--accent);
+    color: var(--accent-tertiary);
     padding-top: 0.1rem;
   }
   .step h4 {
     font-size: 1rem;
     font-weight: 500;
     margin-bottom: 0.4rem;
+    color: var(--surface);
   }
   .step p {
     font-size: 0.9rem;
-    color: var(--text-mid);
+    color: var(--accent-secondary-mid);
     line-height: 1.7;
   }
   .testimonials {
@@ -703,7 +701,7 @@
       gap: 1rem;
       padding: 1.5rem 2rem;
     }
-    .offerings, .testimonials, .process, .systems { padding: 5rem 2rem; }
+    .offerings, .testimonials, .process .inner, .systems { padding: 5rem 2rem; }
     .diagnosis .inner {
       grid-template-columns: 1fr;
       gap: 2.5rem;
