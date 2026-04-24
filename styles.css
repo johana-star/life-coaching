@@ -3,6 +3,7 @@
     margin: 0;
     padding: 0;
   }
+  /* Tide Garden palette */
   :root {
     /* ─── color tokens ─────────────────────────────────────────────────────────
        Color wheel relationships:
@@ -25,60 +26,61 @@
       Note: all color math here is Claude-generated. Trust, but verify.
     */
 
-    --white: #ffffff;
-    --cream: #f8f8f4;
-    --feta: #eeeee4;
-    --feta-dark: #d8d8c8;
-    --navy: #1a2244;
-    --navy-mid: #4a5472;
-    --navy-light: #8a94b0;
-/*  --periwinkle: #7F7FBD;
-    --periwinkle-hover: #4a5e9c;  /* periwinkle (L=46.3%) darkened 8.0 lightness points to L=38.3% */
-    --lavender: #7570a9;
-    --lavender-hover: #5f5a96;  /* lavender (L=55.1%) darkened 8.0 lightness points to L=47.1% */
-    --sage: #7aaa82;
-    --mint: #e8f4ea;              /* sage (L=57.6%) lightened 35.0 lightness points to L=92.6% */
-    --thyme: #a8d0b0;             /* sage (L=57.6%) lightened 15.0 lightness points to L=72.6% */
-    --mustard: #d8c030;
-    --dijon: #b8a020;             /* mustard (L=51.2%) darkened 7.0 lightness points to L=44.2% */
-    --coastal: #88bcd8;
-    --sakura: #e8a0c0;
-    --cherry: #883060;            /* sakura sibling: H=327° S=48% L=36% vs sakura H=333° S=61% L=77% */
+    --white:        #ffffff;
+    --cream:        #f8f8f4;
+    --feta:         #eeeee4;
+    --chevre:       #d8d8c8;
+    --navy:         #1a2244;
+    --abyss:        #4a5472;
+    --haze:         #8a94b0;
+    --periwinkle:   #7F7FBD;
+    --cosmic:       #4a5e9c;  /* periwinkle (L=46.3%) darkened 8.0 lightness points to L=38.3% */
+    --lavender:     #7570a9;
+    --wisteria:     #5f5a96;  /* lavender (L=55.1%) darkened 8.0 lightness points to L=47.1% → wisteria */
+    --sage:         #7aaa82;
+    --mint:         #e8f4ea;  /* sage (L=57.6%) lightened 35.0 lightness points to L=92.6% */
+    --thyme:        #a8d0b0;  /* sage (L=57.6%) lightened 15.0 lightness points to L=72.6% */
+    --mustard:      #d8c030;
+    --dijon:        #b8a020;  /* mustard (L=51.2%) darkened 7.0 lightness points to L=44.2% */
+    --paprika:      #e27e36;  /* split complement of lavender (H=245°); H=25° S=75% L=55% */
+    --coastal:      #88bcd8;  /* shallows was considered but coastal retained */
+    --sakura:       #e8a0c0;
+    --cherry:       #883060;  /* sakura sibling: H=327° S=48% L=36% vs sakura H=333° S=61% L=77% */
     --serif: 'Cormorant Garamond', serif;
 
     /* ─── tints and shades ──────────────────────────────────────────────────────
        native CSS cannot compute these; use Sass or a design tool to
        recalculate if palette colours change */
-    --lavender-dark: #494573;   /* lavender (L=55.1%) darkened 19.0 lightness points to L=36.1% */
-    --lavender-mid:  #c8c6dd;   /* lavender (L=55.1%) lightened 27.0 lightness points to L=82.1% */
-    --lavender-tint: #e7e6f0;   /* lavender (L=55.1%) lightened to L=92.3% (target unchanged) */
-    --sakura-mid:      #e0a8c8;   /* sakura (L=77.5%) darkened 10.0 lightness points to L=67.5% */
-    --sakura-tint:     #fceef5;   /* sakura (L=77.5%) lightened 15.0 lightness points to L=92.5% */
-    --mustard-tint:    #faf5c0;   /* mustard (L=51.2%) lightened 40.0 lightness points to L=91.2% */
-    --dijon-dark:      #6a5800;   /* dijon (L=42.4%) darkened 21.6 lightness points to L=20.8% */
-    --sage-dark:       #2a5a32;   /* sage (L=57.6%) darkened 35.0 lightness points to L=22.6% */
+    --iris:       #494573;   /* lavender (L=55.1%) darkened 19.0 lightness points to L=36.1% → iris */
+    --thistle:    #c8c6dd;   /* lavender (L=55.1%) lightened 27.0 lightness points to L=82.1% → thistle */
+    --lilac:      #e7e6f0;   /* lavender (L=55.1%) lightened to L=92.3% → lilac */
+    --peony:      #e0a8c8;   /* sakura (L=77.5%) darkened 10.0 lightness points to L=67.5% → peony */
+    --blush:      #fceef5;   /* sakura (L=77.5%) lightened 15.0 lightness points to L=92.5% → blush */
+    --parchment:  #faf5c0;   /* mustard (L=51.2%) lightened 40.0 lightness points to L=91.2% → parchment */
+    --molasses:   #6a5800;   /* dijon (L=42.4%) darkened 21.6 lightness points to L=20.8% → molasses */
+    --pine:       #2a5a32;   /* sage (L=57.6%) darkened 35.0 lightness points to L=22.6% → pine */
 
     /* ─── semantic tokens ───────────────────────────────────────────────────────
        these are what rules reference — colour tokens above should not
        appear in rules directly */
-    --background:            var(--cream);
-    --surface:               var(--white);
-    --surface-alt:           var(--feta);
-    --surface-alt-dark:      var(--feta-dark);
-    --text:                  var(--navy);
-    --text-mid:              var(--navy-mid);
-    --text-light:            var(--navy-light);
-    --accent:                var(--lavender);
-    --accent-hover:          var(--lavender-hover);
-    --accent-secondary:      var(--sage);
+    --background:             var(--cream);
+    --surface:                var(--white);
+    --surface-alt:            var(--feta);
+    --surface-alt-dark:       var(--chevre);
+    --text:                   var(--navy);
+    --text-mid:               var(--abyss);
+    --text-light:             var(--haze);
+    --accent:                 var(--lavender);
+    --accent-hover:           var(--wisteria);
+    --accent-secondary:       var(--sage);
     --accent-secondary-light: var(--mint);
-    --accent-secondary-mid:  var(--thyme);
-    --accent-tertiary:       var(--mustard);
-    --accent-tertiary-hover: var(--dijon);
-    --highlight:             var(--sakura);
-    --highlight-dark:        var(--cherry);
-    --muted:                 var(--coastal);
-    --deep:                  var(--navy);
+    --accent-secondary-mid:   var(--thyme);
+    --accent-tertiary:        var(--mustard);
+    --accent-tertiary-hover:  var(--dijon);
+    --highlight:              var(--sakura);
+    --highlight-dark:         var(--cherry);
+    --muted:                  var(--coastal);
+    --deep:                   var(--navy);
 
     /* ─── opacity variants ──────────────────────────────────────────────────────
        for use where alpha transparency is needed */
@@ -90,7 +92,7 @@
     --white-85:      rgba(255,255,255,0.85);
     --white-30:      rgba(255,255,255,0.30);
     --white-15:      rgba(255,255,255,0.15);
-    --lavender-15: rgba(117,112,169,0.15);
+    --lavender-15:   rgba(117,112,169,0.15);
     --mustard-25:    rgba(216,192,48,0.25);
     --navy-8:        rgba(26,34,68,0.08);
   }
@@ -340,24 +342,24 @@
   }
   /* TODO: Can we define the hex codes below in the color tokens section of :root */
   .tag-secondary {
-    color: var(--sage-dark);
+    color: var(--pine);
     background: var(--accent-secondary-light);
     border-color: var(--accent-secondary-mid);
   }
   .tag-accent {
-    color: var(--lavender-dark);
-    background: var(--lavender-tint);
-    border-color: var(--lavender-mid);
+    color: var(--iris);
+    background: var(--lilac);
+    border-color: var(--thistle);
   }
   .tag-tertiary {
-    color: var(--dijon-dark);
-    background: var(--mustard-tint);
+    color: var(--molasses);
+    background: var(--parchment);
     border-color: var(--accent-tertiary);
   }
   .tag-highlight {
     color: var(--highlight-dark);
-    background: var(--sakura-tint);
-    border-color: var(--sakura-mid);
+    background: var(--blush);
+    border-color: var(--peony);
   }
   .about .portrait {
     aspect-ratio: 4/5;
