@@ -30,15 +30,15 @@
     </nav>
   </header>
   <div class="image animate delay-3">
-    <!-- TODO: can we update the colors in this SVG to use the currently defined color scheme? -->
+    <!-- SVG presentation attributes are used here instead of CSS because SVG elements
+         inside HTML do not reliably inherit CSS custom properties for fill and font-family.
+         Colour mapping: fill=#a8d0b0 (--thyme), fill=#eeeee4 (--feta), stroke/fill=#6b7fbd (--periwinkle) -->
     <svg class="shapes" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="480" cy="120" r="200" fill="#c5d2c7" opacity="0.35"/>
-        <circle cx="80" cy="460" r="140" fill="#e8e0d5" opacity="0.5"/>
-        <circle cx="300" cy="300" r="180" fill="none" stroke="#6b7f6e" stroke-width="0.6" opacity="0.2"/>
-        <circle cx="300" cy="300" r="120" fill="none" stroke="#6b7f6e" stroke-width="0.6" opacity="0.15"/>
-        <!-- SVG presentation attributes are used here instead of CSS because SVG elements
-        inside HTML do not reliably inherit CSS custom properties for fill and font-family. -->
-        <text x="300" y="315" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="52" fill="#6b7f6e" opacity="0.15" font-style="italic">seen.</text>
+      <circle cx="480" cy="120" r="200" fill="#a8d0b0" opacity="0.35"/>
+      <circle cx="80" cy="460" r="140" fill="#eeeee4" opacity="0.5"/>
+      <circle cx="300" cy="300" r="180" fill="none" stroke="#6b7fbd" stroke-width="0.6" opacity="0.2"/>
+      <circle cx="300" cy="300" r="120" fill="none" stroke="#6b7fbd" stroke-width="0.6" opacity="0.15"/>
+      <text x="300" y="315" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="52" fill="#6b7fbd" opacity="0.25" font-style="italic">seen.</text>
     </svg>
     <div class="badge">
       <strong>Lived experience.</strong>
