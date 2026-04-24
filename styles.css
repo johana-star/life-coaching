@@ -33,6 +33,16 @@
     --cherry: #883060;
     --serif: 'Cormorant Garamond', serif;
 
+    /* tints and shades — derived from palette colours */
+    --periwinkle-dark: #2a3878; /* periwinkle (L=46.3%) darkened by 19.0 lightness points to L=27.3% */
+    --periwinkle-mid:  #b8c0e0;
+    --periwinkle-tint: #eef0f8;
+    --sakura-mid:  #e0a8c8;
+    --sakura-tint: #fceef5;
+    --mustard-tint: #faf5c0;
+    --dijon-dark:  #6a5800; /* dijon (L=42.4%) darkened by 21.6 lightness points to L=20.8% */
+    --sage-dark:   #2a5a32;
+
     /* semantic tokens */
     --background: var(--cream);
     --surface: var(--white);
@@ -52,6 +62,18 @@
     --highlight-dark: var(--cherry);
     --muted: var(--coastal);
     --deep: var(--navy);
+
+    /* opacity variants — for use where alpha transparency is needed */
+    --cream-88:  var(--cream-88);
+    --cream-35:  var(--cream-35);
+    --cream-8:   var(--cream-8);
+    --cream-6:   var(--cream-6);
+    --white-85:  var(--white-85);
+    --white-30:  var(--white-30);
+    --white-15:  var(--white-15);
+    --periwinkle-15: var(--periwinkle-15);
+    --mustard-25:    var(--mustard-25);
+    --navy-8:        var(--navy-8);
   }
   body {
     font-family: 'DM Sans', sans-serif;
@@ -75,9 +97,9 @@
     justify-content: space-between;
     align-items: center;
     padding: 1.25rem 4rem;
-    background: rgba(248,248,244,0.88);
+    background: var(--cream-88);
     backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(107,127,189,0.15);
+    border-bottom: 1px solid var(--periwinkle-15);
   }
   body > nav .logo {
     font-weight: 400;
@@ -210,7 +232,7 @@
     background: var(--surface);
     padding: 1.25rem 1.5rem;
     border-radius: 2px;
-    box-shadow: 0 4px 32px rgba(42,42,39,0.08);
+    box-shadow: 0 4px 32px var(--navy-8);
     max-width: 240px;
   }
   .hero .badge strong {
@@ -299,24 +321,24 @@
   }
   /* TODO: Can we define the hex codes below in the color tokens section of :root */
   .tag-secondary {
-    color: #2a5a32;
+    color: var(--sage-dark);
     background: var(--accent-secondary-light);
     border-color: var(--accent-secondary-mid);
   }
   .tag-accent {
-    color: #2a3878;
-    background: #eef0f8;
-    border-color: #b8c0e0;
+    color: var(--periwinkle-dark);
+    background: var(--periwinkle-tint);
+    border-color: var(--periwinkle-mid);
   }
   .tag-tertiary {
-    color: #6a5800;
-    background: #faf5c0;
+    color: var(--dijon-dark);
+    background: var(--mustard-tint);
     border-color: var(--accent-tertiary);
   }
   .tag-highlight {
     color: var(--highlight-dark);
-    background: #fceef5;
-    border-color: #e0a8c8;
+    background: var(--sakura-tint);
+    border-color: var(--sakura-mid);
   }
   .about .portrait {
     aspect-ratio: 4/5;
@@ -348,20 +370,20 @@
   .not-therapy h2 em { color: var(--muted); }
   .not-therapy p {
     font-size: 0.92rem;
-    color: rgba(248,248,244,0.6);
+    color: var(--cream-60);
     line-height: 1.8;
     margin-bottom: 1rem;
   }
   .not-therapy .note {
     font-size: 0.8rem;
-    color: rgba(248,248,244,0.35);
+    color: var(--cream-35);
   }
   .not-therapy .comparison {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1px;
-    background: rgba(248,248,244,0.08);
-    border: 1px solid rgba(248,248,244,0.08);
+    background: var(--cream-8);
+    border: 1px solid var(--cream-8);
   }
   .not-therapy .panel { padding: 1.5rem; }
   .not-therapy .panel .title {
@@ -372,19 +394,19 @@
     margin-bottom: 0.75rem;
   }
   .not-therapy .panel .title.is { color: var(--muted); }
-  .not-therapy .panel .title.not { color: rgba(255,255,255,0.3); }
+  .not-therapy .panel .title.not { color: var(--white-30); }
   .not-therapy .list { list-style: none; }
   .not-therapy .list li {
     font-size: 0.85rem;
     padding: 0.4rem 0;
-    border-bottom: 1px solid rgba(248,248,244,0.06);
+    border-bottom: 1px solid var(--cream-6);
     line-height: 1.5;
   }
-  .not-therapy .list.is li { color: rgba(255,255,255,0.85); }
+  .not-therapy .list.is li { color: var(--white-85); }
   .not-therapy .list.not li {
-    color: rgba(248,248,244,0.35);
+    color: var(--cream-35);
     text-decoration: line-through;
-    text-decoration-color: rgba(255,255,255,0.15);
+    text-decoration-color: var(--white-15);
   }
   .offerings { padding: 7rem 4rem; }
   .offerings .header { margin-bottom: 3.5rem; }
@@ -486,12 +508,12 @@
   .step {
     display: grid;
     grid-template-columns: 80px 1fr;
-    border-top: 1px solid rgba(216,192,48,0.25);
+    border-top: 1px solid var(--mustard-25);
     padding: 2rem 0;
     align-items: start;
     gap: 2rem;
   }
-  .step:last-child { border-bottom: 1px solid rgba(216,192,48,0.25); }
+  .step:last-child { border-bottom: 1px solid var(--mustard-25); }
   .step .numeral {
     font-size: 1.5rem;
     color: var(--accent-tertiary);
