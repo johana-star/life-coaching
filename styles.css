@@ -391,7 +391,7 @@
   .tag-highlight {
     color: var(--highlight-dark);
     background: var(--blush);
-    border-color: var(--peony);
+    border-color: var(--highlight);
   }
   .about .portrait {
     aspect-ratio: 4/5;
