@@ -192,6 +192,21 @@
     margin-top: 60px;
   }
   .banner div { flex: 1; }
+  .stripe-sakura  { background: #e8a0c0; }
+  .stripe-cherry  { background: #883060; }
+  .stripe-cayenne { background: #b24c19; }
+  .stripe-mustard { background: #d8c030; }
+  .stripe-sage    { background: #7aaa82; }
+  .stripe-coastal { background: #88bcd8; }
+  .stripe-abyss   { background: #1a2244; }
+  .stripe-lavender { background: #7570a9; }
+
+  /* tag-highlight (sakura) is invisible on the sakura about background — override to accent */
+  .about .tag-highlight {
+    color: var(--periwinkle-dark);
+    background: var(--lilac);
+    border-color: var(--thistle);
+  }
   .hero header .eyebrow {
     font-size: 0.72rem;
     font-weight: 500;
