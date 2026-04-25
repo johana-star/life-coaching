@@ -123,6 +123,7 @@
     --cream-88:      rgba(248,248,244,0.88);
     --cream-60:      rgba(248,248,244,0.60);
     --cream-35:      rgba(248,248,244,0.35);
+    --cream-15:      rgba(248,248,244,0.15);
     --cream-8:       rgba(248,248,244,0.08);
     --cream-6:       rgba(248,248,244,0.06);
     --white-85:      rgba(255,255,255,0.85);
@@ -201,12 +202,7 @@
   .stripe-abyss   { background: #1a2244; }
   .stripe-lavender { background: #7570a9; }
 
-  /* tag-highlight (sakura) is invisible on the sakura about background — override to accent */
-  .about .tag-highlight {
-    color: var(--periwinkle-dark);
-    background: var(--lilac);
-    border-color: var(--thistle);
-  }
+
   .hero header .eyebrow {
     font-size: 0.72rem;
     font-weight: 500;
@@ -462,8 +458,8 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1px;
-    background: var(--cream-8);
-    border: 1px solid var(--cream-8);
+    background: var(--cream-15);
+    border: 1px solid var(--cream-15);
   }
   .not-therapy .panel { padding: 1.5rem; }
   .not-therapy .panel .title {
@@ -474,7 +470,7 @@
     margin-bottom: 0.75rem;
   }
   .not-therapy .panel .title.is { color: var(--muted); }
-  .not-therapy .panel .title.not { color: var(--white-30); }
+  .not-therapy .panel .title.not { color: var(--highlight); }
   .not-therapy .list { list-style: none; }
   .not-therapy .list li {
     font-size: 0.85rem;
@@ -709,7 +705,7 @@
   }
   .diagnosis {
     padding: 7rem 4rem;
-    background: var(--accent-secondary);
+    background: var(--haze);
   }
   .diagnosis .inner {
     max-width: 860px;
@@ -723,12 +719,12 @@
     font-size: clamp(1.8rem, 3vw, 2.4rem);
     line-height: 1.2;
     margin-bottom: 1.25rem;
-    color: var(--text);
+    color: var(--white);
   }
-  .diagnosis h2 em { color: var(--text); }
+  .diagnosis h2 em, .diagnosis .label { color: var(--thistle); }
   .diagnosis p {
     font-size: 0.95rem;
-    color: var(--text);
+    color: var(--cream);
     line-height: 1.85;
     margin-bottom: 1rem;
   }
@@ -1036,3 +1032,85 @@ body.palette-page footer em {
     gap: 0.5rem;
   }
 }
+
+body.palette-page .usage-section {
+  margin-top: 3rem;
+  border-top: 1px solid var(--chevre);
+  padding-top: 2rem;
+}
+body.palette-page .usage-winner {
+  font-size: 0.75rem;
+  color: var(--navy);
+  font-family: 'DM Mono', 'Courier New', monospace;
+  letter-spacing: 0.04em;
+  border: 0.5px solid var(--chevre);
+  border-radius: 2px;
+  padding: 0.5rem 0.75rem;
+  margin-bottom: 1.5rem;
+  display: inline-block;
+}
+body.palette-page .usage-winner strong {
+  font-weight: 500;
+  color: var(--abyss);
+}
+body.palette-page .usage-section h2 {
+  font-family: var(--serif);
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  font-weight: 300;
+  margin-bottom: 0.5rem;
+}
+body.palette-page .usage-section h3 {
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--navy);
+  margin-top: 0.25rem;
+  margin-bottom: 2rem;
+}
+body.palette-page .usage-chart {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+body.palette-page .usage-row {
+  display: grid;
+  grid-template-columns: 100px 24px 1fr 200px;
+  align-items: center;
+  gap: 10px;
+}
+body.palette-page .usage-label {
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--navy);
+  text-align: right;
+  font-family: 'DM Mono', 'Courier New', monospace;
+}
+body.palette-page .usage-dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 1px solid rgba(0,0,0,0.08);
+  flex-shrink: 0;
+  justify-self: center;
+}
+body.palette-page .usage-bar-wrap {
+  height: 16px;
+  background: var(--feta);
+  border-radius: 2px;
+  overflow: hidden;
+}
+body.palette-page .usage-bar {
+  height: 100%;
+  border-radius: 2px;
+  opacity: 0.85;
+}
+body.palette-page .usage-note {
+  font-size: 0.62rem;
+  font-family: 'DM Mono', 'Courier New', monospace;
+  color: var(--haze);
+  line-height: 1.3;
+}
+body.palette-page .usage-zero .usage-label { color: var(--chevre); }
+body.palette-page .usage-zero .usage-note { color: var(--chevre); }
