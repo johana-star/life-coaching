@@ -806,3 +806,203 @@
     }
   }
 
+
+/* ─── Palette page ──────────────────────────────────────────────────────────
+   All rules are scoped to body.palette-page to avoid collisions with
+   index.html styles above (notably: body, header, footer, @media block).
+   ─────────────────────────────────────────────────────────────────────────── */
+
+body.palette-page {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 300;
+  background: var(--cream);
+  color: var(--abyss);
+  min-height: 100vh;
+  padding: 4rem;
+}
+
+body.palette-page header {
+  margin-bottom: 4rem;
+}
+
+body.palette-page header p {
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--lavender);
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+body.palette-page header p::before {
+  content: '';
+  display: block;
+  width: 32px;
+  height: 1px;
+  background: var(--lavender);
+}
+
+body.palette-page header h1 {
+  font-family: var(--serif);
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 300;
+  line-height: 1.1;
+}
+
+body.palette-page header h1 em {
+  font-style: italic;
+  color: var(--lavender);
+}
+
+/* ── Palette table ── */
+.palette-table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid var(--chevre);
+  table-layout: fixed;
+}
+
+.palette-table thead tr th {
+  padding: 0.75rem 1rem;
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--navy);
+  background: var(--feta);
+  border-bottom: 1px solid var(--chevre);
+  border-right: 1px solid var(--chevre);
+  text-align: left;
+  position: sticky;
+  top: 0;
+}
+
+.palette-table thead tr th:last-child {
+  border-right: none;
+}
+
+.palette-table tbody tr {
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+
+/* ── Swatch cells ── */
+.palette-table tbody tr {
+  height: 80px;
+}
+
+.palette-table tbody tr:hover {
+  height: 104px;
+}
+
+td.swatch {
+  vertical-align: bottom;
+  padding: 0.5rem 0.75rem;
+  border-right: 1px solid var(--chevre);
+  cursor: default;
+}
+
+td.swatch:last-child { border-right: none; }
+
+td.swatch p {
+  margin: 0;
+  line-height: 1.2;
+}
+
+td.swatch .swatch-name {
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  mix-blend-mode: multiply;
+}
+
+td.swatch .swatch-hex {
+  font-size: 0.62rem;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  opacity: 0.6;
+  font-family: 'DM Mono', 'Courier New', monospace;
+  mix-blend-mode: multiply;
+}
+
+td.swatch.light .swatch-name,
+td.swatch.light .swatch-hex { color: var(--abyss); }
+
+td.swatch.dark .swatch-name,
+td.swatch.dark .swatch-hex { color: var(--cream); mix-blend-mode: normal; opacity: 1; }
+
+td.swatch.dark .swatch-hex { opacity: 0.6; }
+
+td.swatch.empty {
+  background: var(--white);
+}
+
+td.swatch.placeholder {
+  background: repeating-linear-gradient(
+    45deg,
+    var(--feta),
+    var(--feta) 4px,
+    var(--chevre) 4px,
+    var(--chevre) 8px
+  );
+}
+
+td.swatch.placeholder .swatch-name,
+td.swatch.placeholder .swatch-hex { color: var(--navy); }
+
+/* ── Palette footer ── */
+body.palette-page footer {
+  margin-top: 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  border-top: 1px solid var(--chevre);
+  border-bottom: none;
+  padding-top: 1.5rem;
+  padding-bottom: 0;
+  /* reset index.html footer values */
+  padding-left: 0;
+  padding-right: 0;
+  flex-direction: row;
+  gap: 0;
+  text-align: left;
+}
+
+body.palette-page footer p {
+  font-size: 0.75rem;
+  color: var(--navy);
+  letter-spacing: 0.04em;
+}
+
+body.palette-page footer em {
+  font-family: var(--serif);
+  font-style: italic;
+}
+
+@media (max-width: 900px) {
+  body.palette-page {
+    padding: 2rem 1rem;
+  }
+  .palette-table {
+    display: block;
+    overflow-x: auto;
+  }
+  .palette-table thead,
+  .palette-table tbody,
+  .palette-table tr {
+    display: block;
+  }
+  .palette-table thead tr th,
+  .palette-table tbody tr td {
+    display: block;
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid var(--chevre);
+  }
+  body.palette-page footer {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
