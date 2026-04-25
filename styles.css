@@ -186,6 +186,12 @@
     padding: 8rem 4rem 4rem;
     gap: 4rem;
   }
+  .banner {
+    display: flex;
+    height: 60px;
+    margin-top: 60px;
+  }
+  .banner div { flex: 1; }
   .hero header .eyebrow {
     font-size: 0.72rem;
     font-weight: 500;
@@ -227,7 +233,7 @@
     font-size: 0.8rem;
     color: var(--text-light);
     line-height: 1.6;
-    border-left: 2px solid var(--surface-alt-dark);
+    border-left: 2px solid var(--highlight);
     padding-left: 0.9rem;
     margin-bottom: 2rem;
     max-width: 420px;
@@ -262,7 +268,7 @@
     font-size: 0.85rem;
     text-decoration: none;
     letter-spacing: 0.02em;
-    border-bottom: 1px solid var(--surface-alt-dark);
+    border-bottom: 1px solid var(--muted);
     padding-bottom: 2px;
     transition: color 0.2s, border-color 0.2s;
   }
@@ -341,6 +347,7 @@
     gap: 6rem;
     padding: 7rem 4rem;
     align-items: start;
+    background: var(--highlight);
   }
   .about .label, .offerings .label, .process .label, .diagnosis .label {
     color: var(--accent);
@@ -352,10 +359,11 @@
     font-size: clamp(2rem, 3.5vw, 2.8rem);
     line-height: 1.2;
     margin-bottom: 1.5rem;
+    color: var(--text);
   }
-  .about h2 em { color: var(--accent); }
+  .about h2 em { color: var(--text); }
   .about p {
-    color: var(--text-mid);
+    color: var(--text);
     line-height: 1.85;
     margin-bottom: 1.2rem;
     font-size: 0.97rem;
@@ -510,7 +518,7 @@
     line-height: 1.7;
   }
   .systems {
-    background: var(--accent-secondary-light);
+    background: var(--accent-secondary);
     padding: 5rem 4rem;
   }
   .systems .inner {
@@ -521,18 +529,19 @@
     font-size: clamp(1.8rem, 3vw, 2.4rem);
     line-height: 1.2;
     margin-bottom: 1.25rem;
+    color: var(--text);
   }
-  .systems h2 em { color: var(--accent-secondary); }
+  .systems h2 em { color: var(--text); }
   .systems p {
     font-size: 0.95rem;
-    color: var(--text-mid);
+    color: var(--text);
     line-height: 1.8;
     max-width: 640px;
   }
   .systems .note {
     margin-top: 1rem;
     font-size: 0.88rem;
-    color: var(--text-light);
+    color: var(--text);
   }
   .systems .tags {
     list-style: none;
@@ -652,7 +661,7 @@
     color: var(--text-light);
   }
   #book {
-    background: var(--background);
+    background: var(--accent-tertiary);
     padding: 0 4rem;
   }
   #book .layout {
@@ -668,10 +677,11 @@
     font-size: clamp(2rem, 4vw, 3.2rem);
     line-height: 1.15;
     margin-bottom: 1rem;
+    color: var(--text);
   }
-  #book .pitch h2 em { color: var(--accent); }
+  #book .pitch h2 em { color: var(--text); }
   #book .pitch p {
-    color: var(--text-mid);
+    color: var(--text);
     line-height: 1.75;
     margin-bottom: 1rem;
     font-size: 0.97rem;
@@ -684,7 +694,7 @@
   }
   .diagnosis {
     padding: 7rem 4rem;
-    background: var(--surface-alt);
+    background: var(--accent-secondary);
   }
   .diagnosis .inner {
     max-width: 860px;
@@ -698,17 +708,18 @@
     font-size: clamp(1.8rem, 3vw, 2.4rem);
     line-height: 1.2;
     margin-bottom: 1.25rem;
+    color: var(--text);
   }
-  .diagnosis h2 em { color: var(--accent); }
+  .diagnosis h2 em { color: var(--text); }
   .diagnosis p {
     font-size: 0.95rem;
-    color: var(--text-mid);
+    color: var(--text);
     line-height: 1.85;
     margin-bottom: 1rem;
   }
   .diagnosis .note {
     font-size: 0.8rem;
-    color: var(--text-light);
+    color: var(--text);
     margin-bottom: 1.25rem;
   }
   .regional-center.card {
@@ -749,7 +760,8 @@
   }
   .regional-center .link:hover { background: var(--accent-hover); }
   footer {
-    border-top: 1px solid var(--surface-alt-dark);
+    background: var(--muted);
+    border-top: none;
     padding: 2.5rem 4rem;
     display: flex;
     justify-content: space-between;
@@ -757,12 +769,12 @@
   }
   footer .logo {
     font-size: 1.1rem;
-    color: var(--text-mid);
+    color: var(--text);
     font-weight: 400;
   }
   footer .note {
     font-size: 0.78rem;
-    color: var(--text-light);
+    color: var(--text);
   }
 
   @keyframes fadeUp {
