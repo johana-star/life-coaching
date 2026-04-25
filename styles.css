@@ -73,13 +73,13 @@
     /* blues & darks — nautical */
     --coastal:      #88bcd8;   /* shallows was considered but coastal retained */
     --haze:         #8a94b0;
+    --periwinkle:   #7F7FBD;
     --navy:         #4a5472;
     --abyss:        #1a2244;   /* swapped — abyss is now the deepest blue */
 
     /* purples — floral & astronomical */
     --lilac:        #e7e6f0;   /* lavender (L=55.1%) lightened to L=92.3% → lilac */
     --thistle:      #c8c6dd;   /* lavender (L=55.1%) lightened 27.0 lightness points to L=82.1% → thistle */
-    --periwinkle:   #7F7FBD;
     --lavender:     #7570a9;
     --kikyo:        #6a4c9c;   /* balloon flower (Japanese: 桔梗); H=272° S=33% L=45% — more violet than lavender family (H=245°); a deliberate accent */
     --wisteria:     #5f5a96;   /* lavender (L=55.1%) darkened 8.0 lightness points to L=47.1% → wisteria */
