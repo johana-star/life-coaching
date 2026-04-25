@@ -363,7 +363,7 @@
   .about .label, .offerings .label, .process .label, .diagnosis .label {
     color: var(--accent);
   }
-  .systems .label, .regional-center.card .label { color: var(--accent-secondary); }
+  .systems .label, .regional-center.card .label { color: var(--parchment); }
   .testimonials .label { color: var(--surface-alt); }
   .not-therapy .label { color: var(--muted); }
   .about h2 {
@@ -529,7 +529,7 @@
     line-height: 1.7;
   }
   .systems {
-    background: var(--accent-secondary);
+    background: var(--pine);
     padding: 5rem 4rem;
   }
   .systems .inner {
@@ -540,19 +540,19 @@
     font-size: clamp(1.8rem, 3vw, 2.4rem);
     line-height: 1.2;
     margin-bottom: 1.25rem;
-    color: var(--text);
+    color: var(--white);
   }
-  .systems h2 em { color: var(--text); }
+  .systems h2 em { color: var(--parchment); }
   .systems p {
     font-size: 0.95rem;
-    color: var(--text);
+    color: var(--cream);
     line-height: 1.8;
     max-width: 640px;
   }
   .systems .note {
     margin-top: 1rem;
     font-size: 0.88rem;
-    color: var(--text);
+    color: var(--parchment);
   }
   .systems .tags {
     list-style: none;
@@ -699,13 +699,22 @@
   }
   #book .pitch .note {
     font-size: 0.82rem;
-    color: var(--accent);
+    color: var(--text);
     font-weight: 500;
     margin-top: 0.5rem;
   }
+  #book .calendly {
+    max-width: 100%;
+    overflow: hidden;
+  }
+  #book .calendly iframe,
+  #book .calendly > div {
+    max-width: 100% !important;
+    width: 100% !important;
+  }
   .diagnosis {
     padding: 7rem 4rem;
-    background: var(--haze);
+    background: var(--text-mid);
   }
   .diagnosis .inner {
     max-width: 860px;
@@ -730,7 +739,7 @@
   }
   .diagnosis .note {
     font-size: 0.8rem;
-    color: var(--text);
+    color: var(--cream);
     margin-bottom: 1.25rem;
   }
   .regional-center.card {
