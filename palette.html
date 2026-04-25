@@ -60,13 +60,10 @@
         <p class="swatch-hex">#fceef5</p>
       </td>
       <td class="swatch light" style="background:#f6edde;">
-        <p class="swatch-name">kaolin</p>
+        <p class="swatch-name">turmeric</p>
         <p class="swatch-hex">#f6edde</p>
       </td>
-      <td class="swatch light" style="background:#faf5c0;">
-        <p class="swatch-name">parchment</p>
-        <p class="swatch-hex">#faf5c0</p>
-      </td>
+      <td class="swatch empty"></td>
       <td class="swatch light" style="background:#e8f4ea;">
         <p class="swatch-name">mint</p>
         <p class="swatch-hex">#e8f4ea</p>
@@ -89,7 +86,10 @@
         <p class="swatch-hex">#e8a0c0</p>
       </td>
       <td class="swatch empty"></td>
-      <td class="swatch empty"></td>
+      <td class="swatch light" style="background:#faf5c0;">
+        <p class="swatch-name">parchment</p>
+        <p class="swatch-hex">#faf5c0</p>
+      </td>
       <td class="swatch light" style="background:#a8d0b0;">
         <p class="swatch-name">thyme</p>
         <p class="swatch-hex">#a8d0b0</p>
@@ -139,7 +139,7 @@
         <p class="swatch-hex">#883060</p>
       </td>
       <td class="swatch dark" style="background:#b24c19;">
-        <p class="swatch-name">adobe</p>
+        <p class="swatch-name">cayenne</p>
         <p class="swatch-hex">#b24c19</p>
       </td>
       <td class="swatch dark" style="background:#b8a020;">
@@ -317,8 +317,8 @@
   //   coastal:  not-therapy h2 em + panel title "is" = small text only = 4
   //   wisteria: accent-hover, never persistently visible = 1 (nav cta hover only)
   //   dijon:    accent-tertiary-hover, not persistently visible = 1
-  //   kaolin:   not used in index.html = 0
-  //   adobe:    not used in index.html = 0
+  //   turmeric:   not used in index.html = 0
+  //   cayenne:    not used in index.html = 0
 
   const palette = [
     { name: 'cream',     hex: '#f8f8f4', score: 1000, note: 'body + hero + book + nav backgrounds' },
@@ -345,8 +345,8 @@
     { name: 'molasses',  hex: '#6a5800', score: 3,    note: 'tag-tertiary text ×3' },
     { name: 'wisteria',  hex: '#5f5a96', score: 1,    note: 'nav cta hover only (not persistent)' },
     { name: 'dijon',     hex: '#b8a020', score: 1,    note: 'accent-tertiary hover only (not persistent)' },
-    { name: 'kaolin',    hex: '#f6edde', score: 0,    note: 'not used in index.html' },
-    { name: 'adobe',     hex: '#b24c19', score: 0,    note: 'not used in index.html' },
+    { name: 'turmeric',    hex: '#f6edde', score: 90,   note: 'offerings section background' },
+    { name: 'cayenne',     hex: '#b24c19', score: 6,    note: 'offerings card h3 titles ×6' },
   ];
 
   const sorted = [...palette].sort((a, b) => b.score - a.score);

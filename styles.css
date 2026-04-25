@@ -54,9 +54,13 @@
     --sakura:       #e8a0c0;
     --cherry:       #883060;   /* sakura sibling: H=327° S=48% L=36% vs sakura H=333° S=61% L=77% */
 
-    /* oranges — ceramics & clay */
-    --adobe:        #b24c19;   /* dark red-orange; H=20° S=75% L=40% — sits alongside cherry, dijon, navy in the mid-dark band */
-    --kaolin:       #f6edde;   /* pale yellow-orange; H=36° S=60% L=92% — the raw clay mineral; sits alongside lilac and mint */
+    /* oranges — culinary, spices */
+    --turmeric:     #f6edde;
+    --cayenne:      #b24c19;
+
+    /* Claude remove and rework to integrate cayenne and turmeric instead of paprika and saffron:
+    --paprika:      #e27e36;   /* split complement of periwinkle (H=240°); H=25° S=75% L=55% — relationship to lavender (H=245°) is near-identical */
+/*  --saffron:      #TKTKTK; */
 
     /* yellows — culinary, condiments */
     --parchment:    #faf5c0;   /* mustard (L=51.2%) lightened 40.0 lightness points to L=91.2% → parchment */
@@ -73,13 +77,13 @@
     /* blues & darks — nautical */
     --coastal:      #88bcd8;   /* shallows was considered but coastal retained */
     --haze:         #8a94b0;
-    --periwinkle:   #7F7FBD;
     --navy:         #4a5472;
     --abyss:        #1a2244;   /* swapped — abyss is now the deepest blue */
 
     /* purples — floral & astronomical */
     --lilac:        #e7e6f0;   /* lavender (L=55.1%) lightened to L=92.3% → lilac */
     --thistle:      #c8c6dd;   /* lavender (L=55.1%) lightened 27.0 lightness points to L=82.1% → thistle */
+    --periwinkle:   #7F7FBD;
     --lavender:     #7570a9;
     --kikyo:        #6a4c9c;   /* balloon flower (Japanese: 桔梗); H=272° S=33% L=45% — more violet than lavender family (H=245°); a deliberate accent */
     --wisteria:     #5f5a96;   /* lavender (L=55.1%) darkened 8.0 lightness points to L=47.1% → wisteria */
@@ -805,7 +809,6 @@
       padding: 2rem;
     }
   }
-
 
 /* ─── Palette page ──────────────────────────────────────────────────────────
    All rules are scoped to body.palette-page to avoid collisions with
