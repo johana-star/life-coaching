@@ -54,9 +54,9 @@
     --sakura:       #e8a0c0;
     --cherry:       #883060;   /* sakura sibling: H=327° S=48% L=36% vs sakura H=333° S=61% L=77% */
 
-    /* oranges — culinary, spices */
-    --paprika:      #e27e36;   /* split complement of periwinkle (H=240°); H=25° S=75% L=55% — relationship to lavender (H=245°) is near-identical */
-/*  --saffron:      #TKTKTK; */
+    /* oranges — ceramics & clay */
+    --adobe:        #b24c19;   /* dark red-orange; H=20° S=75% L=40% — sits alongside cherry, dijon, navy in the mid-dark band */
+    --kaolin:       #f6edde;   /* pale yellow-orange; H=36° S=60% L=92% — the raw clay mineral; sits alongside lilac and mint */
 
     /* yellows — culinary, condiments */
     --parchment:    #faf5c0;   /* mustard (L=51.2%) lightened 40.0 lightness points to L=91.2% → parchment */
