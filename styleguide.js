@@ -44,14 +44,14 @@
     { name: 'parchment', hex: '#faf5c0', score: 8,    note: 'tag-tertiary background ×4' },
     { name: 'horizon',   hex: '#d1e5f0', score: 6,    note: 'tag-highlight background on sakura (about section)' },
     { name: 'sage',      hex: '#7aaa82', score: 5,    note: 'systems h2 em + label' },
-    { name: 'haze',      hex: '#8a94b0', score: 5,    note: 'note text in diagnosis' },
+    { name: 'horizon',   hex: '#d1e5f0', score: 7,    note: 'tag-highlight bg on sakura (about) + diagnosis note' },
     { name: 'thistle',   hex: '#c8c6dd', score: 5,    note: 'tag-accent border ×5' },
-    { name: 'iris',      hex: '#494573', score: 5,    note: 'tag-accent text ×5' },
+    { name: 'iris',      hex: '#494573', score: 6,    note: 'tag-accent text ×5 + nav cta hover (accent-hover)' },
     { name: 'blush',     hex: '#fceef5', score: 4,    note: 'tag-highlight background ×2 (systems)' },
     { name: 'molasses',  hex: '#6a5800', score: 4,    note: 'tag-tertiary text ×4' },
     { name: 'cherry',    hex: '#883060', score: 3,    note: 'tag-highlight text ×2 + banner stripe' },
     { name: 'feta',      hex: '#eeeee4', score: 3,    note: 'icon backgrounds ×6' },
-    { name: 'wisteria',  hex: '#5f5a96', score: 1,    note: 'nav cta hover only (not persistent)' },
+
     { name: 'dijon',     hex: '#b8a020', score: 1,    note: 'banner stripe (not persistent)' },
   ];
 
