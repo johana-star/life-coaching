@@ -7,14 +7,14 @@
   :root {
     /* ─── color tokens ─────────────────────────────────────────────────────────
        Color wheel relationships:
-         · coastal (H=201°), lavender (H=245°), and navy (H=229°) are
-           analogous — a tight blue/purple cluster spanning 44°
+         · coastal (H=201°), navy (H=225°), and abyss (H=229°) are
+           analogous — a nautical blue cluster spanning 28°
          · mustard (H=51°) and lavender (H=245°) are near-complementary
            (194° apart) — they pop against each other
          · mustard (H=51°) and coastal (H=201°) are near-complementary
            (150° apart)
-         · coastal (H=201°) and lavender (H=245°) are now 44° apart —
-           a wider analogous gap than the original 24° with coastal/periwinkle
+         · lavender (H=245°) sits 44° from coastal — a wider analogous gap
+           than the original 24° with coastal/periwinkle
          · sakura (H=333°) and sage (H=130°) are near-complementary
            (157° apart) — warm pink against cool green
          · mustard (H=51°), sage (H=130°), and sakura (H=333°) form a
@@ -76,6 +76,7 @@
 
     /* blues & darks — nautical */
     --coastal:      #88bcd8;   /* shallows was considered but coastal retained */
+    --horizon:      #d1e5f0;   /* coastal (L=69%) lightened 19.0 lightness points to L=88% */
     --haze:         #8a94b0;
     --navy:         #4a5472;
     --abyss:        #1a2244;   /* swapped — abyss is now the deepest blue */
@@ -108,14 +109,16 @@
     --text-light:             var(--haze);
     --accent:                 var(--lavender);
     --accent-hover:           var(--wisteria);
-    --accent-secondary:       var(--sage);
     --accent-secondary-light: var(--mint);
     --accent-secondary-mid:   var(--thyme);
+    --accent-secondary:       var(--sage);
+    --accent-secondary-dark:  var(--pine);
     --accent-tertiary:        var(--mustard);
-    --accent-tertiary-hover:  var(--dijon);
     --highlight:              var(--sakura);
     --highlight-dark:         var(--cherry);
     --muted:                  var(--coastal);
+    --surface-warm:           var(--turmeric);
+    --accent-warm:            var(--cayenne);
     --deep:                   var(--abyss);
 
     /* ─── opacity variants ──────────────────────────────────────────────────────
@@ -124,10 +127,8 @@
     --cream-60:      rgba(248,248,244,0.60);
     --cream-35:      rgba(248,248,244,0.35);
     --cream-15:      rgba(248,248,244,0.15);
-    --cream-8:       rgba(248,248,244,0.08);
     --cream-6:       rgba(248,248,244,0.06);
     --white-85:      rgba(255,255,255,0.85);
-    --white-30:      rgba(255,255,255,0.30);
     --white-15:      rgba(255,255,255,0.15);
     --lavender-15:   rgba(117,112,169,0.15);
     --mustard-25:    rgba(216,192,48,0.25);
@@ -188,29 +189,30 @@
   }
   body > nav .cta:hover { background: var(--accent-hover); }
   #hero {
-    display: grid;
+    min-height: 100vh;
+    display: grid; /* When I disable this attribute I get no padding between #hero and #banner.
+                      Why does grid make the section have more whitespace at the top?
+                      (I presume this impacts the bottom as well, as the whitespace gap there is quite large.) */
     grid-template-columns: 1fr 1fr;
-    align-items: start;
-    padding: 4rem 4rem;
+    align-items: center;
+    padding: 0rem 4rem 4rem;
     gap: 4rem;
   }
   #banner {
     display: flex;
-    width: 100%;
     height: 60px;
-    margin-top: var(--nav-height, 78px);
-  }
+    margin-top: 78px; /* determined through trial and error that the nav is 78px high. Can we compute that somehow?
+                         That is, why did we think it was only 60px high? */
   }
   #banner div { flex: 1; }
-  .stripe         { width: 12.5%; }
-  .stripe.sakura  { background: #e8a0c0; }
-  .stripe.cherry  { background: #883060; }
-  .stripe.cayenne { background: #b24c19; }
-  .stripe.mustard { background: #d8c030; }
-  .stripe.sage    { background: #7aaa82; }
-  .stripe.coastal { background: #88bcd8; }
-  .stripe.abyss   { background: #1a2244; }
-  .stripe.lavender { background: #7570a9; }
+  .stripe-sakura  { background: #e8a0c0; }
+  .stripe-cherry  { background: #883060; }
+  .stripe-cayenne { background: #b24c19; }
+  .stripe-mustard { background: #d8c030; }
+  .stripe-sage    { background: #7aaa82; }
+  .stripe-coastal { background: #88bcd8; }
+  .stripe-abyss   { background: #1a2244; }
+  .stripe-lavender { background: #7570a9; }
 
 
   #hero header .eyebrow {
@@ -373,6 +375,7 @@
   #about .label, #offerings .label, #process .label, #diagnosis .label {
     color: var(--accent);
   }
+  #offerings .label { color: var(--accent-warm); }
   #systems .label { color: var(--parchment); }
   #diagnosis .regional-center.card .label { color: var(--accent-secondary); }
   #testimonials .label { color: var(--surface-alt); }
@@ -426,6 +429,13 @@
     color: var(--highlight-dark);
     background: var(--blush);
     border-color: var(--highlight);
+  }
+  /* tag-highlight (sakura tones) is invisible on the sakura about background —
+     substitute coastal family for contrast */
+  #about .tag-highlight {
+    color: var(--abyss);
+    background: var(--horizon);
+    border-color: var(--coastal);
   }
   #about .portrait {
     aspect-ratio: 4/5;
@@ -495,13 +505,13 @@
     text-decoration: line-through;
     text-decoration-color: var(--white-15);
   }
-  #offerings { padding: 7rem 4rem; }
+  #offerings { padding: 7rem 4rem; background: var(--surface-warm); }
   #offerings .header { margin-bottom: 3.5rem; }
   #offerings h2 {
     font-size: clamp(2rem, 3.5vw, 2.8rem);
     line-height: 1.2;
   }
-  #offerings h2 em { color: var(--accent); }
+  #offerings h2 em { color: var(--accent-warm); }
   #offerings .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -509,6 +519,9 @@
     background: var(--surface-alt-dark);
     border: 1px solid var(--surface-alt-dark);
     margin-top: 2.5rem;
+  }
+  @media (min-width: 1268px) {
+    #offerings .grid { grid-template-columns: repeat(6, 1fr); }
   }
   #offerings .card {
     background: var(--surface);
@@ -531,7 +544,7 @@
   #offerings .card h3 {
     font-size: 0.95rem;
     font-weight: 500;
-    color: var(--text);
+    color: var(--accent-warm);
     margin-bottom: 0.5rem;
   }
   #offerings .card p {
@@ -715,7 +728,7 @@
     margin-bottom: 1rem;
     color: var(--text);
   }
-  #book .pitch h2 em { color: var(--text); }
+  #book .pitch h2 em { color: var(--accent-secondary-dark); }
   #book .pitch p {
     color: var(--text);
     line-height: 1.75;
@@ -727,15 +740,6 @@
     color: var(--text);
     font-weight: 500;
     margin-top: 0.5rem;
-  }
-  #book .calendly {
-    max-width: 100%;
-    overflow: hidden;
-  }
-  #book .calendly iframe,
-  #book .calendly > div {
-    max-width: 100% !important;
-    width: 100% !important;
   }
   .calendly-inline-widget {
     max-width: 100% !important;
@@ -1171,3 +1175,240 @@ body.palette-page .usage-note {
 }
 body.palette-page .usage-zero .usage-label { color: var(--chevre); }
 body.palette-page .usage-zero .usage-note { color: var(--chevre); }
+
+body.palette-page .type-section {
+  margin-top: 3rem;
+  border-top: 1px solid var(--chevre);
+  padding-top: 2rem;
+}
+body.palette-page .type-section h2 {
+  font-family: var(--serif);
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  font-weight: 300;
+  margin-bottom: 0.5rem;
+}
+body.palette-page .type-section h3 {
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--navy);
+  margin-top: 0.25rem;
+  margin-bottom: 2rem;
+}
+body.palette-page .type-specimen {
+  border-top: 0.5px solid var(--chevre);
+  padding: 1.5rem 0;
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 1rem 3rem;
+  align-items: start;
+}
+body.palette-page .type-specimen:last-child {
+  border-bottom: 0.5px solid var(--chevre);
+}
+body.palette-page .type-label {
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--navy);
+  padding-top: 0.25rem;
+}
+body.palette-page .type-meta {
+  font-size: 0.62rem;
+  font-family: 'Courier New', monospace;
+  color: var(--haze);
+  letter-spacing: 0.04em;
+  margin-top: 0.35rem;
+  grid-column: 1;
+}
+body.palette-page .type-example {
+  grid-column: 2;
+  grid-row: 1 / 3;
+  color: var(--abyss);
+}
+body.palette-page .type-h1 {
+  font-family: var(--serif);
+  font-size: clamp(2.6rem, 5vw, 4rem);
+  font-weight: 300;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+}
+body.palette-page .type-h1 em { font-style: italic; color: var(--lavender); }
+body.palette-page .type-h2 {
+  font-family: var(--serif);
+  font-size: clamp(2rem, 3.5vw, 2.8rem);
+  font-weight: 300;
+  line-height: 1.2;
+}
+body.palette-page .type-h2 em { font-style: italic; color: var(--lavender); }
+body.palette-page .type-h3 {
+  font-family: var(--serif);
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  font-weight: 300;
+  line-height: 1.2;
+}
+body.palette-page .type-h3 em { font-style: italic; color: var(--lavender); }
+body.palette-page .type-h4 {
+  font-size: 1rem;
+  font-weight: 500;
+}
+body.palette-page .type-body {
+  font-size: 0.97rem;
+  line-height: 1.8;
+  font-weight: 300;
+}
+body.palette-page .type-label-ex {
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--lavender);
+}
+body.palette-page .type-trust {
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+body.palette-page .type-note {
+  font-size: 0.8rem;
+  line-height: 1.6;
+  font-weight: 300;
+  color: var(--navy);
+  border-left: 2px solid var(--sakura);
+  padding-left: 0.9rem;
+}
+body.palette-page .type-cta {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  background: var(--lavender);
+  color: var(--white);
+  padding: 0.55rem 1.4rem;
+  border-radius: 2px;
+}
+
+body.palette-page .components-section {
+  margin-top: 3rem;
+  border-top: 1px solid var(--chevre);
+  padding-top: 2rem;
+}
+body.palette-page .components-section h2 {
+  font-family: var(--serif);
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  font-weight: 300;
+  margin-bottom: 0.5rem;
+}
+body.palette-page .components-section h3 {
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--navy);
+  margin-top: 0.25rem;
+  margin-bottom: 2rem;
+}
+body.palette-page .component-group {
+  border-top: 0.5px solid var(--chevre);
+  padding: 1.5rem 0;
+}
+body.palette-page .component-group:last-child {
+  border-bottom: 0.5px solid var(--chevre);
+}
+body.palette-page .component-label {
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--navy);
+  margin-bottom: 0.35rem;
+}
+body.palette-page .component-desc {
+  font-size: 0.8rem;
+  color: var(--haze);
+  line-height: 1.6;
+  max-width: 640px;
+  margin-bottom: 1.25rem;
+}
+body.palette-page .component-example {
+  background: var(--feta);
+  border-radius: 4px;
+  padding: 1.5rem 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+body.palette-page .component-note {
+  font-size: 0.72rem;
+  color: var(--haze);
+  font-family: 'Courier New', monospace;
+  margin-top: 0.75rem;
+  padding-left: 0.75rem;
+  border-left: 2px solid var(--chevre);
+  line-height: 1.6;
+}
+
+/* style guide component examples */
+body.palette-page .sg-tags {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 0;
+}
+body.palette-page .sg-offering-example {
+  background: var(--turmeric);
+  padding: 2rem;
+}
+body.palette-page .sg-card {
+  max-width: 280px;
+  background: var(--surface);
+  padding: 2rem;
+}
+body.palette-page .sg-card .icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 2px;
+  background: var(--surface-alt);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+}
+body.palette-page .sg-card .icon img {
+  width: 16px;
+  height: 16px;
+}
+body.palette-page h3.sg-card-h3 {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--cayenne);
+  margin-bottom: 0.5rem;
+}
+body.palette-page .sg-card-p {
+  font-size: 0.85rem;
+  color: var(--text-mid);
+  line-height: 1.7;
+}
+
+
+body.palette-page .component-sublabel {
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--haze);
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+body.palette-page .component-example #about {
+  display: block;
+  min-height: unset;
+  padding: 0;
+  grid-template-columns: unset;
+}

@@ -68,7 +68,10 @@
         <p class="swatch-name">mint</p>
         <p class="swatch-hex">#e8f4ea</p>
       </td>
-      <td class="swatch empty"></td>
+      <td class="swatch light" style="background:#d1e5f0;">
+        <p class="swatch-name">horizon</p>
+        <p class="swatch-hex">#d1e5f0</p>
+      </td>
       <td class="swatch light" style="background:#e7e6f0;">
         <p class="swatch-name">lilac</p>
         <p class="swatch-hex">#e7e6f0</p>
@@ -215,11 +218,171 @@
   <div class="usage-chart" id="usageChart"></div>
 </div>
 
+<div class="type-section">
+  <h2>Typography</h2>
+  <h3>Two typefaces — serif for display, sans-serif for body</h3>
+
+  <div class="type-specimen">
+    <p class="type-label">Display — Cormorant Garamond 300</p>
+    <p class="type-meta">h1 · clamp(2.6rem, 5vw, 4rem) · tracking −0.01em · leading 1.1</p>
+    <p class="type-example type-h1">A headline that <em>speaks directly</em> to the reader.</p>
+  </div>
+
+  <div class="type-specimen">
+    <p class="type-label">Section heading — Cormorant Garamond 300</p>
+    <p class="type-meta">h2 · clamp(2rem, 3.5vw, 2.8rem) · leading 1.2</p>
+    <p class="type-example type-h2">A section heading that sets the tone — <em>specific and honest.</em></p>
+  </div>
+
+  <div class="type-specimen">
+    <p class="type-label">Sub-heading — Cormorant Garamond 300</p>
+    <p class="type-meta">h3 · clamp(1.8rem, 3vw, 2.4rem) · leading 1.2</p>
+    <p class="type-example type-h3">A sub-heading that introduces a topic or <em>card group.</em></p>
+  </div>
+
+  <div class="type-specimen">
+    <p class="type-label">Card heading — DM Sans 500</p>
+    <p class="type-meta">h4 · 1rem · weight 500</p>
+    <p class="type-example type-h4">Card or step heading — concise and actionable</p>
+  </div>
+
+  <div class="type-specimen">
+    <p class="type-label">Body — DM Sans 300</p>
+    <p class="type-meta">p · 0.95–1.05rem · leading 1.75–1.85</p>
+    <p class="type-example type-body">Body copy is set in DM Sans at 300 weight. It is warm and direct — written to be read by someone who may be tired, overwhelmed, or skeptical. Line height is generous. Sentences are honest.</p>
+  </div>
+
+  <div class="type-specimen">
+    <p class="type-label">Label / eyebrow — DM Sans 500</p>
+    <p class="type-meta">0.72rem · weight 500 · tracking 0.14em · uppercase</p>
+    <p class="type-example type-label-ex">Section label · Location</p>
+  </div>
+
+  <div class="type-specimen">
+    <p class="type-label">Trust bar — DM Sans 500</p>
+    <p class="type-meta">0.75rem · weight 500 · tracking 0.08em · uppercase</p>
+    <p class="type-example type-trust">Trust signal · Identity · Community</p>
+  </div>
+
+  <div class="type-specimen" id="#note">
+    <p class="type-label">Disclaimer / note — DM Sans 300</p>
+    <p class="type-meta">0.8rem · leading 1.6 · sakura left border · matches btn-ghost border style</p>
+    <p class="type-example type-note">A clarifying note or disclaimer — smaller, quieter text with a sakura left border to mark it as distinct from body copy.</p>
+  </div>
+
+  <div class="type-specimen">
+    <p class="type-label">Nav CTA — DM Sans 400</p>
+    <p class="type-meta">0.8rem · weight 400 · tracking 0.06em · uppercase</p>
+    <p class="type-example type-cta">Primary action</p>
+  </div>
+</div>
 
 
-<footer>
+
+<div class="components-section">
+  <h2>Components</h2>
+  <h3>Reusable elements and their approved colour combinations</h3>
+
+  <!-- Tags -->
+  <div class="component-group">
+    <p class="component-label">Tags</p>
+    <p class="component-desc">Four semantic variants. Default background is cream. On colored section backgrounds, some variants need overrides — see examples below.</p>
+
+    <p class="component-sublabel">Default (cream background)</p>
+    <div class="component-example">
+      <ul class="sg-tags">
+        <li class="tag tag-accent">Accent tag</li>
+        <li class="tag tag-secondary">Secondary tag</li>
+        <li class="tag tag-tertiary">Tertiary tag</li>
+        <li class="tag tag-highlight">Highlight tag</li>
+      </ul>
+    </div>
+
+    <p class="component-sublabel">On sakura — tag-highlight substituted with horizon/coastal</p>
+    <div class="component-example" style="background:var(--sakura);">
+      <div id="about">
+        <ul class="sg-tags">
+          <li class="tag tag-accent">Accent tag</li>
+          <li class="tag tag-secondary">Secondary tag</li>
+          <li class="tag tag-tertiary">Tertiary tag</li>
+          <li class="tag tag-highlight">Highlight tag</li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="component-sublabel">On pine — tag-secondary uses parchment text</p>
+    <div class="component-example" style="background:var(--pine);">
+      <ul class="sg-tags">
+        <li class="tag tag-accent">Accent tag</li>
+        <li class="tag tag-secondary">Secondary tag</li>
+        <li class="tag tag-tertiary">Tertiary tag</li>
+        <li class="tag tag-highlight">Highlight tag</li>
+      </ul>
+    </div>
+
+    <p class="component-note">tag-highlight (sakura tones) blends into the sakura section background — the #about override substitutes horizon background with coastal border and abyss text. All four tag variants pass AA contrast on pine.</p>
+  </div>
+
+  <!-- Buttons -->
+  <div id= "#buttons" class="component-group">
+    <p class="component-label">Buttons</p>
+    <p class="component-desc">Two variants. btn-primary for primary actions, btn-ghost for secondary navigation links.</p>
+    <div class="component-example">
+      <a href="#" class="btn-primary" onclick="return false;">Book your free discovery call</a>
+      <a href="#" class="btn-ghost" onclick="return false;">My story</a>
+    </div>
+  </div>
+
+  <!-- Flag badges -->
+  <div class="component-group">
+    <p class="component-label">Flag badges</p>
+    <p class="component-desc">Inline SVG badges sized to cap height of surrounding text. Use alt text for accessibility. Colors are hardcoded to specific palette tokens which roughly correspond to pride flag colors.</p>
+    <div class="component-example">
+      Trans
+      <img class="flag-badge" src="images/flag-trans.svg" alt="Trans pride flag">
+      &amp; nonbinary
+      <img class="flag-badge" src="images/flag-nonbinary.svg" alt="Nonbinary pride flag">
+    </div>
+  </div>
+
+  <!-- Offering card -->
+  <div class="component-group">
+    <p class="component-label">Offering card</p>
+    <p class="component-desc">Used in the offerings grid. White surface on turmeric background. Icon in feta, h3 in cayenne.</p>
+    <div class="component-example sg-offering-example">
+      <article class="card sg-card">
+        <div class="icon">
+          <img src="images/mug.svg" alt="" aria-hidden="true">
+        </div>
+        <h3 class="sg-card-h3">Example offering title</h3>
+        <p class="sg-card-p">A brief description of what this offering covers and how it supports the client in practical terms.</p>
+      </article>
+    </div>
+  </div>
+
+  <!-- Process step -->
+  <div class="component-group">
+    <p class="component-label">Process step</p>
+    <p class="component-desc">Used in the process section. Numeral generated via CSS counter — do not add markup numerals. Abyss background, mustard numeral, white h4, thyme body text.</p>
+    <section id="process">
+      <div class="inner">
+        <ol>
+          <li class="step">
+            <h4>Example step title</h4>
+            <p>A brief description of what happens in this step and what the client can expect from the process.</p>
+          </li>
+          <li class="step">
+            <h4>A second example step</h4>
+            <p>Showing the counter increment and the divider between steps.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+  </div>
+
+</div>
   <p>Tide Garden &mdash; <em>a palette for Johana Star Life Coaching</em></p>
-  <p>28 colours · 7 families</p>
+  <p>29 colours · 7 families</p>
 </footer>
 
 <script src="script.js" defer></script>
