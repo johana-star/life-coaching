@@ -3,15 +3,45 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tide Garden — Palette</title>
+<title>Tide Garden — Style Guide</title>
 <link rel="stylesheet" href="styles.css">
 </head>
 <body class="palette-page">
 
 <header>
-  <p>Color system</p>
+  <p>Style guide</p>
   <h1>Tide <em>Garden</em></h1>
 </header>
+
+<nav id="toc">
+  <p class="toc-label">Contents</p>
+  <ol class="toc-list">
+    <li><a href="#color-usage">Color usage</a></li>
+    <li><a href="#typography">Typography</a>
+      <ol>
+        <li><a href="#type-display">Display</a></li>
+        <li><a href="#type-heading">Section heading</a></li>
+        <li><a href="#type-subheading">Sub-heading</a></li>
+        <li><a href="#type-card-heading">Card heading</a></li>
+        <li><a href="#type-body">Body</a></li>
+        <li><a href="#type-label">Label / eyebrow</a></li>
+        <li><a href="#type-trust-bar">Trust bar</a></li>
+        <li><a href="#note">Disclaimer / note</a></li>
+        <li><a href="#type-cta">Nav CTA</a></li>
+      </ol>
+    </li>
+    <li><a href="#components">Components</a>
+      <ol>
+        <li><a href="#tags">Tags</a></li>
+        <li><a href="#buttons">Buttons</a></li>
+        <li><a href="#flag-badges">Flag badges</a></li>
+        <li><a href="#offering-card">Offering card</a></li>
+        <li><a href="#process-step">Process step</a></li>
+      </ol>
+    </li>
+    <li><a href="#retired">Retired colors</a></li>
+  </ol>
+</nav>
 
 <!--
   Rows represent lightness bands (lightest at top, darkest at bottom).
@@ -186,7 +216,7 @@
 </table>
 
 <div class="retired">
-  <h2>Retired colors</h2>
+  <h2 id="retired">Retired colors</h2>
   <h3>Defined but not used in the active design</h3>
   <table class="palette-table">
     <tbody>
@@ -213,52 +243,52 @@
 </div>
 
 <div class="usage-section">
-  <h2>Color usage</h2>
+  <h2 id="color-usage">Color usage</h2>
   <h3>Estimated visual weight in index.html — area × role × frequency of rendered elements</h3>
   <div class="usage-chart" id="usageChart"></div>
 </div>
 
 <div class="type-section">
-  <h2>Typography</h2>
+  <h2 id="typography">Typography</h2>
   <h3>Two typefaces — serif for display, sans-serif for body</h3>
 
-  <div class="type-specimen">
+  <div id="type-display" class="type-specimen">
     <p class="type-label">Display — Cormorant Garamond 300</p>
     <p class="type-meta">h1 · clamp(2.6rem, 5vw, 4rem) · tracking −0.01em · leading 1.1</p>
     <p class="type-example type-h1">A headline that <em>speaks directly</em> to the reader.</p>
   </div>
 
-  <div class="type-specimen">
+  <div id="type-heading" class="type-specimen">
     <p class="type-label">Section heading — Cormorant Garamond 300</p>
     <p class="type-meta">h2 · clamp(2rem, 3.5vw, 2.8rem) · leading 1.2</p>
     <p class="type-example type-h2">A section heading that sets the tone — <em>specific and honest.</em></p>
   </div>
 
-  <div class="type-specimen">
+  <div id="type-subheading" class="type-specimen">
     <p class="type-label">Sub-heading — Cormorant Garamond 300</p>
     <p class="type-meta">h3 · clamp(1.8rem, 3vw, 2.4rem) · leading 1.2</p>
     <p class="type-example type-h3">A sub-heading that introduces a topic or <em>card group.</em></p>
   </div>
 
-  <div class="type-specimen">
+  <div id="type-card-heading" class="type-specimen">
     <p class="type-label">Card heading — DM Sans 500</p>
     <p class="type-meta">h4 · 1rem · weight 500</p>
     <p class="type-example type-h4">Card or step heading — concise and actionable</p>
   </div>
 
-  <div class="type-specimen">
+  <div id="type-body" class="type-specimen">
     <p class="type-label">Body — DM Sans 300</p>
     <p class="type-meta">p · 0.95–1.05rem · leading 1.75–1.85</p>
     <p class="type-example type-body">Body copy is set in DM Sans at 300 weight. It is warm and direct — written to be read by someone who may be tired, overwhelmed, or skeptical. Line height is generous. Sentences are honest.</p>
   </div>
 
-  <div class="type-specimen">
+  <div id="type-label" class="type-specimen">
     <p class="type-label">Label / eyebrow — DM Sans 500</p>
     <p class="type-meta">0.72rem · weight 500 · tracking 0.14em · uppercase</p>
     <p class="type-example type-label-ex">Section label · Location</p>
   </div>
 
-  <div class="type-specimen">
+  <div id="type-trust-bar" class="type-specimen">
     <p class="type-label">Trust bar — DM Sans 500</p>
     <p class="type-meta">0.75rem · weight 500 · tracking 0.08em · uppercase</p>
     <p class="type-example type-trust">Trust signal · Identity · Community</p>
@@ -270,7 +300,7 @@
     <p class="type-example type-note">A clarifying note or disclaimer — smaller, quieter text with a sakura left border to mark it as distinct from body copy. Note visually corresponds with <a href="#buttons">btn-ghost</a>.</p>
   </div>
 
-  <div class="type-specimen">
+  <div id="type-cta" class="type-specimen">
     <p class="type-label">Nav CTA — DM Sans 400</p>
     <p class="type-meta">0.8rem · weight 400 · tracking 0.06em · uppercase</p>
     <p class="type-example type-cta">Primary action</p>
@@ -280,11 +310,11 @@
 
 
 <div class="components-section">
-  <h2>Components</h2>
+  <h2 id="components">Components</h2>
   <h3>Reusable elements and their approved colour combinations</h3>
 
   <!-- Tags -->
-  <div class="component-group">
+  <div id="tags" class="component-group">
     <p class="component-label">Tags</p>
     <p class="component-desc">Four semantic variants. Default background is cream. On colored section backgrounds, some variants need overrides — see examples below.</p>
 
@@ -334,7 +364,7 @@
   </div>
 
   <!-- Flag badges -->
-  <div class="component-group">
+  <div id="flag-badges" class="component-group">
     <p class="component-label">Flag badges</p>
     <p class="component-desc">Inline SVG badges sized to cap height of surrounding text. Use alt text for accessibility. Colors are hardcoded to specific palette tokens which roughly correspond to pride flag colors.</p>
     <div class="component-example">
@@ -346,7 +376,7 @@
   </div>
 
   <!-- Offering card -->
-  <div class="component-group">
+  <div id="offering-card" class="component-group">
     <p class="component-label">Offering card</p>
     <p class="component-desc">Used in the offerings grid. White surface on turmeric background. Icon in feta, h3 in cayenne.</p>
     <div class="component-example sg-offering-example">
@@ -361,7 +391,7 @@
   </div>
 
   <!-- Process step -->
-  <div class="component-group">
+  <div id="process-step" class="component-group">
     <p class="component-label">Process step</p>
     <p class="component-desc">Used in the process section. Numeral generated via CSS counter — do not add markup numerals. Abyss background, mustard numeral, white h4, thyme body text.</p>
     <section id="process">
@@ -381,6 +411,8 @@
   </div>
 
 </div>
+
+<footer>
   <p>Tide Garden &mdash; <em>a palette for Johana Star Life Coaching</em></p>
   <p>29 colours · 7 families</p>
 </footer>
