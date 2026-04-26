@@ -144,10 +144,10 @@
     line-height: 1.6;
     font-weight: 300;
   }
-  h1, h2, h3, h4, body > nav .logo, .step .numeral, footer .logo, .quote blockquote {
+  h1, h2, h3, h4, body > nav .logo, footer .logo, .quote blockquote {
     font-family: var(--serif);
   }
-  h1, h2, h3, h4, .step .numeral { font-weight: 300; }
+  h1, h2, h3, h4 { font-weight: 300; }
   /* TODO: Can we define the rbga codes below either in the color tokens section of :root or derived from those colors? */
   body > nav {
     position: fixed;
@@ -571,7 +571,7 @@
   }
   .process {
     background: var(--deep);
-    padding: 7rem 4rem;
+    padding: 5rem 2rem;
   }
   .process .inner {
     max-width: 860px;
@@ -589,31 +589,42 @@
   .process h2 em { color: var(--accent-tertiary); }
   .process ol {
     list-style: none;
+    counter-reset: step-counter;
   }
   .step {
-    display: grid;
-    grid-template-columns: 80px 1fr;
+    counter-increment: step-counter;
     border-top: 1px solid var(--mustard-25);
     padding: 2rem 0;
-    align-items: start;
-    gap: 2rem;
+    display: grid;
+    grid-template-columns: 2.5rem 1fr;
+    grid-template-rows: auto auto;
+    gap: 0.25rem 2rem;
+    align-items: baseline;
   }
   .step:last-child { border-bottom: 1px solid var(--mustard-25); }
-  .step .numeral {
+  .step::before {
+    content: counter(step-counter, upper-roman);
+    font-family: var(--serif);
     font-size: 1.5rem;
+    font-weight: 300;
     color: var(--accent-tertiary);
-    padding-top: 0.1rem;
+    grid-column: 1;
+    grid-row: 1;
   }
   .step h4 {
     font-size: 1rem;
     font-weight: 500;
-    margin-bottom: 0.4rem;
     color: var(--surface);
+    grid-column: 2;
+    grid-row: 1;
   }
   .step p {
     font-size: 0.9rem;
     color: var(--accent-secondary-mid);
     line-height: 1.7;
+    grid-column: 1 / -1;
+    grid-row: 2;
+    padding-top: 0.4rem;
   }
   .testimonials {
     background: var(--accent);
@@ -846,7 +857,12 @@
       min-width: 0 !important;
       width: 100% !important;
     }
-    .hero .image { height: 340px; }
+    .step {
+      gap: 0.25rem 0.75rem;
+    }
+    .process {
+      padding: 2rem;
+    }
     .quotes { grid-template-columns: 1fr; }
     .not-therapy .comparison { grid-template-columns: 1fr; }
     .trust-bar {
