@@ -133,6 +133,10 @@
     --mustard-25:    rgba(216,192,48,0.25);
     --abyss-8:       rgba(26,34,68,0.08);
   }
+  html, body {
+    overflow-x: hidden;
+    max-width: 100%;
+  }
   body {
     font-family: 'DM Sans', sans-serif;
     background: var(--background);
@@ -158,6 +162,10 @@
     background: var(--cream-88);
     backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--lavender-15);
+    transition: transform 0.3s ease;
+  }
+  body > nav.nav-hidden {
+    transform: translateY(-100%);
   }
   body > nav .logo {
     font-weight: 400;
@@ -712,6 +720,10 @@
     max-width: 100% !important;
     width: 100% !important;
   }
+  .calendly-inline-widget {
+    max-width: 100% !important;
+    overflow: hidden !important;
+  }
   .diagnosis {
     padding: 7rem 4rem;
     background: var(--text-mid);
@@ -820,6 +832,19 @@
     .hero, .about, #book .layout, .not-therapy {
       grid-template-columns: 1fr;
       padding: 5rem 2rem 3rem;
+    }
+    #book .layout {
+      padding: 3rem 0;
+    }
+    #book .layout .pitch {
+      padding: 0 2rem;
+    }
+    #book {
+      padding: 0;
+    }
+    .calendly-inline-widget {
+      min-width: 0 !important;
+      width: 100% !important;
     }
     .hero .image { height: 340px; }
     .quotes { grid-template-columns: 1fr; }

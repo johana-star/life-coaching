@@ -10,3 +10,22 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     if (target) target.scrollIntoView({ behavior: 'smooth' });
   });
 });
+
+(function() {
+  const nav = document.querySelector('body > nav');
+  if (!nav) return;
+  let lastY = 0;
+  const threshold = 100;
+
+  window.addEventListener('scroll', () => {
+    const y = window.scrollY;
+    if (y < threshold) {
+      nav.classList.remove('nav-hidden');
+    } else if (y > lastY) {
+      nav.classList.add('nav-hidden');
+    } else {
+      nav.classList.remove('nav-hidden');
+    }
+    lastY = y;
+  }, { passive: true });
+})();
