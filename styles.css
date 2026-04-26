@@ -187,7 +187,7 @@
     transition: background 0.2s;
   }
   body > nav .cta:hover { background: var(--accent-hover); }
-  .hero {
+  #hero {
     min-height: 100vh;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -195,12 +195,12 @@
     padding: 8rem 4rem 4rem;
     gap: 4rem;
   }
-  .banner {
+  #banner {
     display: flex;
     height: 60px;
     margin-top: 60px;
   }
-  .banner div { flex: 1; }
+  #banner div { flex: 1; }
   .stripe-sakura  { background: #e8a0c0; }
   .stripe-cherry  { background: #883060; }
   .stripe-cayenne { background: #b24c19; }
@@ -211,7 +211,7 @@
   .stripe-lavender { background: #7570a9; }
 
 
-  .hero header .eyebrow {
+  #hero header .eyebrow {
     font-size: 0.72rem;
     font-weight: 500;
     letter-spacing: 0.14em;
@@ -222,25 +222,25 @@
     align-items: center;
     gap: 0.75rem;
   }
-  .hero header .eyebrow::before {
+  #hero header .eyebrow::before {
     content: '';
     display: block;
     width: 32px;
     height: 1px;
     background: var(--accent);
   }
-  .hero header h1 {
+  #hero header h1 {
     font-size: clamp(2.6rem, 5vw, 4rem);
     line-height: 1.1;
     letter-spacing: -0.01em;
     color: var(--text);
     margin-bottom: 1.5rem;
   }
-  .hero header h1 em {
+  #hero header h1 em {
     font-style: italic;
     color: var(--accent);
   }
-  .hero header .lede {
+  #hero header .lede {
     font-size: 1.05rem;
     color: var(--text-mid);
     line-height: 1.75;
@@ -257,7 +257,7 @@
     margin-bottom: 2rem;
     max-width: 420px;
   }
-  .hero header nav {
+  #hero header nav {
     display: flex;
     align-items: center;
     gap: 1.5rem;
@@ -295,19 +295,19 @@
     color: var(--accent);
     border-color: var(--accent);
   }
-  .hero .image {
+  #hero .image {
     position: relative;
     height: 600px;
     border-radius: 2px;
     overflow: hidden;
     background: var(--surface);
   }
-  .hero .image .shapes {
+  #hero .image .shapes {
     position: absolute;
     inset: 0;
     pointer-events: none;
   }
-  .hero .badge {
+  #hero .badge {
     position: absolute;
     bottom: 2.5rem;
     left: 2rem;
@@ -317,13 +317,13 @@
     box-shadow: 0 4px 32px var(--abyss-8);
     max-width: 240px;
   }
-  .hero .badge strong {
+  #hero .badge strong {
     font-size: 1rem;
     color: var(--accent);
     margin-bottom: 0.25rem;
   }
-  .hero .badge ul { list-style-type: '\b7  '; }
-  .hero .badge li {
+  #hero .badge ul { list-style-type: '\b7  '; }
+  #hero .badge li {
     font-size: 0.78rem;
     color: var(--text-mid);
     line-height: 1.5;
@@ -336,7 +336,7 @@
     margin: 0 0.15em;
     border-radius: 1.5px;
   }
-  .trust-bar {
+  #trust-bar {
     list-style: none;
     background: var(--accent);
     padding: 1.75rem 4rem;
@@ -346,7 +346,7 @@
     gap: 3rem;
     flex-wrap: wrap;
   }
-  .trust-bar li {
+  #trust-bar li {
     font-size: 0.75rem;
     color: var(--surface);
     font-weight: 500;
@@ -356,11 +356,11 @@
     align-items: center;
     gap: 0.6rem;
   }
-  .trust-bar li::before {
+  #trust-bar li::before {
     content: '◆';
     font-size: 0.5rem;
   }
-  .about {
+  #about {
     display: grid;
     grid-template-columns: 1fr 1.2fr;
     gap: 6rem;
@@ -368,26 +368,26 @@
     align-items: start;
     background: var(--highlight);
   }
-  .about .label, .offerings .label, .process .label, .diagnosis .label {
+  #about .label, #offerings .label, #process .label, #diagnosis .label {
     color: var(--accent);
   }
-  .systems .label, .regional-center.card .label { color: var(--parchment); }
-  .testimonials .label { color: var(--surface-alt); }
-  .not-therapy .label { color: var(--muted); }
-  .about h2 {
+  #systems .label, .regional-center.card .label { color: var(--parchment); }
+  #testimonials .label { color: var(--surface-alt); }
+  #not-therapy .label { color: var(--muted); }
+  #about h2 {
     font-size: clamp(2rem, 3.5vw, 2.8rem);
     line-height: 1.2;
     margin-bottom: 1.5rem;
     color: var(--text);
   }
-  .about h2 em { color: var(--text); }
-  .about p {
+  #about h2 em { color: var(--text); }
+  #about p {
     color: var(--text);
     line-height: 1.85;
     margin-bottom: 1.2rem;
     font-size: 0.97rem;
   }
-  .about .tags {
+  #about .tags {
     list-style: none;
     display: flex;
     flex-wrap: wrap;
@@ -424,20 +424,20 @@
     background: var(--blush);
     border-color: var(--highlight);
   }
-  .about .portrait {
+  #about .portrait {
     aspect-ratio: 4/5;
     background: var(--surface);
     border-radius: 2px;
     position: relative;
     overflow: hidden;
   }
-  .about .portrait img {
+  #about .portrait img {
     width:100%;
     height:100%;
     object-fit:cover;
     display:block;
   }
-  .not-therapy {
+  #not-therapy {
     background: var(--deep);
     padding: 4rem;
     display: grid;
@@ -445,61 +445,61 @@
     gap: 4rem;
     align-items: center;
   }
-  .not-therapy h2 {
+  #not-therapy h2 {
     font-size: clamp(1.8rem, 3vw, 2.4rem);
     color: var(--background);
     line-height: 1.2;
     margin-bottom: 1rem;
   }
-  .not-therapy h2 em { color: var(--muted); }
-  .not-therapy p {
+  #not-therapy h2 em { color: var(--muted); }
+  #not-therapy p {
     font-size: 0.92rem;
     color: var(--cream-60);
     line-height: 1.8;
     margin-bottom: 1rem;
   }
-  .not-therapy .note {
+  #not-therapy .note {
     font-size: 0.8rem;
     color: var(--cream-35);
   }
-  .not-therapy .comparison {
+  #not-therapy .comparison {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1px;
     background: var(--cream-15);
     border: 1px solid var(--cream-15);
   }
-  .not-therapy .panel { padding: 1.5rem; }
-  .not-therapy .panel .title {
+  #not-therapy .panel { padding: 1.5rem; }
+  #not-therapy .panel .title {
     font-size: 0.72rem;
     font-weight: 500;
     letter-spacing: 0.1em;
     text-transform: uppercase;
     margin-bottom: 0.75rem;
   }
-  .not-therapy .panel .title.is { color: var(--muted); }
-  .not-therapy .panel .title.not { color: var(--highlight); }
-  .not-therapy .list { list-style: none; }
-  .not-therapy .list li {
+  #not-therapy .panel .title.is { color: var(--muted); }
+  #not-therapy .panel .title.not { color: var(--highlight); }
+  #not-therapy .list { list-style: none; }
+  #not-therapy .list li {
     font-size: 0.85rem;
     padding: 0.4rem 0;
     border-bottom: 1px solid var(--cream-6);
     line-height: 1.5;
   }
-  .not-therapy .list.is li { color: var(--white-85); }
-  .not-therapy .list.not li {
+  #not-therapy .list.is li { color: var(--white-85); }
+  #not-therapy .list.not li {
     color: var(--cream-35);
     text-decoration: line-through;
     text-decoration-color: var(--white-15);
   }
-  .offerings { padding: 7rem 4rem; }
-  .offerings .header { margin-bottom: 3.5rem; }
-  .offerings h2 {
+  #offerings { padding: 7rem 4rem; }
+  #offerings .header { margin-bottom: 3.5rem; }
+  #offerings h2 {
     font-size: clamp(2rem, 3.5vw, 2.8rem);
     line-height: 1.2;
   }
-  .offerings h2 em { color: var(--accent); }
-  .offerings .grid {
+  #offerings h2 em { color: var(--accent); }
+  #offerings .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 1px;
@@ -507,11 +507,11 @@
     border: 1px solid var(--surface-alt-dark);
     margin-top: 2.5rem;
   }
-  .offerings .card {
+  #offerings .card {
     background: var(--surface);
     padding: 2rem;
   }
-  .offerings .icon {
+  #offerings .icon {
     width: 36px;
     height: 36px;
     border-radius: 2px;
@@ -521,73 +521,76 @@
     justify-content: center;
     margin-bottom: 1.25rem;
   }
-  .offerings .icon img {
+  #offerings .icon img {
     width: 16px;
     height: 16px;
   }
-  .offerings .card h3 {
+  #offerings .card h3 {
     font-size: 0.95rem;
     font-weight: 500;
     color: var(--text);
     margin-bottom: 0.5rem;
   }
-  .offerings .card p {
+  #offerings .card p {
     font-size: 0.85rem;
     color: var(--text-mid);
     line-height: 1.7;
   }
-  .systems {
+  #systems {
     background: var(--pine);
     padding: 5rem 4rem;
   }
-  .systems .inner {
+  #systems .inner {
     max-width: 860px;
     margin: 0 auto;
   }
-  .systems h2 {
+  #systems h2 {
     font-size: clamp(1.8rem, 3vw, 2.4rem);
     line-height: 1.2;
     margin-bottom: 1.25rem;
     color: var(--white);
   }
-  .systems h2 em { color: var(--parchment); }
-  .systems p {
+  #systems h2 em { color: var(--parchment); }
+  #systems p {
     font-size: 0.95rem;
     color: var(--cream);
     line-height: 1.8;
     max-width: 640px;
   }
-  .systems .note {
+  #systems .note {
     margin-top: 1rem;
     font-size: 0.88rem;
     color: var(--parchment);
   }
-  .systems .tags {
+  #systems .tags {
     list-style: none;
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
     margin-top: 1.5rem;
   }
-  .process {
+  #process {
     background: var(--deep);
     padding: 5rem 2rem;
   }
-  .process .inner {
+  #process .inner {
     max-width: 860px;
     margin: 0 auto;
   }
-  .process .label {
+  #process .label {
     color: var(--accent-tertiary);
   }
-  .process h2 {
+  #process h2 {
     font-size: clamp(2rem, 3.5vw, 2.8rem);
     margin-bottom: 3.5rem;
     line-height: 1.2;
     color: var(--surface);
   }
-  .process h2 em { color: var(--accent-tertiary); }
-  .process ol {
+  #process h2 em { color: var(--accent-tertiary); }
+  /* list-style: none + CSS counter is intentional — list-style-type: upper-roman cannot be
+     independently styled (color, font, size) from the list item content. The counter()
+     approach lets the numeral be mustard, serif, and 1.5rem while step text stays distinct. */
+  #process ol {
     list-style: none;
     counter-reset: step-counter;
   }
@@ -626,22 +629,22 @@
     grid-row: 2;
     padding-top: 0.4rem;
   }
-  .testimonials {
+  #testimonials {
     background: var(--accent);
     padding: 7rem 4rem;
   }
-  .testimonials .inner {
+  #testimonials .inner {
     max-width: 1000px;
     margin: 0 auto;
   }
-  .testimonials h2 {
+  #testimonials h2 {
     font-size: clamp(2rem, 3.5vw, 2.8rem);
     text-align: center;
     margin-bottom: 3.5rem;
     line-height: 1.2;
     color: var(--surface);
   }
-  .testimonials h2 em { color: var(--accent-tertiary); }
+  #testimonials h2 em { color: var(--accent-tertiary); }
   .quotes {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -735,11 +738,11 @@
     max-width: 100% !important;
     overflow: hidden !important;
   }
-  .diagnosis {
+  #diagnosis {
     padding: 7rem 4rem;
     background: var(--text-mid);
   }
-  .diagnosis .inner {
+  #diagnosis .inner {
     max-width: 860px;
     margin: 0 auto;
     display: grid;
@@ -747,20 +750,20 @@
     gap: 5rem;
     align-items: start;
   }
-  .diagnosis h2 {
+  #diagnosis h2 {
     font-size: clamp(1.8rem, 3vw, 2.4rem);
     line-height: 1.2;
     margin-bottom: 1.25rem;
     color: var(--white);
   }
-  .diagnosis h2 em, .diagnosis .label { color: var(--thistle); }
-  .diagnosis p {
+  #diagnosis h2 em, #diagnosis .label { color: var(--thistle); }
+  #diagnosis p {
     font-size: 0.95rem;
     color: var(--cream);
     line-height: 1.85;
     margin-bottom: 1rem;
   }
-  .diagnosis .note {
+  #diagnosis .note {
     font-size: 0.8rem;
     color: var(--cream);
     margin-bottom: 1.25rem;
@@ -840,7 +843,7 @@
     body > nav {
       padding: 1.25rem 2rem;
     }
-    .hero, .about, #book .layout, .not-therapy {
+    #hero, #about, #book .layout, #not-therapy {
       grid-template-columns: 1fr;
       padding: 5rem 2rem 3rem;
     }
@@ -860,18 +863,18 @@
     .step {
       gap: 0.25rem 0.75rem;
     }
-    .process {
+    #process {
       padding: 2rem;
     }
     .quotes { grid-template-columns: 1fr; }
-    .not-therapy .comparison { grid-template-columns: 1fr; }
-    .trust-bar {
+    #not-therapy .comparison { grid-template-columns: 1fr; }
+    #trust-bar {
       flex-direction: column;
       gap: 1rem;
       padding: 1.5rem 2rem;
     }
-    .offerings, .testimonials, .process .inner, .systems { padding: 5rem 2rem; }
-    .diagnosis .inner {
+    #offerings, #testimonials, #process .inner, #systems { padding: 5rem 2rem; }
+    #diagnosis .inner {
       grid-template-columns: 1fr;
       gap: 2.5rem;
     }
