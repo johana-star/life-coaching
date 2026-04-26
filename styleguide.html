@@ -13,10 +13,16 @@
   <h1>Tide <em>Garden</em></h1>
 </header>
 
-<nav id="toc">
-  <p class="toc-label">Contents</p>
+<details id="toc">
+  <summary class="toc-label">Contents</summary>
   <ol class="toc-list">
-    <li><a href="#color-usage">Color usage</a></li>
+    <li>Palette
+      <ol>
+        <li><a href="#palette-table">Palette table</a></li>
+        <li><a href="#retired">Retired colors</a></li>
+        <li><a href="#color-usage">Color usage</a></li>
+      </ol>
+    </li>
     <li><a href="#typography">Typography</a>
       <ol>
         <li><a href="#type-display">Display</a></li>
@@ -32,6 +38,7 @@
     </li>
     <li><a href="#components">Components</a>
       <ol>
+        <li><a href="#nav">Site nav</a></li>
         <li><a href="#tags">Tags</a></li>
         <li><a href="#buttons">Buttons</a></li>
         <li><a href="#flag-badges">Flag badges</a></li>
@@ -39,9 +46,8 @@
         <li><a href="#process-step">Process step</a></li>
       </ol>
     </li>
-    <li><a href="#retired">Retired colors</a></li>
   </ol>
-</nav>
+</details>
 
 <!--
   Rows represent lightness bands (lightest at top, darkest at bottom).
@@ -51,7 +57,7 @@
   Empty cells indicate no swatch in that family at that lightness band.
   6 rows span L≈100% (row 1) to L≈18% (row 6), in ~12-point steps.
 -->
-<table class="palette-table">
+<table id="palette-table" class="palette-table">
   <thead>
     <tr>
       <th>White &amp; Lights</th>
@@ -353,6 +359,19 @@
     <p class="component-note">tag-highlight (sakura tones) blends into the sakura section background — the #about override substitutes horizon background with coastal border and abyss text. All four tag variants pass AA contrast on pine.</p>
   </div>
 
+  <!-- Nav (mockup) -->
+  <div id="nav" class="component-group">
+    <p class="component-label">Site nav</p>
+    <p class="component-desc">Fixed to top of page. Cream-88 background with backdrop blur. Lavender CTA button. Hides on scroll down, reappears on scroll up. Shown below as a non-interactive mockup — a real &lt;nav&gt; cannot be nested here without collision.</p>
+    <div class="component-example sg-nav-mockup">
+      <span class="sg-nav-logo">Johana Star</span>
+      <div class="sg-nav-actions">
+        <a class="sg-nav-ghost">My story</a>
+        <span class="sg-nav-cta">Book a call</span>
+      </div>
+    </div>
+  </div>
+
   <!-- Buttons -->
   <div id="buttons" class="component-group">
     <p class="component-label">Buttons</p>
@@ -418,6 +437,6 @@
 </footer>
 
 <script src="script.js" defer></script>
-<script src="palette.js" defer></script>
+<script src="styleguide.js" defer></script>
 </body>
 </html>

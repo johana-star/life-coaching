@@ -1418,11 +1418,22 @@ body.palette-page .sg-example-pine   { background: var(--pine); }
 
 body.palette-page #toc {
   margin-bottom: 3rem;
-  padding: 1.5rem 2rem;
   border: 0.5px solid var(--chevre);
   border-radius: 4px;
   display: inline-block;
   min-width: 260px;
+}
+body.palette-page #toc summary {
+  padding: 1rem 2rem;
+  cursor: pointer;
+  list-style: none;
+}
+body.palette-page #toc summary::-webkit-details-marker { display: none; }
+body.palette-page #toc[open] summary {
+  border-bottom: 0.5px solid var(--chevre);
+}
+body.palette-page #toc .toc-list {
+  padding: 0.75rem 2rem 1.25rem;
 }
 body.palette-page .toc-label {
   font-size: 0.65rem;
@@ -1430,7 +1441,18 @@ body.palette-page .toc-label {
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--navy);
-  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+body.palette-page .toc-label::after {
+  content: '▸';
+  font-size: 0.6rem;
+  color: var(--haze);
+  transition: transform 0.2s;
+}
+body.palette-page #toc[open] .toc-label::after {
+  transform: rotate(90deg);
 }
 body.palette-page .toc-list {
   margin: 0;
@@ -1453,4 +1475,47 @@ body.palette-page .toc-list a {
 body.palette-page .toc-list a:hover {
   color: var(--lavender);
   border-color: var(--lavender);
+}
+
+body.palette-page .sg-nav-mockup {
+  background: var(--cream-88);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--lavender-15);
+  padding: 1.25rem 4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+body.palette-page .sg-nav-logo {
+  font-family: var(--serif);
+  font-size: 1.3rem;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  color: var(--text);
+}
+body.palette-page .sg-nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+body.palette-page .sg-nav-ghost {
+  font-size: 0.85rem;
+  color: var(--text-mid);
+  letter-spacing: 0.02em;
+  border-bottom: 1px solid var(--muted);
+  padding-bottom: 2px;
+  cursor: default;
+}
+body.palette-page .sg-nav-cta {
+  background: var(--accent);
+  color: var(--surface);
+  padding: 0.55rem 1.4rem;
+  border-radius: 2px;
+  font-size: 0.8rem;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: default;
 }

@@ -30,18 +30,19 @@
     { name: 'abyss',     hex: '#1a2244', score: 230,  note: 'not-therapy + process bg + body text' },
     { name: 'navy',      hex: '#4a5472', score: 120,  note: 'diagnosis bg + body text-mid' },
     { name: 'white',     hex: '#ffffff', score: 115,  note: 'portrait, hero image, badge, rc card' },
-    { name: 'sakura',    hex: '#e8a0c0', score: 93,   note: 'about section background + tag-highlight' },
+    { name: 'sakura',    hex: '#e8a0c0', score: 93,   note: 'about section background + tag-highlight border' },
     { name: 'mustard',   hex: '#d8c030', score: 85,   note: 'book/CTA bg + process accents + tag borders' },
     { name: 'pine',      hex: '#2a5a32', score: 84,   note: 'systems section background + tag-secondary text' },
     { name: 'turmeric',  hex: '#f6edde', score: 80,   note: 'offerings section background' },
     { name: 'lavender',  hex: '#7570a9', score: 72,   note: 'trust-bar bg, nav cta, eyebrow, seen.svg' },
     { name: 'thyme',     hex: '#a8d0b0', score: 34,   note: 'seen.svg fill + step text + tag borders' },
-    { name: 'coastal',   hex: '#88bcd8', score: 14,   note: 'footer bg + not-therapy text' },
+    { name: 'coastal',   hex: '#88bcd8', score: 14,   note: 'footer bg + not-therapy text + tag border' },
     { name: 'cayenne',   hex: '#b24c19', score: 12,   note: 'offerings label, h2 em + card h3 ×6' },
     { name: 'lilac',     hex: '#e7e6f0', score: 10,   note: 'tag-accent background ×5' },
     { name: 'chevre',    hex: '#d8d8c8', score: 9,    note: 'dividers and grid borders throughout' },
     { name: 'mint',      hex: '#e8f4ea', score: 8,    note: 'tag-secondary background ×4' },
     { name: 'parchment', hex: '#faf5c0', score: 8,    note: 'tag-tertiary background ×4' },
+    { name: 'horizon',   hex: '#d1e5f0', score: 6,    note: 'tag-highlight background on sakura (about section)' },
     { name: 'sage',      hex: '#7aaa82', score: 5,    note: 'systems h2 em + label' },
     { name: 'haze',      hex: '#8a94b0', score: 5,    note: 'note text in diagnosis' },
     { name: 'thistle',   hex: '#c8c6dd', score: 5,    note: 'tag-accent border ×5' },
@@ -60,7 +61,6 @@
   const max = winner.score;
   const chart = document.getElementById('usageChart');
 
-  // Show winner as text above chart
   const winnerEl = document.createElement('p');
   winnerEl.className = 'usage-winner';
   winnerEl.innerHTML = 'First place: <strong>' + winner.name + '</strong> — ' + winner.note;
