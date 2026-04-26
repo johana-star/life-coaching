@@ -203,14 +203,15 @@
                          That is, why did we think it was only 60px high? */
   }
   #banner div { flex: 1; }
-  .stripe-sakura  { background: #e8a0c0; }
-  .stripe-cherry  { background: #883060; }
-  .stripe-cayenne { background: #b24c19; }
-  .stripe-mustard { background: #d8c030; }
-  .stripe-sage    { background: #7aaa82; }
-  .stripe-coastal { background: #88bcd8; }
-  .stripe-abyss   { background: #1a2244; }
-  .stripe-lavender { background: #7570a9; }
+  .stripe         { width:12.5%; }
+  .sakura-bg      { background: #e8a0c0; }
+  .cherry-bg      { background: #883060; }
+  .cayenne-bg     { background: #b24c19; }
+  .mustard-bg     { background: #d8c030; }
+  .sage-bg        { background: #7aaa82; }
+  .coastal-bg     { background: #88bcd8; }
+  .abyss-bg       { background: #1a2244; }
+  .lavender-bg    { background: #7570a9; }
 
 
   #hero header .eyebrow {
