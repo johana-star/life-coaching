@@ -1412,3 +1412,6 @@ body.palette-page .component-example #about {
   padding: 0;
   grid-template-columns: unset;
 }
+
+body.palette-page .sg-example-sakura { background: var(--sakura); }
+body.palette-page .sg-example-pine   { background: var(--pine); }
