@@ -188,27 +188,29 @@
   }
   body > nav .cta:hover { background: var(--accent-hover); }
   #hero {
-    min-height: 100vh;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    align-items: center;
-    padding: 8rem 4rem 4rem;
+    align-items: start;
+    padding: 4rem 4rem;
     gap: 4rem;
   }
   #banner {
     display: flex;
+    width: 100%;
     height: 60px;
-    margin-top: 60px;
+    margin-top: var(--nav-height, 78px);
+  }
   }
   #banner div { flex: 1; }
-  .stripe-sakura  { background: #e8a0c0; }
-  .stripe-cherry  { background: #883060; }
-  .stripe-cayenne { background: #b24c19; }
-  .stripe-mustard { background: #d8c030; }
-  .stripe-sage    { background: #7aaa82; }
-  .stripe-coastal { background: #88bcd8; }
-  .stripe-abyss   { background: #1a2244; }
-  .stripe-lavender { background: #7570a9; }
+  .stripe         { width: 12.5%; }
+  .stripe.sakura  { background: #e8a0c0; }
+  .stripe.cherry  { background: #883060; }
+  .stripe.cayenne { background: #b24c19; }
+  .stripe.mustard { background: #d8c030; }
+  .stripe.sage    { background: #7aaa82; }
+  .stripe.coastal { background: #88bcd8; }
+  .stripe.abyss   { background: #1a2244; }
+  .stripe.lavender { background: #7570a9; }
 
 
   #hero header .eyebrow {

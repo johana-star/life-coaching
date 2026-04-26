@@ -11,6 +11,14 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
+// Set --nav-height as a CSS custom property so #banner can clear the fixed nav precisely
+function setNavHeight() {
+  const nav = document.querySelector('body > nav');
+  if (nav) document.documentElement.style.setProperty('--nav-height', nav.offsetHeight + 'px');
+}
+setNavHeight();
+window.addEventListener('resize', setNavHeight);
+
 (function() {
   const nav = document.querySelector('body > nav');
   if (!nav) return;
