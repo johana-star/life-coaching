@@ -595,7 +595,7 @@
     list-style: none;
     counter-reset: step-counter;
   }
-  .step {
+  #process .step {
     counter-increment: step-counter;
     border-top: 1px solid var(--mustard-25);
     padding: 2rem 0;
@@ -605,8 +605,8 @@
     gap: 0.25rem 2rem;
     align-items: baseline;
   }
-  .step:last-child { border-bottom: 1px solid var(--mustard-25); }
-  .step::before {
+  #process .step:last-child { border-bottom: 1px solid var(--mustard-25); }
+  #process .step::before {
     content: counter(step-counter, upper-roman);
     font-family: var(--serif);
     font-size: 1.5rem;
@@ -615,14 +615,14 @@
     grid-column: 1;
     grid-row: 1;
   }
-  .step h4 {
+  #process .step h4 {
     font-size: 1rem;
     font-weight: 500;
     color: var(--surface);
     grid-column: 2;
     grid-row: 1;
   }
-  .step p {
+  #process .step p {
     font-size: 0.9rem;
     color: var(--accent-secondary-mid);
     line-height: 1.7;
@@ -651,12 +651,12 @@
     grid-template-columns: 1fr 1fr;
     gap: 1.5rem;
   }
-  .quote {
+  #testimonials .quote {
     background: var(--surface);
     padding: 2.5rem;
     border-radius: 2px;
   }
-  .quote blockquote {
+  #testimonials .quote blockquote {
     font-size: 1.2rem;
     font-weight: 300;
     font-style: italic;
@@ -664,12 +664,12 @@
     color: var(--text);
     margin-bottom: 1.5rem;
   }
-  .quote .author {
+  #testimonials .quote .author {
     display: flex;
     align-items: center;
     gap: 0.75rem;
   }
-  .quote .avatar {
+  #testimonials .quote .avatar {
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -681,16 +681,16 @@
     font-weight: 500;
     color: var(--accent);
   }
-  .quote .avatar.plum {
+  #testimonials .quote .avatar.plum {
     background: var(--accent-secondary-light);
     color: var(--accent-secondary);
   }
-  .quote .name {
+  #testimonials .quote .name {
     font-size: 0.85rem;
     font-weight: 500;
     color: var(--text);
   }
-  .quote .role {
+  #testimonials .quote .role {
     font-size: 0.78rem;
     color: var(--text-light);
   }
@@ -769,13 +769,13 @@
     color: var(--cream);
     margin-bottom: 1.25rem;
   }
-  .regional-center.card {
+  #diagnosis .regional-center.card {
     background: var(--surface);
     border-radius: 2px;
     padding: 2rem;
     border: 1px solid var(--surface-alt-dark);
   }
-  .regional-center.card h3 {
+  #diagnosis .regional-center.card h3 {
     font-size: 1.3rem;
     margin-bottom: 0.75rem;
     line-height: 1.3;
@@ -787,14 +787,14 @@
     line-height: 1.75;
     margin-bottom: 1.25rem;
   }
-  .regional-center .conditions {
+  #diagnosis .regional-center .conditions {
     list-style: none;
     display: flex;
     flex-wrap: wrap;
     gap: 0.4rem;
     margin-bottom: 1.5rem;
   }
-  .regional-center .link {
+  #diagnosis .regional-center .link {
     display: inline-block;
     background: var(--accent);
     color: var(--surface);
@@ -806,7 +806,7 @@
     text-decoration: none;
     transition: background 0.2s;
   }
-  .regional-center .link:hover { background: var(--accent-hover); }
+  #diagnosis .regional-center .link:hover { background: var(--accent-hover); }
   footer {
     background: var(--muted);
     border-top: none;
@@ -862,7 +862,7 @@
       min-width: 0 !important;
       width: 100% !important;
     }
-    .step {
+    #process .step {
       gap: 0.25rem 0.75rem;
     }
     #process {
