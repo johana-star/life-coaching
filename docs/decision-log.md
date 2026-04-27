@@ -38,7 +38,7 @@ Final sequence:
 - Footer: coastal (with abyss text — AAA)
 
 Key colour decisions:
-- Process section echoes book/CTA with the same three colours (abyss, mustard, sage) with backgrounds and text swapped — intentional design relationship
+- Process section uses abyss background with mustard and sage accents. Book/CTA uses butter background with abyss text and pine em — related palette, distinct feel.
 - tag-highlight (sakura) is invisible on sakura about background — overridden to horizon bg / coastal border / abyss text
 - Systems moved from mint → sage → pine to get sufficient contrast for light text
 
@@ -124,3 +124,4 @@ Key insight: most clients arrive having already done significant research. They 
 - **`--peony`** (`#c7508c`) — restored to active palette. H=330° S=52% L=55%. Sibling of sakura, midpoint between sakura (L=77%) and cherry (L=36%). Fills row 3 of the reds & pinks family in the palette table.
 - **`--ginger`** (`#dcb288`) — new orange family token. H=30° S=55% L=70%. Warm brown-orange, sits between turmeric and saffron. Culinary theme: the spice.
 - **`--saffron`** (`#c62810`) — new orange family token. H=8° S=85% L=42%. Deep red-orange, derived from the color of saffron threads. Redder than cayenne (H=20°), similar depth. Orange family now reads light to dark: turmeric → ginger → saffron → cayenne.
+- **Book/CTA background: mustard → butter** — mustard was too high-contrast and punchy for the closing section. Butter is softer and warmer. Pine on butter (AAA 7.24) replaces the failing sage-on-mustard (1.46 — Fail). Mustard retained as `--accent-tertiary` for process section and tag-tertiary; book background overrides directly with `var(--butter)`.

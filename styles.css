@@ -702,7 +702,7 @@
     color: var(--text-light);
   }
   #book {
-    background: var(--accent-tertiary);
+    background: var(--butter);
     padding: 0 4rem;
   }
   #book .layout {

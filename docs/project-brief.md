@@ -97,7 +97,7 @@ Two-layer CSS token system: color tokens → semantic tokens.
 | Process | abyss |
 | Diagnosis | navy |
 | Testimonials | lavender (commented out) |
-| Book/CTA | mustard |
+| Book/CTA | butter |
 | Footer | coastal |
 
 ### Color Wheel Relationships
@@ -181,7 +181,7 @@ Two-layer CSS token system: color tokens → semantic tokens.
 - **Testimonials** — section is commented out in the HTML pending real testimonials. Once received: write heading and copy, uncomment section, update styleguide.
 
 ### Styleguide
-- **Color combinations section** — approved pairings with contrast ratios. Currently colors are shown individually but not as pairs.
+- ~~**Color combinations section**~~ — done. Added to styleguide with WCAG ratios and live samples. Book/CTA updated to butter bg, abyss text, pine em (all AAA).
 - **Update palette.js scores** — scores in styleguide.js reflect a snapshot and will drift as the design evolves. Revisit after major section changes.
 
 ### Done

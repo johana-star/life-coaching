@@ -21,6 +21,7 @@
         <li><a href="#palette-table">Palette table</a></li>
         <li><a href="#retired">Retired colors</a></li>
         <li><a href="#color-usage">Color usage</a></li>
+        <li><a href="#color-pairs">Color combinations</a></li>
       </ol>
     </li>
     <li><a href="#typography">Typography</a>
@@ -210,7 +211,7 @@
     <tbody>
       <tr>
         <td class="swatch light" style="background:#e0a8c8;">
-          <p class="swatch-name">peony</p>
+          <p class="swatch-name">peony (old)</p>
           <p class="swatch-hex">#e0a8c8</p>
         </td>
         <td class="swatch light" style="background:#e27e36;">
@@ -242,6 +243,108 @@
   <h2 id="color-usage">Color usage</h2>
   <h3>Estimated visual weight in index.html — area × role × frequency of rendered elements</h3>
   <div class="usage-chart" id="usageChart"></div>
+</div>
+
+
+<div class="sg-section" id="color-pairs">
+  <h2>Color combinations</h2>
+  <h3>WCAG contrast ratios for approved pairings</h3>
+  <p class="component-desc">All text pairings should meet AA (4.5:1) for normal text or AAA (7:1) where possible. Large text and UI components require 3:1 minimum.</p>
+
+  <table class="palette-table">
+    <thead>
+      <tr>
+        <th>Pairing</th>
+        <th>Context</th>
+        <th>Ratio</th>
+        <th>WCAG</th>
+        <th>Sample</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Abyss on white</td><td>Surface text</td><td>15.48</td><td>AAA</td>
+        <td style="background:#ffffff;color:#1a2244;padding:0.4rem 0.75rem;">The quick brown fox</td>
+      </tr>
+      <tr>
+        <td>Abyss on cream</td><td>Body text</td><td>14.54</td><td>AAA</td>
+        <td style="background:#f8f8f4;color:#1a2244;padding:0.4rem 0.75rem;">The quick brown fox</td>
+      </tr>
+      <tr>
+        <td>Cream on abyss</td><td>Not-therapy &amp; process text</td><td>14.54</td><td>AAA</td>
+        <td style="background:#1a2244;color:#f8f8f4;padding:0.4rem 0.75rem;">The quick brown fox</td>
+      </tr>
+      <tr>
+        <td>Abyss on butter</td><td>Book/CTA section</td><td>13.93</td><td>AAA</td>
+        <td style="background:#faf5c0;color:#1a2244;padding:0.4rem 0.75rem;">The quick brown fox</td>
+      </tr>
+      <tr>
+        <td>Abyss on turmeric</td><td>Offerings section</td><td>13.34</td><td>AAA</td>
+        <td style="background:#f6edde;color:#1a2244;padding:0.4rem 0.75rem;">The quick brown fox</td>
+      </tr>
+      <tr>
+        <td>Mustard on abyss</td><td>Process accents</td><td>8.48</td><td>AAA</td>
+        <td style="background:#1a2244;color:#d8c030;padding:0.4rem 0.75rem;">The quick brown fox</td>
+      </tr>
+      <tr>
+        <td>White on pine</td><td>Systems section</td><td>8.06</td><td>AAA</td>
+        <td style="background:#2a5a32;color:#ffffff;padding:0.4rem 0.75rem;">The quick brown fox</td>
+      </tr>
+      <tr>
+        <td>Abyss on coastal</td><td>Footer</td><td>7.54</td><td>AAA</td>
+        <td style="background:#88bcd8;color:#1a2244;padding:0.4rem 0.75rem;">The quick brown fox</td>
+      </tr>
+      <tr>
+        <td>Abyss on sakura</td><td>About section</td><td>7.54</td><td>AAA</td>
+        <td style="background:#e8a0c0;color:#1a2244;padding:0.4rem 0.75rem;">The quick brown fox</td>
+      </tr>
+      <tr>
+        <td>White on navy</td><td>Diagnosis section</td><td>7.49</td><td>AAA</td>
+        <td style="background:#4a5472;color:#ffffff;padding:0.4rem 0.75rem;">The quick brown fox</td>
+      </tr>
+      <tr>
+        <td>Butter on pine</td><td>Systems label</td><td>7.24</td><td>AAA</td>
+        <td style="background:#2a5a32;color:#faf5c0;padding:0.4rem 0.75rem;">The quick brown fox</td>
+      </tr>
+      <tr>
+        <td>Pine on butter</td><td>Book/CTA h2 em</td><td>7.24</td><td>AAA</td>
+        <td style="background:#faf5c0;color:#2a5a32;padding:0.4rem 0.75rem;">The quick brown fox</td>
+      </tr>
+      <tr>
+        <td>Iris on lilac</td><td>tag-accent</td><td>7.13</td><td>AAA</td>
+        <td style="background:#e7e6f0;color:#494573;padding:0.4rem 0.75rem;">Tag label</td>
+      </tr>
+      <tr>
+        <td>Pine on mint</td><td>tag-secondary</td><td>7.12</td><td>AAA</td>
+        <td style="background:#e8f4ea;color:#2a5a32;padding:0.4rem 0.75rem;">Tag label</td>
+      </tr>
+      <tr>
+        <td>Cherry on blush</td><td>tag-highlight</td><td>7.08</td><td>AAA</td>
+        <td style="background:#fceef5;color:#883060;padding:0.4rem 0.75rem;">Tag label</td>
+      </tr>
+      <tr>
+        <td>Navy on cream</td><td>Mid / muted text</td><td>7.04</td><td>AAA</td>
+        <td style="background:#f8f8f4;color:#4a5472;padding:0.4rem 0.75rem;">The quick brown fox</td>
+      </tr>
+      <tr>
+        <td>Molasses on butter</td><td>tag-tertiary</td><td>6.28</td><td>AA</td>
+        <td style="background:#faf5c0;color:#6a5800;padding:0.4rem 0.75rem;">Tag label</td>
+      </tr>
+      <tr>
+        <td>Horizon on navy</td><td>Diagnosis note text</td><td>5.77</td><td>AA</td>
+        <td style="background:#4a5472;color:#d1e5f0;padding:0.4rem 0.75rem;">The quick brown fox</td>
+      </tr>
+      <tr>
+        <td>Cayenne on turmeric</td><td>Offerings h3</td><td>4.59</td><td>AA</td>
+        <td style="background:#f6edde;color:#b24c19;padding:0.4rem 0.75rem;">The quick brown fox</td>
+      </tr>
+      <tr>
+        <td>White on lavender</td><td>Trust bar</td><td>4.52</td><td>AA</td>
+        <td style="background:#7570a9;color:#ffffff;padding:0.4rem 0.75rem;">The quick brown fox</td>
+      </tr>
+    </tbody>
+  </table>
+
 </div>
 
 <div class="type-section">
