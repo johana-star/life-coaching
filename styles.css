@@ -629,7 +629,7 @@
     grid-column: 1;
     grid-row: 1;
   }
-  #process .step h4 {
+  #process .step h3 {
     font-size: 1rem;
     font-weight: 500;
     color: var(--surface);
@@ -1248,7 +1248,7 @@ body.palette-page .type-h3 {
   line-height: 1.2;
 }
 body.palette-page .type-h3 em { font-style: italic; color: var(--lavender); }
-body.palette-page .type-h4 {
+body.palette-page .type-h3-card {
   font-size: 1rem;
   font-weight: 500;
 }
