@@ -46,7 +46,7 @@ Two-layer CSS token system: color tokens → semantic tokens.
 
 ### Color Families
 
-**Dairy:** white `#ffffff`, cream `#f8f8f4`, feta `#eeeee4`, chevre `#d8d8c8`
+**Dairy:** white `#ffffff`, cream `#f5f5ef`, feta `#eeeee4`, chevre `#d8d8c8`
 
 **Reds & pinks:** blush `#fceef5`, sakura `#e8a0c0`, peony `#c7508c`, cherry `#883060`
 
@@ -60,7 +60,7 @@ Two-layer CSS token system: color tokens → semantic tokens.
 
 **Purples:** lilac `#e7e6f0`, thistle `#c8c6dd`, lavender `#7570a9`, iris `#494573`
 
-**Retired:** peony (old), paprika, periwinkle, kikyo, wisteria, and haze
+**Retired:** cream (old), peony (old), paprika, periwinkle, kikyo, wisteria, and haze
 
 ### Semantic Tokens (key ones)
 ```css

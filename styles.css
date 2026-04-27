@@ -39,7 +39,7 @@
 
     /* dairy — lights & whites */
     --white:        #ffffff;
-    --cream:        #f8f8f4;
+    --cream:        #f5f5ef;   /* H=60° S=23% L=95% — warmer and more distinct from white than previous #f8f8f4 (L=96.5%) */
     --feta:         #eeeee4;
     --chevre:       #d8d8c8;
 
@@ -111,11 +111,11 @@
        Hardcoded rgba values are intentional — plain CSS cannot derive alpha
        variants from a custom property value. color-mix() could do this in
        modern browsers but adds complexity without meaningful gain here. */
-    --cream-88:      rgba(248,248,244,0.88);
-    --cream-60:      rgba(248,248,244,0.60);
-    --cream-35:      rgba(248,248,244,0.35);
-    --cream-15:      rgba(248,248,244,0.15);
-    --cream-6:       rgba(248,248,244,0.06);
+    --cream-88:      rgba(245,245,239,0.88);
+    --cream-60:      rgba(245,245,239,0.60);
+    --cream-35:      rgba(245,245,239,0.35);
+    --cream-15:      rgba(245,245,239,0.15);
+    --cream-6:       rgba(245,245,239,0.06);
     --white-85:      rgba(255,255,255,0.85);
     --white-15:      rgba(255,255,255,0.15);
     --lavender-15:   rgba(117,112,169,0.15);
@@ -1074,6 +1074,20 @@ body#styleguide-page footer em {
   font-style: italic;
 }
 
+  /* page color progression diagram */
+  .sg-swatch-label {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    fill: var(--text);
+  }
+  .sg-swatch-sub {
+    font-family: 'DM Mono', 'Courier New', monospace;
+    font-size: 11px;
+    font-weight: 400;
+    fill: var(--text-mid);
+    opacity: 0.7;
+  }
 @media (max-width: 900px) {
   body#styleguide-page {
     padding: 2rem 1rem;
