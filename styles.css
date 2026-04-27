@@ -195,7 +195,11 @@
     height: 3.75rem;
     margin-top: var(--nav-height); /* --nav-height is set dynamically by script.js on load and resize */
   }
-  #banner div { flex: 1; }
+  #ribbon {
+    display: flex;
+    height: 0.375rem; /* 6px — a thin reprise of the banner palette above the footer */
+  }
+  #banner div, #ribbon div { flex: 1; }
   .stripe         { width:12.5%; }
   .sakura-bg      { background: var(--sakura); }
   .cherry-bg      { background: var(--cherry); }
@@ -589,7 +593,7 @@
     margin-top: 1.5rem;
   }
   #process {
-    background: var(--deep);
+    background: var(--iris);
     padding: 5rem 2rem;
   }
   #process .inner {
@@ -750,7 +754,7 @@
   }
   #diagnosis {
     padding: 7rem 4rem;
-    background: var(--text-mid);
+    background: var(--highlight-dark);
   }
   #diagnosis .inner {
     max-width: 860px;
