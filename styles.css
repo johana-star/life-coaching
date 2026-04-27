@@ -45,7 +45,6 @@
 
     /* reds & pinks — floral & fruity */
     --blush:        #fceef5;   /* sakura (L=77.5%) lightened 15.0 lightness points to L=92.5% → blush */
-    --peony:        #e0a8c8;   /* sakura (L=77.5%) darkened 10.0 lightness points to L=67.5% → peony */
     --sakura:       #e8a0c0;
     --cherry:       #883060;   /* sakura sibling: H=327° S=48% L=36% vs sakura H=333° S=61% L=77% */
 
@@ -80,12 +79,12 @@
     --serif: 'Cormorant Garamond', serif;
 
     /* ─── tints and shades ──────────────────────────────────────────────────────
-       All tints and shades are now defined within their colour family above.
+       All tints and shades are now defined within their color family above.
        native CSS cannot compute derived values; use Sass or a design tool to
-       recalculate if palette colours change */
+       recalculate if palette colors change */
 
     /* ─── semantic tokens ───────────────────────────────────────────────────────
-       these are what rules reference — colour tokens above should not
+       these are what rules reference — color tokens above should not
        appear in rules directly */
     --background:             var(--cream);
     --surface:                var(--white);
@@ -888,11 +887,11 @@
   }
 
 /* ─── Palette page ──────────────────────────────────────────────────────────
-   All rules are scoped to body.palette-page to avoid collisions with
+   All rules are scoped to body#styleguide-page to avoid collisions with
    index.html styles above (notably: body, header, footer, @media block).
    ─────────────────────────────────────────────────────────────────────────── */
 
-body.palette-page {
+body#styleguide-page {
   font-family: 'DM Sans', sans-serif;
   font-weight: 300;
   background: var(--cream);
@@ -901,11 +900,11 @@ body.palette-page {
   padding: 4rem;
 }
 
-body.palette-page header {
+body#styleguide-page header {
   margin-bottom: 4rem;
 }
 
-body.palette-page header p {
+body#styleguide-page header p {
   font-size: 0.72rem;
   font-weight: 500;
   letter-spacing: 0.14em;
@@ -917,7 +916,7 @@ body.palette-page header p {
   gap: 0.75rem;
 }
 
-body.palette-page header p::before {
+body#styleguide-page header p::before {
   content: '';
   display: block;
   width: 32px;
@@ -925,14 +924,14 @@ body.palette-page header p::before {
   background: var(--lavender);
 }
 
-body.palette-page header h1 {
+body#styleguide-page header h1 {
   font-family: var(--serif);
   font-size: clamp(2.5rem, 5vw, 4rem);
   font-weight: 300;
   line-height: 1.1;
 }
 
-body.palette-page header h1 em {
+body#styleguide-page header h1 em {
   font-style: italic;
   color: var(--lavender);
 }
@@ -1033,7 +1032,7 @@ td.swatch.placeholder .swatch-name,
 td.swatch.placeholder .swatch-hex { color: var(--navy); }
 
 /* ── Palette footer ── */
-body.palette-page footer {
+body#styleguide-page footer {
   margin-top: 3rem;
   display: flex;
   justify-content: space-between;
@@ -1050,19 +1049,19 @@ body.palette-page footer {
   text-align: left;
 }
 
-body.palette-page footer p {
+body#styleguide-page footer p {
   font-size: 0.75rem;
   color: var(--navy);
   letter-spacing: 0.04em;
 }
 
-body.palette-page footer em {
+body#styleguide-page footer em {
   font-family: var(--serif);
   font-style: italic;
 }
 
 @media (max-width: 900px) {
-  body.palette-page {
+  body#styleguide-page {
     padding: 2rem 1rem;
   }
   .palette-table {
@@ -1081,18 +1080,18 @@ body.palette-page footer em {
     border-right: none;
     border-bottom: 1px solid var(--chevre);
   }
-  body.palette-page footer {
+  body#styleguide-page footer {
     flex-direction: column;
     gap: 0.5rem;
   }
 }
 
-body.palette-page .usage-section {
+body#styleguide-page .usage-section {
   margin-top: 3rem;
   border-top: 1px solid var(--chevre);
   padding-top: 2rem;
 }
-body.palette-page .usage-winner {
+body#styleguide-page .usage-winner {
   font-size: 0.75rem;
   color: var(--navy);
   font-family: 'DM Mono', 'Courier New', monospace;
@@ -1103,17 +1102,17 @@ body.palette-page .usage-winner {
   margin-bottom: 1.5rem;
   display: inline-block;
 }
-body.palette-page .usage-winner strong {
+body#styleguide-page .usage-winner strong {
   font-weight: 500;
   color: var(--abyss);
 }
-body.palette-page .usage-section h2 {
+body#styleguide-page .usage-section h2 {
   font-family: var(--serif);
   font-size: clamp(1.8rem, 3vw, 2.4rem);
   font-weight: 300;
   margin-bottom: 0.5rem;
 }
-body.palette-page .usage-section h3 {
+body#styleguide-page .usage-section h3 {
   font-size: 0.65rem;
   font-weight: 500;
   letter-spacing: 0.1em;
@@ -1122,18 +1121,18 @@ body.palette-page .usage-section h3 {
   margin-top: 0.25rem;
   margin-bottom: 2rem;
 }
-body.palette-page .usage-chart {
+body#styleguide-page .usage-chart {
   display: flex;
   flex-direction: column;
   gap: 6px;
 }
-body.palette-page .usage-row {
+body#styleguide-page .usage-row {
   display: grid;
   grid-template-columns: 100px 24px 1fr 200px;
   align-items: center;
   gap: 10px;
 }
-body.palette-page .usage-label {
+body#styleguide-page .usage-label {
   font-size: 0.68rem;
   font-weight: 500;
   letter-spacing: 0.04em;
@@ -1141,7 +1140,7 @@ body.palette-page .usage-label {
   text-align: right;
   font-family: 'DM Mono', 'Courier New', monospace;
 }
-body.palette-page .usage-dot {
+body#styleguide-page .usage-dot {
   width: 16px;
   height: 16px;
   border-radius: 50%;
@@ -1149,38 +1148,38 @@ body.palette-page .usage-dot {
   flex-shrink: 0;
   justify-self: center;
 }
-body.palette-page .usage-bar-wrap {
+body#styleguide-page .usage-bar-wrap {
   height: 16px;
   background: var(--feta);
   border-radius: 2px;
   overflow: hidden;
 }
-body.palette-page .usage-bar {
+body#styleguide-page .usage-bar {
   height: 100%;
   border-radius: 2px;
   opacity: 0.85;
 }
-body.palette-page .usage-note {
+body#styleguide-page .usage-note {
   font-size: 0.62rem;
   font-family: 'DM Mono', 'Courier New', monospace;
   color: var(--text-mid);
   line-height: 1.3;
 }
-body.palette-page .usage-zero .usage-label { color: var(--chevre); }
-body.palette-page .usage-zero .usage-note { color: var(--chevre); }
+body#styleguide-page .usage-zero .usage-label { color: var(--chevre); }
+body#styleguide-page .usage-zero .usage-note { color: var(--chevre); }
 
-body.palette-page .type-section {
+body#styleguide-page .type-section {
   margin-top: 3rem;
   border-top: 1px solid var(--chevre);
   padding-top: 2rem;
 }
-body.palette-page .type-section h2 {
+body#styleguide-page .type-section h2 {
   font-family: var(--serif);
   font-size: clamp(1.8rem, 3vw, 2.4rem);
   font-weight: 300;
   margin-bottom: 0.5rem;
 }
-body.palette-page .type-section h3 {
+body#styleguide-page .type-section h3 {
   font-size: 0.65rem;
   font-weight: 500;
   letter-spacing: 0.1em;
@@ -1189,7 +1188,7 @@ body.palette-page .type-section h3 {
   margin-top: 0.25rem;
   margin-bottom: 2rem;
 }
-body.palette-page .type-specimen {
+body#styleguide-page .type-specimen {
   border-top: 0.5px solid var(--chevre);
   padding: 1.5rem 0;
   display: grid;
@@ -1197,17 +1196,17 @@ body.palette-page .type-specimen {
   gap: 1rem 3rem;
   align-items: start;
 }
-body.palette-page .type-specimen:last-child {
+body#styleguide-page .type-specimen:last-child {
   border-bottom: 0.5px solid var(--chevre);
 }
-body.palette-page .type-label {
+body#styleguide-page .type-label {
   font-size: 0.72rem;
   font-weight: 500;
   letter-spacing: 0.04em;
   color: var(--navy);
   padding-top: 0.25rem;
 }
-body.palette-page .type-meta {
+body#styleguide-page .type-meta {
   font-size: 0.62rem;
   font-family: 'Courier New', monospace;
   color: var(--text-mid);
@@ -1215,56 +1214,56 @@ body.palette-page .type-meta {
   margin-top: 0.35rem;
   grid-column: 1;
 }
-body.palette-page .type-example {
+body#styleguide-page .type-example {
   grid-column: 2;
   grid-row: 1 / 3;
   color: var(--abyss);
 }
-body.palette-page .type-h1 {
+body#styleguide-page .type-h1 {
   font-family: var(--serif);
   font-size: clamp(2.6rem, 5vw, 4rem);
   font-weight: 300;
   line-height: 1.1;
   letter-spacing: -0.01em;
 }
-body.palette-page .type-h1 em { font-style: italic; color: var(--lavender); }
-body.palette-page .type-h2 {
+body#styleguide-page .type-h1 em { font-style: italic; color: var(--lavender); }
+body#styleguide-page .type-h2 {
   font-family: var(--serif);
   font-size: clamp(2rem, 3.5vw, 2.8rem);
   font-weight: 300;
   line-height: 1.2;
 }
-body.palette-page .type-h2 em { font-style: italic; color: var(--lavender); }
-body.palette-page .type-h3 {
+body#styleguide-page .type-h2 em { font-style: italic; color: var(--lavender); }
+body#styleguide-page .type-h3 {
   font-family: var(--serif);
   font-size: clamp(1.8rem, 3vw, 2.4rem);
   font-weight: 300;
   line-height: 1.2;
 }
-body.palette-page .type-h3 em { font-style: italic; color: var(--lavender); }
-body.palette-page .type-h3-card {
+body#styleguide-page .type-h3 em { font-style: italic; color: var(--lavender); }
+body#styleguide-page .type-h3-card {
   font-size: 1rem;
   font-weight: 500;
 }
-body.palette-page .type-body {
+body#styleguide-page .type-body {
   font-size: 0.97rem;
   line-height: 1.8;
   font-weight: 300;
 }
-body.palette-page .type-label-ex {
+body#styleguide-page .type-label-ex {
   font-size: 0.72rem;
   font-weight: 500;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--lavender);
 }
-body.palette-page .type-trust {
+body#styleguide-page .type-trust {
   font-size: 0.75rem;
   font-weight: 500;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
-body.palette-page .type-note {
+body#styleguide-page .type-note {
   font-size: 0.8rem;
   line-height: 1.6;
   font-weight: 300;
@@ -1272,7 +1271,7 @@ body.palette-page .type-note {
   border-left: 2px solid var(--sakura);
   padding-left: 0.9rem;
 }
-body.palette-page .type-cta {
+body#styleguide-page .type-cta {
   display: inline-block;
   font-size: 0.8rem;
   font-weight: 400;
@@ -1284,18 +1283,18 @@ body.palette-page .type-cta {
   border-radius: 2px;
 }
 
-body.palette-page .components-section {
+body#styleguide-page .components-section {
   margin-top: 3rem;
   border-top: 1px solid var(--chevre);
   padding-top: 2rem;
 }
-body.palette-page .components-section h2 {
+body#styleguide-page .components-section h2 {
   font-family: var(--serif);
   font-size: clamp(1.8rem, 3vw, 2.4rem);
   font-weight: 300;
   margin-bottom: 0.5rem;
 }
-body.palette-page .components-section h3 {
+body#styleguide-page .components-section h3 {
   font-size: 0.65rem;
   font-weight: 500;
   letter-spacing: 0.1em;
@@ -1304,14 +1303,14 @@ body.palette-page .components-section h3 {
   margin-top: 0.25rem;
   margin-bottom: 2rem;
 }
-body.palette-page .component-group {
+body#styleguide-page .component-group {
   border-top: 0.5px solid var(--chevre);
   padding: 1.5rem 0;
 }
-body.palette-page .component-group:last-child {
+body#styleguide-page .component-group:last-child {
   border-bottom: 0.5px solid var(--chevre);
 }
-body.palette-page .component-label {
+body#styleguide-page .component-label {
   font-size: 0.72rem;
   font-weight: 500;
   letter-spacing: 0.08em;
@@ -1319,14 +1318,14 @@ body.palette-page .component-label {
   color: var(--navy);
   margin-bottom: 0.35rem;
 }
-body.palette-page .component-desc {
+body#styleguide-page .component-desc {
   font-size: 0.8rem;
   color: var(--text-mid);
   line-height: 1.6;
   max-width: 640px;
   margin-bottom: 1.25rem;
 }
-body.palette-page .component-example {
+body#styleguide-page .component-example {
   background: var(--feta);
   border-radius: 4px;
   padding: 1.5rem 2rem;
@@ -1335,7 +1334,7 @@ body.palette-page .component-example {
   gap: 1.5rem;
   flex-wrap: wrap;
 }
-body.palette-page .component-note {
+body#styleguide-page .component-note {
   font-size: 0.72rem;
   color: var(--text-mid);
   font-family: 'Courier New', monospace;
@@ -1346,23 +1345,23 @@ body.palette-page .component-note {
 }
 
 /* style guide component examples */
-body.palette-page .sg-tags {
+body#styleguide-page .sg-tags {
   list-style: none;
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
   padding: 0;
 }
-body.palette-page .sg-offering-example {
+body#styleguide-page .sg-offering-example {
   background: var(--turmeric);
   padding: 2rem;
 }
-body.palette-page .sg-card {
+body#styleguide-page .sg-card {
   max-width: 280px;
   background: var(--surface);
   padding: 2rem;
 }
-body.palette-page .sg-card .icon {
+body#styleguide-page .sg-card .icon {
   width: 36px;
   height: 36px;
   border-radius: 2px;
@@ -1372,24 +1371,24 @@ body.palette-page .sg-card .icon {
   justify-content: center;
   margin-bottom: 1.25rem;
 }
-body.palette-page .sg-card .icon img {
+body#styleguide-page .sg-card .icon img {
   width: 16px;
   height: 16px;
 }
-body.palette-page h3.sg-card-h3 {
+body#styleguide-page h3.sg-card-h3 {
   font-size: 0.95rem;
   font-weight: 500;
   color: var(--cayenne);
   margin-bottom: 0.5rem;
 }
-body.palette-page .sg-card-p {
+body#styleguide-page .sg-card-p {
   font-size: 0.85rem;
   color: var(--text-mid);
   line-height: 1.7;
 }
 
 
-body.palette-page .component-sublabel {
+body#styleguide-page .component-sublabel {
   font-size: 0.65rem;
   font-weight: 500;
   letter-spacing: 0.08em;
@@ -1399,36 +1398,36 @@ body.palette-page .component-sublabel {
   margin-bottom: 0.5rem;
 }
 
-body.palette-page .component-example #about {
+body#styleguide-page .component-example #about {
   display: block;
   min-height: unset;
   padding: 0;
   grid-template-columns: unset;
 }
 
-body.palette-page .sg-example-sakura { background: var(--sakura); }
-body.palette-page .sg-example-pine   { background: var(--pine); }
+body#styleguide-page .sg-example-sakura { background: var(--sakura); }
+body#styleguide-page .sg-example-pine   { background: var(--pine); }
 
-body.palette-page #toc {
+body#styleguide-page #toc {
   margin-bottom: 3rem;
   border: 0.5px solid var(--chevre);
   border-radius: 4px;
   display: inline-block;
   min-width: 260px;
 }
-body.palette-page #toc summary {
+body#styleguide-page #toc summary {
   padding: 1rem 2rem;
   cursor: pointer;
   list-style: none;
 }
-body.palette-page #toc summary::-webkit-details-marker { display: none; }
-body.palette-page #toc[open] summary {
+body#styleguide-page #toc summary::-webkit-details-marker { display: none; }
+body#styleguide-page #toc[open] summary {
   border-bottom: 0.5px solid var(--chevre);
 }
-body.palette-page #toc .toc-list {
+body#styleguide-page #toc .toc-list {
   padding: 0.75rem 2rem 1.25rem;
 }
-body.palette-page .toc-label {
+body#styleguide-page .toc-label {
   font-size: 0.65rem;
   font-weight: 500;
   letter-spacing: 0.1em;
@@ -1438,39 +1437,39 @@ body.palette-page .toc-label {
   align-items: center;
   gap: 0.5rem;
 }
-body.palette-page .toc-label::after {
+body#styleguide-page .toc-label::after {
   content: '▸';
   font-size: 0.6rem;
   color: var(--text-mid);
   transition: transform 0.2s;
 }
-body.palette-page #toc[open] .toc-label::after {
+body#styleguide-page #toc[open] .toc-label::after {
   transform: rotate(90deg);
 }
-body.palette-page .toc-list {
+body#styleguide-page .toc-list {
   margin: 0;
   padding-left: 1rem;
   font-size: 0.85rem;
   line-height: 1.8;
   color: var(--abyss);
 }
-body.palette-page .toc-list ol {
+body#styleguide-page .toc-list ol {
   padding-left: 1rem;
   font-size: 0.78rem;
   color: var(--navy);
 }
-body.palette-page .toc-list a {
+body#styleguide-page .toc-list a {
   color: inherit;
   text-decoration: none;
   border-bottom: 1px solid var(--chevre);
   transition: border-color 0.2s, color 0.2s;
 }
-body.palette-page .toc-list a:hover {
+body#styleguide-page .toc-list a:hover {
   color: var(--lavender);
   border-color: var(--lavender);
 }
 
-body.palette-page .sg-nav-mockup {
+body#styleguide-page .sg-nav-mockup {
   background: var(--cream-88);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--lavender-15);
@@ -1481,19 +1480,19 @@ body.palette-page .sg-nav-mockup {
   width: 100%;
   box-sizing: border-box;
 }
-body.palette-page .sg-nav-logo {
+body#styleguide-page .sg-nav-logo {
   font-family: var(--serif);
   font-size: 1.3rem;
   font-weight: 400;
   letter-spacing: 0.04em;
   color: var(--text);
 }
-body.palette-page .sg-nav-actions {
+body#styleguide-page .sg-nav-actions {
   display: flex;
   align-items: center;
   gap: 1.5rem;
 }
-body.palette-page .sg-nav-ghost {
+body#styleguide-page .sg-nav-ghost {
   font-size: 0.85rem;
   color: var(--text-mid);
   letter-spacing: 0.02em;
@@ -1501,7 +1500,7 @@ body.palette-page .sg-nav-ghost {
   padding-bottom: 2px;
   cursor: default;
 }
-body.palette-page .sg-nav-cta {
+body#styleguide-page .sg-nav-cta {
   background: var(--accent);
   color: var(--surface);
   padding: 0.55rem 1.4rem;

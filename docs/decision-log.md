@@ -112,3 +112,7 @@ Four anonymised/amalgamated client personas, named after Tide Garden colours:
 - **Perry** — high-functioning burnout, struggles with daily living, undiagnosed, ashamed
 
 Key insight: most clients arrive having already done significant research. They want someone who can sit with complexity, not explain it.
+- **`body.palette-page` → `body.styleguide-page`** — renamed throughout styles.css and styleguide.html to match the file's promotion from palette to styleguide.
+- **`--peony` removed** — slipped through the earlier retired token cleanup. Now gone from the active palette.
+- **colour → color** — British spellings corrected to American throughout styles.css and styleguide.html comments and copy.
+- **Styleguide footer updated** — "a palette" → "style guide"; 29 colours → 26 colors (reflecting retired token removals).
