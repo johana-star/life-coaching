@@ -1346,6 +1346,15 @@ body#styleguide-page .components-section h3 {
   margin-top: 0.25rem;
   margin-bottom: 2rem;
 }
+body#styleguide-page .components-section #process .step h3 {
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--surface);
+  margin-top: 0;
+  margin-bottom: 0;
+}
 body#styleguide-page .component-group {
   border-top: 0.5px solid var(--chevre);
   padding: 1.5rem 0;
