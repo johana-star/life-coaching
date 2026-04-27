@@ -56,7 +56,7 @@
     --cayenne:      #b24c19;
 
     /* yellows — culinary, condiments */
-    --parchment:    #faf5c0;   /* mustard (L=51.2%) lightened 40.0 lightness points to L=91.2% → parchment */
+    --butter:    #faf5c0;   /* mustard (L=51.2%) lightened 40.0 lightness points to L=91.2% → butter */
     --mustard:      #d8c030;
     --dijon:        #b8a020;   /* mustard (L=51.2%) darkened 7.0 lightness points to L=44.2% */
     --molasses:     #6a5800;   /* dijon (L=42.4%) darkened 21.6 lightness points to L=20.8% → molasses */
@@ -372,7 +372,7 @@
     color: var(--accent);
   }
   #offerings .label { color: var(--accent-warm); }
-  #systems .label { color: var(--parchment); }
+  #systems .label { color: var(--butter); }
   #diagnosis .regional-center.card .label { color: var(--accent-secondary); }
   #testimonials .label { color: var(--surface-alt); }
   #not-therapy .label { color: var(--muted); }
@@ -418,7 +418,7 @@
   }
   .tag-tertiary {
     color: var(--molasses);
-    background: var(--parchment);
+    background: var(--butter);
     border-color: var(--accent-tertiary);
   }
   .tag-highlight {
@@ -562,7 +562,7 @@
     margin-bottom: 1.25rem;
     color: var(--white);
   }
-  #systems h2 em { color: var(--parchment); }
+  #systems h2 em { color: var(--butter); }
   #systems p {
     font-size: 0.95rem;
     color: var(--cream);
@@ -572,7 +572,7 @@
   #systems .note {
     margin-top: 1rem;
     font-size: 0.88rem;
-    color: var(--parchment);
+    color: var(--butter);
   }
   #systems .tags {
     list-style: none;

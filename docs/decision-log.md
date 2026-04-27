@@ -31,7 +31,7 @@ Final sequence:
 - About: sakura (with abyss text — AAA)
 - Not-therapy: abyss
 - Offerings: turmeric (with cayenne accents)
-- Systems: pine (with parchment/white text — all AAA)
+- Systems: pine (with butter/white text — all AAA)
 - Process: abyss (with mustard accents)
 - Diagnosis: navy (with white/cream/horizon text)
 - Book/CTA: mustard (with abyss text — AAA, sage em accent)

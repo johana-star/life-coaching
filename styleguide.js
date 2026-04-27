@@ -41,7 +41,7 @@
     { name: 'lilac',     hex: '#e7e6f0', score: 10,   note: 'tag-accent background ×5' },
     { name: 'chevre',    hex: '#d8d8c8', score: 9,    note: 'dividers and grid borders throughout' },
     { name: 'mint',      hex: '#e8f4ea', score: 8,    note: 'tag-secondary background ×4' },
-    { name: 'parchment', hex: '#faf5c0', score: 8,    note: 'tag-tertiary background ×4' },
+    { name: 'butter', hex: '#faf5c0', score: 8,    note: 'tag-tertiary background ×4' },
     { name: 'horizon',   hex: '#d1e5f0', score: 6,    note: 'tag-highlight background on sakura (about section)' },
     { name: 'sage',      hex: '#7aaa82', score: 5,    note: 'systems h2 em + label' },
     { name: 'horizon',   hex: '#d1e5f0', score: 7,    note: 'tag-highlight bg on sakura (about) + diagnosis note' },

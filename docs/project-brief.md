@@ -52,7 +52,7 @@ Two-layer CSS token system: colour tokens → semantic tokens.
 
 **Oranges:** turmeric `#f6edde`, cayenne `#b24c19`
 
-**Yellows:** parchment `#faf5c0`, mustard `#d8c030`, dijon `#b8a020`, molasses `#6a5800`
+**Yellows:** butter `#faf5c0`, mustard `#d8c030`, dijon `#b8a020`, molasses `#6a5800`
 
 **Greens:** mint `#e8f4ea`, thyme `#a8d0b0`, sage `#7aaa82`, pine `#2a5a32`
 
@@ -138,7 +138,7 @@ Two-layer CSS token system: colour tokens → semantic tokens.
 ### Tag Classes
 - `tag-accent` — lavender family (lilac bg, thistle border, iris text)
 - `tag-secondary` — sage family (mint bg, thyme border, pine text)
-- `tag-tertiary` — mustard family (parchment bg, mustard border, molasses text)
+- `tag-tertiary` — mustard family (butter bg, mustard border, molasses text)
 - `tag-highlight` — sakura family (blush bg, sakura border, cherry text)
   - On sakura background: overridden to horizon bg, coastal border, abyss text
 
