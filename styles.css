@@ -1029,7 +1029,7 @@ td.swatch .swatch-hsl {
   mix-blend-mode: multiply;
 }
 
-td.swatch.dark .swatch-hsl { mix-blend-mode: normal; opacity: 0.5; }
+td.swatch.dark .swatch-hsl { color: var(--cream); mix-blend-mode: normal; opacity: 0.5; }
 
 td.swatch.light .swatch-name,
 td.swatch.light .swatch-hex { color: var(--abyss); }
