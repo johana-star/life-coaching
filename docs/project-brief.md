@@ -35,14 +35,14 @@ images/
   shield.svg
   mug.svg
   calendar.svg
-  info.svg
+  pencil.svg
 ```
 
 ---
 
 ## Palette — Tide Garden
 
-Two-layer CSS token system: colour tokens → semantic tokens.
+Two-layer CSS token system: color tokens → semantic tokens.
 
 ### Color Families
 
@@ -52,7 +52,7 @@ Two-layer CSS token system: colour tokens → semantic tokens.
 
 **Oranges:** turmeric `#f6edde`, ginger `#dcb288`, saffron `#c62810`, cayenne `#b24c19` — light to dark
 
-**Yellows:** parchment `#faf5c0`, mustard `#d8c030`, dijon `#b8a020`, molasses `#6a5800`
+**Yellows:** butter `#faf5c0`, mustard `#d8c030`, dijon `#b8a020`, molasses `#6a5800` — a complete condiment progression, light to dark
 
 **Greens:** mint `#e8f4ea`, thyme `#a8d0b0`, sage `#7aaa82`, pine `#2a5a32`
 
@@ -60,7 +60,7 @@ Two-layer CSS token system: colour tokens → semantic tokens.
 
 **Purples:** lilac `#e7e6f0`, thistle `#c8c6dd`, lavender `#7570a9`, iris `#494573`
 
-**Retired:** peony, paprika, periwinkle, kikyo, wisteria, haze
+**Retired:** peony (old), paprika, periwinkle, kikyo, wisteria, and haze
 
 ### Semantic Tokens (key ones)
 ```css
@@ -74,9 +74,6 @@ Two-layer CSS token system: colour tokens → semantic tokens.
 --text-light:            navy
 --accent:                lavender
 --accent-hover:          iris
---accent-secondary:      sage
---accent-secondary-light: mint
---accent-secondary-mid:  thyme
 --accent-tertiary:       mustard
 --accent-warm:           cayenne
 --highlight:             sakura
@@ -119,15 +116,15 @@ Two-layer CSS token system: colour tokens → semantic tokens.
 - **Scoped generic classes** — `.inner`, `.label`, `.card` scoped to their section id
 - **One declaration per line** in CSS
 - **American spelling** — "color" not "colour" in comments and copy
-- **Two-layer CSS tokens** — colour names in `:root`, semantic aliases reference them; rules only use semantic tokens
-- **SVGs extracted** to `images/` folder; colours hardcoded with mapping comments since CSS custom properties don't work in external SVGs
+- **Two-layer CSS tokens** — color names in `:root`, semantic aliases reference them; rules only use semantic tokens
+- **SVGs extracted** to `images/` folder; colors hardcoded with mapping comments since CSS custom properties don't work in external SVGs
 - **No inline scripts** — JS in `script.js` and `styleguide.js`
 - **Evocative naming** — tokens named after what they evoke (dairy, flora, culinary, nautical), not what they describe
 
 ### CSS Architecture
 ```
 :root {
-  /* colour tokens — named palette */
+  /* color tokens — named palette */
   /* tints and shades — with HSL derivation comments */
   /* retired colors */
   /* semantic tokens — what rules reference */
@@ -138,7 +135,7 @@ Two-layer CSS token system: colour tokens → semantic tokens.
 ### Tag Classes
 - `tag-accent` — lavender family (lilac bg, thistle border, iris text)
 - `tag-secondary` — sage family (mint bg, thyme border, pine text)
-- `tag-tertiary` — mustard family (parchment bg, mustard border, molasses text)
+- `tag-tertiary` — mustard family (butter bg, mustard border, molasses text)
 - `tag-highlight` — sakura family (blush bg, sakura border, cherry text)
   - On sakura background: overridden to horizon bg, coastal border, abyss text
 
@@ -184,13 +181,14 @@ Two-layer CSS token system: colour tokens → semantic tokens.
 - **Testimonials** — section is commented out in the HTML pending real testimonials. Once received: write heading and copy, uncomment section, update styleguide.
 
 ### Styleguide
-- **Color combinations section** — approved pairings with contrast ratios. Currently colours are shown individually but not as pairs.
+- **Color combinations section** — approved pairings with contrast ratios. Currently colors are shown individually but not as pairs.
 - **Update palette.js scores** — scores in styleguide.js reflect a snapshot and will drift as the design evolves. Revisit after major section changes.
 
 ### Done
 - **Global type scale** — base font-size set to 18px globally, 20px on mobile via media query.
 - **`info.svg` icon** — replaced with `pencil.svg` on the Artistic practice card.
-- **Saffron** — removed from stylesheet along with other retired tokens (paprika, peony, periwinkle, kikyo).
+- **Retired tokens** — paprika, periwinkle, kikyo removed from stylesheet. Peony and saffron reinstated as active tokens.
+- **New tokens** — ginger (`#dcb288`) and updated saffron (`#c62810`) added to the orange family. Palette table now has no empty cells.
 - **Spacing and layout section** — added to styleguide.html with section padding, inner max-width, grid gap, and breakpoint documentation.
 - **Voice and tone section** — added to styleguide.html including naming convention, language preferences, and singular they guidance.
 - **Nav height** — `#banner` margin-top now uses `var(--nav-height)` computed dynamically by script.js. Documented in stylesheet.
@@ -218,7 +216,7 @@ Late 30s. Received an autism or ADHD diagnosis recently after years of strugglin
 
 Parent of a nonverbal autistic child entering adolescence. Already receiving traditional service delivery through a Regional Center but doesn't fully understand what else might be available. Has heard of the Self-Determination Program but found the information overwhelming and acronym-heavy. Worried about what happens when her son ages out of school services. Time-poor, emotionally depleted, and skeptical of systems that seem designed to discourage access.
 
-**What they're looking for:** An Independent Facilitator referral, or coaching to help their navigate the system herself. Practical knowledge, not platitudes. Honest assessment of what's realistically achievable.
+**What they're looking for:** An Independent Facilitator referral, or coaching to help her navigate the system herself. Practical knowledge, not platitudes. Honest assessment of what's realistically achievable.
 
 ---
 
@@ -227,7 +225,7 @@ Parent of a nonverbal autistic child entering adolescence. Already receiving tra
 
 Mid-20s, recently out as nonbinary or trans. Also late-diagnosed neurodivergent, or strongly suspects it. The two processes are tangled — it's hard to know where identity ends and neurodivergence begins. Has found most therapists either focus on one or the other, or don't have enough lived experience with either. Burned through a lot of energy masking in previous jobs and relationships. Currently rebuilding.
 
-**What they're looking for:** A coach who holds both threads without requiring their to choose which one is "the real issue." Someone who won't pathologize either their gender or their brain.
+**What they're looking for:** A coach who holds both threads without requiring her to choose which one is "the real issue." Someone who won't pathologize either their gender or their brain.
 
 ---
 
