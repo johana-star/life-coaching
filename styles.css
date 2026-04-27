@@ -987,7 +987,7 @@ body#styleguide-page header h1 em {
 }
 
 .palette-table tbody tr:hover {
-  height: 104px;
+  height: 120px;
 }
 
 td.swatch {
@@ -1019,6 +1019,17 @@ td.swatch .swatch-hex {
   font-family: 'DM Mono', 'Courier New', monospace;
   mix-blend-mode: multiply;
 }
+
+td.swatch .swatch-hsl {
+  font-size: 0.55rem;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  opacity: 0.5;
+  font-family: 'DM Mono', 'Courier New', monospace;
+  mix-blend-mode: multiply;
+}
+
+td.swatch.dark .swatch-hsl { mix-blend-mode: normal; opacity: 0.5; }
 
 td.swatch.light .swatch-name,
 td.swatch.light .swatch-hex { color: var(--abyss); }
