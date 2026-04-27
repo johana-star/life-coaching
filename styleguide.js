@@ -20,50 +20,61 @@
   //   not-therapy:   abyss
   //   offerings:     turmeric
   //   systems:       pine
-  //   process:       abyss
-  //   diagnosis:     navy
-  //   book/CTA:      mustard
+  //   process:       iris
+  //   diagnosis:     cherry
+  //   book/CTA:      butter
+  //   ribbon:        rainbow stripes (not persistent)
   //   footer:        coastal
 
   const palette = [
-    { name: 'cream',     hex: '#f8f8f4', score: 820,  note: 'body + nav backgrounds' },
-    { name: 'abyss',     hex: '#1a2244', score: 230,  note: 'not-therapy + process bg + body text' },
-    { name: 'navy',      hex: '#4a5472', score: 120,  note: 'diagnosis bg + body text-mid' },
+    { name: 'cream',     hex: '#f5f5ef', score: 820,  note: 'body + hero + nav backgrounds' },
+    { name: 'abyss',     hex: '#1a2244', score: 120,  note: 'not-therapy bg + body text' },
     { name: 'white',     hex: '#ffffff', score: 115,  note: 'portrait, hero image, badge, rc card' },
     { name: 'sakura',    hex: '#e8a0c0', score: 93,   note: 'about section background + tag-highlight border' },
-    { name: 'mustard',   hex: '#d8c030', score: 85,   note: 'book/CTA bg + process accents + tag borders' },
     { name: 'pine',      hex: '#2a5a32', score: 84,   note: 'systems section background + tag-secondary text' },
     { name: 'turmeric',  hex: '#f6edde', score: 80,   note: 'offerings section background' },
     { name: 'lavender',  hex: '#7570a9', score: 72,   note: 'trust-bar bg, nav cta, eyebrow, seen.svg' },
-    { name: 'thyme',     hex: '#a8d0b0', score: 34,   note: 'seen.svg fill + step text + tag borders' },
+    { name: 'iris',      hex: '#494573', score: 70,   note: 'process bg + tag-accent text + nav cta hover' },
+    { name: 'cherry',    hex: '#883060', score: 70,   note: 'diagnosis bg + tag-highlight text' },
+    { name: 'butter',    hex: '#faf5c0', score: 68,   note: 'book/CTA bg + tag-tertiary background ×4' },
+    { name: 'mustard',   hex: '#d8c030', score: 35,   note: 'process accents + tag borders + accent-tertiary' },
+    { name: 'thyme',     hex: '#a8d0b0', score: 34,   note: 'seen.svg fill + process step text + tag borders' },
     { name: 'coastal',   hex: '#88bcd8', score: 14,   note: 'footer bg + not-therapy text + tag border' },
     { name: 'cayenne',   hex: '#b24c19', score: 12,   note: 'offerings label, h2 em + card h3 ×6' },
     { name: 'lilac',     hex: '#e7e6f0', score: 10,   note: 'tag-accent background ×5' },
     { name: 'chevre',    hex: '#d8d8c8', score: 9,    note: 'dividers and grid borders throughout' },
     { name: 'mint',      hex: '#e8f4ea', score: 8,    note: 'tag-secondary background ×4' },
-    { name: 'butter', hex: '#faf5c0', score: 8,    note: 'tag-tertiary background ×4' },
-    { name: 'horizon',   hex: '#d1e5f0', score: 6,    note: 'tag-highlight background on sakura (about section)' },
+    { name: 'navy',      hex: '#4a5472', score: 7,    note: 'body text-mid throughout' },
+    { name: 'horizon',   hex: '#d1e5f0', score: 6,    note: 'tag-highlight bg on sakura (about) + diagnosis note' },
     { name: 'sage',      hex: '#7aaa82', score: 5,    note: 'systems h2 em + label' },
-    { name: 'horizon',   hex: '#d1e5f0', score: 7,    note: 'tag-highlight bg on sakura (about) + diagnosis note' },
-    { name: 'thistle',   hex: '#c8c6dd', score: 5,    note: 'tag-accent border ×5' },
-    { name: 'iris',      hex: '#494573', score: 6,    note: 'tag-accent text ×5 + nav cta hover (accent-hover)' },
-    { name: 'blush',     hex: '#fceef5', score: 4,    note: 'tag-highlight background ×2 (systems)' },
+    { name: 'thistle',   hex: '#c8c6dd', score: 5,    note: 'tag-accent border ×5 + diagnosis em' },
+    { name: 'blush',     hex: '#fceef5', score: 4,    note: 'tag-highlight background ×2' },
     { name: 'molasses',  hex: '#6a5800', score: 4,    note: 'tag-tertiary text ×4' },
-    { name: 'cherry',    hex: '#883060', score: 3,    note: 'tag-highlight text ×2 + banner stripe' },
     { name: 'feta',      hex: '#eeeee4', score: 3,    note: 'icon backgrounds ×6' },
-
+    { name: 'peony',     hex: '#c7508c', score: 2,    note: 'trust bar tag or accent use' },
+    { name: 'ginger',    hex: '#dcb288', score: 2,    note: 'tag-warm border' },
+    { name: 'saffron',   hex: '#c62810', score: 2,    note: 'tag-warm text' },
     { name: 'dijon',     hex: '#b8a020', score: 1,    note: 'banner stripe (not persistent)' },
   ];
 
   const sorted = [...palette].sort((a, b) => b.score - a.score);
   const winner = sorted[0];
   const rest = sorted.slice(1);
-  const max = winner.score;
+  const max = rest[0].score; // scale bars relative to second place = 100%
   const chart = document.getElementById('usageChart');
 
   const winnerEl = document.createElement('p');
   winnerEl.className = 'usage-winner';
-  winnerEl.innerHTML = 'First place: <strong>' + winner.name + '</strong> — ' + winner.note;
+  const winnerDot = document.createElement('span');
+  winnerDot.className = 'usage-dot';
+  winnerDot.style.background = winner.hex;
+  winnerDot.style.display = 'inline-block';
+  winnerDot.style.verticalAlign = 'middle';
+  winnerDot.style.marginRight = '0.5rem';
+  winnerEl.appendChild(winnerDot);
+  const winnerText = document.createElement('span');
+  winnerText.innerHTML = '<strong>First place: ' + winner.name + '</strong> — ' + winner.note;
+  winnerEl.appendChild(winnerText);
   chart.before(winnerEl);
 
   rest.forEach(item => {
@@ -84,7 +95,7 @@
 
     const bar = document.createElement('div');
     bar.className = 'usage-bar';
-    bar.style.width = max > 0 ? (item.score / max * 100) + '%' : '0%';
+    bar.style.width = max > 0 ? Math.min(item.score / max * 100, 100) + '%' : '0%';
     bar.style.background = item.hex;
     bar.style.outline = '1px solid rgba(0,0,0,0.06)';
     barWrap.appendChild(bar);
