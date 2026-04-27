@@ -16,14 +16,15 @@
 <details id="toc">
   <summary class="toc-label">Contents</summary>
   <ol class="toc-list">
-    <li>Palette
+    <li><a href="#voice">Voice &amp; tone</a></li>
+    <li><a href="#palette-table-section">Palette</a>
       <ol>
-        <li><a href="#palette-table">Palette table</a></li>
+        <li><a href="#palette-table-section">Palette</a></li>
         <li><a href="#retired">Retired colors</a></li>
-        <li><a href="#color-usage">Color usage</a></li>
-        <li><a href="#color-progression">Page progression</a></li>
         <li><a href="#hue-wheel">Hue wheel</a></li>
+        <li><a href="#color-progression">Page progression</a></li>
         <li><a href="#color-pairs">Color combinations</a></li>
+        <li><a href="#color-usage">Color usage</a></li>
       </ol>
     </li>
     <li><a href="#typography">Typography</a>
@@ -49,21 +50,57 @@
         <li><a href="#process-step">Process step</a></li>
       </ol>
     </li>
-    <li><a href="#voice">Voice &amp; tone</a></li>
+    <li><a href="#spacing">Spacing &amp; layout</a></li>
     <li><a href="#utils">Color utilities</a></li>
   </ol>
 </details>
 
-<!--
-  Rows represent lightness bands (lightest at top, darkest at bottom).
-  Each swatch is placed in the row closest to its HSL lightness value.
-  Within a family, swatches that share near-identical lightness are nudged
-  to adjacent rows to maintain unique placement per column.
-  Empty cells indicate no swatch in that family at that lightness band.
-  4 rows span L≈100% (row 1) to L≈18% (row 4).
-  Families with four colors (yellows, blues, purples) fill all four rows with no empty cells.
-  Other families may have empty cells where no color exists at that lightness band.
--->
+
+<div class="sg-section" id="voice">
+  <h2>Voice &amp; tone</h2>
+
+  <h3>Core principles</h3>
+  <p class="component-desc">Direct, warm, honest — not performative. Front-loads the most important information. Names systems plainly and takes positions. Discloses personal experience naturally, without over-explaining.</p>
+
+  <h3>Naming convention</h3>
+  <p class="component-desc">Name things after what they evoke, not what they describe. Applies to palette token names, CSS class names, section names, and copy. Examples: <code>--mustard</code> not <code>--dark-yellow</code>; <code>--abyss</code> not <code>--darkest-blue</code>.</p>
+
+  <h3>Language preferences</h3>
+  <table class="palette-table" style="width:auto;">
+    <thead>
+      <tr><th>Prefer</th><th>Avoid</th><th>Reason</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Neurodivergent</td><td>Neurodivergent-affirming</td><td>Signals belonging rather than allyship</td></tr>
+      <tr><td>Peer support</td><td>Peer coaching</td><td>More accurate to what is offered</td></tr>
+      <tr><td>Life Coach</td><td>Peer Life Coach</td><td>Simpler, less jargon</td></tr>
+      <tr><td>Recovering from trauma</td><td>In recovery</td><td>Specific; avoids connoting substance use</td></tr>
+      <tr><td>American English spelling</td><td>British English</td><td>color, not colour — in copy and code comments</td><!-- intentional British spelling as counter-example --></tr>
+    </tbody>
+  </table>
+
+  <h3>Singular they</h3>
+  <p class="component-desc">Johana uses they/them pronouns. The verb form depends on the subject:</p>
+  <table class="palette-table" style="width:auto;">
+    <thead>
+      <tr><th>Subject</th><th>Verb</th><th>Example</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><em>they</em></td><td>plural</td><td>They are late-diagnosed. They have navigated the SDP.</td></tr>
+      <tr><td>Proper name</td><td>singular</td><td>Johana is shadowing as an Independent Facilitator.</td></tr>
+    </tbody>
+  </table>
+  <p class="component-desc">This mirrors how <em>you</em> works — "you are" whether one person or many, but "Alex is" when using the name. With practice, "they are" becomes natural. (<a href="https://www.merriam-webster.com/grammar/singular-nonbinary-they-is-or-they-are">Merriam-Webster</a>)</p>
+</div>
+
+
+
+
+<div class="sg-section" id="palette-table-section">
+  <h2>Palette — Tide Garden</h2>
+  <h3>28 active color tokens across 7 families</h3>
+  <p class="component-desc">Rows represent lightness bands — lightest at top, darkest at bottom. Each swatch shows name, hex, and H/S/L values. Families with four colors fill all four rows; others may have empty cells where no color exists at that lightness band.</p>
+</div>
 <table id="palette-table" class="palette-table">
   <thead>
     <tr>
@@ -274,12 +311,72 @@
   </table>
 </div>
 
-<div class="usage-section">
-  <h2 id="color-usage">Color usage</h2>
-  <h3>Estimated visual weight in index.html — area × role × frequency of rendered elements</h3>
-  <div class="usage-chart" id="usageChart"></div>
+<div class="sg-section" id="hue-wheel">
+  <h2>Hue wheel</h2>
+  <h3>All 28 active tokens arranged by hue angle</h3>
+  <p class="component-desc">Angle = hue (clockwise from top = 0°). Distance from center = darkness — lighter colors cluster near center, darker toward the edge. Circle size is proportional to the lightness step within each family. Small faded circles at 0°, 90°, 180°, and 270° show the pure hue at that angle for orientation — they are not palette tokens.</p>
+  <svg width="100%" viewBox="0 0 680 680" role="img">
+    <title>Tide Garden hue wheel</title>
+    <desc>28 active palette colors arranged by hue angle around a circle. Distance from center encodes lightness — lighter colors sit closer to center, darker colors toward the edge.</desc>
+    <circle cx="340" cy="340" r="270" fill="none" stroke="#d8d8c8" stroke-width="0.5"/>
+    <circle cx="340" cy="340" r="190" fill="none" stroke="#d8d8c8" stroke-width="0.5" stroke-dasharray="2 4"/>
+    <circle cx="340" cy="340" r="110" fill="none" stroke="#d8d8c8" stroke-width="0.5" stroke-dasharray="2 4"/>
+    <circle cx="340" cy="340" r="30"  fill="none" stroke="#d8d8c8" stroke-width="0.5" stroke-dasharray="2 4"/>
+    <line x1="340" y1="70" x2="340" y2="610" stroke="#d8d8c8" stroke-width="0.5" stroke-dasharray="2 6"/>
+    <line x1="70"  y1="340" x2="610" y2="340" stroke="#d8d8c8" stroke-width="0.5" stroke-dasharray="2 6"/>
+    <!-- Reference hue samples at 0°, 90°, 180°, 270° -->
+    <circle cx="340.0" cy="70.0"  r="8" fill="#dc3b3b" stroke="#a82020" stroke-width="0.5" opacity="0.6"/>
+    <circle cx="610.0" cy="340.0" r="8" fill="#8cdc3b" stroke="#60a820" stroke-width="0.5" opacity="0.6"/>
+    <circle cx="340.0" cy="610.0" r="8" fill="#3bdcdc" stroke="#20a8a8" stroke-width="0.5" opacity="0.6"/>
+    <circle cx="70.0"  cy="340.0" r="8" fill="#8c3bdc" stroke="#6020a8" stroke-width="0.5" opacity="0.6"/>
+    <text class="sg-swatch-sub" x="340" y="52"  text-anchor="middle">0°</text>
+    <text class="sg-swatch-sub" x="628" y="344" text-anchor="start">90°</text>
+    <text class="sg-swatch-sub" x="340" y="636" text-anchor="middle">180°</text>
+    <text class="sg-swatch-sub" x="52"  y="344" text-anchor="end">270°</text>
+    <text class="sg-swatch-sub" x="320" y="128" text-anchor="end">reds &amp; pinks</text>
+    <text class="sg-swatch-sub" x="502" y="192" text-anchor="start">oranges / yellows</text>
+    <text class="sg-swatch-sub" x="520" y="462" text-anchor="start">greens</text>
+    <text class="sg-swatch-sub" x="158" y="508" text-anchor="end">blues</text>
+    <text class="sg-swatch-sub" x="140" y="424" text-anchor="end">purples</text>
+    <text class="sg-swatch-sub" x="432" y="272" text-anchor="start">dairy</text>
+    <!-- Dairy -->
+    <circle cx="340.0" cy="260.0" r="10" fill="#ffffff" stroke="#d8d8c8" stroke-width="1"/>
+    <text class="sg-swatch-sub" x="350" y="252" text-anchor="start">white</text>
+    <circle cx="417.5" cy="295.2" r="7"  fill="#f5f5ef" stroke="#d8d8c8" stroke-width="0.5"/>
+    <circle cx="424.1" cy="291.4" r="7"  fill="#eeeee4" stroke="#d8d8c8" stroke-width="0.5"/>
+    <circle cx="438.9" cy="282.9" r="9"  fill="#d8d8c8" stroke="#b8b8a8" stroke-width="0.5"/>
+    <!-- Reds & pinks -->
+    <circle cx="296.2" cy="264.1" r="7"  fill="#fceef5" stroke="#e8c0d8" stroke-width="0.5"/>
+    <circle cx="283.8" cy="229.8" r="9"  fill="#e8a0c0" stroke="#c878a0" stroke-width="0.5"/>
+    <circle cx="257.2" cy="196.7" r="11" fill="#c7508c" stroke="#a83070" stroke-width="0.5"/>
+    <circle cx="230.2" cy="170.9" r="11" fill="#883060" stroke="#602040" stroke-width="0.5"/>
+    <!-- Oranges -->
+    <circle cx="398.6" cy="265.0" r="7"  fill="#f6edde" stroke="#d8c8b0" stroke-width="0.5"/>
+    <circle cx="408.5" cy="221.4" r="9"  fill="#dcb288" stroke="#c09060" stroke-width="0.5"/>
+    <circle cx="366.5" cy="151.7" r="11" fill="#c62810" stroke="#a01800" stroke-width="0.5"/>
+    <circle cx="406.4" cy="157.7" r="11" fill="#b24c19" stroke="#903000" stroke-width="0.5"/>
+    <!-- Yellows -->
+    <circle cx="425.8" cy="279.9" r="8"  fill="#faf5c0" stroke="#d8d000" stroke-width="0.5"/>
+    <circle cx="473.0" cy="232.3" r="10" fill="#d8c030" stroke="#b8a010" stroke-width="0.5"/>
+    <circle cx="487.8" cy="220.3" r="10" fill="#b8a020" stroke="#988000" stroke-width="0.5"/>
+    <circle cx="516.3" cy="192.1" r="11" fill="#6a5800" stroke="#4a3800" stroke-width="0.5"/>
+    <!-- Greens -->
+    <circle cx="411.5" cy="400.0" r="7"  fill="#e8f4ea" stroke="#b0d8b8" stroke-width="0.5"/>
+    <circle cx="436.2" cy="426.6" r="9"  fill="#a8d0b0" stroke="#78b088" stroke-width="0.5"/>
+    <circle cx="463.9" cy="443.9" r="10" fill="#7aaa82" stroke="#508858" stroke-width="0.5"/>
+    <circle cx="509.0" cy="481.8" r="11" fill="#2a5a32" stroke="#103818" stroke-width="0.5"/>
+    <!-- Blues & darks -->
+    <circle cx="303.2" cy="436.0" r="8"  fill="#d1e5f0" stroke="#a0c8e0" stroke-width="0.5"/>
+    <circle cx="290.2" cy="469.7" r="10" fill="#88bcd8" stroke="#5898b8" stroke-width="0.5"/>
+    <circle cx="198.8" cy="481.2" r="11" fill="#4a5472" stroke="#283450" stroke-width="0.5"/>
+    <circle cx="162.0" cy="494.7" r="12" fill="#1a2244" stroke="#080e28" stroke-width="0.5"/>
+    <!-- Purples -->
+    <circle cx="253.0" cy="378.7" r="7"  fill="#e7e6f0" stroke="#c0bedd" stroke-width="0.5"/>
+    <circle cx="236.5" cy="388.3" r="8"  fill="#c8c6dd" stroke="#a0a0c0" stroke-width="0.5"/>
+    <circle cx="190.0" cy="409.9" r="10" fill="#7570a9" stroke="#504d88" stroke-width="0.5"/>
+    <circle cx="157.3" cy="425.2" r="11" fill="#494573" stroke="#282450" stroke-width="0.5"/>
+  </svg>
 </div>
-
 
 <div class="sg-section" id="color-progression">
   <h2>Page color progression</h2>
@@ -330,68 +427,6 @@
     <rect x="40" y="616" width="200" height="44" rx="4" fill="#88bcd8"/>
     <text x="256" y="635" class="sg-swatch-label">Footer</text>
     <text x="256" y="652" class="sg-swatch-sub">coastal  #88bcd8</text>
-  </svg>
-</div>
-
-<div class="sg-section" id="hue-wheel">
-  <h2>Hue wheel</h2>
-  <h3>All 28 active tokens arranged by hue angle</h3>
-  <p class="component-desc">Angle = hue (clockwise from top = 0°). Distance from center = darkness — lighter colors cluster near center, darker toward the edge. Circle size is proportional to the lightness step within each family.</p>
-  <svg width="100%" viewBox="0 0 680 680" role="img">
-    <title>Tide Garden hue wheel</title>
-    <desc>28 active palette colors arranged by hue angle around a circle. Distance from center encodes lightness — lighter colors sit closer to center, darker colors toward the edge.</desc>
-    <circle cx="340" cy="340" r="270" fill="none" stroke="#d8d8c8" stroke-width="0.5"/>
-    <circle cx="340" cy="340" r="190" fill="none" stroke="#d8d8c8" stroke-width="0.5" stroke-dasharray="2 4"/>
-    <circle cx="340" cy="340" r="110" fill="none" stroke="#d8d8c8" stroke-width="0.5" stroke-dasharray="2 4"/>
-    <circle cx="340" cy="340" r="30"  fill="none" stroke="#d8d8c8" stroke-width="0.5" stroke-dasharray="2 4"/>
-    <line x1="340" y1="70" x2="340" y2="610" stroke="#d8d8c8" stroke-width="0.5" stroke-dasharray="2 6"/>
-    <line x1="70"  y1="340" x2="610" y2="340" stroke="#d8d8c8" stroke-width="0.5" stroke-dasharray="2 6"/>
-    <text class="sg-swatch-sub" x="340" y="52"  text-anchor="middle">0°</text>
-    <text class="sg-swatch-sub" x="628" y="344" text-anchor="start">90°</text>
-    <text class="sg-swatch-sub" x="340" y="636" text-anchor="middle">180°</text>
-    <text class="sg-swatch-sub" x="52"  y="344" text-anchor="end">270°</text>
-    <text class="sg-swatch-sub" x="320" y="128" text-anchor="end">reds &amp; pinks</text>
-    <text class="sg-swatch-sub" x="502" y="192" text-anchor="start">oranges / yellows</text>
-    <text class="sg-swatch-sub" x="520" y="462" text-anchor="start">greens</text>
-    <text class="sg-swatch-sub" x="158" y="508" text-anchor="end">blues</text>
-    <text class="sg-swatch-sub" x="140" y="424" text-anchor="end">purples</text>
-    <text class="sg-swatch-sub" x="432" y="272" text-anchor="start">dairy</text>
-    <!-- Dairy -->
-    <circle cx="340.0" cy="260.0" r="10" fill="#ffffff" stroke="#d8d8c8" stroke-width="1"/>
-    <text class="sg-swatch-sub" x="350" y="252" text-anchor="start">white</text>
-    <circle cx="417.5" cy="295.2" r="7"  fill="#f5f5ef" stroke="#d8d8c8" stroke-width="0.5"/>
-    <circle cx="424.1" cy="291.4" r="7"  fill="#eeeee4" stroke="#d8d8c8" stroke-width="0.5"/>
-    <circle cx="438.9" cy="282.9" r="9"  fill="#d8d8c8" stroke="#b8b8a8" stroke-width="0.5"/>
-    <!-- Reds & pinks -->
-    <circle cx="296.2" cy="264.1" r="7"  fill="#fceef5" stroke="#e8c0d8" stroke-width="0.5"/>
-    <circle cx="283.8" cy="229.8" r="9"  fill="#e8a0c0" stroke="#c878a0" stroke-width="0.5"/>
-    <circle cx="257.2" cy="196.7" r="11" fill="#c7508c" stroke="#a83070" stroke-width="0.5"/>
-    <circle cx="230.2" cy="170.9" r="11" fill="#883060" stroke="#602040" stroke-width="0.5"/>
-    <!-- Oranges -->
-    <circle cx="398.6" cy="265.0" r="7"  fill="#f6edde" stroke="#d8c8b0" stroke-width="0.5"/>
-    <circle cx="408.5" cy="221.4" r="9"  fill="#dcb288" stroke="#c09060" stroke-width="0.5"/>
-    <circle cx="366.5" cy="151.7" r="11" fill="#c62810" stroke="#a01800" stroke-width="0.5"/>
-    <circle cx="406.4" cy="157.7" r="11" fill="#b24c19" stroke="#903000" stroke-width="0.5"/>
-    <!-- Yellows -->
-    <circle cx="425.8" cy="279.9" r="8"  fill="#faf5c0" stroke="#d8d000" stroke-width="0.5"/>
-    <circle cx="473.0" cy="232.3" r="10" fill="#d8c030" stroke="#b8a010" stroke-width="0.5"/>
-    <circle cx="487.8" cy="220.3" r="10" fill="#b8a020" stroke="#988000" stroke-width="0.5"/>
-    <circle cx="516.3" cy="192.1" r="11" fill="#6a5800" stroke="#4a3800" stroke-width="0.5"/>
-    <!-- Greens -->
-    <circle cx="411.5" cy="400.0" r="7"  fill="#e8f4ea" stroke="#b0d8b8" stroke-width="0.5"/>
-    <circle cx="436.2" cy="426.6" r="9"  fill="#a8d0b0" stroke="#78b088" stroke-width="0.5"/>
-    <circle cx="463.9" cy="443.9" r="10" fill="#7aaa82" stroke="#508858" stroke-width="0.5"/>
-    <circle cx="509.0" cy="481.8" r="11" fill="#2a5a32" stroke="#103818" stroke-width="0.5"/>
-    <!-- Blues & darks -->
-    <circle cx="303.2" cy="436.0" r="8"  fill="#d1e5f0" stroke="#a0c8e0" stroke-width="0.5"/>
-    <circle cx="290.2" cy="469.7" r="10" fill="#88bcd8" stroke="#5898b8" stroke-width="0.5"/>
-    <circle cx="198.8" cy="481.2" r="11" fill="#4a5472" stroke="#283450" stroke-width="0.5"/>
-    <circle cx="162.0" cy="494.7" r="12" fill="#1a2244" stroke="#080e28" stroke-width="0.5"/>
-    <!-- Purples -->
-    <circle cx="253.0" cy="378.7" r="7"  fill="#e7e6f0" stroke="#c0bedd" stroke-width="0.5"/>
-    <circle cx="236.5" cy="388.3" r="8"  fill="#c8c6dd" stroke="#a0a0c0" stroke-width="0.5"/>
-    <circle cx="190.0" cy="409.9" r="10" fill="#7570a9" stroke="#504d88" stroke-width="0.5"/>
-    <circle cx="157.3" cy="425.2" r="11" fill="#494573" stroke="#282450" stroke-width="0.5"/>
   </svg>
 </div>
 
@@ -499,6 +534,14 @@
   </table>
 
 </div>
+
+<div class="usage-section">
+  <h2 id="color-usage">Color usage</h2>
+  <h3>Estimated visual weight in index.html — area × role × frequency of rendered elements</h3>
+  <div class="usage-chart" id="usageChart"></div>
+</div>
+
+
 
 <div class="type-section">
   <h2 id="typography">Typography</h2>
@@ -680,43 +723,50 @@
 
 </div>
 
-<div class="sg-section" id="voice">
-  <h2>Voice &amp; tone</h2>
+<div class="sg-section" id="spacing">
+  <h2>Spacing &amp; layout</h2>
 
-  <h3>Core principles</h3>
-  <p class="component-desc">Direct, warm, honest — not performative. Front-loads the most important information. Names systems plainly and takes positions. Discloses personal experience naturally, without over-explaining.</p>
-
-  <h3>Naming convention</h3>
-  <p class="component-desc">Name things after what they evoke, not what they describe. Applies to palette token names, CSS class names, section names, and copy. Examples: <code>--mustard</code> not <code>--dark-yellow</code>; <code>--abyss</code> not <code>--darkest-blue</code>.</p>
-
-  <h3>Language preferences</h3>
+  <h3>Section padding</h3>
+  <p class="component-desc">Two tiers. Standard sections use <code>5rem 4rem</code> (vertical × horizontal). Hero sections — those that anchor a major content shift — use <code>7rem 4rem</code>. The horizontal <code>4rem</code> is consistent across all sections and collapses to <code>2rem</code> on mobile.</p>
   <table class="palette-table" style="width:auto;">
-    <thead>
-      <tr><th>Prefer</th><th>Avoid</th><th>Reason</th></tr>
-    </thead>
+    <thead><tr><th>Tier</th><th>Padding</th><th>Sections</th></tr></thead>
     <tbody>
-      <tr><td>Neurodivergent</td><td>Neurodivergent-affirming</td><td>Signals belonging rather than allyship</td></tr>
-      <tr><td>Peer support</td><td>Peer coaching</td><td>More accurate to what is offered</td></tr>
-      <tr><td>Life Coach</td><td>Peer Life Coach</td><td>Simpler, less jargon</td></tr>
-      <tr><td>Recovering from trauma</td><td>In recovery</td><td>Specific; avoids connoting substance use</td></tr>
-      <tr><td>American English spelling</td><td>British English</td><td>color, not colour — in copy and code comments</td><!-- intentional British spelling as counter-example --></tr>
+      <tr><td>Standard</td><td><code>5rem 4rem</code></td><td>#systems, #process</td></tr>
+      <tr><td>Hero</td><td><code>7rem 4rem</code></td><td>#about, #offerings, #testimonials, #diagnosis</td></tr>
+      <tr><td>Hero (exception)</td><td><code>4rem</code></td><td>#hero — full-viewport, padding uniform on all sides</td></tr>
+      <tr><td>Mobile (all)</td><td><code>5rem 2rem</code></td><td>All sections collapse to this below 900px</td></tr>
     </tbody>
   </table>
 
-  <h3>Singular they</h3>
-  <p class="component-desc">Johana uses they/them pronouns. The verb form depends on the subject:</p>
+  <h3>Inner max-width pattern</h3>
+  <p class="component-desc">Full-bleed sections that contain a single column of content use an <code>.inner</code> wrapper with <code>max-width</code> and <code>margin: 0 auto</code> to constrain line length. Two-column grid sections (#about, #not-therapy, #hero) let the grid handle width — no <code>.inner</code> needed.</p>
   <table class="palette-table" style="width:auto;">
-    <thead>
-      <tr><th>Subject</th><th>Verb</th><th>Example</th></tr>
-    </thead>
+    <thead><tr><th>Context</th><th>Max-width</th></tr></thead>
     <tbody>
-      <tr><td><em>they</em></td><td>plural</td><td>They are late-diagnosed. They have navigated the SDP.</td></tr>
-      <tr><td>Proper name</td><td>singular</td><td>Johana is shadowing as an Independent Facilitator.</td></tr>
+      <tr><td>Body copy within a section (<code>#systems p</code>, <code>#diagnosis p</code>)</td><td><code>640px</code></td></tr>
+      <tr><td>Section inner wrapper (<code>.inner</code>)</td><td><code>860px</code></td></tr>
+      <tr><td>#testimonials inner</td><td><code>1000px</code></td></tr>
+      <tr><td>#book layout</td><td><code>1100px</code></td></tr>
     </tbody>
   </table>
-  <p class="component-desc">This mirrors how <em>you</em> works — "you are" whether one person or many, but "Alex is" when using the name. With practice, "they are" becomes natural. (<a href="https://www.merriam-webster.com/grammar/singular-nonbinary-they-is-or-they-are">Merriam-Webster</a>)</p>
+
+  <h3>Grid gaps</h3>
+  <p class="component-desc">Column gaps are generous — content that breathes. Offering and testimonial card grids use <code>1px</code> gap to create hairline dividers via the section background showing through.</p>
+  <table class="palette-table" style="width:auto;">
+    <thead><tr><th>Context</th><th>Gap</th></tr></thead>
+    <tbody>
+      <tr><td>#hero, #not-therapy column gap</td><td><code>4rem</code></td></tr>
+      <tr><td>#about column gap</td><td><code>6rem</code></td></tr>
+      <tr><td>#book column gap</td><td><code>6rem</code></td></tr>
+      <tr><td>#offerings card grid</td><td><code>1px</code> (hairline divider)</td></tr>
+      <tr><td>#testimonials card grid</td><td><code>1.5rem</code></td></tr>
+      <tr><td>#process step list</td><td><code>0.25rem 2rem</code> (row × column)</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Breakpoint</h3>
+  <p class="component-desc">One breakpoint at <code>900px</code>. Below it: all multi-column grids collapse to single column, horizontal padding halves to <code>2rem</code>, and the base font size steps up from <code>18px</code> to <code>20px</code>.</p>
 </div>
-
 
 <div class="sg-section" id="utils">
   <h2>Color utilities</h2>
