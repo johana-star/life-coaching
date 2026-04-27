@@ -12,9 +12,36 @@ All HSL values use the CSS convention:
   H = hue in degrees (0–360)
   S = saturation as percentage (0–100)
   L = lightness as percentage (0–100)
+
+Requires Python 3.9+. On macOS, the command may be `python3` rather than
+`python` depending on your shell configuration:
+
+  python3 palette-utils.py palette
 """
 
+import sys
+if sys.version_info < (3, 9):
+    raise RuntimeError('palette-utils.py requires Python 3.9 or higher.')
+
 import colorsys
+
+
+# ─── colorsys HSL wrappers ────────────────────────────────────────────────────
+#
+# colorsys uses HLS order (hue, lightness, saturation) internally, which is
+# the inverse of the CSS/design-world convention (HSL: hue, saturation,
+# lightness). These two wrappers normalise the interface so all calling code
+# uses HSL order and never needs to know about the swap.
+
+def _rgb_to_hsl(r: float, g: float, b: float) -> tuple[float, float, float]:
+    """colorsys.rgb_to_hls returns (h, l, s) — reorder to (h, s, l)."""
+    h, l, s = colorsys.rgb_to_hls(r, g, b)
+    return h, s, l
+
+
+def _hsl_to_rgb(h: float, s: float, l: float) -> tuple[float, float, float]:
+    """colorsys.hls_to_rgb takes (h, l, s) — swap s and l before passing."""
+    return colorsys.hls_to_rgb(h, l, s)
 
 
 # ─── Conversion ──────────────────────────────────────────────────────────────
@@ -30,10 +57,9 @@ def hex_to_hsl(hex: str) -> tuple[float, float, float]:
     Convert a hex color string to (H, S, L).
 
     Returns H in degrees (0–360), S and L as percentages (0–100).
-    Uses CSS convention where colorsys returns (h, l, s) — note the swap.
     """
     r, g, b = hex_to_rgb(hex)
-    h, l, s = colorsys.rgb_to_hls(r, g, b)
+    h, s, l = _rgb_to_hsl(r, g, b)
     return round(h * 360, 1), round(s * 100, 1), round(l * 100, 1)
 
 
@@ -43,8 +69,7 @@ def hsl_to_hex(h: float, s: float, l: float) -> str:
 
     H in degrees (0–360), S and L as percentages (0–100).
     """
-    h, s, l = h / 360, s / 100, l / 100
-    r, g, b = colorsys.hls_to_rgb(h, l, s)  # note: hls not hsl
+    r, g, b = _hsl_to_rgb(h / 360, s / 100, l / 100)
     return '#{:02x}{:02x}{:02x}'.format(int(r * 255), int(g * 255), int(b * 255))
 
 
@@ -199,8 +224,6 @@ FAMILIES = {
 # ─── CLI ─────────────────────────────────────────────────────────────────────
 
 if __name__ == '__main__':
-    import sys
-
     args = sys.argv[1:]
 
     if not args:
