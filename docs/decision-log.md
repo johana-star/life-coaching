@@ -116,3 +116,11 @@ Key insight: most clients arrive having already done significant research. They 
 - **`--peony` removed** — slipped through the earlier retired token cleanup. Now gone from the active palette.
 - **colour → color** — British spellings corrected to American throughout styles.css and styleguide.html comments and copy.
 - **Styleguide footer updated** — "a palette" → "style guide"; 29 colours → 26 colors (reflecting retired token removals).
+
+---
+
+## New color tokens (April 2026)
+
+- **`--peony`** (`#c7508c`) — restored to active palette. H=330° S=52% L=55%. Sibling of sakura, midpoint between sakura (L=77%) and cherry (L=36%). Fills row 3 of the reds & pinks family in the palette table.
+- **`--ginger`** (`#dcb288`) — new orange family token. H=30° S=55% L=70%. Warm brown-orange, sits between turmeric and saffron. Culinary theme: the spice.
+- **`--saffron`** (`#c62810`) — new orange family token. H=8° S=85% L=42%. Deep red-orange, derived from the color of saffron threads. Redder than cayenne (H=20°), similar depth. Orange family now reads light to dark: turmeric → ginger → saffron → cayenne.

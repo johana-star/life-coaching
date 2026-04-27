@@ -46,10 +46,13 @@
     /* reds & pinks — floral & fruity */
     --blush:        #fceef5;   /* sakura (L=77.5%) lightened 15.0 lightness points to L=92.5% → blush */
     --sakura:       #e8a0c0;
+    --peony:        #c7508c;   /* sakura sibling: H=330° S=52% L=55% — midpoint between sakura (L=77%) and cherry (L=36%) */
     --cherry:       #883060;   /* sakura sibling: H=327° S=48% L=36% vs sakura H=333° S=61% L=77% */
 
     /* oranges — culinary, spices */
     --turmeric:     #f6edde;
+    --ginger:       #dcb288;   /* turmeric (L=91.8%) darkened ~22 lightness points → ginger; H=30° S=55% */
+    --saffron:      #c62810;   /* deep red-orange; H=8° S=85% L=42% — redder than cayenne (H=20°), similar depth */
     --cayenne:      #b24c19;
 
     /* yellows — culinary, condiments */

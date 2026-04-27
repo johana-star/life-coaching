@@ -48,9 +48,9 @@ Two-layer CSS token system: colour tokens → semantic tokens.
 
 **Dairy:** white `#ffffff`, cream `#f8f8f4`, feta `#eeeee4`, chevre `#d8d8c8`
 
-**Reds & pinks:** blush `#fceef5`, sakura `#e8a0c0`, cherry `#883060`
+**Reds & pinks:** blush `#fceef5`, sakura `#e8a0c0`, peony `#c7508c`, cherry `#883060`
 
-**Oranges:** turmeric `#f6edde`, cayenne `#b24c19`
+**Oranges:** turmeric `#f6edde`, ginger `#dcb288`, saffron `#c62810`, cayenne `#b24c19` — light to dark
 
 **Yellows:** parchment `#faf5c0`, mustard `#d8c030`, dijon `#b8a020`, molasses `#6a5800`
 
