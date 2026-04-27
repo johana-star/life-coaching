@@ -37,9 +37,6 @@
     greens: theming is culinary, herbal
     darks & blues: theming is nautical
     purples: theming is floral & astronomical
-        NOTE: Oranges and periwinkles are not used yet in this design, their intention in
-              specification is to be used as accent colors for future designs inheriting
-              this palette and pride flags.
     */
 
     /* dairy — lights & whites */
@@ -57,10 +54,6 @@
     /* oranges — culinary, spices */
     --turmeric:     #f6edde;
     --cayenne:      #b24c19;
-
-    /* Claude remove and rework to integrate cayenne and turmeric instead of paprika and saffron:
-    --paprika:      #e27e36;   /* split complement of periwinkle (H=240°); H=25° S=75% L=55% — relationship to lavender (H=245°) is near-identical */
-/*  --saffron:      #TKTKTK; */
 
     /* yellows — culinary, condiments */
     --parchment:    #faf5c0;   /* mustard (L=51.2%) lightened 40.0 lightness points to L=91.2% → parchment */
@@ -83,9 +76,7 @@
     /* purples — floral & astronomical */
     --lilac:        #e7e6f0;   /* lavender (L=55.1%) lightened to L=92.3% → lilac */
     --thistle:      #c8c6dd;   /* lavender (L=55.1%) lightened 27.0 lightness points to L=82.1% → thistle */
-    --periwinkle:   #7F7FBD;
     --lavender:     #7570a9;
-    --kikyo:        #6a4c9c;   /* balloon flower (Japanese: 桔梗); H=272° S=33% L=45% — more violet than lavender family (H=245°); a deliberate accent */
     --iris:         #494573;   /* lavender (L=55.1%) darkened 19.0 lightness points to L=36.1% → iris */
 
     --serif: 'Cormorant Garamond', serif;
