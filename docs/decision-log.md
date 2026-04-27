@@ -10,7 +10,7 @@ Entries are grouped by topic and ordered roughly chronologically within each gro
 - Named the palette **Tide Garden** — captures the aquatic and botanical threads simultaneously
 - Two-layer token system: colour tokens (named) → semantic tokens (functional aliases). Rules only reference semantic tokens.
 - Colour names are evocative natural/culinary references — never descriptive (e.g. `--mustard` not `--dark-yellow`)
-- **Periwinkle → Lavender**: renamed and colour-shifted to `#7570a9` (H=245°) to match Johana's top in their headshot. Improves WCAG contrast to AA.
+- **Periwinkle → Lavender**: renamed and colour-shifted to `#7570a9` (H=245°) to match Johana's top in her headshot. Improves WCAG contrast to AA.
 - **Navy/Abyss swapped**: abyss is now the deepest blue (`#1a2244`), navy is the mid blue (`#4a5472`) — semantically accurate.
 - **Horizon** (`#d1e5f0`) added — coastal tint at L=88%, used as tag-highlight background on sakura sections.
 - **Wisteria retired** — replaced by iris as `--accent-hover`. Iris (darker) gives clearer hover feedback on lavender CTA.
@@ -38,7 +38,7 @@ Final sequence:
 - Footer: coastal (with abyss text — AAA)
 
 Key colour decisions:
-- Process section uses abyss background with mustard and sage accents. Book/CTA uses butter background with abyss text and pine em — related palette, distinct feel.
+- Process section echoes book/CTA with the same three colours (abyss, mustard, sage) with backgrounds and text swapped — intentional design relationship
 - tag-highlight (sakura) is invisible on sakura about background — overridden to horizon bg / coastal border / abyss text
 - Systems moved from mint → sage → pine to get sufficient contrast for light text
 
@@ -112,22 +112,10 @@ Four anonymised/amalgamated client personas, named after Tide Garden colours:
 - **Perry** — high-functioning burnout, struggles with daily living, undiagnosed, ashamed
 
 Key insight: most clients arrive having already done significant research. They want someone who can sit with complexity, not explain it.
-- **`body.palette-page` → `body.styleguide-page`** — renamed throughout styles.css and styleguide.html to match the file's promotion from palette to styleguide.
-- **`--peony` removed** — slipped through the earlier retired token cleanup. Now gone from the active palette.
-- **colour → color** — British spellings corrected to American throughout styles.css and styleguide.html comments and copy.
-- **Styleguide footer updated** — "a palette" → "style guide"; 29 colours → 26 colors (reflecting retired token removals).
 
 ---
 
-## New color tokens (April 2026)
+## Styleguide component examples (April 2026)
 
-- **`--peony`** (`#c7508c`) — restored to active palette. H=330° S=52% L=55%. Sibling of sakura, midpoint between sakura (L=77%) and cherry (L=36%). Fills row 3 of the reds & pinks family in the palette table.
-- **`--ginger`** (`#dcb288`) — new orange family token. H=30° S=55% L=70%. Warm brown-orange, sits between turmeric and saffron. Culinary theme: the spice.
-- **`--saffron`** (`#c62810`) — new orange family token. H=8° S=85% L=42%. Deep red-orange, derived from the color of saffron threads. Redder than cayenne (H=20°), similar depth. Orange family now reads light to dark: turmeric → ginger → saffron → cayenne.
-- **Book/CTA background: mustard → butter** — mustard was too high-contrast and punchy for the closing section. Butter is softer and warmer. Pine on butter (AAA 7.24) replaces the failing sage-on-mustard (1.46 — Fail). Mustard retained as `--accent-tertiary` for process section and tag-tertiary; book background overrides directly with `var(--butter)`.
-- **`tag-warm`** added — turmeric bg (`#f6edde`), ginger border (`#dcb288`), saffron text (`#c62810`). Saffron on turmeric passes AA at 4.87. Completes the orange family tag variant alongside accent (lavender), secondary (sage), tertiary (mustard), and highlight (sakura).
-- **Hero `min-height: 100vh` removed** — the full-viewport height was leaving substantial dead space on desktop. Hero now sizes to content plus `4rem` padding. Confirmed visually on both landscape and portrait desktop views — feels warmer and more grounded.
-- **`--cream` updated** — `#f8f8f4` (L=96.5%) → `#f5f5ef` (L=95%, H=60° S=23%). New cream is more visually distinct from white. Old value retired as "cream (old)" in the styleguide. All five cream opacity variants updated to `rgba(245,245,239,…)`.
-- **Process background: abyss → iris** — breaks the double-abyss in the dark cluster. Mustard and thyme both pass AA on iris. Color sequence in the dark middle is now abyss → turmeric → pine → iris → cherry, each section genuinely distinct.
-- **Diagnosis background: navy → cherry** — emotionally resonant for a section about identity and diagnosis. White AAA, thistle AA, cream AAA. The white surface card is unchanged. Sequence now closes the dark cluster with warmth before surfacing to butter.
-- **`#ribbon` added** — a 6px reprise of the banner palette stripes directly above the footer. Same eight colors, same order. Mirrors `#banner` structurally (`display:flex`, reuses `.stripe` and `-bg` classes). Functions as the "tell them what you told them" closing beat of the page's color narrative.
+- **Generic placeholder text is intentional** — styleguide component examples use placeholder headings and body copy by default. When asked to fix a component "not matching," interpret this as a styling/color issue unless explicitly told otherwise. Do not replace placeholder text with real copy unless asked.
+- **Lesson:** "The headers don't match" = the header styling doesn't match the expected colors. Confirm the interpretation before touching content.
