@@ -2,15 +2,15 @@
 
 ## About Johana
 
-Johana Star is a life coach based in California. She is late-diagnosed autistic, nonbinary, trans, queer, and in recovery from complex trauma. She has a background as a Ruby developer (visible in a Ruby gem tattoo in pride colours on her shoulder). She peer-facilitates NAMI Connections meetings and is shadowing as an Independent Facilitator with Educators and Advocates. She has personally navigated the California Self-Determination Program (SDP).
+Johana Star is a life coach based in California. They are late-diagnosed autistic, nonbinary, trans, queer, and in recovery from complex trauma. They have a background as a Ruby developer (visible in a Ruby gem tattoo in pride colours on their shoulder). They peer-facilitate NAMI Connections meetings and are shadowing as an Independent Facilitator with Educators and Advocates. They have personally navigated the California Self-Determination Program (SDP).
 
-Her coaching practice focuses on:
+Their coaching practice focuses on:
 - Neurodivergent people (especially late-diagnosed)
 - People managing mental health conditions
 - Queer and trans people
 - California Regional Center and DDS navigation
 
-She is **not** a licensed mental health practitioner — she is a life coach bringing peer support from lived experience.
+They are **not** a licensed mental health practitioner — they are a life coach bringing peer support from lived experience.
 
 ---
 
@@ -52,7 +52,7 @@ Two-layer CSS token system: colour tokens → semantic tokens.
 
 **Oranges:** turmeric `#f6edde`, cayenne `#b24c19`
 
-**Yellows:** butter `#faf5c0`, mustard `#d8c030`, dijon `#b8a020`, molasses `#6a5800`
+**Yellows:** butter `#faf5c0`, mustard `#d8c030`, dijon `#b8a020`, molasses `#6a5800` — a complete condiment progression, light to dark
 
 **Greens:** mint `#e8f4ea`, thyme `#a8d0b0`, sage `#7aaa82`, pine `#2a5a32`
 
@@ -179,26 +179,22 @@ Two-layer CSS token system: colour tokens → semantic tokens.
 
 ## Punchlist
 
-Items are roughly in priority order. Visual review required unless noted.
-
-### In progress
-- **Body copy review** — go section by section through about, not-therapy, offerings, systems, process, diagnosis, and book. Headings are approved (see above). Body paragraphs still need editing toward Johana's natural voice.
+### Blocked on content
+- **Body copy review** — go section by section through about, not-therapy, offerings, systems, process, diagnosis, and book. Headings are approved (see above). Body paragraphs still need editing toward Johana's natural voice. In progress with writer friend.
 - **Testimonials** — section is commented out in the HTML pending real testimonials. Once received: write heading and copy, uncomment section, update styleguide.
 
-### Design
-- **Global type scale** — text reads too small on mobile across all sections. Needs a considered bump, likely to the base font-size or via clamp() adjustments throughout. The book/CTA note text color decision (lavender vs something darker) also depends on this review.
-- **`info.svg` icon** — currently used for "Artistic practice" offering card. The info circle is semantically wrong. Replace with a pencil, brush, or similar creative-practice icon.
-- **Saffron** — placeholder color (`#TKTKTK`) in the palette. Intended as a warm golden-orange at approximately H=65°, lighter than cayenne. Calculate and define when ready to use.
-
 ### Styleguide
-- **Spacing and layout section** — document section padding conventions, inner max-width pattern, grid gap values. Not yet in styleguide.html.
-- **Voice and tone section** — document the design language principle and copy conventions in the styleguide for future reference.
 - **Color combinations section** — approved pairings with contrast ratios. Currently colours are shown individually but not as pairs.
 - **Update palette.js scores** — scores in styleguide.js reflect a snapshot and will drift as the design evolves. Revisit after major section changes.
 
-### Technical
-- **Nav height** — `--nav-height` is computed by JS on load and resize. The CSS fallback is `78px` (determined empirically). Worth documenting why.
-- **Calendly widget** — mobile layout is resolved but the widget still has a hardcoded `min-width: 320px` inline style (Calendly vendor requirement). This is documented in the HTML.
+### Done
+- **Global type scale** — base font-size set to 18px globally, 20px on mobile via media query.
+- **`info.svg` icon** — replaced with `pencil.svg` on the Artistic practice card.
+- **Saffron** — removed from stylesheet along with other retired tokens (paprika, peony, periwinkle, kikyo).
+- **Spacing and layout section** — added to styleguide.html with section padding, inner max-width, grid gap, and breakpoint documentation.
+- **Voice and tone section** — added to styleguide.html including naming convention, language preferences, and singular they guidance.
+- **Nav height** — `#banner` margin-top now uses `var(--nav-height)` computed dynamically by script.js. Documented in stylesheet.
+- **Calendly widget** — documented in HTML. No further action needed.
 
 ---
 
@@ -213,7 +209,7 @@ Personas are named after Tide Garden colors to signal their emotional register.
 
 Late 30s. Received an autism or ADHD diagnosis recently after years of struggling without explanation. Relieved and grieving simultaneously. Has a stable life on the surface — job, apartment, relationships — but privately finds basic things exhausting in ways she can't explain to people around her. Doesn't know whether to tell her employer. Isn't sure if she "counts" as disabled. Needs help figuring out what the diagnosis actually means for her daily life, not a clinical explanation of what autism is.
 
-**What she's looking for:** Someone who has been through it and can talk plainly. Not therapy. Not another explainer. A person who gets it without needing it explained.
+**What they're looking for:** Someone who has been through it and can talk plainly. Not therapy. Not another explainer. A person who gets it without needing it explained.
 
 ---
 
@@ -222,7 +218,7 @@ Late 30s. Received an autism or ADHD diagnosis recently after years of strugglin
 
 Parent of a nonverbal autistic child entering adolescence. Already receiving traditional service delivery through a Regional Center but doesn't fully understand what else might be available. Has heard of the Self-Determination Program but found the information overwhelming and acronym-heavy. Worried about what happens when her son ages out of school services. Time-poor, emotionally depleted, and skeptical of systems that seem designed to discourage access.
 
-**What she's looking for:** An Independent Facilitator referral, or coaching to help her navigate the system herself. Practical knowledge, not platitudes. Honest assessment of what's realistically achievable.
+**What they're looking for:** An Independent Facilitator referral, or coaching to help their navigate the system herself. Practical knowledge, not platitudes. Honest assessment of what's realistically achievable.
 
 ---
 
@@ -231,7 +227,7 @@ Parent of a nonverbal autistic child entering adolescence. Already receiving tra
 
 Mid-20s, recently out as nonbinary or trans. Also late-diagnosed neurodivergent, or strongly suspects it. The two processes are tangled — it's hard to know where identity ends and neurodivergence begins. Has found most therapists either focus on one or the other, or don't have enough lived experience with either. Burned through a lot of energy masking in previous jobs and relationships. Currently rebuilding.
 
-**What she's looking for:** A coach who holds both threads without requiring her to choose which one is "the real issue." Someone who won't pathologize either her gender or her brain.
+**What they're looking for:** A coach who holds both threads without requiring their to choose which one is "the real issue." Someone who won't pathologize either their gender or their brain.
 
 ---
 

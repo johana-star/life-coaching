@@ -30,10 +30,8 @@
     lights & whites: theming is dairy
     reds & pinks: theming is floral & fruity
     oranges: theming is culinary, spices
-    yellows: theming is culinary, condiments
-        NOTE: Mustard is a brassica, so there may be design space for cabbage, a yellow-green
-        tinted white, bok choy, a light green, broccoli, a dark and grounded green,
-        turnip, a purplish-red white, kale a dark green, etc.
+    yellows: theming is culinary, condiments — a complete light-to-dark progression:
+        butter (lightest) → mustard → dijon → molasses (darkest)
     greens: theming is culinary, herbal
     darks & blues: theming is nautical
     purples: theming is floral & astronomical
@@ -98,10 +96,7 @@
     --text-light:             var(--navy);
     --accent:                 var(--lavender);
     --accent-hover:           var(--iris);
-    --accent-secondary-light: var(--mint);
-    --accent-secondary-mid:   var(--thyme);
-    --accent-secondary:       var(--sage);
-    --accent-secondary-dark:  var(--pine);
+
     --accent-tertiary:        var(--mustard);
     --highlight:              var(--sakura);
     --highlight-dark:         var(--cherry);
@@ -111,7 +106,9 @@
     --deep:                   var(--abyss);
 
     /* ─── opacity variants ──────────────────────────────────────────────────────
-       for use where alpha transparency is needed */
+       Hardcoded rgba values are intentional — plain CSS cannot derive alpha
+       variants from a custom property value. color-mix() could do this in
+       modern browsers but adds complexity without meaningful gain here. */
     --cream-88:      rgba(248,248,244,0.88);
     --cream-60:      rgba(248,248,244,0.60);
     --cream-35:      rgba(248,248,244,0.35);
@@ -144,7 +141,6 @@
     font-family: var(--serif);
   }
   h1, h2, h3, h4 { font-weight: 300; }
-  /* TODO: Can we define the rbga codes below either in the color tokens section of :root or derived from those colors? */
   body > nav {
     position: fixed;
     top: 0;
@@ -185,9 +181,9 @@
   body > nav .cta:hover { background: var(--accent-hover); }
   #hero {
     min-height: 100vh;
-    display: grid; /* When I disable this attribute I get no padding between #hero and #banner.
-                      Why does grid make the section have more whitespace at the top?
-                      (I presume this impacts the bottom as well, as the whitespace gap there is quite large.) */
+    display: grid; /* grid + min-height: 100vh + align-items: center vertically centers
+                      the content within the viewport. Without display: grid, there is no
+                      centering mechanism and the content sits flush at the top. */
     grid-template-columns: 1fr 1fr;
     align-items: center;
     padding: 4rem;
@@ -196,19 +192,18 @@
   #banner {
     display: flex;
     height: 3.75rem;
-    margin-top: 4.875rem; /* determined through trial and error that the nav is 78px high. Can we compute that somehow?
-                         That is, why did we think it was only 60px high? */
+    margin-top: var(--nav-height); /* --nav-height is set dynamically by script.js on load and resize */
   }
   #banner div { flex: 1; }
   .stripe         { width:12.5%; }
-  .sakura-bg      { background: #e8a0c0; }
-  .cherry-bg      { background: #883060; }
-  .cayenne-bg     { background: #b24c19; }
-  .mustard-bg     { background: #d8c030; }
-  .sage-bg        { background: #7aaa82; }
-  .coastal-bg     { background: #88bcd8; }
-  .abyss-bg       { background: #1a2244; }
-  .lavender-bg    { background: #7570a9; }
+  .sakura-bg      { background: var(--sakura); }
+  .cherry-bg      { background: var(--cherry); }
+  .cayenne-bg     { background: var(--cayenne); }
+  .mustard-bg     { background: var(--mustard); }
+  .sage-bg        { background: var(--sage); }
+  .coastal-bg     { background: var(--coastal); }
+  .abyss-bg       { background: var(--abyss); }
+  .lavender-bg    { background: var(--lavender); }
 
 
   #hero header .eyebrow {
@@ -373,7 +368,7 @@
   }
   #offerings .label { color: var(--accent-warm); }
   #systems .label { color: var(--butter); }
-  #diagnosis .regional-center.card .label { color: var(--accent-secondary); }
+  #diagnosis .regional-center.card .label { color: var(--sage); }
   #testimonials .label { color: var(--surface-alt); }
   #not-therapy .label { color: var(--muted); }
   #about h2 {
@@ -405,11 +400,10 @@
     border: 1px solid;
     border-radius: 2px;
   }
-  /* TODO: Can we define the hex codes below in the color tokens section of :root */
   .tag-secondary {
     color: var(--pine);
-    background: var(--accent-secondary-light);
-    border-color: var(--accent-secondary-mid);
+    background: var(--mint);
+    border-color: var(--thyme);
   }
   .tag-accent {
     color: var(--iris);
@@ -635,7 +629,7 @@
   }
   #process .step p {
     font-size: 0.9rem;
-    color: var(--accent-secondary-mid);
+    color: var(--thyme);
     line-height: 1.7;
     grid-column: 1 / -1;
     grid-row: 2;
@@ -693,8 +687,8 @@
     color: var(--accent);
   }
   #testimonials .quote .avatar.plum {
-    background: var(--accent-secondary-light);
-    color: var(--accent-secondary);
+    background: var(--mint);
+    color: var(--sage);
   }
   #testimonials .quote .name {
     font-size: 0.85rem;
@@ -724,7 +718,7 @@
     margin-bottom: 1rem;
     color: var(--text);
   }
-  #book .pitch h2 em { color: var(--accent-secondary-dark); }
+  #book .pitch h2 em { color: var(--pine); }
   #book .pitch p {
     color: var(--text);
     line-height: 1.75;

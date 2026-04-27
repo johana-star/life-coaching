@@ -10,7 +10,7 @@ Entries are grouped by topic and ordered roughly chronologically within each gro
 - Named the palette **Tide Garden** — captures the aquatic and botanical threads simultaneously
 - Two-layer token system: colour tokens (named) → semantic tokens (functional aliases). Rules only reference semantic tokens.
 - Colour names are evocative natural/culinary references — never descriptive (e.g. `--mustard` not `--dark-yellow`)
-- **Periwinkle → Lavender**: renamed and colour-shifted to `#7570a9` (H=245°) to match Johana's top in her headshot. Improves WCAG contrast to AA.
+- **Periwinkle → Lavender**: renamed and colour-shifted to `#7570a9` (H=245°) to match Johana's top in their headshot. Improves WCAG contrast to AA.
 - **Navy/Abyss swapped**: abyss is now the deepest blue (`#1a2244`), navy is the mid blue (`#4a5472`) — semantically accurate.
 - **Horizon** (`#d1e5f0`) added — coastal tint at L=88%, used as tag-highlight background on sakura sections.
 - **Wisteria retired** — replaced by iris as `--accent-hover`. Iris (darker) gives clearer hover feedback on lavender CTA.
