@@ -422,9 +422,21 @@
     background: var(--blush);
     border-color: var(--highlight);
   }
+  .tag-warm {
+    color: var(--saffron);
+    background: var(--turmeric);
+    border-color: var(--ginger);
+  }
   /* tag-highlight (sakura tones) is invisible on the sakura about background —
      substitute coastal family for contrast */
   #about .tag-highlight {
+    color: var(--abyss);
+    background: var(--horizon);
+    border-color: var(--coastal);
+  }
+  /* tag-warm (orange tones) also blends into sakura — same override as tag-highlight for now.
+     A better warm-toned override is worth researching. */
+  #about .tag-warm {
     color: var(--abyss);
     background: var(--horizon);
     border-color: var(--coastal);

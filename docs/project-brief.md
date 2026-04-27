@@ -138,6 +138,7 @@ Two-layer CSS token system: color tokens → semantic tokens.
 - `tag-tertiary` — mustard family (butter bg, mustard border, molasses text)
 - `tag-highlight` — sakura family (blush bg, sakura border, cherry text)
   - On sakura background: overridden to horizon bg, coastal border, abyss text
+- `tag-warm` — orange family (turmeric bg, ginger border, saffron text)
 
 ---
 
