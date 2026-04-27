@@ -123,6 +123,12 @@
     --mustard-25:    rgba(216,192,48,0.25);
     --abyss-8:       rgba(26,34,68,0.08);
   }
+  html {
+    /* The browser default is 16px. Setting font-size here scales all rem values
+       throughout the stylesheet proportionally — increasing this value makes
+       everything larger without touching individual rules. */
+    font-size: 18px;
+  }
   html, body {
     overflow-x: hidden;
     max-width: 100%;
@@ -184,13 +190,13 @@
                       (I presume this impacts the bottom as well, as the whitespace gap there is quite large.) */
     grid-template-columns: 1fr 1fr;
     align-items: center;
-    padding: 0rem 4rem 4rem;
+    padding: 4rem;
     gap: 4rem;
   }
   #banner {
     display: flex;
-    height: 60px;
-    margin-top: 78px; /* determined through trial and error that the nav is 78px high. Can we compute that somehow?
+    height: 3.75rem;
+    margin-top: 4.875rem; /* determined through trial and error that the nav is 78px high. Can we compute that somehow?
                          That is, why did we think it was only 60px high? */
   }
   #banner div { flex: 1; }
@@ -838,6 +844,9 @@
   .delay-3 { animation-delay: 0.25s; }
   .delay-4 { animation-delay: 0.35s; }
   @media (max-width: 900px) {
+    html {
+      font-size: 20px;
+    }
     body > nav {
       padding: 1.25rem 2rem;
     }
