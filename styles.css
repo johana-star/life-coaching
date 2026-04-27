@@ -182,10 +182,9 @@
   }
   body > nav .cta:hover { background: var(--accent-hover); }
   #hero {
-    min-height: 100vh;
-    display: grid; /* grid + min-height: 100vh + align-items: center vertically centers
-                      the content within the viewport. Without display: grid, there is no
-                      centering mechanism and the content sits flush at the top. */
+    display: grid; /* grid + align-items: center vertically centers content.
+                      Without display: grid there is no centering mechanism
+                      and content sits flush at the top. */
     grid-template-columns: 1fr 1fr;
     align-items: center;
     padding: 4rem;
