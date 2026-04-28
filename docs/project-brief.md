@@ -185,19 +185,35 @@ Note: the color progression sakura→cherry→cayenne→mustard→sage→coastal
 - **Body copy review** — go section by section through about, not-therapy, offerings, systems, process, diagnosis, and book. Headings are approved (see above). Body paragraphs still need editing toward Johana's natural voice. In progress with writer friend.
 - **Testimonials** — section is commented out in the HTML pending real testimonials. Once received: write heading and copy, uncomment section, update styleguide.
 
-### Styleguide
-- ~~**Color combinations section**~~ — done. Added to styleguide with WCAG ratios and live samples. Book/CTA updated to butter bg, abyss text, pine em (all AAA).
-- **Update palette.js scores** — scores in styleguide.js reflect a snapshot and will drift as the design evolves. Revisit after major section changes.
+### Open
+- **tag-warm on sakura** — currently uses horizon/coastal/abyss override (same as tag-highlight). A warm-toned alternative is worth researching.
+- **Styleguide responsive behavior** — the styleguide is a desktop dev tool; mobile layout is not a priority but would be a nice-to-have. The palette table already scrolls horizontally. Typography section is the main pain point.
+- **palette.js scores** — updated this session. Revisit after the next major round of design changes.
 
 ### Done
 - **Global type scale** — base font-size set to 18px globally, 20px on mobile via media query.
 - **`info.svg` icon** — replaced with `pencil.svg` on the Artistic practice card.
 - **Retired tokens** — paprika, periwinkle, kikyo removed from stylesheet. Peony and saffron reinstated as active tokens.
-- **New tokens** — ginger (`#dcb288`) and updated saffron (`#c62810`) added to the orange family. Palette table now has no empty cells.
-- **Spacing and layout section** — added to styleguide.html with section padding, inner max-width, grid gap, and breakpoint documentation.
-- **Voice and tone section** — added to styleguide.html including naming convention, language preferences, and singular they guidance.
-- **Nav height** — `#banner` margin-top now uses `var(--nav-height)` computed dynamically by script.js. Documented in stylesheet.
+- **New tokens** — ginger (`#dcb288`), saffron (`#c62810`), peony (`#c7508c`) added. Orange family complete; palette table has no empty cells.
+- **Cream updated** — `#f8f8f4` → `#f5f5ef` (L=95%) for more distinction from white. Old value retired as cream (old).
+- **Spacing and layout section** — added to styleguide.html.
+- **Voice and tone section** — added to styleguide.html including naming convention, language preferences, singular they guidance (MW attributed).
+- **About this guide section** — added to styleguide.html capturing design intent and placeholder text convention.
+- **Color combinations section** — added to styleguide.html with WCAG ratios and live samples.
+- **Hue wheel** — added to styleguide.html mapping all 28 tokens by hue angle and lightness.
+- **Page progression diagram** — added to styleguide.html showing section backgrounds top to bottom.
+- **Color utilities** — interactive hex inspector and contrast checker added to styleguide.html.
+- **`palette-utils.py`** — documented color math utility added to project root.
+- **Section backgrounds** — process → iris, diagnosis → cherry, book/CTA → butter. Dark cluster now reads: abyss → turmeric → pine → iris → cherry.
+- **`#ribbon`** — 6px reprise of the banner rainbow added above the footer. Documented in styleguide.
+- **`tag-warm`** — new orange family tag variant (turmeric bg, ginger border, saffron text). AA 4.87.
+- **Banner stripe classes** — switched from hardcoded hex to CSS custom properties.
+- **`--accent-secondary-*` tokens** — removed; replaced with color tokens directly.
+- **Nav height** — `#banner` margin-top uses `var(--nav-height)` computed by script.js.
 - **Calendly widget** — documented in HTML. No further action needed.
+- **Hero `min-height: 100vh`** — removed; hero now sizes to content.
+- **Styleguide palette.js scores** — updated for new tokens and section background changes.
+- **`body.palette-page` → `body#styleguide-page`** — renamed throughout stylesheet and styleguide.
 
 ---
 

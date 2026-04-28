@@ -1107,21 +1107,10 @@ body#styleguide-page footer em {
   body#styleguide-page {
     padding: 2rem 1rem;
   }
+  /* palette table — horizontal scroll only; full responsive behavior is a future task */
   .palette-table {
     display: block;
     overflow-x: auto;
-  }
-  .palette-table thead,
-  .palette-table tbody,
-  .palette-table tr {
-    display: block;
-  }
-  .palette-table thead tr th,
-  .palette-table tbody tr td {
-    display: block;
-    width: 100%;
-    border-right: none;
-    border-bottom: 1px solid var(--chevre);
   }
   body#styleguide-page footer {
     flex-direction: column;
