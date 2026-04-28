@@ -1,3 +1,4 @@
+/* ─── reset & base ─────────────────────────────────────────────────────────── */
   *, *::before, *::after {
     box-sizing: border-box;
     margin: 0;
@@ -86,27 +87,6 @@
        native CSS cannot compute derived values; use Sass or a design tool to
        recalculate if palette colors change */
 
-    /* ─── semantic tokens ───────────────────────────────────────────────────────
-       these are what rules reference — color tokens above should not
-       appear in rules directly */
-    --background:             var(--cream);
-    --surface:                var(--white);
-    --surface-alt:            var(--feta);
-    --surface-alt-dark:       var(--chevre);
-    --text:                   var(--abyss);
-    --text-mid:               var(--navy);
-    --text-light:             var(--navy);
-    --accent:                 var(--lavender);
-    --accent-hover:           var(--iris);
-
-    --accent-tertiary:        var(--mustard);
-    --highlight:              var(--sakura);
-    --highlight-dark:         var(--cherry);
-    --muted:                  var(--coastal);
-    --surface-warm:           var(--turmeric);
-    --accent-warm:            var(--cayenne);
-    --deep:                   var(--abyss);
-
     /* ─── opacity variants ──────────────────────────────────────────────────────
        Hardcoded rgba values are intentional — plain CSS cannot derive alpha
        variants from a custom property value. color-mix() could do this in
@@ -122,6 +102,7 @@
     --mustard-25:    rgba(216,192,48,0.25);
     --abyss-8:       rgba(26,34,68,0.08);
   }
+
   html {
     /* The browser default is 16px. Setting font-size here scales all rem values
        throughout the stylesheet proportionally — increasing this value makes
@@ -134,8 +115,8 @@
   }
   body {
     font-family: 'DM Sans', sans-serif;
-    background: var(--background);
-    color: var(--text);
+    background: var(--cream);
+    color: var(--abyss);
     line-height: 1.6;
     font-weight: 300;
   }
@@ -143,6 +124,7 @@
     font-family: var(--serif);
   }
   h1, h2, h3, h4 { font-weight: 300; }
+/* ─── nav ──────────────────────────────────────────────────────────────────── */
   body > nav {
     position: fixed;
     top: 0;
@@ -165,12 +147,12 @@
     font-weight: 400;
     font-size: 1.3rem;
     letter-spacing: 0.04em;
-    color: var(--text);
+    color: var(--abyss);
     text-decoration: none;
   }
   body > nav .cta {
-    background: var(--accent);
-    color: var(--surface);
+    background: var(--lavender);
+    color: var(--white);
     padding: 0.55rem 1.4rem;
     border-radius: 2px;
     font-size: 0.8rem;
@@ -180,8 +162,120 @@
     text-decoration: none;
     transition: background 0.2s;
   }
-  body > nav .cta:hover { background: var(--accent-hover); }
+  body > nav .cta:hover { background: var(--iris); }
+
+/* ─── global components ─────────────────────────────────────────────────────── */
+  .disclaimer {
+    font-size: 0.8rem;
+    color: var(--navy);
+    line-height: 1.6;
+    border-left: 2px solid var(--sakura);
+    padding-left: 0.9rem;
+    margin-bottom: 2rem;
+    max-width: 420px;
+  }
+  .btn-primary {
+    background: var(--abyss);
+    color: var(--white);
+    padding: 0.9rem 2rem;
+    border-radius: 2px;
+    font-size: 0.85rem;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    text-decoration: none;
+    transition: background 0.2s;
+    border: 1.5px solid var(--abyss);
+  }
+  .btn-primary.spacer {
+    display:inline-block;
+    margin-top:1rem;
+  }
+  .btn-primary:hover {
+    background: var(--lavender);
+    border-color: var(--lavender);
+  }
+  .btn-ghost {
+    color: var(--navy);
+    font-size: 0.85rem;
+    text-decoration: none;
+    letter-spacing: 0.02em;
+    border-bottom: 1px solid var(--coastal);
+    padding-bottom: 2px;
+    transition: color 0.2s, border-color 0.2s;
+  }
+  .btn-ghost:hover {
+    color: var(--lavender);
+    border-color: var(--lavender);
+  }
+  .flag-badge {
+    display: inline-block;
+    width: 1.3em;
+    height: 0.78em;
+    vertical-align: baseline;
+    margin: 0 0.15em;
+    border-radius: 1.5px;
+  }
+
+/* ─── tags ──────────────────────────────────────────────────────────────────── */
+  .tag {
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 0.3rem 0.75rem;
+    border: 1px solid;
+    border-radius: 2px;
+  }
+  .tag-secondary {
+    color: var(--pine);
+    background: var(--mint);
+    border-color: var(--thyme);
+  }
+  .tag-accent {
+    color: var(--iris);
+    background: var(--lilac);
+    border-color: var(--thistle);
+  }
+  .tag-tertiary {
+    color: var(--molasses);
+    background: var(--butter);
+    border-color: var(--mustard);
+  }
+  .tag-highlight {
+    color: var(--cherry);
+    background: var(--blush);
+    border-color: var(--sakura);
+  }
+  .tag-warm {
+    color: var(--saffron);
+    background: var(--turmeric);
+    border-color: var(--ginger);
+  }
+  /* tag-highlight (sakura tones) is invisible on the sakura about background —
+     substitute coastal family for contrast */
+  #about .tag-highlight {
+    color: var(--abyss);
+    background: var(--horizon);
+    border-color: var(--coastal);
+  }
+  /* tag-warm (orange tones) also blends into sakura — same override as tag-highlight for now.
+     A better warm-toned override is worth researching. */
+  #about .tag-warm {
+    color: var(--abyss);
+    background: var(--horizon);
+    border-color: var(--coastal);
+  }
+
+/* ─── sections ──────────────────────────────────────────────────────────────── */
+
+/* #hero */
   #hero {
+    --bg:           var(--cream);
+    --heading:      var(--abyss);
+    --heading-soft: var(--lavender);
+    --label:        var(--navy);
+    --text:         var(--navy);
+    --accent:       var(--lavender);
     display: grid; /* grid + align-items: center vertically centers content.
                       Without display: grid there is no centering mechanism
                       and content sits flush at the top. */
@@ -212,11 +306,12 @@
 
 
   #hero header .eyebrow {
+    color: var(--label);
     font-size: 0.72rem;
     font-weight: 500;
     letter-spacing: 0.14em;
     text-transform: uppercase;
-    color: var(--accent);
+    color: var(--lavender);
     margin-bottom: 1.5rem;
     display: flex;
     align-items: center;
@@ -227,80 +322,38 @@
     display: block;
     width: 32px;
     height: 1px;
-    background: var(--accent);
+    background: var(--lavender);
   }
   #hero header h1 {
     font-size: clamp(2.6rem, 5vw, 4rem);
     line-height: 1.1;
     letter-spacing: -0.01em;
-    color: var(--text);
+    color: var(--abyss);
     margin-bottom: 1.5rem;
   }
   #hero header h1 em {
     font-style: italic;
-    color: var(--accent);
+    color: var(--heading-soft);
   }
   #hero header .lede {
     font-size: 1.05rem;
-    color: var(--text-mid);
+    color: var(--text);
     line-height: 1.75;
     margin-bottom: 1.5rem;
     font-weight: 300;
     max-width: 440px;
-  }
-  .disclaimer {
-    font-size: 0.8rem;
-    color: var(--text-light);
-    line-height: 1.6;
-    border-left: 2px solid var(--highlight);
-    padding-left: 0.9rem;
-    margin-bottom: 2rem;
-    max-width: 420px;
   }
   #hero header nav {
     display: flex;
     align-items: center;
     gap: 1.5rem;
   }
-  .btn-primary {
-    background: var(--text);
-    color: var(--surface);
-    padding: 0.9rem 2rem;
-    border-radius: 2px;
-    font-size: 0.85rem;
-    font-weight: 400;
-    letter-spacing: 0.04em;
-    text-decoration: none;
-    transition: background 0.2s;
-    border: 1.5px solid var(--text);
-  }
-  .btn-primary.spacer {
-    display:inline-block;
-    margin-top:1rem;
-  }
-  .btn-primary:hover {
-    background: var(--accent);
-    border-color: var(--accent);
-  }
-  .btn-ghost {
-    color: var(--text-mid);
-    font-size: 0.85rem;
-    text-decoration: none;
-    letter-spacing: 0.02em;
-    border-bottom: 1px solid var(--muted);
-    padding-bottom: 2px;
-    transition: color 0.2s, border-color 0.2s;
-  }
-  .btn-ghost:hover {
-    color: var(--accent);
-    border-color: var(--accent);
-  }
   #hero .image {
     position: relative;
     height: 600px;
     border-radius: 2px;
     overflow: hidden;
-    background: var(--surface);
+    background: var(--white);
   }
   #hero .image .shapes {
     position: absolute;
@@ -311,7 +364,7 @@
     position: absolute;
     bottom: 2.5rem;
     left: 2rem;
-    background: var(--surface);
+    background: var(--white);
     padding: 1.25rem 1.5rem;
     border-radius: 2px;
     box-shadow: 0 4px 32px var(--abyss-8);
@@ -319,26 +372,22 @@
   }
   #hero .badge strong {
     font-size: 1rem;
-    color: var(--accent);
+    color: var(--lavender);
     margin-bottom: 0.25rem;
   }
   #hero .badge ul { list-style-type: '\b7  '; }
   #hero .badge li {
     font-size: 0.78rem;
-    color: var(--text-mid);
+    color: var(--text);
     line-height: 1.5;
   }
-  .flag-badge {
-    display: inline-block;
-    width: 1.3em;
-    height: 0.78em;
-    vertical-align: baseline;
-    margin: 0 0.15em;
-    border-radius: 1.5px;
-  }
+
+/* #trust-bar */
   #trust-bar {
+    --bg:   var(--lavender);
+    --text: var(--white);
     list-style: none;
-    background: var(--accent);
+    background: var(--lavender);
     padding: 1.75rem 4rem;
     display: flex;
     align-items: center;
@@ -348,7 +397,7 @@
   }
   #trust-bar li {
     font-size: 0.75rem;
-    color: var(--surface);
+    color: var(--text);
     font-weight: 500;
     letter-spacing: 0.08em;
     text-transform: uppercase;
@@ -360,31 +409,28 @@
     content: '◆';
     font-size: 0.5rem;
   }
+
+/* #about */
   #about {
+    --bg:   var(--sakura);
+    --text: var(--abyss);
     display: grid;
     grid-template-columns: 1fr 1.2fr;
     gap: 6rem;
     padding: 7rem 4rem;
     align-items: start;
-    background: var(--highlight);
+    background: var(--bg);
   }
-  #about .label, #offerings .label, #process .label, #diagnosis .label {
-    color: var(--accent);
-  }
-  #offerings .label { color: var(--accent-warm); }
-  #systems .label { color: var(--butter); }
-  #diagnosis .regional-center.card .label { color: var(--sage); }
-  #testimonials .label { color: var(--surface-alt); }
-  #not-therapy .label { color: var(--muted); }
+  #about .label { color: var(--lavender); }
   #about h2 {
     font-size: clamp(2rem, 3.5vw, 2.8rem);
     line-height: 1.2;
     margin-bottom: 1.5rem;
-    color: var(--text);
+    color: var(--abyss);
   }
   #about h2 em { color: var(--text); }
   #about p {
-    color: var(--text);
+    color: var(--abyss);
     line-height: 1.85;
     margin-bottom: 1.2rem;
     font-size: 0.97rem;
@@ -396,57 +442,9 @@
     gap: 0.5rem;
     margin: 1.5rem 0;
   }
-  .tag {
-    font-size: 0.72rem;
-    font-weight: 500;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    padding: 0.3rem 0.75rem;
-    border: 1px solid;
-    border-radius: 2px;
-  }
-  .tag-secondary {
-    color: var(--pine);
-    background: var(--mint);
-    border-color: var(--thyme);
-  }
-  .tag-accent {
-    color: var(--iris);
-    background: var(--lilac);
-    border-color: var(--thistle);
-  }
-  .tag-tertiary {
-    color: var(--molasses);
-    background: var(--butter);
-    border-color: var(--accent-tertiary);
-  }
-  .tag-highlight {
-    color: var(--highlight-dark);
-    background: var(--blush);
-    border-color: var(--highlight);
-  }
-  .tag-warm {
-    color: var(--saffron);
-    background: var(--turmeric);
-    border-color: var(--ginger);
-  }
-  /* tag-highlight (sakura tones) is invisible on the sakura about background —
-     substitute coastal family for contrast */
-  #about .tag-highlight {
-    color: var(--abyss);
-    background: var(--horizon);
-    border-color: var(--coastal);
-  }
-  /* tag-warm (orange tones) also blends into sakura — same override as tag-highlight for now.
-     A better warm-toned override is worth researching. */
-  #about .tag-warm {
-    color: var(--abyss);
-    background: var(--horizon);
-    border-color: var(--coastal);
-  }
   #about .portrait {
     aspect-ratio: 4/5;
-    background: var(--surface);
+    background: var(--white);
     border-radius: 2px;
     position: relative;
     overflow: hidden;
@@ -457,8 +455,18 @@
     object-fit:cover;
     display:block;
   }
+
+/* #not-therapy */
+  #not-therapy .label { color: var(--panel-is); }
   #not-therapy {
-    background: var(--deep);
+    --bg:          var(--abyss);
+    --heading:     var(--white);
+    --heading-soft:var(--coastal);
+    --text:        var(--white-85);
+    --panel-bg:    var(--cream-15);
+    --panel-is:    var(--coastal);
+    --panel-not:   var(--sakura);
+    background: var(--abyss);
     padding: 4rem;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -467,11 +475,11 @@
   }
   #not-therapy h2 {
     font-size: clamp(1.8rem, 3vw, 2.4rem);
-    color: var(--background);
+    color: var(--cream);
     line-height: 1.2;
     margin-bottom: 1rem;
   }
-  #not-therapy h2 em { color: var(--muted); }
+  #not-therapy h2 em { color: var(--heading-soft); }
   #not-therapy p {
     font-size: 0.92rem;
     color: var(--cream-60);
@@ -497,8 +505,8 @@
     text-transform: uppercase;
     margin-bottom: 0.75rem;
   }
-  #not-therapy .panel .title.is { color: var(--muted); }
-  #not-therapy .panel .title.not { color: var(--highlight); }
+  #not-therapy .panel .title.is { color: var(--panel-is); }
+  #not-therapy .panel .title.not { color: var(--panel-not); }
   #not-therapy .list { list-style: none; }
   #not-therapy .list li {
     font-size: 0.85rem;
@@ -506,39 +514,54 @@
     border-bottom: 1px solid var(--cream-6);
     line-height: 1.5;
   }
-  #not-therapy .list.is li { color: var(--white-85); }
+  #not-therapy .list.is li { color: var(--text); }
   #not-therapy .list.not li {
     color: var(--cream-35);
     text-decoration: line-through;
     text-decoration-color: var(--white-15);
   }
-  #offerings { padding: 7rem 4rem; background: var(--surface-warm); }
+
+/* #offerings */
+  #offerings .label { color: var(--heading-soft); }
+  #offerings {
+    --bg:           var(--turmeric);
+    --heading:      var(--abyss);
+    --heading-soft: var(--cayenne);
+    --text:         var(--navy);
+    --card-bg:      var(--white);
+    --card-icon:    var(--feta);
+    --card-heading: var(--cayenne);
+    --card-text:    var(--navy);
+    --divider:      var(--chevre);
+    padding: 7rem 4rem;
+    background: var(--bg);
+  }
   #offerings .header { margin-bottom: 3.5rem; }
   #offerings h2 {
     font-size: clamp(2rem, 3.5vw, 2.8rem);
     line-height: 1.2;
   }
-  #offerings h2 em { color: var(--accent-warm); }
+  #offerings h2 em { color: var(--heading-soft); }
   #offerings .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 1px;
-    background: var(--surface-alt-dark);
-    border: 1px solid var(--surface-alt-dark);
+    background: var(--divider);
+    border: 1px solid var(--divider);
     margin-top: 2.5rem;
   }
   @media (min-width: 1268px) {
     #offerings .grid { grid-template-columns: repeat(6, 1fr); }
   }
   #offerings .card {
-    background: var(--surface);
+    background: var(--white);
     padding: 2rem;
   }
   #offerings .icon {
     width: 36px;
     height: 36px;
     border-radius: 2px;
-    background: var(--surface-alt);
+    background: var(--card-icon);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -551,16 +574,24 @@
   #offerings .card h3 {
     font-size: 0.95rem;
     font-weight: 500;
-    color: var(--accent-warm);
+    color: var(--card-heading);
     margin-bottom: 0.5rem;
   }
   #offerings .card p {
     font-size: 0.85rem;
-    color: var(--text-mid);
+    color: var(--card-text);
     line-height: 1.7;
   }
+
+/* #systems */
+  #systems .label { color: var(--label); }
   #systems {
-    background: var(--pine);
+    --bg:           var(--pine);
+    --heading:      var(--white);
+    --heading-soft: var(--butter);
+    --text:         var(--thyme);
+    --label:        var(--butter);
+    background: var(--bg);
     padding: 5rem 4rem;
   }
   #systems .inner {
@@ -571,19 +602,19 @@
     font-size: clamp(1.8rem, 3vw, 2.4rem);
     line-height: 1.2;
     margin-bottom: 1.25rem;
-    color: var(--white);
+    color: var(--heading);
   }
-  #systems h2 em { color: var(--butter); }
+  #systems h2 em { color: var(--heading-soft); }
   #systems p {
     font-size: 0.95rem;
-    color: var(--cream);
+    color: var(--text);
     line-height: 1.8;
     max-width: 640px;
   }
   #systems .note {
     margin-top: 1rem;
     font-size: 0.88rem;
-    color: var(--butter);
+    color: var(--text);
   }
   #systems .tags {
     list-style: none;
@@ -592,8 +623,15 @@
     gap: 0.5rem;
     margin-top: 1.5rem;
   }
+
+/* #process */
   #process {
-    background: var(--iris);
+    --bg:           var(--iris);
+    --heading:      var(--white);
+    --heading-soft: var(--mustard);
+    --text:         var(--thyme);
+    --divider:      var(--mustard-25);
+    background: var(--bg);
     padding: 5rem 2rem;
   }
   #process .inner {
@@ -601,15 +639,15 @@
     margin: 0 auto;
   }
   #process .label {
-    color: var(--accent-tertiary);
+    color: var(--heading-soft);
   }
   #process h2 {
     font-size: clamp(2rem, 3.5vw, 2.8rem);
     margin-bottom: 3.5rem;
     line-height: 1.2;
-    color: var(--surface);
+    color: var(--heading);
   }
-  #process h2 em { color: var(--accent-tertiary); }
+  #process h2 em { color: var(--heading-soft); }
   /* list-style: none + CSS counter is intentional — list-style-type: upper-roman cannot be
      independently styled (color, font, size) from the list item content. The counter()
      approach lets the numeral be mustard, serif, and 1.5rem while step text stays distinct. */
@@ -619,7 +657,7 @@
   }
   #process .step {
     counter-increment: step-counter;
-    border-top: 1px solid var(--mustard-25);
+    border-top: 1px solid var(--divider);
     padding: 2rem 0;
     display: grid;
     grid-template-columns: 2.5rem 1fr;
@@ -627,33 +665,36 @@
     gap: 0.25rem 2rem;
     align-items: baseline;
   }
-  #process .step:last-child { border-bottom: 1px solid var(--mustard-25); }
+  #process .step:last-child { border-bottom: 1px solid var(--divider); }
   #process .step::before {
     content: counter(step-counter, upper-roman);
     font-family: var(--serif);
     font-size: 1.5rem;
     font-weight: 300;
-    color: var(--accent-tertiary);
+    color: var(--heading-soft);
     grid-column: 1;
     grid-row: 1;
   }
   #process .step h3 {
     font-size: 1rem;
     font-weight: 500;
-    color: var(--surface);
+    color: var(--heading);
     grid-column: 2;
     grid-row: 1;
   }
   #process .step p {
     font-size: 0.9rem;
-    color: var(--thyme);
+    color: var(--text);
     line-height: 1.7;
     grid-column: 1 / -1;
     grid-row: 2;
     padding-top: 0.4rem;
   }
+
+/* #testimonials */
+  #testimonials .label { color: var(--feta); }
   #testimonials {
-    background: var(--accent);
+    background: var(--lavender);
     padding: 7rem 4rem;
   }
   #testimonials .inner {
@@ -665,16 +706,16 @@
     text-align: center;
     margin-bottom: 3.5rem;
     line-height: 1.2;
-    color: var(--surface);
+    color: var(--white);
   }
-  #testimonials h2 em { color: var(--accent-tertiary); }
+  #testimonials h2 em { color: var(--mustard); }
   .quotes {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1.5rem;
   }
   #testimonials .quote {
-    background: var(--surface);
+    background: var(--white);
     padding: 2.5rem;
     border-radius: 2px;
   }
@@ -683,7 +724,7 @@
     font-weight: 300;
     font-style: italic;
     line-height: 1.6;
-    color: var(--text);
+    color: var(--abyss);
     margin-bottom: 1.5rem;
   }
   #testimonials .quote .author {
@@ -695,13 +736,13 @@
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background: var(--surface-alt);
+    background: var(--feta); /* testimonials commented out — update if reinstated */
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 0.78rem;
     font-weight: 500;
-    color: var(--accent);
+    color: var(--lavender);
   }
   #testimonials .quote .avatar.plum {
     background: var(--mint);
@@ -710,14 +751,100 @@
   #testimonials .quote .name {
     font-size: 0.85rem;
     font-weight: 500;
-    color: var(--text);
+    color: var(--abyss);
   }
   #testimonials .quote .role {
     font-size: 0.78rem;
-    color: var(--text-light);
+    color: var(--navy);
   }
+
+/* #diagnosis */
+  #diagnosis .label { color: var(--heading-soft); }
+  #diagnosis .regional-center.card .label { color: var(--sage); }
+  #diagnosis {
+    --bg:           var(--cherry);
+    --heading:      var(--white);
+    --heading-soft: var(--thistle);
+    --text:         var(--cream);
+    --card-bg:      var(--white);
+    --card-heading: var(--abyss);
+    --card-text:    var(--navy);
+    --link-bg:      var(--coastal);
+    --link-hover:   var(--iris);
+    padding: 7rem 4rem;
+    background: var(--bg);
+  }
+  #diagnosis .inner {
+    max-width: 860px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: start;
+  }
+  #diagnosis h2 {
+    font-size: clamp(1.8rem, 3vw, 2.4rem);
+    line-height: 1.2;
+    margin-bottom: 1.25rem;
+    color: var(--heading);
+  }
+  #diagnosis h2 em, #diagnosis .label { color: var(--heading-soft); }
+  #diagnosis p {
+    font-size: 0.95rem;
+    color: var(--text);
+    line-height: 1.85;
+    margin-bottom: 1rem;
+  }
+  #diagnosis .note {
+    font-size: 0.8rem;
+    color: var(--text);
+    margin-bottom: 1.25rem;
+  }
+  #diagnosis .regional-center.card {
+    background: var(--card-bg);
+    border-radius: 2px;
+    padding: 2rem;
+    border: 1px solid var(--chevre);
+  }
+  #diagnosis .regional-center.card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.75rem;
+    line-height: 1.3;
+    color: var(--card-heading);
+  }
+  #diagnosis .regional-center.card p {
+    font-size: 0.85rem;
+    color: var(--card-text);
+    line-height: 1.75;
+    margin-bottom: 1.25rem;
+  }
+  #diagnosis .regional-center .conditions {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-bottom: 1.5rem;
+  }
+  #diagnosis .regional-center .link {
+    display: inline-block;
+    background: var(--link-bg);
+    color: var(--heading);
+    padding: 0.65rem 1.25rem;
+    border-radius: 2px;
+    font-size: 0.8rem;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+  #diagnosis .regional-center .link:hover { background: var(--link-hover); }
+
+/* #book */
   #book {
-    background: var(--butter);
+    --bg:           var(--butter);
+    --heading:      var(--abyss);
+    --heading-soft: var(--pine);
+    background: var(--bg);
     padding: 0 4rem;
   }
   #book .layout {
@@ -733,18 +860,18 @@
     font-size: clamp(2rem, 4vw, 3.2rem);
     line-height: 1.15;
     margin-bottom: 1rem;
-    color: var(--text);
+    color: var(--heading);
   }
-  #book .pitch h2 em { color: var(--pine); }
+  #book .pitch h2 em { color: var(--heading-soft); }
   #book .pitch p {
-    color: var(--text);
+    color: var(--heading);
     line-height: 1.75;
     margin-bottom: 1rem;
     font-size: 0.97rem;
   }
   #book .pitch .note {
     font-size: 0.82rem;
-    color: var(--text);
+    color: var(--heading);
     font-weight: 500;
     margin-top: 0.5rem;
   }
@@ -752,76 +879,12 @@
     max-width: 100% !important;
     overflow: hidden !important;
   }
-  #diagnosis {
-    padding: 7rem 4rem;
-    background: var(--highlight-dark);
-  }
-  #diagnosis .inner {
-    max-width: 860px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 5rem;
-    align-items: start;
-  }
-  #diagnosis h2 {
-    font-size: clamp(1.8rem, 3vw, 2.4rem);
-    line-height: 1.2;
-    margin-bottom: 1.25rem;
-    color: var(--white);
-  }
-  #diagnosis h2 em, #diagnosis .label { color: var(--thistle); }
-  #diagnosis p {
-    font-size: 0.95rem;
-    color: var(--cream);
-    line-height: 1.85;
-    margin-bottom: 1rem;
-  }
-  #diagnosis .note {
-    font-size: 0.8rem;
-    color: var(--cream);
-    margin-bottom: 1.25rem;
-  }
-  #diagnosis .regional-center.card {
-    background: var(--surface);
-    border-radius: 2px;
-    padding: 2rem;
-    border: 1px solid var(--surface-alt-dark);
-  }
-  #diagnosis .regional-center.card h3 {
-    font-size: 1.3rem;
-    margin-bottom: 0.75rem;
-    line-height: 1.3;
-    color: var(--text);
-  }
-  #diagnosis .regional-center.card p {
-    font-size: 0.85rem;
-    color: var(--text-mid);
-    line-height: 1.75;
-    margin-bottom: 1.25rem;
-  }
-  #diagnosis .regional-center .conditions {
-    list-style: none;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.4rem;
-    margin-bottom: 1.5rem;
-  }
-  #diagnosis .regional-center .link {
-    display: inline-block;
-    background: var(--accent);
-    color: var(--surface);
-    padding: 0.65rem 1.25rem;
-    border-radius: 2px;
-    font-size: 0.8rem;
-    font-weight: 400;
-    letter-spacing: 0.04em;
-    text-decoration: none;
-    transition: background 0.2s;
-  }
-  #diagnosis .regional-center .link:hover { background: var(--accent-hover); }
+
+/* footer */
   footer {
-    background: var(--muted);
+    --bg:   var(--coastal);
+    --text: var(--abyss);
+    background: var(--bg);
     border-top: none;
     padding: 2.5rem 4rem;
     display: flex;
@@ -830,12 +893,12 @@
   }
   footer .logo {
     font-size: 1.1rem;
-    color: var(--text);
+    color: var(--abyss);
     font-weight: 400;
   }
   footer .note {
     font-size: 0.78rem;
-    color: var(--text);
+    color: var(--abyss);
   }
 
   @keyframes fadeUp {
@@ -854,6 +917,8 @@
   .delay-2 { animation-delay: 0.15s; }
   .delay-3 { animation-delay: 0.25s; }
   .delay-4 { animation-delay: 0.35s; }
+
+/* ─── responsive ────────────────────────────────────────────────────────────── */
   @media (max-width: 900px) {
     html {
       font-size: 20px;
@@ -905,15 +970,21 @@
   }
 
 /* ─── Palette page ──────────────────────────────────────────────────────────
+
+/* ─── styleguide ─────────────────────────────────────────────────────────────
    All rules are scoped to body#styleguide-page to avoid collisions with
    index.html styles above (notably: body, header, footer, @media block).
    ─────────────────────────────────────────────────────────────────────────── */
 
 body#styleguide-page {
+  --bg:         var(--cream);
+  --text:       var(--abyss);
+  --text-soft:  var(--lavender);
+  --border:     var(--chevre);
   font-family: 'DM Sans', sans-serif;
   font-weight: 300;
-  background: var(--cream);
-  color: var(--abyss);
+  background: var(--bg);
+  color: var(--text);
   min-height: 100vh;
   padding: 4rem;
 }
@@ -927,7 +998,7 @@ body#styleguide-page header p {
   font-weight: 500;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--lavender);
+  color: var(--text-soft);
   margin-bottom: 0.75rem;
   display: flex;
   align-items: center;
@@ -939,7 +1010,7 @@ body#styleguide-page header p::before {
   display: block;
   width: 32px;
   height: 1px;
-  background: var(--lavender);
+  background: var(--text-soft);
 }
 
 body#styleguide-page header h1 {
@@ -951,7 +1022,7 @@ body#styleguide-page header h1 {
 
 body#styleguide-page header h1 em {
   font-style: italic;
-  color: var(--lavender);
+  color: var(--text-soft);
 }
 
 /* ── Palette table ── */
@@ -1033,13 +1104,13 @@ td.swatch .swatch-hsl {
   mix-blend-mode: multiply;
 }
 
-td.swatch.dark .swatch-hsl { color: var(--cream); mix-blend-mode: normal; opacity: 0.5; }
+td.swatch.dark .swatch-hsl { color: var(--bg); mix-blend-mode: normal; opacity: 0.5; }
 
 td.swatch.light .swatch-name,
 td.swatch.light .swatch-hex { color: var(--abyss); }
 
 td.swatch.dark .swatch-name,
-td.swatch.dark .swatch-hex { color: var(--cream); mix-blend-mode: normal; opacity: 1; }
+td.swatch.dark .swatch-hex { color: var(--bg); mix-blend-mode: normal; opacity: 1; }
 
 td.swatch.dark .swatch-hex { opacity: 0.6; }
 
@@ -1066,7 +1137,7 @@ body#styleguide-page footer {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  border-top: 1px solid var(--chevre);
+  border-top: 1px solid var(--border);
   border-bottom: none;
   padding-top: 1.5rem;
   padding-bottom: 0;
@@ -1094,13 +1165,13 @@ body#styleguide-page footer em {
     font-family: 'DM Sans', sans-serif;
     font-size: 13px;
     font-weight: 500;
-    fill: var(--text);
+    fill: var(--abyss);
   }
   .sg-swatch-sub {
     font-family: 'DM Mono', 'Courier New', monospace;
     font-size: 11px;
     font-weight: 400;
-    fill: var(--text-mid);
+    fill: var(--navy);
     opacity: 0.7;
   }
 @media (max-width: 900px) {
@@ -1120,7 +1191,7 @@ body#styleguide-page footer em {
 
 body#styleguide-page .usage-section {
   margin-top: 3rem;
-  border-top: 1px solid var(--chevre);
+  border-top: 1px solid var(--border);
   padding-top: 2rem;
 }
 body#styleguide-page .usage-winner {
@@ -1128,7 +1199,7 @@ body#styleguide-page .usage-winner {
   color: var(--navy);
   font-family: 'DM Mono', 'Courier New', monospace;
   letter-spacing: 0.04em;
-  border: 0.5px solid var(--chevre);
+  border: 0.5px solid var(--border);
   border-radius: 2px;
   padding: 0.5rem 0.75rem;
   margin-bottom: 1.5rem;
@@ -1136,7 +1207,7 @@ body#styleguide-page .usage-winner {
 }
 body#styleguide-page .usage-winner strong {
   font-weight: 700;
-  color: var(--abyss);
+  color: var(--text);
 }
 body#styleguide-page .usage-section h2 {
   font-family: var(--serif);
@@ -1194,7 +1265,7 @@ body#styleguide-page .usage-bar {
 body#styleguide-page .usage-note {
   font-size: 0.62rem;
   font-family: 'DM Mono', 'Courier New', monospace;
-  color: var(--text-mid);
+  color: var(--navy);
   line-height: 1.3;
 }
 body#styleguide-page .usage-zero .usage-label { color: var(--chevre); }
@@ -1202,7 +1273,7 @@ body#styleguide-page .usage-zero .usage-note { color: var(--chevre); }
 
 body#styleguide-page .type-section {
   margin-top: 3rem;
-  border-top: 1px solid var(--chevre);
+  border-top: 1px solid var(--border);
   padding-top: 2rem;
 }
 body#styleguide-page .type-section h2 {
@@ -1221,7 +1292,7 @@ body#styleguide-page .type-section h3 {
   margin-bottom: 2rem;
 }
 body#styleguide-page .type-specimen {
-  border-top: 0.5px solid var(--chevre);
+  border-top: 0.5px solid var(--border);
   padding: 1.5rem 0;
   display: grid;
   grid-template-columns: 220px 1fr;
@@ -1229,7 +1300,7 @@ body#styleguide-page .type-specimen {
   align-items: start;
 }
 body#styleguide-page .type-specimen:last-child {
-  border-bottom: 0.5px solid var(--chevre);
+  border-bottom: 0.5px solid var(--border);
 }
 body#styleguide-page .type-label {
   font-size: 0.72rem;
@@ -1241,7 +1312,7 @@ body#styleguide-page .type-label {
 body#styleguide-page .type-meta {
   font-size: 0.62rem;
   font-family: 'Courier New', monospace;
-  color: var(--text-mid);
+  color: var(--navy);
   letter-spacing: 0.04em;
   margin-top: 0.35rem;
   grid-column: 1;
@@ -1249,7 +1320,7 @@ body#styleguide-page .type-meta {
 body#styleguide-page .type-example {
   grid-column: 2;
   grid-row: 1 / 3;
-  color: var(--abyss);
+  color: var(--text);
 }
 body#styleguide-page .type-h1 {
   font-family: var(--serif);
@@ -1258,21 +1329,21 @@ body#styleguide-page .type-h1 {
   line-height: 1.1;
   letter-spacing: -0.01em;
 }
-body#styleguide-page .type-h1 em { font-style: italic; color: var(--lavender); }
+body#styleguide-page .type-h1 em { font-style: italic; color: var(--text-soft); }
 body#styleguide-page .type-h2 {
   font-family: var(--serif);
   font-size: clamp(2rem, 3.5vw, 2.8rem);
   font-weight: 300;
   line-height: 1.2;
 }
-body#styleguide-page .type-h2 em { font-style: italic; color: var(--lavender); }
+body#styleguide-page .type-h2 em { font-style: italic; color: var(--text-soft); }
 body#styleguide-page .type-h3 {
   font-family: var(--serif);
   font-size: clamp(1.8rem, 3vw, 2.4rem);
   font-weight: 300;
   line-height: 1.2;
 }
-body#styleguide-page .type-h3 em { font-style: italic; color: var(--lavender); }
+body#styleguide-page .type-h3 em { font-style: italic; color: var(--text-soft); }
 body#styleguide-page .type-h3-card {
   font-size: 1rem;
   font-weight: 500;
@@ -1287,7 +1358,7 @@ body#styleguide-page .type-label-ex {
   font-weight: 500;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--lavender);
+  color: var(--text-soft);
 }
 body#styleguide-page .type-trust {
   font-size: 0.75rem;
@@ -1309,7 +1380,7 @@ body#styleguide-page .type-cta {
   font-weight: 400;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  background: var(--lavender);
+  background: var(--text-soft);
   color: var(--white);
   padding: 0.55rem 1.4rem;
   border-radius: 2px;
@@ -1317,7 +1388,7 @@ body#styleguide-page .type-cta {
 
 body#styleguide-page .components-section {
   margin-top: 3rem;
-  border-top: 1px solid var(--chevre);
+  border-top: 1px solid var(--border);
   padding-top: 2rem;
 }
 body#styleguide-page .components-section h2 {
@@ -1340,16 +1411,16 @@ body#styleguide-page .components-section #process .step h3 {
   font-weight: 500;
   letter-spacing: 0;
   text-transform: none;
-  color: var(--surface);
+  color: var(--white);
   margin-top: 0;
   margin-bottom: 0;
 }
 body#styleguide-page .component-group {
-  border-top: 0.5px solid var(--chevre);
+  border-top: 0.5px solid var(--border);
   padding: 1.5rem 0;
 }
 body#styleguide-page .component-group:last-child {
-  border-bottom: 0.5px solid var(--chevre);
+  border-bottom: 0.5px solid var(--border);
 }
 body#styleguide-page .component-label {
   font-size: 0.72rem;
@@ -1361,7 +1432,7 @@ body#styleguide-page .component-label {
 }
 body#styleguide-page .component-desc {
   font-size: 0.8rem;
-  color: var(--text-mid);
+  color: var(--navy);
   line-height: 1.6;
   max-width: 640px;
   margin-bottom: 1.25rem;
@@ -1377,11 +1448,11 @@ body#styleguide-page .component-example {
 }
 body#styleguide-page .component-note {
   font-size: 0.72rem;
-  color: var(--text-mid);
+  color: var(--navy);
   font-family: 'Courier New', monospace;
   margin-top: 0.75rem;
   padding-left: 0.75rem;
-  border-left: 2px solid var(--chevre);
+  border-left: 2px solid var(--border);
   line-height: 1.6;
 }
 
@@ -1399,14 +1470,14 @@ body#styleguide-page .sg-offering-example {
 }
 body#styleguide-page .sg-card {
   max-width: 280px;
-  background: var(--surface);
+  background: var(--white);
   padding: 2rem;
 }
 body#styleguide-page .sg-card .icon {
   width: 36px;
   height: 36px;
   border-radius: 2px;
-  background: var(--surface-alt);
+  background: var(--feta);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1424,7 +1495,7 @@ body#styleguide-page h3.sg-card-h3 {
 }
 body#styleguide-page .sg-card-p {
   font-size: 0.85rem;
-  color: var(--text-mid);
+  color: var(--navy);
   line-height: 1.7;
 }
 
@@ -1434,7 +1505,7 @@ body#styleguide-page .component-sublabel {
   font-weight: 500;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--text-mid);
+  color: var(--navy);
   margin-top: 1rem;
   margin-bottom: 0.5rem;
 }
@@ -1451,7 +1522,7 @@ body#styleguide-page .sg-example-pine   { background: var(--pine); }
 
 body#styleguide-page #toc {
   margin-bottom: 3rem;
-  border: 0.5px solid var(--chevre);
+  border: 0.5px solid var(--border);
   border-radius: 4px;
   display: inline-block;
   min-width: 260px;
@@ -1463,7 +1534,7 @@ body#styleguide-page #toc summary {
 }
 body#styleguide-page #toc summary::-webkit-details-marker { display: none; }
 body#styleguide-page #toc[open] summary {
-  border-bottom: 0.5px solid var(--chevre);
+  border-bottom: 0.5px solid var(--border);
 }
 body#styleguide-page #toc .toc-list {
   padding: 0.75rem 2rem 1.25rem;
@@ -1481,7 +1552,7 @@ body#styleguide-page .toc-label {
 body#styleguide-page .toc-label::after {
   content: '▸';
   font-size: 0.6rem;
-  color: var(--text-mid);
+  color: var(--navy);
   transition: transform 0.2s;
 }
 body#styleguide-page #toc[open] .toc-label::after {
@@ -1492,7 +1563,7 @@ body#styleguide-page .toc-list {
   padding-left: 1rem;
   font-size: 0.85rem;
   line-height: 1.8;
-  color: var(--abyss);
+  color: var(--text);
 }
 body#styleguide-page .toc-list ol {
   padding-left: 1rem;
@@ -1502,14 +1573,13 @@ body#styleguide-page .toc-list ol {
 body#styleguide-page .toc-list a {
   color: inherit;
   text-decoration: none;
-  border-bottom: 1px solid var(--chevre);
+  border-bottom: 1px solid var(--border);
   transition: border-color 0.2s, color 0.2s;
 }
 body#styleguide-page .toc-list a:hover {
-  color: var(--lavender);
-  border-color: var(--lavender);
+  color: var(--text-soft);
+  border-color: var(--text-soft);
 }
-
 body#styleguide-page .sg-nav-mockup {
   background: var(--cream-88);
   backdrop-filter: blur(12px);
@@ -1526,7 +1596,7 @@ body#styleguide-page .sg-nav-logo {
   font-size: 1.3rem;
   font-weight: 400;
   letter-spacing: 0.04em;
-  color: var(--text);
+  color: var(--abyss);
 }
 body#styleguide-page .sg-nav-actions {
   display: flex;
@@ -1535,15 +1605,15 @@ body#styleguide-page .sg-nav-actions {
 }
 body#styleguide-page .sg-nav-ghost {
   font-size: 0.85rem;
-  color: var(--text-mid);
+  color: var(--navy);
   letter-spacing: 0.02em;
-  border-bottom: 1px solid var(--muted);
+  border-bottom: 1px solid var(--coastal);
   padding-bottom: 2px;
   cursor: default;
 }
 body#styleguide-page .sg-nav-cta {
-  background: var(--accent);
-  color: var(--surface);
+  background: var(--lavender);
+  color: var(--white);
   padding: 0.55rem 1.4rem;
   border-radius: 2px;
   font-size: 0.8rem;
