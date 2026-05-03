@@ -85,7 +85,6 @@ Two-layer CSS token system: color tokens → semantic tokens.
 
 ### Section Background Sequence
 Note: the color progression sakura→cherry→cayenne→mustard→sage→coastal→abyss→lavender is known below as "rainbow."
-Note: the color progression sakura→cherry→cayenne→mustard→sage→coastal→abyss→lavender is known below as "rainbow."
 | Section | Background |
 |---|---|
 | Nav | cream-88 (frosted) |
